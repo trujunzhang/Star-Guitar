@@ -1,5 +1,5 @@
 //
-//  TunningTypeTableView.swift
+//  TuningsTypeTableView.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/28/17.

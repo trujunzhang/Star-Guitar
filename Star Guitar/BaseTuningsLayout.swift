@@ -1,5 +1,5 @@
 //
-//  TunningLayouts.swift
+//  TuningsLayouts.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/31/17.
