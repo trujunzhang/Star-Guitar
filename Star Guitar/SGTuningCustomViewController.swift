@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  SGTuningsCustomViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/19/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SGTuningCustomViewController: UIViewController {
+class SGTuningsCustomViewController: UIViewController {
 
     var titleViewController: TitleViewController!
 
@@ -16,7 +16,7 @@ class SGTuningCustomViewController: UIViewController {
     @IBOutlet weak var twoColumnContainer: UIView!
     @IBOutlet weak var threeColumnContainer: UIView!
     @IBOutlet weak var eventsContainer: UIView!
-    @IBOutlet weak var tuningResultContainer: UIView!
+    @IBOutlet weak var tuningsResultContainer: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class SGTuningCustomViewController: UIViewController {
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)
         ThreeColumnLayout(self.view).layoutContainer(twoColumnContainer, forThirdColumnView: threeColumnContainer,0,ThreeColumnSchema.threeColumnWidth())
         
-        CustomResultsLayout(self.view).layoutResultsContainer(threeColumnContainer, forResultView: tuningResultContainer,0,TuningTypeSchema.itemWidth() + CustomResultsColumnSchema.resultsMarginLeft() + ResultsBoarderSchema.outBoardSize())
+        CustomResultsLayout(self.view).layoutResultsContainer(threeColumnContainer, forResultView: tuningsResultContainer,0,TuningTypeSchema.itemWidth() + CustomResultsColumnSchema.resultsMarginLeft() + ResultsBoarderSchema.outBoardSize())
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
 

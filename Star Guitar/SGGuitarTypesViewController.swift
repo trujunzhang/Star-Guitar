@@ -79,7 +79,7 @@ class SGGuitarTypesViewController: QuickTableViewController {
         if (title  == "Standard"){
             viewController = StoryboardScene.Main.instantiateTuningStandardViewController()
         }else  if (title  == "Custom"){
-            viewController = StoryboardScene.Main.instantiateTuningCustomViewController()
+            viewController = StoryboardScene.Main.instantiateTuningsCustomViewController()
         }else  if (title  == "1 Touch Chords"){
             viewController = StoryboardScene.Main.instantiateTouchChordViewController()
         }

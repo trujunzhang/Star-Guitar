@@ -782,10 +782,10 @@
             </objects>
             <point key="canvasLocation" x="720" y="-4495"/>
         </scene>
-        <!--Tuning Custom View Controller-->
+        <!--Tunings Custom View Controller-->
         <scene sceneID="0AL-Jy-OxV">
             <objects>
-                <viewController storyboardIdentifier="tuningsCustomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfa-Mk-qn4" customClass="SGTuningCustomViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuningsCustomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfa-Mk-qn4" customClass="SGTuningsCustomViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="slM-Lq-hwX"/>
                         <viewControllerLayoutGuide type="bottom" id="NxG-ft-o5O"/>
@@ -859,7 +859,7 @@
                         <outlet property="eventsContainer" destination="Rsv-wK-hcL" id="s5F-Hz-M8N"/>
                         <outlet property="oneColumnContainer" destination="Yqt-l0-hjK" id="t96-RA-aJg"/>
                         <outlet property="threeColumnContainer" destination="M4e-mT-o2F" id="q7e-zJ-eaX"/>
-                        <outlet property="tuningResultContainer" destination="cym-Mg-HLK" id="fdb-K3-bRh"/>
+                        <outlet property="tuningsResultContainer" destination="cym-Mg-HLK" id="GBR-IF-8WT"/>
                         <outlet property="twoColumnContainer" destination="rag-VK-ohO" id="MNw-gU-g8z"/>
                     </connections>
                 </viewController>
@@ -1003,11 +1003,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jsn-5H-REY"/>
-        <segue reference="9j0-fh-ruf"/>
-        <segue reference="u3i-JV-qd5"/>
-        <segue reference="P8N-wi-0t0"/>
-        <segue reference="Jvi-6X-jUO"/>
+        <segue reference="rdS-U1-l5E"/>
+        <segue reference="gsJ-HH-i3y"/>
+        <segue reference="n9T-ZH-D9Q"/>
+        <segue reference="8It-5U-mgF"/>
+        <segue reference="rd8-Il-Unn"/>
         <segue reference="1Xg-Ew-c00"/>
     </inferredMetricsTieBreakers>
 </document>
