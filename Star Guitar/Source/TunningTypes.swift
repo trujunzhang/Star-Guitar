@@ -20,13 +20,13 @@ open class TunningTypeActionCell: UICollectionViewCell {
     
     override open var isHighlighted: Bool {
         willSet { // make lightgray background show immediately(使灰背景立即出现)
-            backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .transparent)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .transparent)
         }
     }
     
     override open var isSelected: Bool {
         willSet { // keep lightGray background (保留灰背景)
-            backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .transparent)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .transparent)
         }
     }
     
