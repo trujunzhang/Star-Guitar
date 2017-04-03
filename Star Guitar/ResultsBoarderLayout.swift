@@ -30,16 +30,16 @@ struct ResultsBoarderSchema {
 class ResultsBoarderHelper{
         let customResultsBoarderView =  CustomResultsBoarderView()
     
-    func addAsBoarder(_ pageContainer:UIView,_ tuningResultContainer:UIView, _ boarderType:ResultsBoarderType)  {
+    func addAsBoarder(_ pageContainer:UIView,_ tuningsResultContainer:UIView, _ boarderType:ResultsBoarderType)  {
         
         pageContainer.addSubview(customResultsBoarderView)
         
         
         customResultsBoarderView.snp.makeConstraints { (make) -> Void in
-            make.leading.equalTo(tuningResultContainer).offset(-ResultsBoarderSchema.outBoardSize())
-            make.trailing.equalTo(tuningResultContainer).offset(ResultsBoarderSchema.outBoardSize())
-            make.top.equalTo(tuningResultContainer).offset(-ResultsBoarderSchema.outBoardSize())
-            make.bottom.equalTo(tuningResultContainer).offset(ResultsBoarderSchema.outBoardSize())
+            make.leading.equalTo(tuningsResultContainer).offset(-ResultsBoarderSchema.outBoardSize())
+            make.trailing.equalTo(tuningsResultContainer).offset(ResultsBoarderSchema.outBoardSize())
+            make.top.equalTo(tuningsResultContainer).offset(-ResultsBoarderSchema.outBoardSize())
+            make.bottom.equalTo(tuningsResultContainer).offset(ResultsBoarderSchema.outBoardSize())
         }
         
         pageContainer.sendSubview(toBack: customResultsBoarderView)

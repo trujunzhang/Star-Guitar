@@ -15,7 +15,7 @@ class DebugTuningCustomResultsViewController: UIViewController {
     
     @IBOutlet weak var resultsBoarderContaier: UIView!
     
-    @IBOutlet weak var tuningResultContainer: UIView!
+    @IBOutlet weak var tuningsResultContainer: UIView!
     
     let customResultsBoarderView =  CustomResultsBoarderView()
     
@@ -24,10 +24,10 @@ class DebugTuningCustomResultsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
 
-        //CustomResultsLayout(self.view).layoutResultsContainer(self.view, forResultView: tuningResultContainer, 0 )
+        //CustomResultsLayout(self.view).layoutResultsContainer(self.view, forResultView: tuningsResultContainer, 0 )
 
         let type = ResultsBoarderType.left
-        ResultsBoarderHelper().addAsBoarder(self.view,tuningResultContainer,type)
+        ResultsBoarderHelper().addAsBoarder(self.view,tuningsResultContainer,type)
     }
     
     override func didReceiveMemoryWarning() {

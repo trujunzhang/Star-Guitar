@@ -298,7 +298,7 @@
                     </view>
                     <connections>
                         <outlet property="resultsBoarderContaier" destination="OjC-7o-lQe" id="I5a-bm-bdv"/>
-                        <outlet property="tuningResultContainer" destination="aJv-9B-FnZ" id="EWl-dI-bzJ"/>
+                        <outlet property="tuningsResultContainer" destination="aJv-9B-FnZ" id="DaL-Ba-MPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZW-zY-yA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
