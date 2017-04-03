@@ -1,5 +1,5 @@
 //
-//  SGOneColumnViewController.swift
+//  SGTuningsEventViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/27/17.

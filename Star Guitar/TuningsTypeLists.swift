@@ -1,5 +1,5 @@
 //
-//  TuningTypeLists.swift
+//  TuningsTypeLists.swift
 //  Star Guitar
 //
 //  Created by djzhang on 4/3/17.

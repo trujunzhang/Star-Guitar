@@ -1,5 +1,5 @@
 //
-//  TuningSettings.swift
+//  TuningsSettings.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/27/17.

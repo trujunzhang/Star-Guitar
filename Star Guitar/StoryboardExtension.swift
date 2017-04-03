@@ -80,20 +80,20 @@ enum StoryboardScene {
       return vc
     }
 
-    case tuningStandardViewControllerScene = "tuningStandardViewController"
-    static func instantiateTuningStandardViewController() -> Star_Guitar.SGTuningsStandardViewController {
-      guard let vc = StoryboardScene.Main.tuningStandardViewControllerScene.viewController() as? Star_Guitar.SGTuningsStandardViewController
-      else {
-        fatalError("ViewController 'tuningStandardViewController' is not of the expected class Star_Guitar.SGTuningsStandardViewController.")
-      }
-      return vc
-    }
-
     case tuningsCustomViewControllerScene = "tuningsCustomViewController"
     static func instantiateTuningsCustomViewController() -> Star_Guitar.SGTuningsCustomViewController {
       guard let vc = StoryboardScene.Main.tuningsCustomViewControllerScene.viewController() as? Star_Guitar.SGTuningsCustomViewController
       else {
         fatalError("ViewController 'tuningsCustomViewController' is not of the expected class Star_Guitar.SGTuningsCustomViewController.")
+      }
+      return vc
+    }
+
+    case tuningsStandardViewControllerScene = "tuningsStandardViewController"
+    static func instantiateTuningsStandardViewController() -> Star_Guitar.SGTuningsStandardViewController {
+      guard let vc = StoryboardScene.Main.tuningsStandardViewControllerScene.viewController() as? Star_Guitar.SGTuningsStandardViewController
+      else {
+        fatalError("ViewController 'tuningsStandardViewController' is not of the expected class Star_Guitar.SGTuningsStandardViewController.")
       }
       return vc
     }

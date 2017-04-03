@@ -308,7 +308,7 @@
         <!--Tunings Standard View Controller-->
         <scene sceneID="7iO-pH-rR4">
             <objects>
-                <viewController storyboardIdentifier="tuningStandardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujv-wT-rz0" customClass="SGTuningsStandardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuningsStandardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujv-wT-rz0" customClass="SGTuningsStandardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRd-OJ-7CR"/>
                         <viewControllerLayoutGuide type="bottom" id="mwG-vC-DsB"/>
@@ -757,7 +757,7 @@
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BOb-B4-pj2">
-                        <rect key="frame" x="0.0" y="0.0" width="486" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="493" height="71"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -969,7 +969,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Fd-b1-CuL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hcS-fP-sHP">
-                        <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
+                        <rect key="frame" x="0.0" y="0.0" width="424" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -1003,11 +1003,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rdS-U1-l5E"/>
+        <segue reference="v2Q-Dx-3hV"/>
+        <segue reference="FND-d6-ff7"/>
+        <segue reference="Nx6-BO-F9s"/>
+        <segue reference="S0d-Dx-XmK"/>
+        <segue reference="bMz-Sy-Vwk"/>
         <segue reference="gsJ-HH-i3y"/>
-        <segue reference="n9T-ZH-D9Q"/>
-        <segue reference="8It-5U-mgF"/>
-        <segue reference="rd8-Il-Unn"/>
-        <segue reference="1Xg-Ew-c00"/>
     </inferredMetricsTieBreakers>
 </document>

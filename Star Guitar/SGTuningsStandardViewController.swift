@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  SGTuningsStandardViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/19/17.
