@@ -8,8 +8,13 @@
 
 import UIKit
 
-class SGTwoColumnViewController: QuickTableViewController {
+protocol TwoColumnProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleTwoColumnNumber(_ sender: Row)
+}
 
+class SGTwoColumnViewController: QuickTableViewController {
+    weak var delegate : TwoColumnProviderProtocol?
+    
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
 
@@ -20,8 +25,6 @@ class SGTwoColumnViewController: QuickTableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
-
         tableContents = [
                 Section(title: nil, rows: [
                         OneColumnActionRow(title: "2", action: toggleNote),
@@ -41,7 +44,7 @@ class SGTwoColumnViewController: QuickTableViewController {
     }
 
     private func toggleNote(_ sender: Row) {
-        let x = 0
+        self.delegate?.toggleTwoColumnNumber(sender)
     }
 
 

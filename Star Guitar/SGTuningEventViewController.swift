@@ -8,8 +8,14 @@
 
 import UIKit
 
-class SGTunningEventViewController: QuickCollectionViewController {
+protocol TuningEventProviderProtocol : class {    // 'class' means only class types can implement it
+    func onTuningEventTapped(_ sender: Row)
+}
 
+
+class SGTuningEventViewController: QuickCollectionViewController {
+    weak var delegate : TuningEventProviderProtocol?
+    
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
 
@@ -45,7 +51,7 @@ class SGTunningEventViewController: QuickCollectionViewController {
     }
 
     private func toggleNote(_ sender: Row) {
-        let x = 0
+        self.delegate?.onTuningEventTapped(sender)
     }
 
 

@@ -731,10 +731,10 @@
             </objects>
             <point key="canvasLocation" x="-1172.4609375" y="-1940.234375"/>
         </scene>
-        <!--Tunning Type View Controller-->
+        <!--Tuning Type View Controller-->
         <scene sceneID="mxT-JX-v7B">
             <objects>
-                <viewController id="LDY-la-6P1" customClass="SGTunningTypeViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LDY-la-6P1" customClass="SGTuningTypeViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hh6-kh-UhA"/>
                         <viewControllerLayoutGuide type="bottom" id="0la-2L-dfE"/>
@@ -748,10 +748,10 @@
             </objects>
             <point key="canvasLocation" x="270" y="-4396"/>
         </scene>
-        <!--Tunning Event View Controller-->
+        <!--Tuning Event View Controller-->
         <scene sceneID="F3U-kC-paR">
             <objects>
-                <viewController id="T86-3z-0jY" customClass="SGTunningEventViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T86-3z-0jY" customClass="SGTuningEventViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vAC-dA-kvi"/>
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
@@ -765,10 +765,10 @@
             </objects>
             <point key="canvasLocation" x="880" y="-2418"/>
         </scene>
-        <!--Stardard Results View Controller-->
+        <!--Standard Results View Controller-->
         <scene sceneID="VUK-6a-dSM">
             <objects>
-                <viewController id="7gU-ta-piI" customClass="SGStardardResultsViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7gU-ta-piI" customClass="SGStandardResultsViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y1t-lE-pVZ"/>
                         <viewControllerLayoutGuide type="bottom" id="VkK-Rh-nk8"/>

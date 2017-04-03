@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SGStardardResultsViewController: QuickCollectionViewController {
+class SGStandardResultsViewController: QuickCollectionViewController {
 
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)

@@ -8,7 +8,12 @@
 
 import UIKit
 
-class SGTunningTypeViewController: QuickCollectionViewController {
+protocol TuningTypeProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleTuningType(_ sender: Row)
+}
+
+class SGTuningTypeViewController: QuickCollectionViewController {
+    weak var delegate : TuningTypeProviderProtocol?
 
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
@@ -46,7 +51,7 @@ class SGTunningTypeViewController: QuickCollectionViewController {
     }
 
     private func tunningTypeTapped(_ sender: Row) {
-        let x = 0
+        self.delegate?.toggleTuningType(sender)
     }
 
 

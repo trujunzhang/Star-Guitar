@@ -20,16 +20,20 @@ class SGTuningStandardViewController: UIViewController {
     
     var oneColumnViewController: SGOneColumnViewController!
     var twoColumnViewController: SGTwoColumnViewController!
-    var tunningTypeViewController: SGTunningTypeViewController!
-    var stardardResultsViewController: SGStardardResultsViewController!
-    var tunningEventViewController: SGTunningEventViewController!
+    var tuningTypeViewController: SGTuningTypeViewController!
+    var standardResultsViewController: SGStandardResultsViewController!
+    var tuningEventViewController: SGTuningEventViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.titleViewController.setTitleWithSubtitle(title: "Tuning", subtitle: "Standard")
-
+        
+        oneColumnViewController.delegate = self
+        twoColumnViewController.delegate = self
+        tuningTypeViewController.delegate = self
+        tuningEventViewController.delegate = self
 
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)
@@ -64,13 +68,13 @@ class SGTuningStandardViewController: UIViewController {
             self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
         }
         else if (segue.identifier == "typesContainer") {
-            self.tunningTypeViewController = segue.destination as! SGTunningTypeViewController
+            self.tuningTypeViewController = segue.destination as! SGTuningTypeViewController
         }
         else if (segue.identifier == "standardResultContainer") {
-            self.stardardResultsViewController = segue.destination as! SGStardardResultsViewController
+            self.standardResultsViewController = segue.destination as! SGStandardResultsViewController
         }
         else if (segue.identifier == "eventsContainer") {
-            self.tunningEventViewController = segue.destination as! SGTunningEventViewController
+            self.tuningEventViewController = segue.destination as! SGTuningEventViewController
         }
     }
 

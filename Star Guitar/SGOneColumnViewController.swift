@@ -8,8 +8,14 @@
 
 import UIKit
 
-class SGOneColumnViewController: QuickTableViewController {
+protocol OneColumnProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleOneColumnLetter(_ sender: Row)
+}
 
+class SGOneColumnViewController: QuickTableViewController {
+    weak var delegate : OneColumnProviderProtocol?
+    
+    
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
         
@@ -48,7 +54,7 @@ class SGOneColumnViewController: QuickTableViewController {
     }
 
     private func toggleNote(_ sender: Row) {
-        let x = 0
+        self.delegate?.toggleOneColumnLetter(sender)
     }
 
 
