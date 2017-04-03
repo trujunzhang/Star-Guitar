@@ -952,7 +952,7 @@
                         <outlet property="fourColumnContainer" destination="V8f-k1-2ar" id="neQ-KW-ly8"/>
                         <outlet property="oneColumnContainer" destination="zhA-Zf-XQv" id="vgb-TM-yPB"/>
                         <outlet property="threeColumnContainer" destination="adZ-Al-g77" id="BIB-dy-Rwp"/>
-                        <outlet property="tuningResultContainer" destination="0Jk-Eq-RQR" id="glZ-LR-BuX"/>
+                        <outlet property="tuningsResultContainer" destination="0Jk-Eq-RQR" id="bui-Yb-30e"/>
                         <outlet property="twoChordColumnContainer" destination="iUg-Gq-P1X" id="ggU-Y3-f9J"/>
                     </connections>
                 </viewController>
