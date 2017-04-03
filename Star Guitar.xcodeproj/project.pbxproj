@@ -55,7 +55,7 @@
 		5E9C6E291E855EB2006F93B4 /* AppFontsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */; };
 		5EA049861E7E83B1003E402F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049851E7E83B1003E402F /* MainViewController.swift */; };
 		5EA049891E7E83FA003E402F /* TuningCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049871E7E83FA003E402F /* TuningCustomViewController.swift */; };
-		5EA0498A1E7E83FA003E402F /* TuningStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049881E7E83FA003E402F /* TuningStandardViewController.swift */; };
+		5EA0498A1E7E83FA003E402F /* SGTuningStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049881E7E83FA003E402F /* SGTuningStandardViewController.swift */; };
 		5EA748001E7E089C00E5BB86 /* QuickTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA747FD1E7E089C00E5BB86 /* QuickTableModel.swift */; };
 		5EA748011E7E089C00E5BB86 /* QuickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA747FE1E7E089C00E5BB86 /* QuickTableViewCell.swift */; };
 		5EA748021E7E089C00E5BB86 /* QuickTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA747FF1E7E089C00E5BB86 /* QuickTableViewController.swift */; };
@@ -179,7 +179,7 @@
 		5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFontsExtensions.swift; sourceTree = "<group>"; };
 		5EA049851E7E83B1003E402F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "Star Guitar/MainViewController.swift"; sourceTree = "<group>"; };
 		5EA049871E7E83FA003E402F /* TuningCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningCustomViewController.swift; sourceTree = "<group>"; };
-		5EA049881E7E83FA003E402F /* TuningStandardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningStandardViewController.swift; sourceTree = "<group>"; };
+		5EA049881E7E83FA003E402F /* SGTuningStandardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningStandardViewController.swift; sourceTree = "<group>"; };
 		5EA747FD1E7E089C00E5BB86 /* QuickTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTableModel.swift; sourceTree = "<group>"; };
 		5EA747FE1E7E089C00E5BB86 /* QuickTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTableViewCell.swift; sourceTree = "<group>"; };
 		5EA747FF1E7E089C00E5BB86 /* QuickTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTableViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				5E25253C1E892228007E660E /* Columns */,
-				5EA049881E7E83FA003E402F /* TuningStandardViewController.swift */,
+				5EA049881E7E83FA003E402F /* SGTuningStandardViewController.swift */,
 				5EACB02D1E89067A0048F2F6 /* TuningSettings.swift */,
 			);
 			name = TuningStandard;
@@ -280,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				5EB135051E8977BB00DA6F6E /* SGTunningTypeViewController.swift */,
-				5EB135091E897B6400DA6F6E /* SGTunningEventViewController.swift */,
 			);
 			name = Columns;
 			sourceTree = "<group>";
@@ -520,6 +519,7 @@
 				5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */,
 				5EBEFB4B1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift */,
 				5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */,
+				5EB135091E897B6400DA6F6E /* SGTunningEventViewController.swift */,
 			);
 			name = TuningColumns;
 			sourceTree = "<group>";
@@ -904,7 +904,7 @@
 				5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */,
 				5E5F6D651E86553300B8D5DA /* SGEffectViewController.swift in Sources */,
 				5EB1350A1E897B6400DA6F6E /* SGTunningEventViewController.swift in Sources */,
-				5EA0498A1E7E83FA003E402F /* TuningStandardViewController.swift in Sources */,
+				5EA0498A1E7E83FA003E402F /* SGTuningStandardViewController.swift in Sources */,
 				5E04A58B1E89DFBA00238BB4 /* SGStardardResultsViewController.swift in Sources */,
 				5EACA69C1E8DFCEB0050270B /* ThreeColumnTableView.swift in Sources */,
 				5EA992D41E7EF660007EBC9E /* TableHeaderViewController.swift in Sources */,

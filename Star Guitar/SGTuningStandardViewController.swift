@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TuningStandardViewController: UIViewController {
+class SGTuningStandardViewController: UIViewController {
 
     var titleViewController: TitleViewController!
 
@@ -17,6 +17,12 @@ class TuningStandardViewController: UIViewController {
     @IBOutlet weak var tunningTypesContainer: UIView!
     @IBOutlet weak var eventsContainer: UIView!
     @IBOutlet weak var tuningResultContainer: UIView!
+    
+    var oneColumnViewController: SGOneColumnViewController!
+    var twoColumnViewController: SGTwoColumnViewController!
+    var tunningTypeViewController: SGTunningTypeViewController!
+    var stardardResultsViewController: SGStardardResultsViewController!
+    var tunningEventViewController: SGTunningEventViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +56,21 @@ class TuningStandardViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "titleContainer") {
             self.titleViewController = segue.destination as! TitleViewController
+        }
+        else if (segue.identifier == "oneColumnContainer") {
+            self.oneColumnViewController = segue.destination as! SGOneColumnViewController
+        }
+        else if (segue.identifier == "twoColumnContainer") {
+            self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
+        }
+        else if (segue.identifier == "typesContainer") {
+            self.tunningTypeViewController = segue.destination as! SGTunningTypeViewController
+        }
+        else if (segue.identifier == "standardResultContainer") {
+            self.stardardResultsViewController = segue.destination as! SGStardardResultsViewController
+        }
+        else if (segue.identifier == "eventsContainer") {
+            self.tunningEventViewController = segue.destination as! SGTunningEventViewController
         }
     }
 

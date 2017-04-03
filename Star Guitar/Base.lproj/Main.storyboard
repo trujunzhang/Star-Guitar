@@ -308,7 +308,7 @@
         <!--Tuning Standard View Controller-->
         <scene sceneID="7iO-pH-rR4">
             <objects>
-                <viewController storyboardIdentifier="tuningStandardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujv-wT-rz0" customClass="TuningStandardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuningStandardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujv-wT-rz0" customClass="SGTuningStandardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRd-OJ-7CR"/>
                         <viewControllerLayoutGuide type="bottom" id="mwG-vC-DsB"/>

@@ -46,8 +46,8 @@ enum StoryboardScene {
   enum Main: String, StoryboardSceneType {
     static let storyboardName = "Main"
 
-    static func initialViewController() -> Star_Guitar.SGTouchChordViewController {
-      guard let vc = storyboard().instantiateInitialViewController() as? Star_Guitar.SGTouchChordViewController else {
+    static func initialViewController() -> Star_Guitar.SGTuningStandardViewController {
+      guard let vc = storyboard().instantiateInitialViewController() as? Star_Guitar.SGTuningStandardViewController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
       }
       return vc
@@ -90,10 +90,10 @@ enum StoryboardScene {
     }
 
     case tuningStandardViewControllerScene = "tuningStandardViewController"
-    static func instantiateTuningStandardViewController() -> Star_Guitar.TuningStandardViewController {
-      guard let vc = StoryboardScene.Main.tuningStandardViewControllerScene.viewController() as? Star_Guitar.TuningStandardViewController
+    static func instantiateTuningStandardViewController() -> Star_Guitar.SGTuningStandardViewController {
+      guard let vc = StoryboardScene.Main.tuningStandardViewControllerScene.viewController() as? Star_Guitar.SGTuningStandardViewController
       else {
-        fatalError("ViewController 'tuningStandardViewController' is not of the expected class Star_Guitar.TuningStandardViewController.")
+        fatalError("ViewController 'tuningStandardViewController' is not of the expected class Star_Guitar.SGTuningStandardViewController.")
       }
       return vc
     }
