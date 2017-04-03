@@ -46,7 +46,7 @@ open class ThreeColumnActionCell: UITableViewCell {
     private func setUpAppearance() {
         backgroundColor = UIColor(named: .tableRowBG)
         
-        textLabel?.font = UIFont.TunningThreeColumnFont()
+        textLabel?.font = UIFont.TuningsThreeColumnFont()
         textLabel?.textAlignment = .left
         textLabel?.textColor = .black
     }

@@ -63,7 +63,7 @@ open class TuningsTypeActionCell: UICollectionViewCell {
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
         
-        eventLabel.font = UIFont.TunningTypesFont()
+        eventLabel.font = UIFont.TuningsTypesFont()
         eventLabel.textColor = .black
         eventLabel.snp.makeConstraints { (make) -> Void in
             make.centerX.equalToSuperview()

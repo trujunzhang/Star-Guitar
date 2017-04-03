@@ -59,15 +59,15 @@ extension UIFont {
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(24))
     }
 
-    static func TunningTypesFont() -> UIFont {
+    static func TuningsTypesFont() -> UIFont {
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(36))
     }
     
-    static func TunningThreeColumnFont() -> UIFont {
+    static func TuningsThreeColumnFont() -> UIFont {
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(26))
     }
 
-    static func TunningEventsFont() -> UIFont {
+    static func TuningsEventsFont() -> UIFont {
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(36))
     }
 

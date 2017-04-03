@@ -53,7 +53,7 @@ open class TuningsEventsActionCell: UICollectionViewCell {
         backgroundColor = UIColor(named: .transparent)
 
         contentView.addSubview(eventLabel)
-        eventLabel.font = UIFont.TunningEventsFont()
+        eventLabel.font = UIFont.TuningsEventsFont()
         eventLabel.textColor = .black
         eventLabel.snp.makeConstraints { (make) -> Void in
             make.centerX.equalToSuperview()
