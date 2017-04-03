@@ -70,7 +70,7 @@ public struct TunningEventsActionRow: Row, Equatable {
     }
 
     public func getRowHeight(indexPath: IndexPath) -> CGFloat {
-        return CGFloat(integerLiteral: EventsSchema.eventsItemHeight())
+        return -1
     }
 
 

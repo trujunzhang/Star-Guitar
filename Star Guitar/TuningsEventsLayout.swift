@@ -14,15 +14,15 @@ import UIKit
 struct EventsSchema {
 
     // ==== Events
-    public static func eventsItemWidth() -> Int {
+    public static func itemWidth() -> Int {
         return 90 + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
 
-    public static func eventsItemHeight() -> Int {
+    public static func itemHeight() -> Int {
         return 20 + SGScreenLayout.sharedInstance.deviceIndex * 10
     }
 
-    public static func eventsEdgeInsets() -> UIEdgeInsets {
+    public static func edgeInsets() -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 
@@ -31,14 +31,14 @@ struct EventsSchema {
     }
 
     public static func eventsColumnWidth() -> CGFloat {
-        let itemsWidth = (EventsSchema.eventsItemWidth() * 4 + EventsSchema.eventsLineSpacing()) + 100
-        let eventsWidth = CGFloat(integerLiteral: itemsWidth) + EventsSchema.eventsEdgeInsets().left + EventsSchema.eventsEdgeInsets().right
+        let itemsWidth = (EventsSchema.itemWidth() * 4 + EventsSchema.eventsLineSpacing()) + 100
+        let eventsWidth = CGFloat(integerLiteral: itemsWidth) + EventsSchema.edgeInsets().left + EventsSchema.edgeInsets().right
         return eventsWidth
     }
 
     public static func eventsColumnHeight() -> CGFloat {
-        let itemsHeight = (EventsSchema.eventsItemHeight() + 10)
-        return CGFloat(integerLiteral: itemsHeight + 20) + EventsSchema.eventsEdgeInsets().top + EventsSchema.eventsEdgeInsets().bottom
+        let itemsHeight = (EventsSchema.itemHeight() + 10)
+        return CGFloat(integerLiteral: itemsHeight + 20) + EventsSchema.edgeInsets().top + EventsSchema.edgeInsets().bottom
     }
 
 

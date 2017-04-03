@@ -14,8 +14,8 @@ class SGTunningEventViewController: QuickCollectionViewController {
         super.configCollectionView(collectionView, forLayout: layout)
 
 
-        layout.sectionInset = EventsSchema.eventsEdgeInsets() // section與section之間的距離
-        layout.itemSize = CGSize(width: EventsSchema.eventsItemWidth(), height: EventsSchema.eventsItemHeight()) // cell的寬、高
+        layout.sectionInset = EventsSchema.edgeInsets() // section與section之間的距離
+        layout.itemSize = CGSize(width: EventsSchema.itemWidth(), height: EventsSchema.itemHeight()) // cell的寬、高
         layout.minimumLineSpacing = CGFloat(integerLiteral: EventsSchema.eventsLineSpacing()) // collectionView設定為縱向的話即「行」的間距、橫向則為「列」的間距
 
         collectionView.register(TunningEventsActionCell.self, forCellWithReuseIdentifier: String(describing: TunningEventsActionCell.self))
