@@ -71,6 +71,7 @@
 		5EB5D0231E84126C0018359D /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5D0221E84126C0018359D /* StoryboardExtension.swift */; };
 		5EBB16EC1E7EE6C700CD109D /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB16EB1E7EE6C700CD109D /* TitleViewController.swift */; };
 		5EBEFB4C1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEFB4B1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift */; };
+		5EC545A71E91ECC3009A6F85 /* TuningTypeLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC545A61E91ECC3009A6F85 /* TuningTypeLists.swift */; };
 		5EC7B7791E842E320086EFB1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; };
 		5EC7B77A1E842E320086EFB1 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EC7B77B1E842E320086EFB1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7781E842E320086EFB1 /* RealmSwift.framework */; };
@@ -194,6 +195,7 @@
 		5EB5D0221E84126C0018359D /* StoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		5EBB16EB1E7EE6C700CD109D /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		5EBEFB4B1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTwoColumnChordViewController.swift; sourceTree = "<group>"; };
+		5EC545A61E91ECC3009A6F85 /* TuningTypeLists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningTypeLists.swift; sourceTree = "<group>"; };
 		5EC7B7771E842E320086EFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Frameworks/realm-swift/Realm.framework"; sourceTree = "<group>"; };
 		5EC7B7781E842E320086EFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Frameworks/realm-swift/RealmSwift.framework"; sourceTree = "<group>"; };
 		5ED0CB8B1E898BA000B4E604 /* TunningEventCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunningEventCollectionView.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 			children = (
 				5E04A58A1E89DFBA00238BB4 /* SGStardardResultsViewController.swift */,
 				5EF0AE151E8DE1590026F0B4 /* SGCustomResultViewController.swift */,
+				5EC545A61E91ECC3009A6F85 /* TuningTypeLists.swift */,
 			);
 			name = TuningResults;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				5E7F0BEB1E8DE69E00E5569F /* TwoColumnLayout.swift in Sources */,
 				5EA748011E7E089C00E5BB86 /* QuickTableViewCell.swift in Sources */,
 				5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */,
+				5EC545A71E91ECC3009A6F85 /* TuningTypeLists.swift in Sources */,
 				5E5F6D671E86563F00B8D5DA /* SGViewsExtension.swift in Sources */,
 				5E61BDB51E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift in Sources */,
 				5E5A05681E837487001B53A5 /* SoundPlayerManager.swift in Sources */,
