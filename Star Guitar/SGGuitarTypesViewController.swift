@@ -38,7 +38,7 @@ class SGGuitarTypesViewController: QuickTableViewController {
 
         // Do any additional setup after loading the view.
 
-        let tunningsSection = Section(title: "Tunings", rows: [
+        let tuningsSection = Section(title: "Tunings", rows: [
                 TapActionRow(title: "Standard", action: showDetail),
                 TapActionRow(title: "Custom", action: showDetail),
                 TapActionRow(title: "1 Touch Chords", action: showDetail)
@@ -47,7 +47,7 @@ class SGGuitarTypesViewController: QuickTableViewController {
 
         tableContents = [
                 self.getGuitarTypesSection(),
-                tunningsSection,
+                tuningsSection,
                 self.getFretboardSection()
         ]
 

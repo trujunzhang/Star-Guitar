@@ -381,8 +381,8 @@
                     <connections>
                         <outlet property="eventsContainer" destination="gXi-XF-WL6" id="yr1-mK-RQl"/>
                         <outlet property="oneColumnContainer" destination="0us-Cc-Mu1" id="F1s-zg-4cb"/>
-                        <outlet property="tuningResultContainer" destination="3ey-C8-v0l" id="DC2-ct-V1q"/>
-                        <outlet property="tunningTypesContainer" destination="fR7-GL-jLa" id="O69-RW-TVX"/>
+                        <outlet property="tuningsResultContainer" destination="3ey-C8-v0l" id="t5m-hL-diM"/>
+                        <outlet property="tuningsTypesContainer" destination="fR7-GL-jLa" id="PjY-PO-F8t"/>
                         <outlet property="twoColumnContainer" destination="eGx-WO-57v" id="Q6y-BT-jP4"/>
                     </connections>
                 </viewController>

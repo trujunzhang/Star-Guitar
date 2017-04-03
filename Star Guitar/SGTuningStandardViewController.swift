@@ -14,9 +14,9 @@ class SGTuningStandardViewController: UIViewController {
 
     @IBOutlet weak var oneColumnContainer: UIView!
     @IBOutlet weak var twoColumnContainer: UIView!
-    @IBOutlet weak var tunningTypesContainer: UIView!
+    @IBOutlet weak var tuningsTypesContainer: UIView!
     @IBOutlet weak var eventsContainer: UIView!
-    @IBOutlet weak var tuningResultContainer: UIView!
+    @IBOutlet weak var tuningsResultContainer: UIView!
     
     var oneColumnViewController: SGOneColumnViewController!
     var twoColumnViewController: SGTwoColumnViewController!
@@ -43,11 +43,11 @@ class SGTuningStandardViewController: UIViewController {
         // 1: Left handed: [Results,TuningsType]
         // 2: Right handed: [TuningsType,Results]
         if(GuitarSettingsUtils.sharedInstance.isLeftHanded()){
-            StandardResultsLayout(self.view).layoutResultsContainer(twoColumnContainer, forResultView: tuningResultContainer,80)
-            TuningsTypeLayout(self.view).layoutTuningTypeContainer(tuningResultContainer, forView: tunningTypesContainer,StandResultsColumnSchema.resultsColumnWidth())
+            StandardResultsLayout(self.view).layoutResultsContainer(twoColumnContainer, forResultView: tuningsResultContainer,80)
+            TuningsTypeLayout(self.view).layoutTuningTypeContainer(tuningsResultContainer, forView: tuningsTypesContainer,StandResultsColumnSchema.resultsColumnWidth())
         }else{
-            TuningsTypeLayout(self.view).layoutTuningTypeContainer(twoColumnContainer, forView: tunningTypesContainer,24)
-            StandardResultsLayout(self.view).layoutResultsContainer(tunningTypesContainer, forResultView: tuningResultContainer,TuningTypeSchema.itemWidth())
+            TuningsTypeLayout(self.view).layoutTuningTypeContainer(twoColumnContainer, forView: tuningsTypesContainer,24)
+            StandardResultsLayout(self.view).layoutResultsContainer(tuningsTypesContainer, forResultView: tuningsResultContainer,TuningTypeSchema.itemWidth())
         }
     }
 
