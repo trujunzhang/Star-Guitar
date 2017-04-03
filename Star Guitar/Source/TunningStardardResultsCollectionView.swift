@@ -93,6 +93,11 @@ public struct TunningStandardResultsActionRow: Row, Equatable {
         cell?.eventLabel.text = row.title
     }
 
+    public var letter: String = ""
+    
+    public var number: String = ""
+    
+    public var haveSharp: Bool = false
 
     /// The title text of the row.
     public var title: String = ""
@@ -107,8 +112,9 @@ public struct TunningStandardResultsActionRow: Row, Equatable {
     public var action: ((Row) -> Void)?
 
     ///
-    public init(title: String, action: ((Row) -> Void)?) {
-        self.title = title
+    public init(letter: String,number: String, action: ((Row) -> Void)?) {
+        self.letter = letter
+        self.number = number
         self.action = action
     }
 

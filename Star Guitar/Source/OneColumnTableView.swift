@@ -104,14 +104,23 @@ public struct OneColumnActionRow: Row, Equatable {
 
     ///
     public init(title: String, action: ((Row) -> Void)?) {
-        self.title = title
+
         self.action = action
+        
+        var _title = title
+        if title.contains("#"){
+            let index = title.index(title.startIndex, offsetBy: 1)
+            _title = title.substring(to: index)
+            self.haveSharp = true
+        }
+        
+        self.title = _title
     }
 
     public init(title: String, haveSharp: Bool, action: ((Row) -> Void)?) {
         self.title = title
         self.action = action
-        self.haveSharp = haveSharp
+
     }
 
     private init() {

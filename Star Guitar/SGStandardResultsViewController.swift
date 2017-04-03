@@ -28,14 +28,12 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     }
 
     func generateRows() -> Section {
-        return Section(title: nil, rows: [
-                TunningStandardResultsActionRow(title: "D#2", action: toggleNote),
-                TunningStandardResultsActionRow(title: "D#3", action: toggleNote),
-                TunningStandardResultsActionRow(title: "D#4", action: toggleNote),
-                TunningStandardResultsActionRow(title: "D#5", action: toggleNote),
-                TunningStandardResultsActionRow(title: "D#6", action: toggleNote),
-                TunningStandardResultsActionRow(title: "D#7", action: toggleNote),
-        ])
+        var rows: [Row] = [Row]()
+        for (_, title) in OneColumnLetterType.getTitles().enumerated(){
+            let row = TunningStandardResultsActionRow(letter: "D#",number:"2", action: toggleNote)
+            rows.append(row)
+        }
+        return Section(title: nil, rows: rows)
     }
 
     override func viewDidLoad() {

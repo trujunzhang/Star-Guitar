@@ -27,23 +27,14 @@ class SGOneColumnViewController: QuickTableViewController {
 
         // Do any additional setup after loading the view.
 
+        var rows: [Row] = [Row]()
+        for (_, title) in OneColumnLetterType.getTitles().enumerated(){
+            let row = OneColumnActionRow(title: title, action: toggleNote)
+            rows.append(row)
+        }
 
         tableContents = [
-                Section(title: nil, rows: [
-                        OneColumnActionRow(title: "C", action: toggleNote),
-                        OneColumnActionRow(title: "C", haveSharp: true, action: toggleNote),
-                        OneColumnActionRow(title: "D", action: toggleNote),
-                        OneColumnActionRow(title: "D", haveSharp: true, action: toggleNote),
-                        OneColumnActionRow(title: "E", action: toggleNote),
-                        OneColumnActionRow(title: "F", action: toggleNote),
-                        OneColumnActionRow(title: "F", haveSharp: true, action: toggleNote),
-                        OneColumnActionRow(title: "G", action: toggleNote),
-                        OneColumnActionRow(title: "G", haveSharp: true, action: toggleNote),
-                        OneColumnActionRow(title: "A", action: toggleNote),
-                        OneColumnActionRow(title: "A", haveSharp: true, action: toggleNote),
-                        OneColumnActionRow(title: "B", action: toggleNote),
-                ])
-
+                Section(title: nil, rows: rows)
         ]
 
     }

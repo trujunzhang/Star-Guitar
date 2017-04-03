@@ -14,14 +14,21 @@ import RealmSwift
 
 
 enum OneColumnLetterType: Int {
-    case Acoustic = 0
-    case Electric = 1
-    case Bass = 2
-    case Classical = 3
-    case Ukulele = 4
+    case C = 0
+    case CSharp = 1
+    case D = 2
+    case DSharp = 3
+    case E = 4
+    case F = 5
+    case FSharp = 6
+    case G = 7
+    case GSharp = 8
+    case A = 9
+    case ASharp = 10
+    case B = 11
     
     public static func getTitles() -> [String] {
-        return ["Acoustic", "Electric", "Bass(6 strng)", "Spanish", "Harp(6 string)"]
+        return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
     }
     
     public static func getGuitarType(_ title: String) -> Int {

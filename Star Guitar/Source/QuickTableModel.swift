@@ -227,7 +227,7 @@ public struct SwitchRow: Row, Equatable, IconEnabled {
 
     public func render(viewCell: UIView) {
         let row = self
-        var cell = viewCell ?? SwitchCell(style: .default, reuseIdentifier: row.cellReuseIdentifier)
+        var cell = viewCell 
         (cell as? SwitchCell)?.textLabel?.text = row.title
 
         let switchControl = (cell as? SwitchCell)?.switchControl
