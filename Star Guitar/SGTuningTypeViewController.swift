@@ -27,7 +27,7 @@ class SGTuningTypeViewController: QuickCollectionViewController {
         layout.itemSize = CGSize(width: TuningTypeSchema.itemWidth(), height: TuningTypeSchema.itemHeight()) // cell的寬、高
         layout.minimumLineSpacing = CGFloat(0) // collectionView設定為縱向的話即「行」的間距、橫向則為「列」的間距
         
-        collectionView.register(TunningTypeActionCell.self, forCellWithReuseIdentifier: String(describing: TunningTypeActionCell.self))
+        collectionView.register(TuningsTypeActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsTypeActionCell.self))
     }
 
     override func viewDidLoad() {
@@ -38,11 +38,11 @@ class SGTuningTypeViewController: QuickCollectionViewController {
 
         tableContents = [
                 Section(title: nil, rows: [
-                        TunningTypeActionRow(title: "Stardand", action: tunningTypeTapped),
-                        TunningTypeActionRow(title: "Drop D", action: tunningTypeTapped),
-                        TunningTypeActionRow(title: "Dadgad", action: tunningTypeTapped),
-                        TunningTypeActionRow(title: "Open C", action: tunningTypeTapped),
-                        TunningTypeActionRow(title: "Custom", action: tunningTypeTapped),
+                        TuningsTypeActionRow(title: "Stardand", action: tuningsTypeTapped),
+                        TuningsTypeActionRow(title: "Drop D", action: tuningsTypeTapped),
+                        TuningsTypeActionRow(title: "Dadgad", action: tuningsTypeTapped),
+                        TuningsTypeActionRow(title: "Open C", action: tuningsTypeTapped),
+                        TuningsTypeActionRow(title: "Custom", action: tuningsTypeTapped),
                 ])
 
         ]
@@ -54,7 +54,7 @@ class SGTuningTypeViewController: QuickCollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    private func tunningTypeTapped(_ sender: Row) {
+    private func tuningsTypeTapped(_ sender: Row) {
         self.delegate?.toggleTuningType(sender)
     }
 

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E04A58B1E89DFBA00238BB4 /* SGStandardResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */; };
 		5E04A58D1E89E03900238BB4 /* TunningStardardResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58C1E89E03800238BB4 /* TunningStardardResultsCollectionView.swift */; };
-		5E04A5911E89ED1D00238BB4 /* TunningTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A5901E89ED1D00238BB4 /* TunningTypes.swift */; };
+		5E04A5911E89ED1D00238BB4 /* TuningsTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */; };
 		5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */; };
 		5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2545DF1E8602E400AA504F /* ColorsExtension.swift */; };
 		5E2D89921E8E755B00D6AEF0 /* CustomResultsBoarderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */; };
@@ -129,7 +129,7 @@
 		55D7B8AAA9F7FFBCB92FCE1C /* Pods-Star GuitarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star GuitarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star GuitarTests/Pods-Star GuitarTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStandardResultsViewController.swift; sourceTree = "<group>"; };
 		5E04A58C1E89E03800238BB4 /* TunningStardardResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunningStardardResultsCollectionView.swift; sourceTree = "<group>"; };
-		5E04A5901E89ED1D00238BB4 /* TunningTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunningTypes.swift; sourceTree = "<group>"; };
+		5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsTypes.swift; sourceTree = "<group>"; };
 		5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGOneColumnViewController.swift; sourceTree = "<group>"; };
 		5E2545DF1E8602E400AA504F /* ColorsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResultsBoarderView.swift; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 		5E435E601E91E030008BE96D /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				5E04A5901E89ED1D00238BB4 /* TunningTypes.swift */,
+				5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */,
 				5E04A58C1E89E03800238BB4 /* TunningStardardResultsCollectionView.swift */,
 				5ED0CB8B1E898BA000B4E604 /* TunningEventCollectionView.swift */,
 				5E61BDB41E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift */,
@@ -905,7 +905,7 @@
 				5E5A05681E837487001B53A5 /* SoundPlayerManager.swift in Sources */,
 				5EA748021E7E089C00E5BB86 /* QuickTableViewController.swift in Sources */,
 				5EB135061E8977BB00DA6F6E /* SGTuningTypeViewController.swift in Sources */,
-				5E04A5911E89ED1D00238BB4 /* TunningTypes.swift in Sources */,
+				5E04A5911E89ED1D00238BB4 /* TuningsTypes.swift in Sources */,
 				5ED4FE0F1E843BB5000ACF23 /* GuitarSettings.swift in Sources */,
 				5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */,
 				5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */,
