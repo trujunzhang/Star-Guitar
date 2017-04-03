@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TuningCustomViewController: UIViewController {
+class SGTuningCustomViewController: UIViewController {
 
     var titleViewController: TitleViewController!
 

@@ -305,10 +305,10 @@
             </objects>
             <point key="canvasLocation" x="1947.6562499999998" y="-3564.0625"/>
         </scene>
-        <!--Tuning Standard View Controller-->
+        <!--Tunings Standard View Controller-->
         <scene sceneID="7iO-pH-rR4">
             <objects>
-                <viewController storyboardIdentifier="tuningStandardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujv-wT-rz0" customClass="SGTuningStandardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuningStandardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ujv-wT-rz0" customClass="SGTuningsStandardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRd-OJ-7CR"/>
                         <viewControllerLayoutGuide type="bottom" id="mwG-vC-DsB"/>
@@ -731,10 +731,10 @@
             </objects>
             <point key="canvasLocation" x="-1172.4609375" y="-1940.234375"/>
         </scene>
-        <!--Tuning Type View Controller-->
+        <!--Tunings Type View Controller-->
         <scene sceneID="mxT-JX-v7B">
             <objects>
-                <viewController id="LDY-la-6P1" customClass="SGTuningTypeViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LDY-la-6P1" customClass="SGTuningsTypeViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hh6-kh-UhA"/>
                         <viewControllerLayoutGuide type="bottom" id="0la-2L-dfE"/>
@@ -748,16 +748,16 @@
             </objects>
             <point key="canvasLocation" x="270" y="-4396"/>
         </scene>
-        <!--Tuning Event View Controller-->
+        <!--Tunings Event View Controller-->
         <scene sceneID="F3U-kC-paR">
             <objects>
-                <viewController id="T86-3z-0jY" customClass="SGTuningEventViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T86-3z-0jY" customClass="SGTuningsEventViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vAC-dA-kvi"/>
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BOb-B4-pj2">
-                        <rect key="frame" x="0.0" y="0.0" width="493" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="486" height="71"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -785,7 +785,7 @@
         <!--Tuning Custom View Controller-->
         <scene sceneID="0AL-Jy-OxV">
             <objects>
-                <viewController storyboardIdentifier="tuningCustomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfa-Mk-qn4" customClass="TuningCustomViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tuningsCustomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfa-Mk-qn4" customClass="SGTuningCustomViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="slM-Lq-hwX"/>
                         <viewControllerLayoutGuide type="bottom" id="NxG-ft-o5O"/>
@@ -1003,11 +1003,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S0d-Dx-XmK"/>
-        <segue reference="Nx6-BO-F9s"/>
-        <segue reference="FND-d6-ff7"/>
-        <segue reference="bMz-Sy-Vwk"/>
         <segue reference="jsn-5H-REY"/>
+        <segue reference="9j0-fh-ruf"/>
         <segue reference="u3i-JV-qd5"/>
+        <segue reference="P8N-wi-0t0"/>
+        <segue reference="Jvi-6X-jUO"/>
+        <segue reference="1Xg-Ew-c00"/>
     </inferredMetricsTieBreakers>
 </document>

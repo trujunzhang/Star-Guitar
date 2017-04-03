@@ -46,8 +46,8 @@ enum StoryboardScene {
   enum Main: String, StoryboardSceneType {
     static let storyboardName = "Main"
 
-    static func initialViewController() -> Star_Guitar.SGTuningStandardViewController {
-      guard let vc = storyboard().instantiateInitialViewController() as? Star_Guitar.SGTuningStandardViewController else {
+    static func initialViewController() -> Star_Guitar.SGTuningsStandardViewController {
+      guard let vc = storyboard().instantiateInitialViewController() as? Star_Guitar.SGTuningsStandardViewController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
       }
       return vc
@@ -80,20 +80,20 @@ enum StoryboardScene {
       return vc
     }
 
-    case tuningCustomViewControllerScene = "tuningCustomViewController"
-    static func instantiateTuningCustomViewController() -> Star_Guitar.TuningCustomViewController {
-      guard let vc = StoryboardScene.Main.tuningCustomViewControllerScene.viewController() as? Star_Guitar.TuningCustomViewController
+    case tuningStandardViewControllerScene = "tuningStandardViewController"
+    static func instantiateTuningStandardViewController() -> Star_Guitar.SGTuningsStandardViewController {
+      guard let vc = StoryboardScene.Main.tuningStandardViewControllerScene.viewController() as? Star_Guitar.SGTuningsStandardViewController
       else {
-        fatalError("ViewController 'tuningCustomViewController' is not of the expected class Star_Guitar.TuningCustomViewController.")
+        fatalError("ViewController 'tuningStandardViewController' is not of the expected class Star_Guitar.SGTuningsStandardViewController.")
       }
       return vc
     }
 
-    case tuningStandardViewControllerScene = "tuningStandardViewController"
-    static func instantiateTuningStandardViewController() -> Star_Guitar.SGTuningStandardViewController {
-      guard let vc = StoryboardScene.Main.tuningStandardViewControllerScene.viewController() as? Star_Guitar.SGTuningStandardViewController
+    case tuningsCustomViewControllerScene = "tuningsCustomViewController"
+    static func instantiateTuningsCustomViewController() -> SGTuningCustomViewController {
+      guard let vc = StoryboardScene.Main.tuningsCustomViewControllerScene.viewController() as? SGTuningCustomViewController
       else {
-        fatalError("ViewController 'tuningStandardViewController' is not of the expected class Star_Guitar.SGTuningStandardViewController.")
+        fatalError("ViewController 'tuningsCustomViewController' is not of the expected class SGTuningCustomViewController.")
       }
       return vc
     }

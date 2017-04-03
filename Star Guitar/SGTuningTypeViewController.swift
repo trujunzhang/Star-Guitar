@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol TuningTypeProviderProtocol : class {    // 'class' means only class types can implement it
+protocol TuningsTypeProviderProtocol : class {    // 'class' means only class types can implement it
     func toggleTuningType(_ sender: Row)
 }
 
-class SGTuningTypeViewController: QuickCollectionViewController {
-    weak var delegate : TuningTypeProviderProtocol?
+class SGTuningsTypeViewController: QuickCollectionViewController {
+    weak var delegate : TuningsTypeProviderProtocol?
 
     public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)

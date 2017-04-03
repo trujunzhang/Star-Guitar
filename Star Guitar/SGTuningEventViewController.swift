@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol TuningEventProviderProtocol : class {    // 'class' means only class types can implement it
+protocol TuningsEventProviderProtocol : class {    // 'class' means only class types can implement it
     func onTuningEventTapped(_ sender: Row)
 }
 
 
-class SGTuningEventViewController: QuickCollectionViewController {
-    weak var delegate : TuningEventProviderProtocol?
+class SGTuningsEventViewController: QuickCollectionViewController {
+    weak var delegate : TuningsEventProviderProtocol?
     
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)

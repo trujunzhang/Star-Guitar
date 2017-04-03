@@ -55,7 +55,7 @@
 		5E9C6E271E855EA9006F93B4 /* FontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */; };
 		5E9C6E291E855EB2006F93B4 /* AppFontsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */; };
 		5EA049861E7E83B1003E402F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049851E7E83B1003E402F /* MainViewController.swift */; };
-		5EA049891E7E83FA003E402F /* TuningCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049871E7E83FA003E402F /* TuningCustomViewController.swift */; };
+		5EA049891E7E83FA003E402F /* SGTuningCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049871E7E83FA003E402F /* SGTuningCustomViewController.swift */; };
 		5EA0498A1E7E83FA003E402F /* SGTuningStandardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049881E7E83FA003E402F /* SGTuningStandardViewController.swift */; };
 		5EA748001E7E089C00E5BB86 /* QuickTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA747FD1E7E089C00E5BB86 /* QuickTableModel.swift */; };
 		5EA748011E7E089C00E5BB86 /* QuickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA747FE1E7E089C00E5BB86 /* QuickTableViewCell.swift */; };
@@ -181,7 +181,7 @@
 		5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsExtension.swift; sourceTree = "<group>"; };
 		5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFontsExtensions.swift; sourceTree = "<group>"; };
 		5EA049851E7E83B1003E402F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "Star Guitar/MainViewController.swift"; sourceTree = "<group>"; };
-		5EA049871E7E83FA003E402F /* TuningCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningCustomViewController.swift; sourceTree = "<group>"; };
+		5EA049871E7E83FA003E402F /* SGTuningCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningCustomViewController.swift; sourceTree = "<group>"; };
 		5EA049881E7E83FA003E402F /* SGTuningStandardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningStandardViewController.swift; sourceTree = "<group>"; };
 		5EA747FD1E7E089C00E5BB86 /* QuickTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTableModel.swift; sourceTree = "<group>"; };
 		5EA747FE1E7E089C00E5BB86 /* QuickTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTableViewCell.swift; sourceTree = "<group>"; };
@@ -511,7 +511,7 @@
 		5EF0AE0F1E8DDF240026F0B4 /* TuningsCustom */ = {
 			isa = PBXGroup;
 			children = (
-				5EA049871E7E83FA003E402F /* TuningCustomViewController.swift */,
+				5EA049871E7E83FA003E402F /* SGTuningCustomViewController.swift */,
 			);
 			name = TuningsCustom;
 			sourceTree = "<group>";
@@ -919,7 +919,7 @@
 				5E61EC461E85EEA400FC5511 /* SGSettingsViewController.swift in Sources */,
 				5E8B8FD61E7CFF69009DFEF1 /* StringsLayoutSchema.swift in Sources */,
 				5E9C6E291E855EB2006F93B4 /* AppFontsExtensions.swift in Sources */,
-				5EA049891E7E83FA003E402F /* TuningCustomViewController.swift in Sources */,
+				5EA049891E7E83FA003E402F /* SGTuningCustomViewController.swift in Sources */,
 				5EF0AE161E8DE1590026F0B4 /* SGCustomResultViewController.swift in Sources */,
 				5E42AA011E8E6C1E00392EBD /* ResultsBoarderLayout.swift in Sources */,
 				5E9C6E271E855EA9006F93B4 /* FontsExtension.swift in Sources */,

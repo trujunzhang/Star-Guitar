@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension SGTuningStandardViewController{
+extension SGTuningsStandardViewController{
     
     func updateSelectedNoteCell() {
         
@@ -16,7 +16,7 @@ extension SGTuningStandardViewController{
     
 }
 
-extension SGTuningStandardViewController: OneColumnProviderProtocol{
+extension SGTuningsStandardViewController: OneColumnProviderProtocol{
     
     func toggleOneColumnLetter(_ sender: Row) {
         
@@ -25,7 +25,7 @@ extension SGTuningStandardViewController: OneColumnProviderProtocol{
 }
 
 
-extension SGTuningStandardViewController: TwoColumnProviderProtocol{
+extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
     
     func toggleTwoColumnNumber(_ sender: Row) {
         
@@ -33,7 +33,7 @@ extension SGTuningStandardViewController: TwoColumnProviderProtocol{
     
 }
 
-extension SGTuningStandardViewController: TuningTypeProviderProtocol{
+extension SGTuningsStandardViewController: TuningsTypeProviderProtocol{
     
     func toggleTuningType(_ sender: Row) {
         
@@ -41,7 +41,7 @@ extension SGTuningStandardViewController: TuningTypeProviderProtocol{
     
 }
 
-extension SGTuningStandardViewController: TuningEventProviderProtocol{
+extension SGTuningsStandardViewController: TuningsEventProviderProtocol{
     
     func onTuningEventTapped(_ sender: Row) {
         
