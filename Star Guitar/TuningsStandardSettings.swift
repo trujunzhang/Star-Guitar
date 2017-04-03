@@ -1,0 +1,164 @@
+//
+//  TuningsStandardSettings.swift
+//  Star Guitar
+//
+//  Created by djzhang on 4/3/17.
+//  Copyright © 2017 djzhang. All rights reserved.
+//
+
+import Foundation
+import UIKit
+import RealmSwift
+
+
+
+
+enum OneColumnLetterType: Int {
+    case Acoustic = 0
+    case Electric = 1
+    case Bass = 2
+    case Classical = 3
+    case Ukulele = 4
+    
+    public static func getTitles() -> [String] {
+        return ["Acoustic", "Electric", "Bass(6 strng)", "Spanish", "Harp(6 string)"]
+    }
+    
+    public static func getGuitarType(_ title: String) -> Int {
+        return OneColumnLetterType.getTitles().index(of: title)!
+    }
+    
+}
+
+
+
+class TuningsStandardSettings: Object {
+    
+    dynamic var id = 0
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    dynamic var fretboardRows: String = "0,1,1"
+    
+    dynamic var muteArray: String = "0,0,1,1,0,0"
+    
+    dynamic var fingerSlider: Bool = true
+}
+
+class TuningsStandardSettingsModel {
+    var guitarType = GuitarType.Electric.rawValue
+    var fretboardRows: String = "0,1,1"
+    var muteArray: String = "0,0,1,1,0,0"
+    var fingerSlider: Bool = true
+    
+    init() {
+        // Empty here.
+    }
+    
+    init( _ fretboardRows: String, _ muteArray: String, _ fingerSlider: Bool) {
+        self.fretboardRows = fretboardRows
+        self.muteArray = muteArray
+        self.fingerSlider = fingerSlider
+    }
+    
+    public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
+        return TuningsStandardSettingsModel( settings.fretboardRows, settings.muteArray, settings.fingerSlider)
+    }
+    
+    public func generate() -> GuitarSettings {
+        let settings = GuitarSettings()
+        settings.guitarType = self.guitarType
+        settings.fretboardRows = self.fretboardRows
+        settings.muteArray = self.muteArray
+        settings.fingerSlider = self.fingerSlider
+        return settings
+    }
+}
+
+class TuningsStandardSettingsUtils: AnyObject {
+
+    private var settings: TuningsStandardSettings?
+    private var settingsModel: TuningsStandardSettingsModel?
+    
+    private func parseFretBoardRows() -> [String] {
+        //settingsModel.fretboardRows.components(separatedBy: ",").flatMap({ Int($0) }) // [Int]
+        return (settingsModel?.fretboardRows.components(separatedBy: ","))!
+    }
+    
+    public func getFretboardTypeRowType(_ index: Int) -> TableRowType {
+        if (self.parseFretBoardRows()[index] == "1") {
+            return TableRowType.Selected
+        }
+        
+        return TableRowType.Empty
+    }
+    
+    public func getMuteArray() -> [String] {
+        return (settingsModel?.muteArray.components(separatedBy: ","))!
+    }
+    
+    public func setMuteArray(_ index: Int) {
+        var arrToSave = self.getMuteArray()
+        var newValue = "1"
+        if (arrToSave[index] == "1") {
+            newValue = "0"
+        }
+        arrToSave[index] = newValue
+        let newFretBoard = arrToSave.map {
+            String(describing: $0)
+            }.joined(separator: ",")
+        self.settingsModel?.muteArray = newFretBoard
+        
+    }
+    
+    public func readSettings() {
+        if let existSetting = self.readGuitarSettings() {
+            self.settings = existSetting
+            self.settingsModel = TuningsStandardSettingsModel.convert(existSetting)
+        } else {
+            self.settingsModel = TuningsStandardSettingsModel()
+        }
+    }
+    
+    private func readGuitarSettings() ->TuningsStandardSettings? {
+        let realm = try! Realm()
+        
+        let items = realm.objects(TuningsStandardSettings.self)
+        if (items.count == 1) {
+            return items[0]
+        }
+        
+        return nil
+    }
+    
+    public func writeSettings() {
+        // Get the default Realm
+        let realm = try! Realm()
+        // You only need to do this once (per thread)
+        
+        // Add to the Realm inside a transaction
+        if let lastSettings = self.settings {
+            // Update an object with a transaction
+            try! realm.write {
+                lastSettings.fretboardRows = (self.settingsModel?.fretboardRows)!
+                lastSettings.muteArray = (self.settingsModel?.muteArray)!
+                lastSettings.fingerSlider = (self.settingsModel?.fingerSlider)!
+            }
+        } else {
+            // No exist, create it.
+            try! realm.write {
+                realm.create(GuitarSettings.self, value:
+                    [
+                        "fretboardRows": (self.settingsModel?.fretboardRows)!,
+                        "muteArray": (self.settingsModel?.muteArray)!,
+                        "fingerSlider": (self.settingsModel?.fingerSlider)!
+                    ]
+                )
+            }
+            // Then, read it again.
+            self.readSettings()
+        }
+    }
+}
