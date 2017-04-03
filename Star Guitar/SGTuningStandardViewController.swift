@@ -20,9 +20,9 @@ class SGTuningsStandardViewController: UIViewController {
     
     var oneColumnViewController: SGOneColumnViewController!
     var twoColumnViewController: SGTwoColumnViewController!
-    var tuningTypeViewController: SGTuningTypeViewController!
+    var tuningsTypeViewController: SGTuningsTypeViewController!
     var standardResultsViewController: SGStandardResultsViewController!
-    var tuningEventViewController: SGTuningEventViewController!
+    var tuningsEventViewController: SGTuningsEventViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class SGTuningsStandardViewController: UIViewController {
         
         oneColumnViewController.delegate = self
         twoColumnViewController.delegate = self
-        tuningTypeViewController.delegate = self
-        tuningEventViewController.delegate = self
+        tuningsTypeViewController.delegate = self
+        tuningsEventViewController.delegate = self
 
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)
@@ -68,13 +68,13 @@ class SGTuningsStandardViewController: UIViewController {
             self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
         }
         else if (segue.identifier == "typesContainer") {
-            self.tuningTypeViewController = segue.destination as! SGTuningTypeViewController
+            self.tuningsTypeViewController = segue.destination as! SGTuningsTypeViewController
         }
         else if (segue.identifier == "standardResultContainer") {
             self.standardResultsViewController = segue.destination as! SGStandardResultsViewController
         }
         else if (segue.identifier == "eventsContainer") {
-            self.tuningEventViewController = segue.destination as! SGTuningEventViewController
+            self.tuningsEventViewController = segue.destination as! SGTuningsEventViewController
         }
     }
 
