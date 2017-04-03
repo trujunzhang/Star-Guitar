@@ -44,7 +44,7 @@ struct EventsSchema {
 
 }
 
-class TuningsEventsLayout: BaseTunningLayout {
+class TuningsEventsLayout: BaseTuningsLayout {
 
     override func layoutContainer(_ leftColumn: UIView, forView containerView: UIView) {
         containerView.snp.makeConstraints { (make) -> Void in

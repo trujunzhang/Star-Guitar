@@ -30,7 +30,7 @@ struct TwoChordColumnSchema {
 }
 
 
-class TwoChordColumnLayout: BaseTunningLayout {
+class TwoChordColumnLayout: BaseTuningsLayout {
     
     override func layoutContainer(_ leftColumn: UIView, forColumnView columnView: UIView) {
         

@@ -68,7 +68,7 @@ struct CustomResultsColumnSchema {
 }
 
 
-class CustomResultsLayout: BaseTunningLayout {
+class CustomResultsLayout: BaseTuningsLayout {
     
     func layoutResultsContainer(_ leftColumn: UIView, forResultView resultView: UIView,_ offLeading:Int,_ leading: Int) {
         resultView.backgroundColor = UIColor(named: .transparent)

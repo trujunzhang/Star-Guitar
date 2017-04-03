@@ -38,7 +38,7 @@ struct ThreeColumnSchema {
 }
 
 
-class ThreeColumnLayout: BaseTunningLayout {
+class ThreeColumnLayout: BaseTuningsLayout {
     
     func layoutContainer(_ leftColumn: UIView, forThirdColumnView columnView: UIView,_ offX: Int,_ width:Int) {
         

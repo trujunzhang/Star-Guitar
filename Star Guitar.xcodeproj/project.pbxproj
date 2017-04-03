@@ -39,7 +39,6 @@
 		5E61EC461E85EEA400FC5511 /* SGSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */; };
 		5E68164A1E8EA143009CAA09 /* SGFourColumnChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */; };
 		5E78D1E41E856F7600410CEE /* ErasITC-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */; };
-		5E7F0BE71E8DE47400E5569F /* BaseTunningLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F0BE61E8DE47400E5569F /* BaseTunningLayout.swift */; };
 		5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F0BE81E8DE55D00E5569F /* OneColumnLayout.swift */; };
 		5E7F0BEB1E8DE69E00E5569F /* TwoColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */; };
 		5E7F0BED1E8DE72B00E5569F /* StandardResultsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F0BEC1E8DE72B00E5569F /* StandardResultsLayout.swift */; };
@@ -51,6 +50,7 @@
 		5E8D11D41E89F93100898679 /* TapActionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D11D31E89F93100898679 /* TapActionTableView.swift */; };
 		5E914D451E8E9D9C00371E3C /* SGTouchChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */; };
 		5E95786C1E925D620008F7D8 /* TuningsStandardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786B1E925D620008F7D8 /* TuningsStandardSettings.swift */; };
+		5E95786E1E9307840008F7D8 /* BaseTuningsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */; };
 		5E98A4961E8E0A6400F9A56D /* DebugTuningCustomResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E98A4951E8E0A6400F9A56D /* DebugTuningCustomResultsViewController.swift */; };
 		5E9C6E271E855EA9006F93B4 /* FontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */; };
 		5E9C6E291E855EB2006F93B4 /* AppFontsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */; };
@@ -164,7 +164,6 @@
 		5E61BDB41E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsCustomResultsCollectionView.swift; sourceTree = "<group>"; };
 		5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSettingsViewController.swift; sourceTree = "<group>"; };
 		5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFourColumnChordViewController.swift; sourceTree = "<group>"; };
-		5E7F0BE61E8DE47400E5569F /* BaseTunningLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTunningLayout.swift; sourceTree = "<group>"; };
 		5E7F0BE81E8DE55D00E5569F /* OneColumnLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneColumnLayout.swift; sourceTree = "<group>"; };
 		5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoColumnLayout.swift; sourceTree = "<group>"; };
 		5E7F0BEC1E8DE72B00E5569F /* StandardResultsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsLayout.swift; sourceTree = "<group>"; };
@@ -176,6 +175,7 @@
 		5E8D11D31E89F93100898679 /* TapActionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapActionTableView.swift; sourceTree = "<group>"; };
 		5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTouchChordViewController.swift; sourceTree = "<group>"; };
 		5E95786B1E925D620008F7D8 /* TuningsStandardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsStandardSettings.swift; sourceTree = "<group>"; };
+		5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTuningsLayout.swift; sourceTree = "<group>"; };
 		5E98A4951E8E0A6400F9A56D /* DebugTuningCustomResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTuningCustomResultsViewController.swift; sourceTree = "<group>"; };
 		5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ErasITC-Demi.ttf"; sourceTree = "<group>"; };
 		5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsExtension.swift; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		5E7F0BE51E8DE45D00E5569F /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				5E7F0BE61E8DE47400E5569F /* BaseTunningLayout.swift */,
+				5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */,
 				5E7F0BE81E8DE55D00E5569F /* OneColumnLayout.swift */,
 				5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */,
 				5E7F0BEC1E8DE72B00E5569F /* StandardResultsLayout.swift */,
@@ -890,13 +890,13 @@
 				5E5F74CC1E8EA3600056E607 /* FourColumnLayout.swift in Sources */,
 				5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */,
 				5E2D89921E8E755B00D6AEF0 /* CustomResultsBoarderView.swift in Sources */,
-				5E7F0BE71E8DE47400E5569F /* BaseTunningLayout.swift in Sources */,
 				5EA049861E7E83B1003E402F /* MainViewController.swift in Sources */,
 				5EB2469D1E8983AC009B9A07 /* QuickCollectionViewController.swift in Sources */,
 				5E7F0BED1E8DE72B00E5569F /* StandardResultsLayout.swift in Sources */,
 				5E36C7881E83F56300B7C97F /* DevicesManager.swift in Sources */,
 				5ED0CB8C1E898BA000B4E604 /* TuningsEventCollectionView.swift in Sources */,
 				5E7F0BEB1E8DE69E00E5569F /* TwoColumnLayout.swift in Sources */,
+				5E95786E1E9307840008F7D8 /* BaseTuningsLayout.swift in Sources */,
 				5EA748011E7E089C00E5BB86 /* QuickTableViewCell.swift in Sources */,
 				5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */,
 				5EC545A71E91ECC3009A6F85 /* TuningTypeLists.swift in Sources */,

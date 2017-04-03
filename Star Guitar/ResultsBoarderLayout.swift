@@ -57,7 +57,7 @@ class ResultsBoarderHelper{
 
 
 
-class ResultsBoarderLayout: BaseTunningLayout {
+class ResultsBoarderLayout: BaseTuningsLayout {
     
     var horizonBoarderType:ResultsBoarderType =  ResultsBoarderType.left
     var verticalBoarderType:ResultsBoarderType =  ResultsBoarderType.left

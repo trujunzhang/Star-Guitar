@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BaseTunningLayout {
+class BaseTuningsLayout {
 
     var pageView: UIView?
     init(_ pageView: UIView) {

@@ -33,7 +33,7 @@ struct FourColumnSchema {
 }
 
 
-class FourColumnLayout: BaseTunningLayout {
+class FourColumnLayout: BaseTuningsLayout {
     
     override func layoutContainer(_ leftColumn: UIView, forColumnView columnView: UIView) {
         

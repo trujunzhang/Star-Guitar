@@ -37,7 +37,7 @@ struct TuningTypeSchema {
 }
 
 
-class TuningsTypeLayout: BaseTunningLayout {
+class TuningsTypeLayout: BaseTuningsLayout {
 
     func layoutTuningTypeContainer(_ leftColumn: UIView, forView containerView: UIView,_ offLeading:CGFloat) {
         containerView.snp.makeConstraints { (make) -> Void in

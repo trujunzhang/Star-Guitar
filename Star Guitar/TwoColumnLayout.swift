@@ -26,7 +26,7 @@ struct TwoColumnSchema {
 }
 
 
-class TwoColumnLayout: BaseTunningLayout {
+class TwoColumnLayout: BaseTuningsLayout {
 
     override func layoutContainer(_ leftColumn: UIView, forColumnView columnView: UIView) {
 

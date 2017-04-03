@@ -54,7 +54,7 @@ struct StandResultsColumnSchema {
 }
 
 
-class StandardResultsLayout: BaseTunningLayout {
+class StandardResultsLayout: BaseTuningsLayout {
 
     override func layoutResultsContainer(_ leftColumn: UIView, forResultView resultView: UIView,_ offLeading:Int) {
         resultView.snp.makeConstraints { (make) -> Void in
