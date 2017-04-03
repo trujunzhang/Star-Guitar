@@ -37,7 +37,7 @@ class TuningStandardViewController: UIViewController {
             TuningsTypeLayout(self.view).layoutTuningTypeContainer(tuningResultContainer, forView: tunningTypesContainer,StandResultsColumnSchema.resultsColumnWidth())
         }else{
             TuningsTypeLayout(self.view).layoutTuningTypeContainer(twoColumnContainer, forView: tunningTypesContainer,0)
-            StandardResultsLayout(self.view).layoutResultsContainer(tunningTypesContainer, forResultView: tuningResultContainer,TuningTypeSchema.tunningTypesColumnWidth())
+            StandardResultsLayout(self.view).layoutResultsContainer(tunningTypesContainer, forResultView: tuningResultContainer,TuningTypeSchema.itemWidth())
         }
     }
 

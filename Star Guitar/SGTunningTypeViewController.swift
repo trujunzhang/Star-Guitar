@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SGTunningTypeViewController: QuickTableViewController {
+class SGTunningTypeViewController: QuickCollectionViewController {
 
-    open override func configTableView(_ tableView: UITableView) {
-        super.configTableView(tableView)
-
-        tableView.register(TunningTypeActionCell.self, forCellReuseIdentifier: String(describing: TunningTypeActionCell.self))
+    open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
+        super.configCollectionView(collectionView, forLayout: layout)
+        
+        
+        layout.sectionInset = TuningTypeSchema.edgeInsets() // section與section之間的距離
+        layout.itemSize = CGSize(width: TuningTypeSchema.itemWidth(), height: TuningTypeSchema.itemHeight()) // cell的寬、高
+        layout.minimumLineSpacing = CGFloat(0) // collectionView設定為縱向的話即「行」的間距、橫向則為「列」的間距
+        
+        collectionView.register(TunningTypeActionCell.self, forCellWithReuseIdentifier: String(describing: TunningTypeActionCell.self))
     }
 
     override func viewDidLoad() {
