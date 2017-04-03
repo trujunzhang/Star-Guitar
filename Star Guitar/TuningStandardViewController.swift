@@ -36,7 +36,7 @@ class TuningStandardViewController: UIViewController {
             StandardResultsLayout(self.view).layoutResultsContainer(twoColumnContainer, forResultView: tuningResultContainer,80)
             TuningsTypeLayout(self.view).layoutTuningTypeContainer(tuningResultContainer, forView: tunningTypesContainer,StandResultsColumnSchema.resultsColumnWidth())
         }else{
-            TuningsTypeLayout(self.view).layoutTuningTypeContainer(twoColumnContainer, forView: tunningTypesContainer,0)
+            TuningsTypeLayout(self.view).layoutTuningTypeContainer(twoColumnContainer, forView: tunningTypesContainer,24)
             StandardResultsLayout(self.view).layoutResultsContainer(tunningTypesContainer, forResultView: tuningResultContainer,TuningTypeSchema.itemWidth())
         }
     }
@@ -46,16 +46,6 @@ class TuningStandardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "titleContainer") {
