@@ -50,7 +50,11 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     }
 
     private func toggleNote(_ sender: Row) {
-        let x = 0
+        //sender.title = "12"
+    }
+    
+    public func updateCell(withTitle title:String){
+        
     }
 
 
