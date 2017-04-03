@@ -24,7 +24,7 @@ class SGTuningEventViewController: QuickCollectionViewController {
         layout.itemSize = CGSize(width: EventsSchema.itemWidth(), height: EventsSchema.itemHeight()) // cell的寬、高
         layout.minimumLineSpacing = CGFloat(integerLiteral: EventsSchema.eventsLineSpacing()) // collectionView設定為縱向的話即「行」的間距、橫向則為「列」的間距
 
-        collectionView.register(TunningEventsActionCell.self, forCellWithReuseIdentifier: String(describing: TunningEventsActionCell.self))
+        collectionView.register(TuningsEventsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsEventsActionCell.self))
     }
 
     override func viewDidLoad() {
@@ -35,10 +35,10 @@ class SGTuningEventViewController: QuickCollectionViewController {
 
         tableContents = [
                 Section(title: nil, rows: [
-                        TunningEventsActionRow(title: "Save", action: toggleNote),
-                        TunningEventsActionRow(title: "Edit", action: toggleNote),
-                        TunningEventsActionRow(title: "Restore", action: toggleNote),
-                        TunningEventsActionRow(title: "Trash", action: toggleNote),
+                        TuningsEventsActionRow(title: "Save", action: toggleNote),
+                        TuningsEventsActionRow(title: "Edit", action: toggleNote),
+                        TuningsEventsActionRow(title: "Restore", action: toggleNote),
+                        TuningsEventsActionRow(title: "Trash", action: toggleNote),
                 ])
 
         ]

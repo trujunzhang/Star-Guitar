@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E04A58B1E89DFBA00238BB4 /* SGStandardResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */; };
-		5E04A58D1E89E03900238BB4 /* TunningStardardResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58C1E89E03800238BB4 /* TunningStardardResultsCollectionView.swift */; };
+		5E04A58D1E89E03900238BB4 /* TuningsStardardResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58C1E89E03800238BB4 /* TuningsStardardResultsCollectionView.swift */; };
 		5E04A5911E89ED1D00238BB4 /* TuningsTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */; };
 		5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */; };
 		5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2545DF1E8602E400AA504F /* ColorsExtension.swift */; };
@@ -78,7 +78,7 @@
 		5EC7B77A1E842E320086EFB1 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EC7B77B1E842E320086EFB1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7781E842E320086EFB1 /* RealmSwift.framework */; };
 		5EC7B77C1E842E320086EFB1 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7781E842E320086EFB1 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5ED0CB8C1E898BA000B4E604 /* TunningEventCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0CB8B1E898BA000B4E604 /* TunningEventCollectionView.swift */; };
+		5ED0CB8C1E898BA000B4E604 /* TuningsEventCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */; };
 		5ED4FE0F1E843BB5000ACF23 /* GuitarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */; };
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
 		5EF0AE121E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */; };
@@ -128,7 +128,7 @@
 		54B21822E2E8B20F7CAE202D /* Pods_Star_GuitarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Star_GuitarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7B8AAA9F7FFBCB92FCE1C /* Pods-Star GuitarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star GuitarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star GuitarTests/Pods-Star GuitarTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStandardResultsViewController.swift; sourceTree = "<group>"; };
-		5E04A58C1E89E03800238BB4 /* TunningStardardResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunningStardardResultsCollectionView.swift; sourceTree = "<group>"; };
+		5E04A58C1E89E03800238BB4 /* TuningsStardardResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsStardardResultsCollectionView.swift; sourceTree = "<group>"; };
 		5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsTypes.swift; sourceTree = "<group>"; };
 		5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGOneColumnViewController.swift; sourceTree = "<group>"; };
 		5E2545DF1E8602E400AA504F /* ColorsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		5EC545A81E91F467009A6F85 /* SGTuningStandardViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningStandardViewControllerExtension.swift; sourceTree = "<group>"; };
 		5EC7B7771E842E320086EFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Frameworks/realm-swift/Realm.framework"; sourceTree = "<group>"; };
 		5EC7B7781E842E320086EFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Frameworks/realm-swift/RealmSwift.framework"; sourceTree = "<group>"; };
-		5ED0CB8B1E898BA000B4E604 /* TunningEventCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunningEventCollectionView.swift; sourceTree = "<group>"; };
+		5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsEventCollectionView.swift; sourceTree = "<group>"; };
 		5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarSettings.swift; sourceTree = "<group>"; };
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
 		5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGThreeColumnViewController.swift; sourceTree = "<group>"; };
@@ -345,8 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */,
-				5E04A58C1E89E03800238BB4 /* TunningStardardResultsCollectionView.swift */,
-				5ED0CB8B1E898BA000B4E604 /* TunningEventCollectionView.swift */,
+				5E04A58C1E89E03800238BB4 /* TuningsStardardResultsCollectionView.swift */,
+				5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */,
 				5E61BDB41E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift */,
 			);
 			name = CollectionViews;
@@ -895,7 +895,7 @@
 				5EB2469D1E8983AC009B9A07 /* QuickCollectionViewController.swift in Sources */,
 				5E7F0BED1E8DE72B00E5569F /* StandardResultsLayout.swift in Sources */,
 				5E36C7881E83F56300B7C97F /* DevicesManager.swift in Sources */,
-				5ED0CB8C1E898BA000B4E604 /* TunningEventCollectionView.swift in Sources */,
+				5ED0CB8C1E898BA000B4E604 /* TuningsEventCollectionView.swift in Sources */,
 				5E7F0BEB1E8DE69E00E5569F /* TwoColumnLayout.swift in Sources */,
 				5EA748011E7E089C00E5BB86 /* QuickTableViewCell.swift in Sources */,
 				5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */,
@@ -933,7 +933,7 @@
 				5EB135081E8977F300DA6F6E /* OneColumnTableView.swift in Sources */,
 				5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */,
 				5EBEFB4C1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift in Sources */,
-				5E04A58D1E89E03900238BB4 /* TunningStardardResultsCollectionView.swift in Sources */,
+				5E04A58D1E89E03900238BB4 /* TuningsStardardResultsCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

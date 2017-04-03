@@ -11,7 +11,7 @@ import UIKit
 
 /// A `UITableViewCell` subclass with the title text center aligned.
 
-open class TunningEventsActionCell: UICollectionViewCell {
+open class TuningsEventsActionCell: UICollectionViewCell {
 
     public let eventLabel = UILabel()
 
@@ -64,7 +64,7 @@ open class TunningEventsActionCell: UICollectionViewCell {
 }
 
 
-public struct TunningEventsActionRow: Row, Equatable {
+public struct TuningsEventsActionRow: Row, Equatable {
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
@@ -77,9 +77,9 @@ public struct TunningEventsActionRow: Row, Equatable {
     public func render(viewCell: UIView) {
         let row = self
 
-        let tunningEventsActionCell = (viewCell as? TunningEventsActionCell)
+        let TuningsEventsActionCell = (viewCell as? TuningsEventsActionCell)
 
-        tunningEventsActionCell?.eventLabel.text = row.title
+        TuningsEventsActionCell?.eventLabel.text = row.title
     }
 
     /// The title text of the row.
@@ -89,7 +89,7 @@ public struct TunningEventsActionRow: Row, Equatable {
     public let subtitle: Subtitle? = nil
 
     /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: TunningEventsActionCell.self)
+    public let cellReuseIdentifier: String = String(describing: TuningsEventsActionCell.self)
 
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?

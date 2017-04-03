@@ -24,13 +24,13 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         layout.minimumInteritemSpacing = CGFloat(integerLiteral: StandResultsColumnSchema.resultsInteritemSpacing()) // collectionView設定為縱向的話即「列」的間距、橫向則為「行」的間距
 
 
-        collectionView.register(TunningStandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TunningStandardResultsActionCell.self))
+        collectionView.register(TuningsStandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsStandardResultsActionCell.self))
     }
 
     func generateRows() -> Section {
         var rows: [Row] = [Row]()
         for (_, title) in OneColumnLetterType.getTitles().enumerated(){
-            let row = TunningStandardResultsActionRow(letter: "D#",number:"2", action: toggleNote)
+            let row = TuningsStandardResultsActionRow(letter: "D#",number:"2", action: toggleNote)
             rows.append(row)
         }
         return Section(title: nil, rows: rows)

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class TunningStandardResultsActionCell: UICollectionViewCell {
+open class TuningsStandardResultsActionCell: UICollectionViewCell {
     
     override open var isHighlighted: Bool {
         willSet { // make lightgray background show immediately(使灰背景立即出现)
@@ -76,7 +76,7 @@ open class TunningStandardResultsActionCell: UICollectionViewCell {
 }
 
 
-public struct TunningStandardResultsActionRow: Row, Equatable {
+public struct TuningsStandardResultsActionRow: Row, Equatable {
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
@@ -88,7 +88,7 @@ public struct TunningStandardResultsActionRow: Row, Equatable {
     public func render(viewCell: UIView) {
         let row = self
 
-        let cell = (viewCell as? TunningStandardResultsActionCell)
+        let cell = (viewCell as? TuningsStandardResultsActionCell)
 
         cell?.eventLabel.text = row.title
     }
@@ -106,7 +106,7 @@ public struct TunningStandardResultsActionRow: Row, Equatable {
     public let subtitle: Subtitle? = nil
 
     /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: TunningStandardResultsActionCell.self)
+    public let cellReuseIdentifier: String = String(describing: TuningsStandardResultsActionCell.self)
 
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?
