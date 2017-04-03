@@ -45,7 +45,10 @@ open class QuickCollectionViewController: UIViewController,
             collectionView?.reloadData()
         }
     }
-
+    
+    public func setDefaultSelectedCells(_ collectionView: UICollectionView){
+        // Setup the default selected cells for children class
+    }
 
     deinit {
         collectionView?.dataSource = nil
@@ -82,15 +85,14 @@ open class QuickCollectionViewController: UIViewController,
         collectionView.delegate = self
 
         self.configCollectionView(collectionView, forLayout: layout)
-
+        
         self.collectionView = collectionView
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //if let indexPath = collectionView.indexPathForSelectedRow, clearsSelectionOnViewWillAppear {
-        //    collectionView.deselectRow(at: indexPath, animated: true)
-        //}
+               
+        self.setDefaultSelectedCells(collectionView!)
     }
 
     // MARK: - UICollectionViewDataSource

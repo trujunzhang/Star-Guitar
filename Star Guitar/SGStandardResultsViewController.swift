@@ -9,6 +9,11 @@
 import UIKit
 
 class SGStandardResultsViewController: QuickCollectionViewController {
+    
+    public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
+        let indexPath = IndexPath(row: 0, section: 0)
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+    }
 
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
