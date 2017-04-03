@@ -24,7 +24,7 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
     }
     
 
-    public let eventLabel = UILabel()
+    public let letterLabel = UILabel()
     
     let backRowView = UIView()
 
@@ -52,13 +52,13 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
         backgroundColor = .clear
         //backgroundColor = UIColor(named: .tableRowBG)
 
-        contentView.addSubview(eventLabel)
+        contentView.addSubview(letterLabel)
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
         
-        eventLabel.font = UIFont.tableRowFont()
-        eventLabel.textColor = .black
-        eventLabel.snp.makeConstraints { (make) -> Void in
+        letterLabel.font = UIFont.tableRowFont()
+        letterLabel.textColor = .black
+        letterLabel.snp.makeConstraints { (make) -> Void in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
@@ -90,7 +90,7 @@ public struct TuningsStandardResultsActionRow: Row, Equatable {
 
         let cell = (viewCell as? TuningsStandardResultsActionCell)
 
-        cell?.eventLabel.text = row.title
+        cell?.letterLabel.text = row.letter
     }
 
     public var letter: String = ""
@@ -113,7 +113,14 @@ public struct TuningsStandardResultsActionRow: Row, Equatable {
 
     ///
     public init(letter: String,number: String, action: ((Row) -> Void)?) {
-        self.letter = letter
+        var _letter = letter
+        if letter.contains("#"){
+            let index = letter.index(letter.startIndex, offsetBy: 1)
+            _letter = letter.substring(to: index)
+            self.haveSharp = true
+        }
+
+        self.letter = _letter
         self.number = number
         self.action = action
     }
