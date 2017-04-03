@@ -48,6 +48,10 @@ open class OneColumnActionCell: UITableViewCell {
     private func setUpAppearance() {
         backgroundColor = UIColor(named: .tableRowBG)
         
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(named: .selectedHighLine)
+        selectedBackgroundView = selectedView
+        
         textLabel?.font = UIFont.oneColumnFont()
         textLabel?.textAlignment = .center
         textLabel?.textColor = .black
