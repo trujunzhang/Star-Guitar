@@ -25,6 +25,8 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
     
 
     public let letterLabel = UILabel()
+    public let sharpLabel = UILabel()
+    public let numberLabel = UILabel()
     
     let backRowView = UIView()
 
@@ -53,13 +55,29 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
         //backgroundColor = UIColor(named: .tableRowBG)
 
         contentView.addSubview(letterLabel)
+        contentView.addSubview(sharpLabel)
+        contentView.addSubview(numberLabel)
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
         
-        letterLabel.font = UIFont.tableRowFont()
+        letterLabel.font = UIFont.oneColumnFont()
         letterLabel.textColor = .black
         letterLabel.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalToSuperview().offset(-24)
+            make.centerY.equalToSuperview()
+        }
+        
+        sharpLabel.font = UIFont.oneColumnSharpFont()
+        sharpLabel.textColor = .black
+        sharpLabel.snp.makeConstraints { (make) -> Void in
             make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-12)
+        }
+        
+        numberLabel.font = UIFont.oneColumnFont()
+        numberLabel.textColor = .black
+        numberLabel.snp.makeConstraints { (make) -> Void in
+            make.centerX.equalToSuperview().offset(20)
             make.centerY.equalToSuperview()
         }
         
@@ -86,11 +104,13 @@ public struct TuningsStandardResultsActionRow: Row, Equatable {
     }
 
     public func render(viewCell: UIView) {
-        let row = self
-
         let cell = (viewCell as? TuningsStandardResultsActionCell)
 
-        cell?.letterLabel.text = row.letter
+        cell?.letterLabel.text = self.letter
+        if (self.haveSharp) {
+            cell?.sharpLabel.text = "#"
+        }
+        cell?.numberLabel.text = self.number
     }
 
     public var letter: String = ""

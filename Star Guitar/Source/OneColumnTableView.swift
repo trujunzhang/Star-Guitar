@@ -79,12 +79,9 @@ public struct OneColumnActionRow: Row, Equatable {
 
 
     public func render(viewCell: UIView) {
-        let row = self
-        let cell = viewCell 
-
-        let oneColumnActionCell = (cell as? OneColumnActionCell)
-        if (row.haveSharp) {
-            oneColumnActionCell?.sharpLabel.text = "#"
+        let cell = (viewCell as? OneColumnActionCell)
+        if (self.haveSharp) {
+            cell?.sharpLabel.text = "#"
         }
     }
 
