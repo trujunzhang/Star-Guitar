@@ -47,7 +47,7 @@ open class OneColumnActionCell: UITableViewCell {
 
     private func setUpAppearance() {
         backgroundColor = UIColor(named: .tableRowBG)
-
+        
         textLabel?.font = UIFont.oneColumnFont()
         textLabel?.textAlignment = .center
         textLabel?.textColor = .black
@@ -76,7 +76,7 @@ public struct OneColumnActionRow: Row, Equatable {
 
     public func render(viewCell: UIView) {
         let row = self
-        var cell = viewCell ?? OneColumnActionCell(style: .default, reuseIdentifier: row.cellReuseIdentifier)
+        let cell = viewCell 
 
         let oneColumnActionCell = (cell as? OneColumnActionCell)
         if (row.haveSharp) {

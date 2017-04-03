@@ -47,6 +47,14 @@ class SGOneColumnViewController: QuickTableViewController {
         ]
 
     }
+    
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
+        self.delegate?.toggleOneColumnLetter(tableContents[0].rows[0])
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
