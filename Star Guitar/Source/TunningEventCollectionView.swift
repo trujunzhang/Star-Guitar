@@ -15,6 +15,19 @@ open class TunningEventsActionCell: UICollectionViewCell {
 
     public let eventLabel = UILabel()
 
+    
+    override open var isHighlighted: Bool {
+        willSet { // make lightgray background show immediately(使灰背景立即出现)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .transparent)
+        }
+    }
+    
+    override open var isSelected: Bool {
+        willSet { // keep lightGray background (保留灰背景)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .transparent)
+        }
+    }
+
 
     // MARK: Initializer
     override init(frame: CGRect) {
