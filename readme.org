@@ -1,0 +1,31 @@
+* Tools
+** Generate Tools
+   [[https://github.com/SwiftGen/SwiftGen][SwiftGen]]
+*** Commanders
+   swiftgen images Star\ Guitar/Assets.xcassets -t swift3 -o Star\ Guitar/ImagesExtension.swift
+   swiftgen storyboards Star\ Guitar/Base.lproj/Main.storyboard -t swift3 -o Star\ Guitar/StoryboardExtension.swift
+   swiftgen fonts  Star\ Guitar -t swift3 -o Star\ Guitar/FontsExtension.swift
+   swiftgen colors SGColors.txt -t swift3 -o Star\ Guitar/ColorsExtension.swift
+
+
+* Libraries
+** Realm-swift
+
+*** Document
+   [https://realm.io/docs/swift/latest/]
+
+*** Download
+   Dynamic-library: [https://static.realm.io/downloads/swift/realm-swift-2.4.4.zip]
+   cocoapods: [pod 'RealmSwift', '~> 2.4.4']
+   Carthage:[github "realm/realm-cocoa"]
+
+
+* Blogs
+** Touch Event
+   [[http://www.uiwithcocoa.io/4-different-ways-to-handle-taps-on-UIViews/][4 Different Ways to Handle Taps on UIViews]]
+
+
+
+
+
+
