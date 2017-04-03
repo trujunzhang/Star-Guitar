@@ -35,7 +35,7 @@
 		5E5F6D691E86577600B8D5DA /* SGEffectLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6D681E86577600B8D5DA /* SGEffectLayout.swift */; };
 		5E5F74CA1E8EA2F60056E607 /* TwoChordColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F74C91E8EA2F60056E607 /* TwoChordColumnLayout.swift */; };
 		5E5F74CC1E8EA3600056E607 /* FourColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F74CB1E8EA3600056E607 /* FourColumnLayout.swift */; };
-		5E61BDB51E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61BDB41E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift */; };
+		5E61BDB51E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61BDB41E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift */; };
 		5E61EC461E85EEA400FC5511 /* SGSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */; };
 		5E68164A1E8EA143009CAA09 /* SGFourColumnChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */; };
 		5E78D1E41E856F7600410CEE /* ErasITC-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */; };
@@ -161,7 +161,7 @@
 		5E5F6D681E86577600B8D5DA /* SGEffectLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGEffectLayout.swift; sourceTree = "<group>"; };
 		5E5F74C91E8EA2F60056E607 /* TwoChordColumnLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoChordColumnLayout.swift; sourceTree = "<group>"; };
 		5E5F74CB1E8EA3600056E607 /* FourColumnLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourColumnLayout.swift; sourceTree = "<group>"; };
-		5E61BDB41E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunningCustomResultsCollectionView.swift; sourceTree = "<group>"; };
+		5E61BDB41E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsCustomResultsCollectionView.swift; sourceTree = "<group>"; };
 		5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSettingsViewController.swift; sourceTree = "<group>"; };
 		5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFourColumnChordViewController.swift; sourceTree = "<group>"; };
 		5E7F0BE61E8DE47400E5569F /* BaseTunningLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTunningLayout.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 				5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */,
 				5E04A58C1E89E03800238BB4 /* TuningsStardardResultsCollectionView.swift */,
 				5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */,
-				5E61BDB41E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift */,
+				5E61BDB41E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift */,
 			);
 			name = CollectionViews;
 			sourceTree = "<group>";
@@ -901,7 +901,7 @@
 				5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */,
 				5EC545A71E91ECC3009A6F85 /* TuningTypeLists.swift in Sources */,
 				5E5F6D671E86563F00B8D5DA /* SGViewsExtension.swift in Sources */,
-				5E61BDB51E8E4D2500CAB2B6 /* TunningCustomResultsCollectionView.swift in Sources */,
+				5E61BDB51E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift in Sources */,
 				5E5A05681E837487001B53A5 /* SoundPlayerManager.swift in Sources */,
 				5EA748021E7E089C00E5BB86 /* QuickTableViewController.swift in Sources */,
 				5EB135061E8977BB00DA6F6E /* SGTuningTypeViewController.swift in Sources */,

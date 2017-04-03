@@ -22,17 +22,17 @@ class SGCustomResultViewController: QuickCollectionViewController {
         layout.minimumInteritemSpacing = CGFloat(integerLiteral: CustomResultsColumnSchema.resultsInteritemSpacing()) // collectionView設定為縱向的話即「列」的間距、橫向則為「行」的間距
         
         
-        collectionView.register(TunningCustomResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TunningCustomResultsActionCell.self))
+        collectionView.register(TuningsCustomResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsCustomResultsActionCell.self))
     }
     
     func generateRows() -> Section {
         return Section(title: nil, rows: [
-            TunningCustomResultsActionRow(title: "2", action: toggleNote),
-            TunningCustomResultsActionRow(title: "3", action: toggleNote),
-            TunningCustomResultsActionRow(title: "4", action: toggleNote),
-            TunningCustomResultsActionRow(title: "5", action: toggleNote),
-            TunningCustomResultsActionRow(title: "6", action: toggleNote),
-            TunningCustomResultsActionRow(title: "7", action: toggleNote),
+            TuningsCustomResultsActionRow(title: "2", action: toggleNote),
+            TuningsCustomResultsActionRow(title: "3", action: toggleNote),
+            TuningsCustomResultsActionRow(title: "4", action: toggleNote),
+            TuningsCustomResultsActionRow(title: "5", action: toggleNote),
+            TuningsCustomResultsActionRow(title: "6", action: toggleNote),
+            TuningsCustomResultsActionRow(title: "7", action: toggleNote),
             ])
     }
     
