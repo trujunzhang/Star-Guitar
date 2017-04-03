@@ -8,6 +8,13 @@
 
 import Foundation
 
+extension SGTuningStandardViewController{
+    
+    func updateSelectedNoteCell() {
+        
+    }
+    
+}
 
 extension SGTuningStandardViewController: OneColumnProviderProtocol{
     

@@ -15,6 +15,10 @@ protocol TuningTypeProviderProtocol : class {    // 'class' means only class typ
 class SGTuningTypeViewController: QuickCollectionViewController {
     weak var delegate : TuningTypeProviderProtocol?
 
+    public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
+        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
+    }
+    
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
         
