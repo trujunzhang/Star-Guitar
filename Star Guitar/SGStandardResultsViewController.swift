@@ -27,8 +27,11 @@ class SGStandardResultsViewController: QuickCollectionViewController {
 
 
         collectionView.register(StandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsActionCell.self))
-        
         collectionView.register(StandardResultsSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsSharpActionCell.self))
+    }
+    
+    func generateResultsRows(_ tuningsStandardSettingsUtils:TuningsStandardSettingsUtils) {
+        
     }
 
     func generateRows() -> Section {
