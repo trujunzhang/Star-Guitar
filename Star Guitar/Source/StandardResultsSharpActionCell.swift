@@ -10,48 +10,13 @@
 import Foundation
 import UIKit
 
-open class StandardResultsSharpActionCell: UICollectionViewCell {
+open class StandardResultsSharpActionCell: StandardResultsActionCell {
     
-    override open var isHighlighted: Bool {
-        willSet { // make lightgray background show immediately(使灰背景立即出现)
-            backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .tableRowBG)
-        }
-    }
-    
-    override open var isSelected: Bool {
-        willSet { // keep lightGray background (保留灰背景)
-            backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .tableRowBG)
-        }
-    }
-    
-    
-    public let letterLabel = UILabel()
     public let sharpLabel = UILabel()
-    public let numberLabel = UILabel()
-    
-    let backRowView = UIView()
-    
-    // MARK: Initializer
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUpAppearance()
-    }
-    
-    /**
-     Overrides the designated initializer that returns an object initialized from data in a given unarchiver.
-     
-     - parameter aDecoder: An unarchiver object.
-     
-     - returns: `self`, initialized using the data in decoder.
-     */
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setUpAppearance()
-    }
-    
+   
     // MARK: Private Methods
     
-    private func setUpAppearance() {
+     override func setUpAppearance() {
         backgroundColor = .clear
         //backgroundColor = UIColor(named: .tableRowBG)
         

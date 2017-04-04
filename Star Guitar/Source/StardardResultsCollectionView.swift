@@ -49,7 +49,7 @@ open class StandardResultsActionCell: UICollectionViewCell {
 
     // MARK: Private Methods
 
-    private func setUpAppearance() {
+    func setUpAppearance() {
         backgroundColor = .clear
         //backgroundColor = UIColor(named: .tableRowBG)
 

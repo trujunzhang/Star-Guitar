@@ -86,16 +86,13 @@ struct ColumnResultItem {
     var haveSharp: Bool = false
     var number: String = ""
     
+    var letterIndex = -1
+    var numberIndex = -1
+    
     init(){
     }
-    
-    init(letter: String, haveSharp: Bool,number: String) {
-        self.letter = letter
-        self.haveSharp = haveSharp
-        self.number = number
-    }
-    
-    init(oneColumnLetterItem: OneColumnLetterItem,number: String) {
+
+    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
         self.letter = oneColumnLetterItem.letter
         self.haveSharp = oneColumnLetterItem.haveSharp
         self.number = number
@@ -125,7 +122,7 @@ class TuningsStandardSettingsModel {
         return String(format: "%@;%@;%@;%@;%@",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
-                      "4-2,-1,-1,-1,-1,-1",
+                      "3-2,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1"
         )
@@ -156,7 +153,7 @@ class TuningsStandardSettingsModel {
                         let letterIndex = array[0]
                         let numberIndex = array[1]
                         let oneColumnLetterItem = oneColumns[letterIndex]
-                        item = ColumnResultItem(oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex])
+                        item = ColumnResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex])
                     }
                 }
                 resultColumn.append(item)
