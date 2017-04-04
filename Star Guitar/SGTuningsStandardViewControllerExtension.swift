@@ -15,7 +15,7 @@ extension SGTuningsStandardViewController{
     func updateSelectedNoteCell() {
         let item = tuningsStandardSettingsUtils.getCurrentColumnResultItem()
         
-        standardResultsViewController.updateCell(letter: item.letter, number: item.number)
+        standardResultsViewController.updateCell(item: item)
     }
     
 }
@@ -42,7 +42,9 @@ extension SGTuningsStandardViewController: OneColumnProviderProtocol{
     
     func toggleOneColumnLetter(_ sender: Row) {
         let row = sender as! OneColumnActionRow
-        //tuningsStandardSettingsUtils.updateOneColumnLetter(row.getRowData())
+        
+        let letterIndex = (row.item?.type.rawValue)!
+        tuningsStandardSettingsUtils.updateOneColumnLetter(letterIndex)
         
         self.updateSelectedNoteCell()
     }
@@ -54,7 +56,8 @@ extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
     
     func toggleTwoColumnNumber(_ sender: Row) {
         let row = sender as! TwoColumnActionRow
-        //tuningsStandardSettingsUtils.updateTwoColumnNumber(row.getRowData())
+        
+        tuningsStandardSettingsUtils.updateTwoColumnNumber(row.title)
         
         self.updateSelectedNoteCell()
     }

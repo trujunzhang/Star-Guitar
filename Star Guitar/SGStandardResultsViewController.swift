@@ -75,13 +75,13 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         }
     }
     
-    public func updateCell(letter:String,number:String){
+    public func updateCell(item:ColumnResultItem){
         if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
             if selectedItems.count == 1{
                 let indexPath = selectedItems[0]
                 let section = indexPath.section
                 let rowIndex = indexPath.row
-                //tableContents[section].rows[rowIndex] = StandardResultsActionRow(letter: letter,number:number, action: toggleNote)
+                tableContents[section].rows[rowIndex] = self.generateRow(item)
                 self.collectionView?.reloadItems(at: selectedItems)
                 self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }

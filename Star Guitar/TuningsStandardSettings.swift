@@ -25,8 +25,10 @@ import RealmSwift
 public struct OneColumnLetterItem {
     var letter: String = ""
     var haveSharp: Bool = false
+    var type:OneColumnLetterType
     
-    init(letter: String, haveSharp: Bool) {
+    init(_ type:OneColumnLetterType,letter: String, haveSharp: Bool) {
+        self.type = type
         self.letter = letter
         self.haveSharp = haveSharp
     }
@@ -48,18 +50,18 @@ enum OneColumnLetterType: Int {
     
     public static func getOneColumnLetterItems() -> [OneColumnLetterItem] {
         return [
-            OneColumnLetterItem(letter: "C",haveSharp: false),
-            OneColumnLetterItem(letter: "C",haveSharp: true),
-            OneColumnLetterItem(letter: "D",haveSharp: false),
-            OneColumnLetterItem(letter: "D",haveSharp: true),
-            OneColumnLetterItem(letter: "E",haveSharp: false),
-            OneColumnLetterItem(letter: "F",haveSharp: false),
-            OneColumnLetterItem(letter: "F",haveSharp: true),
-            OneColumnLetterItem(letter: "G",haveSharp: false),
-            OneColumnLetterItem(letter: "G",haveSharp: true),
-            OneColumnLetterItem(letter: "A",haveSharp: false),
-            OneColumnLetterItem(letter: "A",haveSharp: true),
-            OneColumnLetterItem(letter: "B",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.C,letter: "C",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.CSharp,letter: "C",haveSharp: true),
+            OneColumnLetterItem(OneColumnLetterType.D,letter: "D",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.DSharp,letter: "D",haveSharp: true),
+            OneColumnLetterItem(OneColumnLetterType.E,letter: "E",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.F,letter: "F",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.FSharp,letter: "F",haveSharp: true),
+            OneColumnLetterItem(OneColumnLetterType.G,letter: "G",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.GSharp,letter: "G",haveSharp: true),
+            OneColumnLetterItem(OneColumnLetterType.A,letter: "A",haveSharp: false),
+            OneColumnLetterItem(OneColumnLetterType.ASharp,letter: "A",haveSharp: true),
+            OneColumnLetterItem(OneColumnLetterType.B,letter: "B",haveSharp: false),
         ]
     }
     
@@ -79,17 +81,34 @@ enum TwoColumnLetterType: Int {
         ]
     }
     
+    public static func getTypeIndex(_ title: String) -> Int {
+        return TwoColumnLetterType.getTitles().index(of: title)!
+    }
+    
 }
 
-public struct ColumnResultItem {
+public class ColumnResultItem {
     var letter: String = ""
     var haveSharp: Bool = false
     var number: String = ""
     
-    var letterIndex = -1
-    var numberIndex = -1
+     var letterIndex = -1
+     var numberIndex = -1
     
     init(){
+        
+    }
+ 
+    func updateLetter(letterIndex:Int,oneColumnLetterItem: OneColumnLetterItem) {
+        self.letterIndex = letterIndex
+        
+        self.letter = oneColumnLetterItem.letter
+        self.haveSharp = oneColumnLetterItem.haveSharp
+    }
+    
+    func updateNumber(number:String) {
+        self.number = number
+        self.numberIndex = TwoColumnLetterType.getTypeIndex(number)
     }
 
     init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
@@ -189,12 +208,16 @@ class TuningsStandardSettingsUtils: AnyObject {
     
     private var currentColumnResultItem = ColumnResultItem()
     
-    public func updateOneColumnLetter(_ letter:String){
-        currentColumnResultItem.letter = letter
+    public func updateOneColumnLetter(_ letterIndex:Int){
+        let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
+        let oneColumnLetterItem = oneColumns[letterIndex]
+        
+        currentColumnResultItem.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
+        
     }
     
     public func updateTwoColumnNumber(_ number:String){
-        currentColumnResultItem.number = number
+        currentColumnResultItem.updateNumber(number: number)
     }
     
     public func getCurrentColumnResultItem() -> ColumnResultItem{

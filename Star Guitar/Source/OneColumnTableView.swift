@@ -80,7 +80,7 @@ public struct OneColumnActionRow: Row, Equatable {
 
     public func render(viewCell: UIView) {
         let cell = (viewCell as? OneColumnActionCell)
-        if let item = self.oneColumnLetterItem{
+        if let item = self.item{
             if item.haveSharp{
                 cell?.sharpLabel.text = "#"
             }
@@ -91,7 +91,7 @@ public struct OneColumnActionRow: Row, Equatable {
     public var title: String = ""
 
 
-    public var oneColumnLetterItem: OneColumnLetterItem? = nil
+    public var item: OneColumnLetterItem? = nil
 
     /// Subtitle is disabled in TapActionRow.
     public let subtitle: Subtitle? = nil
@@ -105,16 +105,10 @@ public struct OneColumnActionRow: Row, Equatable {
     ///
     public init(item: OneColumnLetterItem, action: ((Row) -> Void)?) {
 
-        self.oneColumnLetterItem = item
+        self.item = item
         self.action = action
         
         self.title = item.letter
-    }
-
-    public init(title: String, haveSharp: Bool, action: ((Row) -> Void)?) {
-        self.title = title
-        self.action = action
-
     }
 
     private init() {
