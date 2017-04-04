@@ -95,11 +95,8 @@ public struct TapActionRow: Row, Equatable {
     }
 
     public func render(viewCell: UIView) {
-        let row = self
-        var cell = viewCell ?? TapActionCell(style: .default, reuseIdentifier: row.cellReuseIdentifier)
-
-        let tapActionCell = (cell as? TapActionCell)
-        tapActionCell?.iconImageView.image = tableRowType.getImage()
+        let cell = (viewCell as? TapActionCell)
+        cell?.iconImageView.image = tableRowType.getImage()
     }
     public var tableRowType: TableRowType = TableRowType.Empty
 

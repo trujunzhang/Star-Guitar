@@ -10,6 +10,7 @@
 		5E04A58B1E89DFBA00238BB4 /* SGStandardResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */; };
 		5E04A58D1E89E03900238BB4 /* StardardResultsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58C1E89E03800238BB4 /* StardardResultsCollectionView.swift */; };
 		5E04A5911E89ED1D00238BB4 /* TuningsTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */; };
+		5E180B4B1E93344E00237530 /* TwoColumnTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */; };
 		5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */; };
 		5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2545DF1E8602E400AA504F /* ColorsExtension.swift */; };
 		5E2D89921E8E755B00D6AEF0 /* CustomResultsBoarderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */; };
@@ -130,6 +131,7 @@
 		5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStandardResultsViewController.swift; sourceTree = "<group>"; };
 		5E04A58C1E89E03800238BB4 /* StardardResultsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardardResultsCollectionView.swift; sourceTree = "<group>"; };
 		5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsTypes.swift; sourceTree = "<group>"; };
+		5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoColumnTableView.swift; sourceTree = "<group>"; };
 		5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGOneColumnViewController.swift; sourceTree = "<group>"; };
 		5E2545DF1E8602E400AA504F /* ColorsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
 		5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResultsBoarderView.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				5E8D11D31E89F93100898679 /* TapActionTableView.swift */,
 				5EB135071E8977F300DA6F6E /* OneColumnTableView.swift */,
 				5EACA69B1E8DFCEB0050270B /* ThreeColumnTableView.swift */,
+				5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -930,6 +933,7 @@
 				5E7F0BEF1E8DE82E00E5569F /* TuningsTypeLayout.swift in Sources */,
 				5E7F0BF11E8DE8BD00E5569F /* TuningsEventsLayout.swift in Sources */,
 				5EBB16EC1E7EE6C700CD109D /* TitleViewController.swift in Sources */,
+				5E180B4B1E93344E00237530 /* TwoColumnTableView.swift in Sources */,
 				5EB135081E8977F300DA6F6E /* OneColumnTableView.swift in Sources */,
 				5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */,
 				5EBEFB4C1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift in Sources */,

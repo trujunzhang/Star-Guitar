@@ -34,7 +34,7 @@ extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
     
     func toggleTwoColumnNumber(_ sender: Row) {
         let row = sender as! OneColumnActionRow
-        tuningsStandardSettingsUtils.updateTwoColumnNumber(row.getRowData())
+        //tuningsStandardSettingsUtils.updateTwoColumnNumber(row.getRowData())
         
         self.updateSelectedNoteCell()
     }
