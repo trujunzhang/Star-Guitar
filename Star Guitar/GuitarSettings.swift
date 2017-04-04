@@ -61,7 +61,10 @@ enum FretboardType: Int {
 
 }
 
-
+//
+// ===
+// Realm Object
+//
 class GuitarSettings: Object {
 
     dynamic var id = 0

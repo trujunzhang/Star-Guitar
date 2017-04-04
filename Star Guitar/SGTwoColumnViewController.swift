@@ -25,17 +25,16 @@ class SGTwoColumnViewController: QuickTableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        var rows: [Row] = [Row]()
+        for (_, title) in TwoColumnLetterType.getTitles().enumerated(){
+            let row = TwoColumnActionRow(title: title, action: toggleNote)
+            rows.append(row)
+        }
+        
         tableContents = [
-                Section(title: nil, rows: [
-                        TwoColumnActionRow(title: "2", action: toggleNote),
-                        TwoColumnActionRow(title: "3", action: toggleNote),
-                        TwoColumnActionRow(title: "4", action: toggleNote),
-                        TwoColumnActionRow(title: "5", action: toggleNote),
-                        TwoColumnActionRow(title: "6", action: toggleNote),
-                ])
-
+            Section(title: nil, rows: rows)
         ]
-
     }
     
     

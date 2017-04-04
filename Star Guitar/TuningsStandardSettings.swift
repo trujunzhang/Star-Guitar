@@ -66,7 +66,32 @@ enum OneColumnLetterType: Int {
 }
 
 
+enum TwoColumnLetterType: Int {
+    case N2 = 0
+    case N3 = 1
+    case N4 = 2
+    case N5 = 3
+    case N6 = 4
+    
+    public static func getTitles() -> [String] {
+        return [
+            "2","3","4","5","6"
+        ]
+    }
+    
+}
 
+struct ColumnResultItem {
+    var letter: String = ""
+    var haveSharp: Bool = false
+    var number: String = ""
+}
+
+
+//
+// ===
+// Realm Object
+//
 class TuningsStandardSettings: Object {
     
     dynamic var id = 0
@@ -75,11 +100,7 @@ class TuningsStandardSettings: Object {
         return "id"
     }
     
-    dynamic var fretboardRows: String = "0,1,1"
-    
-    dynamic var muteArray: String = "0,0,1,1,0,0"
-    
-    dynamic var fingerSlider: Bool = true
+    dynamic var results: [String] = ["0,1,1"]
 }
 
 class TuningsStandardSettingsModel {
@@ -98,9 +119,9 @@ class TuningsStandardSettingsModel {
         self.fingerSlider = fingerSlider
     }
     
-    public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
-        return TuningsStandardSettingsModel( settings.fretboardRows, settings.muteArray, settings.fingerSlider)
-    }
+    //public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
+    //    return TuningsStandardSettingsModel( settings.fretboardRows, settings.muteArray, settings.fingerSlider)
+    //}
     
     public func generate() -> GuitarSettings {
         let settings = GuitarSettings()
@@ -112,11 +133,7 @@ class TuningsStandardSettingsModel {
     }
 }
 
-struct ColumnResultItem {
-    var letter: String = ""
-    var haveSharp: Bool = false
-    var number: String = ""
-}
+
 
 class TuningsStandardSettingsUtils: AnyObject {
 
