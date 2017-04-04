@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StandardResultsProviderProtocol : class {    // 'class' means only class types can implement it
-    func toggleCell(_ sender: Row)
+    func toggleCell(_ columnResultItem: ColumnResultItem)
 }
 
 class SGStandardResultsViewController: QuickCollectionViewController {
@@ -20,12 +20,12 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
     }
-
+    
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
-
+        
         layout.itemSize = CGSize(width: StandResultsColumnSchema.resultsItemWidth(), height: StandResultsColumnSchema.resultsItemHeight()) // cell的寬、高
-
+        
         collectionView.register(StandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsActionCell.self))
         collectionView.register(StandardResultsSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsSharpActionCell.self))
     }
@@ -49,26 +49,30 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     
     private func generateRow(_ item:ColumnResultItem) -> Row{
         if(item.haveSharp){
-            return StandardResultsSharpActionRow(letter: item.letter,number:item.number, action: toggleNote)
+            return StandardResultsSharpActionRow(item: item, action: toggleNote)
         }
-        return StandardResultsActionRow(letter: item.letter,number:item.number, action: toggleNote)
+        return StandardResultsActionRow(item: item, action: toggleNote)
     }
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     private func toggleNote(_ sender: Row) {
-        delegate?.toggleCell(sender)
+        if let _row = sender as? StandardResultsActionRow{
+            delegate?.toggleCell(_row.item!)
+        }else if let _row = sender as? StandardResultsSharpActionRow{
+            delegate?.toggleCell(_row.item!)
+        }
     }
     
     public func updateCell(letter:String,number:String){
@@ -77,7 +81,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 let indexPath = selectedItems[0]
                 let section = indexPath.section
                 let rowIndex = indexPath.row
-                tableContents[section].rows[rowIndex] = StandardResultsActionRow(letter: letter,number:number, action: toggleNote)
+                //tableContents[section].rows[rowIndex] = StandardResultsActionRow(letter: letter,number:number, action: toggleNote)
                 self.collectionView?.reloadItems(at: selectedItems)
                 self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }
@@ -85,6 +89,6 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         
         
     }
-
-
+    
+    
 }

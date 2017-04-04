@@ -77,6 +77,8 @@ public struct StandardResultsSharpActionRow: Row, Equatable {
         cell?.numberLabel.text = self.number
     }
     
+    public var item:ColumnResultItem? = nil
+    
     public var letter: String = ""
     
     public var number: String = ""
@@ -96,9 +98,10 @@ public struct StandardResultsSharpActionRow: Row, Equatable {
     public var action: ((Row) -> Void)?
     
     ///
-    public init(letter: String,number: String, action: ((Row) -> Void)?) {
-        self.letter = letter
-        self.number = number
+    public init(item:ColumnResultItem, action: ((Row) -> Void)?) {
+        self.item = item
+        self.letter = item.letter
+        self.number = item.number
         self.action = action
     }
     

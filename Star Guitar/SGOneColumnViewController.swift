@@ -38,6 +38,9 @@ class SGOneColumnViewController: QuickTableViewController {
 
     }
     
+    public func updateCell(rowIndex:Int){
+        tableView.selectRow(at: IndexPath(row: rowIndex, section: 0), animated: true, scrollPosition: .top)
+    }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

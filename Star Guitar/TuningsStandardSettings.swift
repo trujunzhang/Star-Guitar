@@ -81,7 +81,7 @@ enum TwoColumnLetterType: Int {
     
 }
 
-struct ColumnResultItem {
+public struct ColumnResultItem {
     var letter: String = ""
     var haveSharp: Bool = false
     var number: String = ""
@@ -93,6 +93,9 @@ struct ColumnResultItem {
     }
 
     init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
+        self.letterIndex = letterIndex
+        self.numberIndex = numberIndex
+        
         self.letter = oneColumnLetterItem.letter
         self.haveSharp = oneColumnLetterItem.haveSharp
         self.number = number
