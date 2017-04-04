@@ -124,7 +124,7 @@ class TuningsStandardSettingsModel {
                       "-1,-1,-1,-1,-1,-1"
         )
     }
-    var resultsCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
+    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
     init() {
         // Empty here.
@@ -137,19 +137,19 @@ class TuningsStandardSettingsModel {
     
     private func convert(_ results: String){
         //let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
-        let columns = (results.components(separatedBy: ";"))
-        for column in columns{
-            var resultsRow = [ColumnResultItem]()
-            let rows = (column.components(separatedBy: ","))
-            for row in rows{
+        let rows = (results.components(separatedBy: ";"))
+        for row in rows{
+            var resultColumn = [ColumnResultItem]()
+            let columns = (row.components(separatedBy: ","))
+            for column in columns{
                 let item = ColumnResultItem()
                 if(row != "-1"){
                     //let array = (column.components(separatedBy: "-"))
                     //item =
                 }
-                resultsRow.append(item)
+                resultColumn.append(item)
             }
-            self.resultsCells.append(resultsRow)
+            self.resultCells.append(resultColumn)
         }
     }
     
@@ -187,6 +187,10 @@ class TuningsStandardSettingsUtils: AnyObject {
     
     public func getCurrentColumnResultItem() -> ColumnResultItem{
         return self.currentColumnResultItem
+    }
+    
+    public func getResultCells() -> [[ColumnResultItem]]{
+        return (self.settingsModel?.resultCells)!
     }
     
     init() {

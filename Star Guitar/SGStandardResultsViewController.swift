@@ -31,7 +31,21 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     }
     
     func generateResultsRows(_ tuningsStandardSettingsUtils:TuningsStandardSettingsUtils) {
+        var sections = [Section]()
         
+        let resultCells = tuningsStandardSettingsUtils.getResultCells()
+        for resultRow in resultCells{
+            var rows: [Row] = [Row]()
+            for item in resultRow{
+                if(item.haveSharp){
+                    rows.append(StandardResultsSharpActionRow(letter: "D",number:"2", action: toggleNote))
+                }else{
+                    rows.append(StandardResultsActionRow(letter: "D",number:"2", action: toggleNote))
+                }
+            }
+            let section = Section(title: nil, rows: rows)
+            sections.append(section)
+        }
     }
 
     func generateRows() -> Section {

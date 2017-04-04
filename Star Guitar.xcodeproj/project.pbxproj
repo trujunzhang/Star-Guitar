@@ -81,7 +81,6 @@
 		5ED4FE0F1E843BB5000ACF23 /* GuitarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */; };
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
 		5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */; };
-		5EEDA1C21E932C550012DCFB /* StandardResultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1C11E932C550012DCFB /* StandardResultsManager.swift */; };
 		5EF0AE121E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */; };
 		5EF0AE141E8DDFE60026F0B4 /* SGFourColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */; };
 		5EF0AE161E8DE1590026F0B4 /* SGCustomResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE151E8DE1590026F0B4 /* SGCustomResultViewController.swift */; };
@@ -206,7 +205,6 @@
 		5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarSettings.swift; sourceTree = "<group>"; };
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
 		5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsSharpActionCell.swift; sourceTree = "<group>"; };
-		5EEDA1C11E932C550012DCFB /* StandardResultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsManager.swift; sourceTree = "<group>"; };
 		5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGThreeColumnViewController.swift; sourceTree = "<group>"; };
 		5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFourColumnViewController.swift; sourceTree = "<group>"; };
 		5EF0AE151E8DE1590026F0B4 /* SGCustomResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGCustomResultViewController.swift; sourceTree = "<group>"; };
@@ -538,7 +536,6 @@
 			children = (
 				5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */,
 				5EF0AE151E8DE1590026F0B4 /* SGCustomResultViewController.swift */,
-				5EEDA1C11E932C550012DCFB /* StandardResultsManager.swift */,
 			);
 			name = TuningResults;
 			sourceTree = "<group>";
@@ -902,7 +899,6 @@
 				5EA748011E7E089C00E5BB86 /* QuickTableViewCell.swift in Sources */,
 				5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */,
 				5E5F6D671E86563F00B8D5DA /* SGViewsExtension.swift in Sources */,
-				5EEDA1C21E932C550012DCFB /* StandardResultsManager.swift in Sources */,
 				5E61BDB51E8E4D2500CAB2B6 /* TuningsCustomResultsCollectionView.swift in Sources */,
 				5E5A05681E837487001B53A5 /* SoundPlayerManager.swift in Sources */,
 				5EA748021E7E089C00E5BB86 /* QuickTableViewController.swift in Sources */,
