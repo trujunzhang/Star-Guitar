@@ -101,7 +101,7 @@ class TuningsStandardSettings: Object {
     }
     
     // 6X5
-    dynamic var results: String = String(format: "%@%@%@%@%@",
+    dynamic var results: String = String(format: "%@;%@;%@;%@;%@",
                                          "-1,-1,-1,-1,-1,-1",
                                          "-1,-1,-1,-1,-1,-1",
                                          "-1,-1,-1,-1,-1,-1",
@@ -118,7 +118,7 @@ class TuningsStandardSettingsModel {
     }
     
     init( _ results: String) {
-        //self.results = results
+        
     }
     
     public func getResults() -> String{
