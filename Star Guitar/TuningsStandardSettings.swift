@@ -101,18 +101,28 @@ class TuningsStandardSettings: Object {
     }
     
     // 6X5
-    dynamic var results: String = String(format: "%@%@%@%@%@", "","","","","")
+    dynamic var results: String = String(format: "%@%@%@%@%@",
+                                         "-1,-1,-1,-1,-1,-1",
+                                         "-1,-1,-1,-1,-1,-1",
+                                         "-1,-1,-1,-1,-1,-1",
+                                         "-1,-1,-1,-1,-1,-1",
+                                         "-1,-1,-1,-1,-1,-1"
+    )
 }
 
 class TuningsStandardSettingsModel {
-    var results: String = "0,1,1"
+    var resultsRows: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
     init() {
         // Empty here.
     }
     
     init( _ results: String) {
-        self.results = results
+        //self.results = results
+    }
+    
+    public func getResults() -> String{
+        return ""
     }
     
     public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
@@ -121,7 +131,7 @@ class TuningsStandardSettingsModel {
     
     public func generate() -> TuningsStandardSettings {
         let settings = TuningsStandardSettings()
-        settings.results = self.results
+        //settings.results = self.results
         return settings
     }
 }
@@ -147,9 +157,12 @@ class TuningsStandardSettingsUtils: AnyObject {
         return self.currentColumnResultItem
     }
     
+    init() {
+        self.readSettings()
+    }
     
     public func readSettings() {
-        if let existSetting = self.readGuitarSettings() {
+        if let existSetting = self.readStandardSettings() {
             self.settings = existSetting
             self.settingsModel = TuningsStandardSettingsModel.convert(existSetting)
         } else {
@@ -157,7 +170,7 @@ class TuningsStandardSettingsUtils: AnyObject {
         }
     }
     
-    private func readGuitarSettings() ->TuningsStandardSettings? {
+    private func readStandardSettings() ->TuningsStandardSettings? {
         let realm = try! Realm()
         
         let items = realm.objects(TuningsStandardSettings.self)
@@ -177,14 +190,14 @@ class TuningsStandardSettingsUtils: AnyObject {
         if let lastSettings = self.settings {
             // Update an object with a transaction
             try! realm.write {
-                lastSettings.results = (self.settingsModel?.results)!
+                lastSettings.results = (self.settingsModel?.getResults())!
             }
         } else {
             // No exist, create it.
             try! realm.write {
                 realm.create(GuitarSettings.self, value:
                     [
-                        "results": (self.settingsModel?.results)!
+                        "results": (self.settingsModel?.getResults())!
                     ]
                 )
             }
