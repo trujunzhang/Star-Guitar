@@ -10,6 +10,8 @@ import UIKit
 
 class SGStandardResultsViewController: QuickCollectionViewController {
     
+    private var selectedRow: Row?
+    
     public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
     }
@@ -29,7 +31,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
 
     func generateRows() -> Section {
         var rows: [Row] = [Row]()
-        for (_, title) in OneColumnLetterType.getTitles().enumerated(){
+        for (_, _) in OneColumnLetterType.getTitles().enumerated(){
             let row = TuningsStandardResultsActionRow(letter: "D#",number:"2", action: toggleNote)
             rows.append(row)
         }
@@ -55,7 +57,18 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         //sender.title = "12"
     }
     
-    public func updateCell(letter:String,number:String,at index:Int){
+    public func updateCell(letter:String,number:String){
+        if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
+            if selectedItems.count == 1{
+                let indexPath = selectedItems[0]
+                let section = indexPath.section
+                let rowIndex = indexPath.row
+                tableContents[section].rows[rowIndex] = TuningsStandardResultsActionRow(letter: letter,number:number, action: toggleNote)
+                self.collectionView?.reloadItems(at: selectedItems)
+                self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
+            }
+        }
+        
         
     }
 

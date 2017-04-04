@@ -107,6 +107,7 @@ public struct TuningsStandardResultsActionRow: Row, Equatable {
         let cell = (viewCell as? TuningsStandardResultsActionCell)
 
         cell?.letterLabel.text = self.letter
+        cell?.sharpLabel.text = ""
         if (self.haveSharp) {
             cell?.sharpLabel.text = "#"
         }

@@ -84,19 +84,30 @@ class TuningsStandardSettingsModel {
     }
 }
 
+struct ColumnResultItem {
+    var letter: String = ""
+    var number: String = ""
+}
+
 class TuningsStandardSettingsUtils: AnyObject {
 
     private var settings: TuningsStandardSettings?
     private var settingsModel: TuningsStandardSettingsModel?
     
+    private var currentColumnResultItem = ColumnResultItem()
     
     public func updateOneColumnLetter(_ letter:String){
-        
+        currentColumnResultItem.letter = letter
     }
     
     public func updateTwoColumnNumber(_ number:String){
-        
+        currentColumnResultItem.number = number
     }
+    
+    public func getCurrentColumnResultItem() -> ColumnResultItem{
+        return self.currentColumnResultItem
+    }
+    
     
     public func readSettings() {
         if let existSetting = self.readGuitarSettings() {

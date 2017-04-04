@@ -19,7 +19,7 @@ struct TwoColumnSchema {
     }
 
     public static func twoColumnHeight() -> Int {
-        return 280 + SGScreenLayout.sharedInstance.deviceIndex * 120
+        return 280 + SGScreenLayout.sharedInstance.deviceIndex * 100
     }
 
 
