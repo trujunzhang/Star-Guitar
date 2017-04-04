@@ -85,6 +85,15 @@ struct ColumnResultItem {
     var letter: String = ""
     var haveSharp: Bool = false
     var number: String = ""
+    
+    init(){
+    }
+    
+    init(letter: String, haveSharp: Bool,number: String) {
+        self.letter = letter
+        self.haveSharp = haveSharp
+        self.number = number
+    }
 }
 
 
@@ -101,24 +110,47 @@ class TuningsStandardSettings: Object {
     }
     
     // 6X5
-    dynamic var results: String = String(format: "%@;%@;%@;%@;%@",
-                                         "-1,-1,-1,-1,-1,-1",
-                                         "-1,-1,-1,-1,-1,-1",
-                                         "-1,-1,-1,-1,-1,-1",
-                                         "-1,-1,-1,-1,-1,-1",
-                                         "-1,-1,-1,-1,-1,-1"
-    )
+    dynamic var results: String = TuningsStandardSettingsModel.getDefaultResults()
+    
 }
 
 class TuningsStandardSettingsModel {
-    var resultsRows: [[ColumnResultItem]] = [[ColumnResultItem]]()
+    public static func getDefaultResults() -> String {
+        return String(format: "%@;%@;%@;%@;%@",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1"
+        )
+    }
+    var resultsCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
     init() {
         // Empty here.
+        self.convert(TuningsStandardSettingsModel.getDefaultResults())
     }
     
     init( _ results: String) {
-        
+        self.convert(results)
+    }
+    
+    private func convert(_ results: String){
+        //let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
+        let columns = (results.components(separatedBy: ";"))
+        for column in columns{
+            var resultsRow = [ColumnResultItem]()
+            let rows = (column.components(separatedBy: ","))
+            for row in rows{
+                let item = ColumnResultItem()
+                if(row != "-1"){
+                    //let array = (column.components(separatedBy: "-"))
+                    //item =
+                }
+                resultsRow.append(item)
+            }
+            self.resultsCells.append(resultsRow)
+        }
     }
     
     public func getResults() -> String{
@@ -139,7 +171,7 @@ class TuningsStandardSettingsModel {
 
 
 class TuningsStandardSettingsUtils: AnyObject {
-
+    
     private var settings: TuningsStandardSettings?
     private var settingsModel: TuningsStandardSettingsModel?
     
