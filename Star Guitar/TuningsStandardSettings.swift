@@ -13,7 +13,7 @@ import RealmSwift
 
 /**
  *
- * the first thing that must be clicked is the
+ * The first thing that must be clicked is the
  tuning type(standard, drop d, ect) then the
  place where the note will go, and then the
  letter  and number of the note. everything
@@ -144,7 +144,7 @@ class TuningsStandardSettingsModel {
         return String(format: "%@;%@;%@;%@;%@",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
-                      "3-2,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1"
         )
