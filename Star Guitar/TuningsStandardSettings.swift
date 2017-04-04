@@ -11,7 +11,26 @@ import UIKit
 import RealmSwift
 
 
+/**
+ *
+ * the first thing that must be clicked is the
+ tuning type(standard, drop d, ect) then the
+ place where the note will go, and then the
+ letter  and number of the note. everything
+ grey and transparent until the tuning type
+ clicked on
+ *
+ */
 
+public struct OneColumnLetterItem {
+    var letter: String = ""
+    var haveSharp: Bool = false
+    
+    init(letter: String, haveSharp: Bool) {
+        self.letter = letter
+        self.haveSharp = haveSharp
+    }
+}
 
 enum OneColumnLetterType: Int {
     case C = 0
@@ -28,7 +47,20 @@ enum OneColumnLetterType: Int {
     case B = 11
     
     public static func getTitles() -> [String] {
-        return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+        return [
+            "C",
+            "C#",
+            "D",
+            "D#",
+            "E",
+            "F",
+            "F#",
+            "G",
+            "G#",
+            "A",
+            "A#",
+            "B"
+        ]
     }
     
     public static func getGuitarType(_ title: String) -> Int {
@@ -86,6 +118,7 @@ class TuningsStandardSettingsModel {
 
 struct ColumnResultItem {
     var letter: String = ""
+    var haveSharp: Bool = false
     var number: String = ""
 }
 

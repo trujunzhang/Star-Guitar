@@ -22,7 +22,7 @@ extension SGTuningsStandardViewController: OneColumnProviderProtocol{
     
     func toggleOneColumnLetter(_ sender: Row) {
         let row = sender as! OneColumnActionRow
-        tuningsStandardSettingsUtils.updateOneColumnLetter(row.getRowData())
+        //tuningsStandardSettingsUtils.updateOneColumnLetter(row.getRowData())
         
         self.updateSelectedNoteCell()
     }

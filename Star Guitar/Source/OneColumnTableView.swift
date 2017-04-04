@@ -114,12 +114,8 @@ public struct OneColumnActionRow: Row, Equatable {
         self.title = _title
     }
     
-    public func getRowData() -> String{
-        if self.haveSharp {
-            return String(format: "%@#", self.title)
-        }
-
-        return self.title
+    public func getRowData() -> OneColumnLetterItem {
+        return OneColumnLetterItem(letter: self.title,haveSharp: self.haveSharp)
     }
 
     public init(title: String, haveSharp: Bool, action: ((Row) -> Void)?) {
