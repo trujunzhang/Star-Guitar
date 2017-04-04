@@ -15,7 +15,6 @@ protocol OneColumnProviderProtocol : class {    // 'class' means only class type
 class SGOneColumnViewController: QuickTableViewController {
     weak var delegate : OneColumnProviderProtocol?
     
-    
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
         

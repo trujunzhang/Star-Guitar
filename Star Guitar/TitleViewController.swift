@@ -15,15 +15,22 @@ struct TitleViewSchema {
     }
 }
 
-class TitleViewController: UIViewController {
+protocol TitleViewBackButtonProviderProtocol : class {    // 'class' means only class types can implement it
+    func onBackButtonClick()
+}
 
+class TitleViewController: UIViewController {
+    weak var delegate : TitleViewBackButtonProviderProtocol?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
 
     @IBAction func backArrowTaped(_ sender: Any) {
-        GuitarSettingsUtils.sharedInstance.writeSettings()
-        self.dismiss(animated: true, completion: nil)
+        if let _delegate = self.delegate{
+            _delegate.onBackButtonClick()
+        }
+        self.dismiss(animated: true, completion: nil)        
     }
 
     override func viewDidLoad() {
@@ -47,6 +54,17 @@ class TitleViewController: UIViewController {
     func setTitleWithSubtitle(title: String, subtitle: String) {
         self.titleLabel.text = title
         self.subtitleLabel.text = subtitle
+    }
+    
+    func setTitle(title: String,delegate:TitleViewBackButtonProviderProtocol) {
+        self.titleLabel.text = title
+        self.delegate = delegate
+    }
+    
+    func setTitleWithSubtitle(title: String, subtitle: String,delegate:TitleViewBackButtonProviderProtocol) {
+        self.titleLabel.text = title
+        self.subtitleLabel.text = subtitle
+        self.delegate = delegate
     }
 
 

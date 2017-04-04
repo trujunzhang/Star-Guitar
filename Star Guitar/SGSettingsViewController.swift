@@ -21,7 +21,7 @@ class SGSettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.titleViewController.setTitle(title: "Settings")
+        self.titleViewController.setTitle(title: "Settings",delegate:self)
 
         self.layout()
     }
@@ -45,4 +45,10 @@ class SGSettingsViewController: UIViewController {
     }
 
 
+}
+
+extension SGSettingsViewController:TitleViewBackButtonProviderProtocol{
+    func onBackButtonClick(){
+         GuitarSettingsUtils.sharedInstance.writeSettings()
+    }
 }
