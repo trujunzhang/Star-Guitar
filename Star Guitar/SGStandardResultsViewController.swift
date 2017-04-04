@@ -55,7 +55,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         //sender.title = "12"
     }
     
-    public func updateCell(withTitle title:String){
+    public func updateCell(letter:String,number:String,at index:Int){
         
     }
 

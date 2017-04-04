@@ -89,34 +89,8 @@ class TuningsStandardSettingsUtils: AnyObject {
     private var settings: TuningsStandardSettings?
     private var settingsModel: TuningsStandardSettingsModel?
     
-    private func parseFretBoardRows() -> [String] {
-        //settingsModel.fretboardRows.components(separatedBy: ",").flatMap({ Int($0) }) // [Int]
-        return (settingsModel?.fretboardRows.components(separatedBy: ","))!
-    }
     
-    public func getFretboardTypeRowType(_ index: Int) -> TableRowType {
-        if (self.parseFretBoardRows()[index] == "1") {
-            return TableRowType.Selected
-        }
-        
-        return TableRowType.Empty
-    }
-    
-    public func getMuteArray() -> [String] {
-        return (settingsModel?.muteArray.components(separatedBy: ","))!
-    }
-    
-    public func setMuteArray(_ index: Int) {
-        var arrToSave = self.getMuteArray()
-        var newValue = "1"
-        if (arrToSave[index] == "1") {
-            newValue = "0"
-        }
-        arrToSave[index] = newValue
-        let newFretBoard = arrToSave.map {
-            String(describing: $0)
-            }.joined(separator: ",")
-        self.settingsModel?.muteArray = newFretBoard
+    public func updateOneColumnLetter(_ letter:String){
         
     }
     

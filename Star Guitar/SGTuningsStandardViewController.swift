@@ -23,6 +23,8 @@ class SGTuningsStandardViewController: UIViewController {
     var tuningsTypeViewController: SGTuningsTypeViewController!
     var standardResultsViewController: SGStandardResultsViewController!
     var tuningsEventViewController: SGTuningsEventViewController!
+    
+    var tuningsStandardSettingsUtils = TuningsStandardSettingsUtils()
 
     override func viewDidLoad() {
         super.viewDidLoad()
