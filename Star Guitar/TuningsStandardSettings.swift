@@ -94,6 +94,10 @@ class TuningsStandardSettingsUtils: AnyObject {
         
     }
     
+    public func updateTwoColumnNumber(_ number:String){
+        
+    }
+    
     public func readSettings() {
         if let existSetting = self.readGuitarSettings() {
             self.settings = existSetting

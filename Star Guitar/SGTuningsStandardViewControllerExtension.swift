@@ -29,7 +29,8 @@ extension SGTuningsStandardViewController: OneColumnProviderProtocol{
 extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
     
     func toggleTwoColumnNumber(_ sender: Row) {
-        
+        let row = sender as! OneColumnActionRow
+        tuningsStandardSettingsUtils.updateTwoColumnNumber(row.getRowData())
     }
     
 }
