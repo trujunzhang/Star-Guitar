@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 extension SGTuningsStandardViewController{
     
     func updateSelectedNoteCell() {
@@ -17,6 +19,15 @@ extension SGTuningsStandardViewController{
     }
     
 }
+
+extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
+    
+    func toggleCell(_ sender: Row) {
+
+    }
+    
+}
+
 
 extension SGTuningsStandardViewController: OneColumnProviderProtocol{
     

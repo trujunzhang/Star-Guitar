@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol StandardResultsProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleCell(_ sender: Row)
+}
+
 class SGStandardResultsViewController: QuickCollectionViewController {
+    weak var delegate : StandardResultsProviderProtocol?
     
     private var selectedRow: Row?
     
@@ -63,7 +68,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     }
 
     private func toggleNote(_ sender: Row) {
-        //sender.title = "12"
+        delegate?.toggleCell(sender)
     }
     
     public func updateCell(letter:String,number:String){
