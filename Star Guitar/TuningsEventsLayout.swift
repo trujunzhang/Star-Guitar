@@ -15,7 +15,7 @@ struct EventsSchema {
 
     // ==== Events
     public static func itemWidth() -> Int {
-        return 90 + SGScreenLayout.sharedInstance.deviceIndex * 40
+        return 112 + SGScreenLayout.sharedInstance.deviceIndex * 10
     }
 
     public static func itemHeight() -> Int {
