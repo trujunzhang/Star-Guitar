@@ -100,35 +100,28 @@ class TuningsStandardSettings: Object {
         return "id"
     }
     
-    dynamic var results: [String] = ["0,1,1"]
+    // 6X5
+    dynamic var results: String = String(format: "%@%@%@%@%@", "","","","","")
 }
 
 class TuningsStandardSettingsModel {
-    var guitarType = GuitarType.Electric.rawValue
-    var fretboardRows: String = "0,1,1"
-    var muteArray: String = "0,0,1,1,0,0"
-    var fingerSlider: Bool = true
+    var results: String = "0,1,1"
     
     init() {
         // Empty here.
     }
     
-    init( _ fretboardRows: String, _ muteArray: String, _ fingerSlider: Bool) {
-        self.fretboardRows = fretboardRows
-        self.muteArray = muteArray
-        self.fingerSlider = fingerSlider
+    init( _ results: String) {
+        self.results = results
     }
     
-    //public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
-    //    return TuningsStandardSettingsModel( settings.fretboardRows, settings.muteArray, settings.fingerSlider)
-    //}
+    public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
+        return TuningsStandardSettingsModel( settings.results)
+    }
     
-    public func generate() -> GuitarSettings {
-        let settings = GuitarSettings()
-        settings.guitarType = self.guitarType
-        settings.fretboardRows = self.fretboardRows
-        settings.muteArray = self.muteArray
-        settings.fingerSlider = self.fingerSlider
+    public func generate() -> TuningsStandardSettings {
+        let settings = TuningsStandardSettings()
+        settings.results = self.results
         return settings
     }
 }
@@ -184,18 +177,14 @@ class TuningsStandardSettingsUtils: AnyObject {
         if let lastSettings = self.settings {
             // Update an object with a transaction
             try! realm.write {
-                lastSettings.fretboardRows = (self.settingsModel?.fretboardRows)!
-                lastSettings.muteArray = (self.settingsModel?.muteArray)!
-                lastSettings.fingerSlider = (self.settingsModel?.fingerSlider)!
+                lastSettings.results = (self.settingsModel?.results)!
             }
         } else {
             // No exist, create it.
             try! realm.write {
                 realm.create(GuitarSettings.self, value:
                     [
-                        "fretboardRows": (self.settingsModel?.fretboardRows)!,
-                        "muteArray": (self.settingsModel?.muteArray)!,
-                        "fingerSlider": (self.settingsModel?.fingerSlider)!
+                        "results": (self.settingsModel?.results)!
                     ]
                 )
             }
