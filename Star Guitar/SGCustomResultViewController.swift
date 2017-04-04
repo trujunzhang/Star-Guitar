@@ -16,11 +16,7 @@ class SGCustomResultViewController: QuickCollectionViewController {
         // Debug
         //collectionView.backgroundColor = .red
         
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) // section與section之間的距離
         layout.itemSize = CGSize(width: CustomResultsColumnSchema.resultsItemWidth(), height: CustomResultsColumnSchema.resultsItemHeight()) // cell的寬、高
-        layout.minimumLineSpacing = CGFloat(integerLiteral: CustomResultsColumnSchema.resultsLineSpacing()) // collectionView設定為縱向的話即「行」的間距、橫向則為「列」的間距
-        layout.minimumInteritemSpacing = CGFloat(integerLiteral: CustomResultsColumnSchema.resultsInteritemSpacing()) // collectionView設定為縱向的話即「列」的間距、橫向則為「行」的間距
-        
         
         collectionView.register(TuningsCustomResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsCustomResultsActionCell.self))
     }

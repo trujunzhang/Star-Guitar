@@ -31,8 +31,6 @@ struct StandResultsColumnSchema {
         return 80 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(StandResultsColumnSchema.resultsItemEdgeInsets().top) + Int(StandResultsColumnSchema.resultsItemEdgeInsets().bottom))
     }
 
-
-
     public static func resultsLineSpacing() -> Int {
         return 0
     }
