@@ -46,25 +46,21 @@ enum OneColumnLetterType: Int {
     case ASharp = 10
     case B = 11
     
-    public static func getTitles() -> [String] {
+    public static func getOneColumnLetterItems() -> [OneColumnLetterItem] {
         return [
-            "C",
-            "C#",
-            "D",
-            "D#",
-            "E",
-            "F",
-            "F#",
-            "G",
-            "G#",
-            "A",
-            "A#",
-            "B"
+            OneColumnLetterItem(letter: "C",haveSharp: false),
+            OneColumnLetterItem(letter: "C",haveSharp: true),
+            OneColumnLetterItem(letter: "D",haveSharp: false),
+            OneColumnLetterItem(letter: "D",haveSharp: true),
+            OneColumnLetterItem(letter: "E",haveSharp: false),
+            OneColumnLetterItem(letter: "F",haveSharp: false),
+            OneColumnLetterItem(letter: "F",haveSharp: true),
+            OneColumnLetterItem(letter: "G",haveSharp: false),
+            OneColumnLetterItem(letter: "G",haveSharp: true),
+            OneColumnLetterItem(letter: "A",haveSharp: false),
+            OneColumnLetterItem(letter: "A",haveSharp: true),
+            OneColumnLetterItem(letter: "B",haveSharp: false),
         ]
-    }
-    
-    public static func getGuitarType(_ title: String) -> Int {
-        return OneColumnLetterType.getTitles().index(of: title)!
     }
     
 }

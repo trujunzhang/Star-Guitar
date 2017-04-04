@@ -80,15 +80,18 @@ public struct OneColumnActionRow: Row, Equatable {
 
     public func render(viewCell: UIView) {
         let cell = (viewCell as? OneColumnActionCell)
-        if (self.haveSharp) {
-            cell?.sharpLabel.text = "#"
+        if let item = self.oneColumnLetterItem{
+            if item.haveSharp{
+                cell?.sharpLabel.text = "#"
+            }
         }
     }
 
     /// The title text of the row.
     public var title: String = ""
 
-    public var haveSharp: Bool = false
+
+    public var oneColumnLetterItem: OneColumnLetterItem? = nil
 
     /// Subtitle is disabled in TapActionRow.
     public let subtitle: Subtitle? = nil
@@ -100,22 +103,12 @@ public struct OneColumnActionRow: Row, Equatable {
     public var action: ((Row) -> Void)?
 
     ///
-    public init(title: String, action: ((Row) -> Void)?) {
+    public init(item: OneColumnLetterItem, action: ((Row) -> Void)?) {
 
+        self.oneColumnLetterItem = item
         self.action = action
         
-        var _title = title
-        if title.contains("#"){
-            let index = title.index(title.startIndex, offsetBy: 1)
-            _title = title.substring(to: index)
-            self.haveSharp = true
-        }
-        
-        self.title = _title
-    }
-    
-    public func getRowData() -> OneColumnLetterItem {
-        return OneColumnLetterItem(letter: self.title,haveSharp: self.haveSharp)
+        self.title = item.letter
     }
 
     public init(title: String, haveSharp: Bool, action: ((Row) -> Void)?) {

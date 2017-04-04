@@ -33,7 +33,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
 
     func generateRows() -> Section {
         var rows: [Row] = [Row]()
-        for (_, _) in OneColumnLetterType.getTitles().enumerated(){
+        for (_, _) in OneColumnLetterType.getOneColumnLetterItems().enumerated(){
             let row = StandardResultsActionRow(letter: "D",number:"2", action: toggleNote)
             rows.append(row)
         }

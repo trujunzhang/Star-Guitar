@@ -28,8 +28,8 @@ class SGOneColumnViewController: QuickTableViewController {
         // Do any additional setup after loading the view.
 
         var rows: [Row] = [Row]()
-        for (_, title) in OneColumnLetterType.getTitles().enumerated(){
-            let row = OneColumnActionRow(title: title, action: toggleNote)
+        for (_, item) in OneColumnLetterType.getOneColumnLetterItems().enumerated(){
+            let row = OneColumnActionRow(item: item, action: toggleNote)
             rows.append(row)
         }
 

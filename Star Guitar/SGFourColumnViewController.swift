@@ -13,7 +13,7 @@ class SGFourColumnViewController: QuickTableViewController {
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
 
-        tableView.register(OneColumnActionCell.self, forCellReuseIdentifier: String(describing: OneColumnActionCell.self))
+        tableView.register(TwoColumnActionCell.self, forCellReuseIdentifier: String(describing: TwoColumnActionCell.self))
     }
 
     override func viewDidLoad() {
@@ -24,11 +24,11 @@ class SGFourColumnViewController: QuickTableViewController {
 
         tableContents = [
                 Section(title: nil, rows: [
-                        OneColumnActionRow(title: "2", action: toggleNote),
-                        OneColumnActionRow(title: "3", action: toggleNote),
-                        OneColumnActionRow(title: "4", action: toggleNote),
-                        OneColumnActionRow(title: "5", action: toggleNote),
-                        OneColumnActionRow(title: "6", action: toggleNote),
+                        TwoColumnActionRow(title: "2", action: toggleNote),
+                        TwoColumnActionRow(title: "3", action: toggleNote),
+                        TwoColumnActionRow(title: "4", action: toggleNote),
+                        TwoColumnActionRow(title: "5", action: toggleNote),
+                        TwoColumnActionRow(title: "6", action: toggleNote),
                 ])
 
         ]
