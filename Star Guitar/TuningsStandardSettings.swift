@@ -94,6 +94,12 @@ struct ColumnResultItem {
         self.haveSharp = haveSharp
         self.number = number
     }
+    
+    init(oneColumnLetterItem: OneColumnLetterItem,number: String) {
+        self.letter = oneColumnLetterItem.letter
+        self.haveSharp = oneColumnLetterItem.haveSharp
+        self.number = number
+    }
 }
 
 
@@ -119,7 +125,7 @@ class TuningsStandardSettingsModel {
         return String(format: "%@;%@;%@;%@;%@",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
+                      "4-2,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1"
         )
@@ -136,16 +142,22 @@ class TuningsStandardSettingsModel {
     }
     
     private func convert(_ results: String){
-        //let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
+        let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
+        let twoColumns = TwoColumnLetterType.getTitles()
         let rows = (results.components(separatedBy: ";"))
         for row in rows{
             var resultColumn = [ColumnResultItem]()
             let columns = (row.components(separatedBy: ","))
             for column in columns{
-                let item = ColumnResultItem()
-                if(row != "-1"){
-                    //let array = (column.components(separatedBy: "-"))
-                    //item =
+                var item = ColumnResultItem()
+                if(column != "-1"){
+                    let array = (column.components(separatedBy: "-")).flatMap({ Int($0) })
+                    if(array.count == 2){
+                        let letterIndex = array[0]
+                        let numberIndex = array[1]
+                        let oneColumnLetterItem = oneColumns[letterIndex]
+                        item = ColumnResultItem(oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex])
+                    }
                 }
                 resultColumn.append(item)
             }
