@@ -213,11 +213,14 @@ class TuningsStandardSettingsUtils: AnyObject {
         let oneColumnLetterItem = oneColumns[letterIndex]
         
         currentColumnResultItem.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
-        
     }
     
     public func updateTwoColumnNumber(_ number:String){
         currentColumnResultItem.updateNumber(number: number)
+    }
+    
+    public func toggleCurrentColumnResultItem(_ item: ColumnResultItem) {
+        return self.currentColumnResultItem = item
     }
     
     public func getCurrentColumnResultItem() -> ColumnResultItem{

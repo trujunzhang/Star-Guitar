@@ -33,6 +33,9 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
         if numberIndex != -1{
             twoColumnViewController.updateCell(rowIndex: numberIndex)
         }
+        
+        
+        tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(columnResultItem)
     }
     
 }
