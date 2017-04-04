@@ -70,5 +70,15 @@ extension UIFont {
     static func TuningsEventsFont() -> UIFont {
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(36))
     }
+    
+    static func letterFont() -> UIFont {
+        let fontSize = 28 + SGScreenLayout.sharedInstance.deviceIndex * 6
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(fontSize))
+    }
+    
+    static func letterSharpFont() -> UIFont {
+        let fontSize = 20 + SGScreenLayout.sharedInstance.deviceIndex * 4
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(fontSize))
+    }
 
 }

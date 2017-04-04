@@ -26,13 +26,15 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         layout.minimumInteritemSpacing = CGFloat(integerLiteral: StandResultsColumnSchema.resultsInteritemSpacing()) // collectionView設定為縱向的話即「列」的間距、橫向則為「行」的間距
 
 
-        collectionView.register(TuningsStandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsStandardResultsActionCell.self))
+        collectionView.register(StandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsActionCell.self))
+        
+        collectionView.register(StandardResultsSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsSharpActionCell.self))
     }
 
     func generateRows() -> Section {
         var rows: [Row] = [Row]()
         for (_, _) in OneColumnLetterType.getTitles().enumerated(){
-            let row = TuningsStandardResultsActionRow(letter: "D#",number:"2", action: toggleNote)
+            let row = StandardResultsActionRow(letter: "D",number:"2", action: toggleNote)
             rows.append(row)
         }
         return Section(title: nil, rows: rows)
@@ -63,7 +65,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 let indexPath = selectedItems[0]
                 let section = indexPath.section
                 let rowIndex = indexPath.row
-                tableContents[section].rows[rowIndex] = TuningsStandardResultsActionRow(letter: letter,number:number, action: toggleNote)
+                tableContents[section].rows[rowIndex] = StandardResultsActionRow(letter: letter,number:number, action: toggleNote)
                 self.collectionView?.reloadItems(at: selectedItems)
                 self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }

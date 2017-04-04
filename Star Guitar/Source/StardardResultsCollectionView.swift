@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class TuningsStandardResultsActionCell: UICollectionViewCell {
+open class StandardResultsActionCell: UICollectionViewCell {
     
     override open var isHighlighted: Bool {
         willSet { // make lightgray background show immediately(使灰背景立即出现)
@@ -25,7 +25,6 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
     
 
     public let letterLabel = UILabel()
-    public let sharpLabel = UILabel()
     public let numberLabel = UILabel()
     
     let backRowView = UIView()
@@ -55,29 +54,21 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
         //backgroundColor = UIColor(named: .tableRowBG)
 
         contentView.addSubview(letterLabel)
-        contentView.addSubview(sharpLabel)
         contentView.addSubview(numberLabel)
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
         
-        letterLabel.font = UIFont.oneColumnFont()
+        letterLabel.font = UIFont.letterFont()
         letterLabel.textColor = .black
         letterLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(-24)
+            make.centerX.equalToSuperview().offset(-10)
             make.centerY.equalToSuperview()
         }
         
-        sharpLabel.font = UIFont.oneColumnSharpFont()
-        sharpLabel.textColor = .black
-        sharpLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-12)
-        }
-        
-        numberLabel.font = UIFont.oneColumnFont()
+        numberLabel.font = UIFont.letterFont()
         numberLabel.textColor = .black
         numberLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(20)
+            make.centerX.equalToSuperview().offset(10)
             make.centerY.equalToSuperview()
         }
         
@@ -94,7 +85,7 @@ open class TuningsStandardResultsActionCell: UICollectionViewCell {
 }
 
 
-public struct TuningsStandardResultsActionRow: Row, Equatable {
+public struct StandardResultsActionRow: Row, Equatable {
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
@@ -104,21 +95,15 @@ public struct TuningsStandardResultsActionRow: Row, Equatable {
     }
 
     public func render(viewCell: UIView) {
-        let cell = (viewCell as? TuningsStandardResultsActionCell)
+        let cell = (viewCell as? StandardResultsActionCell)
 
         cell?.letterLabel.text = self.letter
-        cell?.sharpLabel.text = ""
-        if (self.haveSharp) {
-            cell?.sharpLabel.text = "#"
-        }
         cell?.numberLabel.text = self.number
     }
 
     public var letter: String = ""
     
     public var number: String = ""
-    
-    public var haveSharp: Bool = false
 
     /// The title text of the row.
     public var title: String = ""
@@ -127,21 +112,14 @@ public struct TuningsStandardResultsActionRow: Row, Equatable {
     public let subtitle: Subtitle? = nil
 
     /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: TuningsStandardResultsActionCell.self)
+    public let cellReuseIdentifier: String = String(describing: StandardResultsActionCell.self)
 
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?
 
     ///
     public init(letter: String,number: String, action: ((Row) -> Void)?) {
-        var _letter = letter
-        if letter.contains("#"){
-            let index = letter.index(letter.startIndex, offsetBy: 1)
-            _letter = letter.substring(to: index)
-            self.haveSharp = true
-        }
-
-        self.letter = _letter
+        self.letter = letter
         self.number = number
         self.action = action
     }

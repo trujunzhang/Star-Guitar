@@ -34,7 +34,7 @@ class SGOneColumnViewController: QuickTableViewController {
         }
 
         tableContents = [
-                Section(title: nil, rows: rows)
+            Section(title: nil, rows: rows)
         ]
 
     }
