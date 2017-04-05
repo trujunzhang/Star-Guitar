@@ -33,7 +33,7 @@ class SGTouchChordViewController: UIViewController {
         ThreeColumnLayout(self.view).layoutContainer(twoChordColumnContainer, forThirdColumnView: threeColumnContainer, 50,ThreeColumnSchema.threeChordColumnWidth())
         FourColumnLayout(self.view).layoutContainer(threeColumnContainer, forColumnView: fourColumnContainer)
         
-        CustomResultsLayout(self.view).layoutResultsContainer(fourColumnContainer, forResultView: tuningsResultContainer,0,CustomResultsColumnSchema.touchChordLeading())
+        FretboardLayout(self.view).layoutFretboard(fourColumnContainer, forResultView: tuningsResultContainer,0,CustomResultsColumnSchema.touchChordLeading())
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
         

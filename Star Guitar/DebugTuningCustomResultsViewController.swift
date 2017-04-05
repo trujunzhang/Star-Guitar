@@ -24,7 +24,7 @@ class DebugTuningCustomResultsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
 
-        //CustomResultsLayout(self.view).layoutResultsContainer(self.view, forResultView: tuningsResultContainer, 0 )
+        FretboardLayout(self.view).layoutFretboard(self.view, forResultView: tuningsResultContainer, 0,0 )
 
         let type = ResultsBoarderType.left
         ResultsBoarderHelper().addAsBoarder(self.view,tuningsResultContainer,type)

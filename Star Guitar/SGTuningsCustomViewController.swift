@@ -30,7 +30,7 @@ class SGTuningsCustomViewController: UIViewController {
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)
         ThreeColumnLayout(self.view).layoutContainer(twoColumnContainer, forThirdColumnView: threeColumnContainer,0,ThreeColumnSchema.threeColumnWidth())
         
-        CustomResultsLayout(self.view).layoutResultsContainer(threeColumnContainer, forResultView: tuningsResultContainer,0,TuningTypeSchema.itemWidth() + CustomResultsColumnSchema.resultsMarginLeft() + ResultsBoarderSchema.outBoardSize() + ResultsBoarderSchema.marginLeft())
+        FretboardLayout(self.view).layoutFretboard(threeColumnContainer, forResultView: tuningsResultContainer,0,TuningTypeSchema.itemWidth() + CustomResultsColumnSchema.resultsMarginLeft() + ResultsBoarderSchema.outBoardSize() + ResultsBoarderSchema.marginLeft())
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
 

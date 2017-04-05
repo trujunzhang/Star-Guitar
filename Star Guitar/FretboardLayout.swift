@@ -1,5 +1,5 @@
 //
-//  CustomResultsLayout.swift
+//  FretboardLayout.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/31/17.
@@ -68,9 +68,9 @@ struct CustomResultsColumnSchema {
 }
 
 
-class CustomResultsLayout: BaseTuningsLayout {
+class FretboardLayout: BaseTuningsLayout {
     
-    func layoutResultsContainer(_ leftColumn: UIView, forResultView resultView: UIView,_ offLeading:Int,_ leading: Int) {
+    func layoutFretboard(_ leftColumn: UIView, forResultView resultView: UIView,_ offLeading:Int,_ leading: Int) {
         resultView.backgroundColor = UIColor(named: .transparent)
         
         resultView.snp.makeConstraints { (make) -> Void in
