@@ -70,19 +70,19 @@ struct FretboardColumnSchema {
 
 class FretboardLayout: BaseTuningsLayout {
     
-    func layoutFretboard(_ leftColumn: UIView, forResultView resultView: UIView,_ offLeading:Int,_ leading: Int) {
-        resultView.backgroundColor = UIColor(named: .transparent)
+    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int) {
+        fretboardView.backgroundColor = UIColor(named: .transparent)
         
-        resultView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(ResultsBoarderSchema.outBoardSize() + 4)
+        fretboardView.snp.makeConstraints { (make) -> Void in
+            make.top.equalToSuperview().offset(FretboardBorderSchema.outBoardSize() + 4)
             make.leading.equalTo(leftColumn).offset(leading)
             make.width.equalTo(FretboardColumnSchema.resultsColumnWidth())
             make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())
         }
         
         // Add boarder effect to the tuning results view.
-        let type = ResultsBoarderType.top
-        ResultsBoarderHelper().addAsBoarder(pageView!,resultView,type)
+        let type = FretboardBorderType.top
+        FretboardViewHelper().addAsBoarder(pageView!,fretboardView,type)
         
     }
     

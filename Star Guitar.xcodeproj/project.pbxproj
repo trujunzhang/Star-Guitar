@@ -13,7 +13,7 @@
 		5E180B4B1E93344E00237530 /* TwoColumnTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */; };
 		5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */; };
 		5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2545DF1E8602E400AA504F /* ColorsExtension.swift */; };
-		5E2D89921E8E755B00D6AEF0 /* CustomResultsBoarderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */; };
+		5E2D89921E8E755B00D6AEF0 /* FretboardBoarderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D89911E8E755B00D6AEF0 /* FretboardBoarderView.swift */; };
 		5E3211BA1E82BAE400988E5D /* 41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E3211B41E82BAE400988E5D /* 41.wav */; };
 		5E3211BB1E82BAE500988E5D /* 42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E3211B51E82BAE400988E5D /* 42.wav */; };
 		5E3211BC1E82BAE500988E5D /* 43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E3211B61E82BAE400988E5D /* 43.wav */; };
@@ -22,7 +22,7 @@
 		5E3211BF1E82BAE500988E5D /* 46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E3211B91E82BAE400988E5D /* 46.wav */; };
 		5E36C7881E83F56300B7C97F /* DevicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36C7871E83F56300B7C97F /* DevicesManager.swift */; };
 		5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E40D8EF1E85F83200588AB6 /* SGScreenLayout.swift */; };
-		5E42AA011E8E6C1E00392EBD /* ResultsBoarderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42AA001E8E6C1E00392EBD /* ResultsBoarderLayout.swift */; };
+		5E42AA011E8E6C1E00392EBD /* FretboardBorderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42AA001E8E6C1E00392EBD /* FretboardBorderLayout.swift */; };
 		5E4B6C001E7C9957006B811D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B6BFF1E7C9957006B811D /* AppDelegate.swift */; };
 		5E4B6C051E7C9957006B811D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B6C031E7C9957006B811D /* Main.storyboard */; };
 		5E4B6C071E7C9957006B811D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B6C061E7C9957006B811D /* Assets.xcassets */; };
@@ -135,7 +135,7 @@
 		5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoColumnTableView.swift; sourceTree = "<group>"; };
 		5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGOneColumnViewController.swift; sourceTree = "<group>"; };
 		5E2545DF1E8602E400AA504F /* ColorsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsExtension.swift; sourceTree = "<group>"; };
-		5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResultsBoarderView.swift; sourceTree = "<group>"; };
+		5E2D89911E8E755B00D6AEF0 /* FretboardBoarderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretboardBoarderView.swift; sourceTree = "<group>"; };
 		5E3211B41E82BAE400988E5D /* 41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 41.wav; sourceTree = "<group>"; };
 		5E3211B51E82BAE400988E5D /* 42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 42.wav; sourceTree = "<group>"; };
 		5E3211B61E82BAE400988E5D /* 43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 43.wav; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		5E3211B91E82BAE400988E5D /* 46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 46.wav; sourceTree = "<group>"; };
 		5E36C7871E83F56300B7C97F /* DevicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesManager.swift; sourceTree = "<group>"; };
 		5E40D8EF1E85F83200588AB6 /* SGScreenLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGScreenLayout.swift; sourceTree = "<group>"; };
-		5E42AA001E8E6C1E00392EBD /* ResultsBoarderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsBoarderLayout.swift; sourceTree = "<group>"; };
+		5E42AA001E8E6C1E00392EBD /* FretboardBorderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretboardBorderLayout.swift; sourceTree = "<group>"; };
 		5E4B6BFC1E7C9957006B811D /* Star Guitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Guitar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B6BFF1E7C9957006B811D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E4B6C041E7C9957006B811D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 		5E2D89901E8E73DE00D6AEF0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5E2D89911E8E755B00D6AEF0 /* CustomResultsBoarderView.swift */,
+				5E2D89911E8E755B00D6AEF0 /* FretboardBoarderView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -430,7 +430,7 @@
 				5E7F0BF01E8DE8BD00E5569F /* TuningsEventsLayout.swift */,
 				5E7FC0DF1E8DF90400033679 /* ThreeColumnSchema.swift */,
 				5E7FC0E11E8DF99600033679 /* FretboardLayout.swift */,
-				5E42AA001E8E6C1E00392EBD /* ResultsBoarderLayout.swift */,
+				5E42AA001E8E6C1E00392EBD /* FretboardBorderLayout.swift */,
 				5E5F74C91E8EA2F60056E607 /* TwoChordColumnLayout.swift */,
 				5E5F74CB1E8EA3600056E607 /* FourColumnLayout.swift */,
 			);
@@ -870,7 +870,7 @@
 				5EC545A91E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift in Sources */,
 				5E5F74CC1E8EA3600056E607 /* FourColumnLayout.swift in Sources */,
 				5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */,
-				5E2D89921E8E755B00D6AEF0 /* CustomResultsBoarderView.swift in Sources */,
+				5E2D89921E8E755B00D6AEF0 /* FretboardBoarderView.swift in Sources */,
 				5EA049861E7E83B1003E402F /* MainViewController.swift in Sources */,
 				5EB2469D1E8983AC009B9A07 /* QuickCollectionViewController.swift in Sources */,
 				5E7F0BED1E8DE72B00E5569F /* StandardResultsLayout.swift in Sources */,
@@ -904,7 +904,7 @@
 				5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */,
 				5EA049891E7E83FA003E402F /* SGTuningsCustomViewController.swift in Sources */,
 				5EF0AE161E8DE1590026F0B4 /* SGCustomResultViewController.swift in Sources */,
-				5E42AA011E8E6C1E00392EBD /* ResultsBoarderLayout.swift in Sources */,
+				5E42AA011E8E6C1E00392EBD /* FretboardBorderLayout.swift in Sources */,
 				5E9C6E271E855EA9006F93B4 /* FontsExtension.swift in Sources */,
 				5EA748001E7E089C00E5BB86 /* QuickTableModel.swift in Sources */,
 				5E8D11D41E89F93100898679 /* TapActionTableView.swift in Sources */,

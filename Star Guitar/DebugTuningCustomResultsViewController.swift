@@ -17,17 +17,17 @@ class DebugTuningCustomResultsViewController: UIViewController {
     
     @IBOutlet weak var tuningsResultContainer: UIView!
     
-    let customResultsBoarderView =  CustomResultsBoarderView()
+    let fretboardBoarderView =  FretboardBoarderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
 
-        FretboardLayout(self.view).layoutFretboard(self.view, forResultView: tuningsResultContainer, 0,0 )
+        FretboardLayout(self.view).layoutFretboard(self.view, forFretboardView: tuningsResultContainer, 0,0 )
 
-        let type = ResultsBoarderType.left
-        ResultsBoarderHelper().addAsBoarder(self.view,tuningsResultContainer,type)
+        let type = FretboardBorderType.left
+        FretboardViewHelper().addAsBoarder(self.view,tuningsResultContainer,type)
     }
     
     override func didReceiveMemoryWarning() {

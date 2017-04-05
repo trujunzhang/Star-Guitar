@@ -1,5 +1,5 @@
 //
-//  ResultsBoarderLayout.swift
+//  FretboardBorderLayout.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/31/17.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public enum ResultsBoarderType: Int {
+public enum FretboardBorderType: Int {
     case left = 0
     case right = 1
     case top = 2
@@ -18,7 +18,7 @@ public enum ResultsBoarderType: Int {
 
 
 
-struct ResultsBoarderSchema {
+struct FretboardBorderSchema {
     
     // ==== ResultsBoarder
     public static func outBoardSize() -> Int {
@@ -31,45 +31,46 @@ struct ResultsBoarderSchema {
     
 }
 
-class ResultsBoarderHelper{
-        let customResultsBoarderView =  CustomResultsBoarderView()
+class FretboardViewHelper{
     
-    func addAsBoarder(_ pageContainer:UIView,_ tuningsResultContainer:UIView, _ boarderType:ResultsBoarderType)  {
+    let fretboardBoarderView =  FretboardBoarderView()
+    
+    func addAsBoarder(_ pageContainer:UIView,_ tuningsResultContainer:UIView, _ boarderType:FretboardBorderType)  {
         
-        pageContainer.addSubview(customResultsBoarderView)
+        pageContainer.addSubview(fretboardBoarderView)
         
         
-        customResultsBoarderView.snp.makeConstraints { (make) -> Void in
-            make.leading.equalTo(tuningsResultContainer).offset(-ResultsBoarderSchema.outBoardSize())
-            make.trailing.equalTo(tuningsResultContainer).offset(ResultsBoarderSchema.outBoardSize())
-            make.top.equalTo(tuningsResultContainer).offset(-ResultsBoarderSchema.outBoardSize())
-            make.bottom.equalTo(tuningsResultContainer).offset(ResultsBoarderSchema.outBoardSize())
+        fretboardBoarderView.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(tuningsResultContainer).offset(-FretboardBorderSchema.outBoardSize())
+            make.trailing.equalTo(tuningsResultContainer).offset(FretboardBorderSchema.outBoardSize())
+            make.top.equalTo(tuningsResultContainer).offset(-FretboardBorderSchema.outBoardSize())
+            make.bottom.equalTo(tuningsResultContainer).offset(FretboardBorderSchema.outBoardSize())
         }
         
-        pageContainer.sendSubview(toBack: customResultsBoarderView)
+        pageContainer.sendSubview(toBack: fretboardBoarderView)
         
-        //let type = ResultsBoarderType.left
+        //let type = FretboardBorderType.left
         
-        //customResultsBoarderView.backgroundColor = .blue
+        //fretboardBoarderView.backgroundColor = .blue
         
         // 6X14
         // 6 * 70(w), 14 * 40(h)
-        customResultsBoarderView.drawBoarder(boarderType,FretboardColumnSchema.resultsItemWidth(),FretboardColumnSchema.resultsItemHeight())
+        fretboardBoarderView.drawBoarder(boarderType,FretboardColumnSchema.resultsItemWidth(),FretboardColumnSchema.resultsItemHeight())
     }
     
 }
 
 
 
-class ResultsBoarderLayout: BaseTuningsLayout {
+class FretboardBorderLayout: BaseTuningsLayout {
     
-    var horizonBoarderType:ResultsBoarderType =  ResultsBoarderType.left
-    var verticalBoarderType:ResultsBoarderType =  ResultsBoarderType.left
+    var horizonBoarderType:FretboardBorderType =  FretboardBorderType.left
+    var verticalBoarderType:FretboardBorderType =  FretboardBorderType.left
     
     let horizonCirclesContainer = UIView()
     let verticalCirclesContainer = UIView()
     
-    init(_ pageView: UIView,withType boarderType:ResultsBoarderType) {
+    init(_ pageView: UIView,withType boarderType:FretboardBorderType) {
         super.init(pageView)
         
         horizonCirclesContainer.backgroundColor = .clear
@@ -81,7 +82,7 @@ class ResultsBoarderLayout: BaseTuningsLayout {
         self.convertBoarderType(boarderType)
     }
     
-    func layoutBoarderView(_ horizonRectView: UIView,_ verticalRectView: UIView) -> ResultsBoarderLayout {               
+    func layoutBoarderView(_ horizonRectView: UIView,_ verticalRectView: UIView) -> FretboardBorderLayout {
         self.layoutReactView(horizonRectView,horizonCirclesContainer,self.horizonBoarderType)
         self.layoutReactView(verticalRectView,verticalCirclesContainer, self.verticalBoarderType)
         
@@ -89,7 +90,7 @@ class ResultsBoarderLayout: BaseTuningsLayout {
     }
     
     //  6X14
-    func layoutHorizonCircles(_ itemWidth:Int) -> ResultsBoarderLayout {
+    func layoutHorizonCircles(_ itemWidth:Int) -> FretboardBorderLayout {
         let circleWH = 10
         
         for i in 0...5{
@@ -114,7 +115,7 @@ class ResultsBoarderLayout: BaseTuningsLayout {
     
     
     //  6X14
-    func layoutVirticalCircles(_ itemHeight:Int) -> ResultsBoarderLayout {
+    func layoutVirticalCircles(_ itemHeight:Int) -> FretboardBorderLayout {
         let circleWH = 10
         
         for i in 0...13{
@@ -137,42 +138,42 @@ class ResultsBoarderLayout: BaseTuningsLayout {
         return self
     }
     
-    private func convertBoarderType(_ boarderType:ResultsBoarderType){
+    private func convertBoarderType(_ boarderType:FretboardBorderType){
         switch boarderType {
         case .left:
             //   *
             //   *
             //   *
             //   #######
-            self.horizonBoarderType = ResultsBoarderType.bottom
-            self.verticalBoarderType = ResultsBoarderType.left
+            self.horizonBoarderType = FretboardBorderType.bottom
+            self.verticalBoarderType = FretboardBorderType.left
         case .right:
             //   #######
             //         *
             //         *
             //         *
-            self.horizonBoarderType = ResultsBoarderType.top
-            self.verticalBoarderType = ResultsBoarderType.right
+            self.horizonBoarderType = FretboardBorderType.top
+            self.verticalBoarderType = FretboardBorderType.right
         case .top:
             //   *******
             //   #
             //   #
             //   #
-            self.horizonBoarderType = ResultsBoarderType.top
-            self.verticalBoarderType = ResultsBoarderType.left
+            self.horizonBoarderType = FretboardBorderType.top
+            self.verticalBoarderType = FretboardBorderType.left
         case .bottom:
             //         #
             //         #
             //         #
             //   *******
-            self.horizonBoarderType = ResultsBoarderType.bottom
-            self.verticalBoarderType = ResultsBoarderType.right
+            self.horizonBoarderType = FretboardBorderType.bottom
+            self.verticalBoarderType = FretboardBorderType.right
         }
     }
     
-    func layoutReactView(_ rectView: UIView,_ circlesContainer: UIView, _ boarderType:ResultsBoarderType) {
+    func layoutReactView(_ rectView: UIView,_ circlesContainer: UIView, _ boarderType:FretboardBorderType) {
         let reactWH = 4
-        let offValue = ResultsBoarderSchema.outBoardSize()
+        let offValue = FretboardBorderSchema.outBoardSize()
         switch boarderType {
         case .left:
             rectView.snp.makeConstraints { (make) -> Void in
