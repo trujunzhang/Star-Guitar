@@ -15,7 +15,7 @@ import UIKit
 /**
  * 6X14
  */
-struct CustomResultsColumnSchema {
+struct FretboardColumnSchema {
    
     // ==== Results
     public static func resultsMarginLeft() -> Int {
@@ -27,11 +27,11 @@ struct CustomResultsColumnSchema {
     }
     
     public static func resultsItemWidth() -> Int {
-        return 56 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(CustomResultsColumnSchema.resultsItemEdgeInsets().left) + Int(CustomResultsColumnSchema.resultsItemEdgeInsets().right))
+        return 56 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.resultsItemEdgeInsets().left) + Int(FretboardColumnSchema.resultsItemEdgeInsets().right))
     }
     
     public static func resultsItemHeight() -> Int {
-        return 32 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(CustomResultsColumnSchema.resultsItemEdgeInsets().top) + Int(CustomResultsColumnSchema.resultsItemEdgeInsets().bottom))
+        return 32 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.resultsItemEdgeInsets().top) + Int(FretboardColumnSchema.resultsItemEdgeInsets().bottom))
     }
     
     public static func resultsLineSpacing() -> Int {
@@ -51,12 +51,12 @@ struct CustomResultsColumnSchema {
     }
     
     public static func resultsColumnWidth() -> CGFloat {
-        let itemsWidth = (CustomResultsColumnSchema.resultsItemWidth() + CustomResultsColumnSchema.resultsLineSpacing()) * 6
+        let itemsWidth = (FretboardColumnSchema.resultsItemWidth() + FretboardColumnSchema.resultsLineSpacing()) * 6
         return CGFloat(integerLiteral: itemsWidth)
     }
     
     public static func resultsColumnHeight() -> CGFloat {
-        let itemsHeight = (CustomResultsColumnSchema.resultsItemHeight() + CustomResultsColumnSchema.resultsInteritemSpacing()) * 14
+        let itemsHeight = (FretboardColumnSchema.resultsItemHeight() + FretboardColumnSchema.resultsInteritemSpacing()) * 14
         return CGFloat(integerLiteral: itemsHeight )
     }
 
@@ -76,8 +76,8 @@ class FretboardLayout: BaseTuningsLayout {
         resultView.snp.makeConstraints { (make) -> Void in
             make.top.equalToSuperview().offset(ResultsBoarderSchema.outBoardSize() + 4)
             make.leading.equalTo(leftColumn).offset(leading)
-            make.width.equalTo(CustomResultsColumnSchema.resultsColumnWidth())
-            make.height.equalTo(CustomResultsColumnSchema.resultsColumnHeight())
+            make.width.equalTo(FretboardColumnSchema.resultsColumnWidth())
+            make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())
         }
         
         // Add boarder effect to the tuning results view.

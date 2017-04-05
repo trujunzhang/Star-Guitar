@@ -16,7 +16,7 @@ class SGCustomResultViewController: QuickCollectionViewController {
         // Debug
         //collectionView.backgroundColor = .red
         
-        layout.itemSize = CGSize(width: CustomResultsColumnSchema.resultsItemWidth(), height: CustomResultsColumnSchema.resultsItemHeight()) // cell的寬、高
+        layout.itemSize = CGSize(width: FretboardColumnSchema.resultsItemWidth(), height: FretboardColumnSchema.resultsItemHeight()) // cell的寬、高
         
         collectionView.register(TuningsCustomResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsCustomResultsActionCell.self))
     }

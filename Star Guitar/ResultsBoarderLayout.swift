@@ -54,7 +54,7 @@ class ResultsBoarderHelper{
         
         // 6X14
         // 6 * 70(w), 14 * 40(h)
-        customResultsBoarderView.drawBoarder(boarderType,CustomResultsColumnSchema.resultsItemWidth(),CustomResultsColumnSchema.resultsItemHeight())
+        customResultsBoarderView.drawBoarder(boarderType,FretboardColumnSchema.resultsItemWidth(),FretboardColumnSchema.resultsItemHeight())
     }
     
 }
