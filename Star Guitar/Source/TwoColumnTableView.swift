@@ -45,9 +45,7 @@ open class TwoColumnActionCell: UITableViewCell {
     private func setUpAppearance() {
         backgroundColor = UIColor(named: .tableRowBG)
         
-        let selectedView = UIView()
-        selectedView.backgroundColor = UIColor(named: .selectedHighLine)
-        selectedBackgroundView = selectedView
+        self.setupSelectedBackground()
         
         textLabel?.font = UIFont.oneColumnFont()
         textLabel?.textAlignment = .center

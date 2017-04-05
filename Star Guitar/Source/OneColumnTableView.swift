@@ -11,6 +11,7 @@ import UIKit
 
 /// A `UITableViewCell` subclass with the title text center aligned.
 
+
 open class OneColumnActionCell: UITableViewCell {
 
     public let sharpLabel = UILabel()
@@ -48,9 +49,7 @@ open class OneColumnActionCell: UITableViewCell {
     private func setUpAppearance() {
         backgroundColor = UIColor(named: .tableRowBG)
         
-        let selectedView = UIView()
-        selectedView.backgroundColor = UIColor(named: .selectedHighLine)
-        selectedBackgroundView = selectedView
+        self.setupSelectedBackground()
         
         textLabel?.font = UIFont.oneColumnFont()
         textLabel?.textAlignment = .center

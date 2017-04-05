@@ -46,6 +46,8 @@ open class ThreeColumnActionCell: UITableViewCell {
     private func setUpAppearance() {
         backgroundColor = UIColor(named: .tableRowBG)
         
+        self.setupSelectedBackground()
+        
         textLabel?.font = UIFont.TuningsThreeColumnFont()
         textLabel?.textAlignment = .left
         textLabel?.textColor = .black
@@ -66,10 +68,7 @@ public struct ThreeColumnActionRow: Row, Equatable {
     
     
     public func render(viewCell: UIView) {
-        let row = self
-        var cell = viewCell ?? ThreeColumnActionCell(style: .default, reuseIdentifier: row.cellReuseIdentifier)
-        
-        let oneColumnActionCell = (cell as? ThreeColumnActionCell)
+        _ = (viewCell as? ThreeColumnActionCell)
     }
     
     /// The title text of the row.
