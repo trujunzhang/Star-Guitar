@@ -18,7 +18,15 @@ class SGTouchChordViewController: UIViewController {
     @IBOutlet weak var threeColumnContainer: UIView!
     @IBOutlet weak var fourColumnContainer: UIView!
     @IBOutlet weak var eventsContainer: UIView!
-    @IBOutlet weak var tuningsResultContainer: UIView!
+    @IBOutlet weak var fretboardContainer: UIView!
+    
+    
+    var oneColumnViewController: SGOneColumnViewController!
+    var twoColumnViewController: SGTwoColumnViewController!
+    var threeColumnViewController: SGThreeColumnViewController!
+    var fourColumnViewController: SGFourColumnViewController!
+    var fretboardViewController: SGFretboardViewController!
+    var tuningsEventViewController: SGTuningsEventViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +41,7 @@ class SGTouchChordViewController: UIViewController {
         ThreeColumnLayout(self.view).layoutContainer(twoChordColumnContainer, forThirdColumnView: threeColumnContainer, 50,ThreeColumnSchema.threeChordColumnWidth())
         FourColumnLayout(self.view).layoutContainer(threeColumnContainer, forColumnView: fourColumnContainer)
         
-        FretboardLayout(self.view).layoutFretboard(fourColumnContainer, forFretboardView: tuningsResultContainer,0,FretboardColumnSchema.touchChordLeading())
+        FretboardLayout(self.view).layoutFretboard(fourColumnContainer, forFretboardView: fretboardContainer,0,FretboardColumnSchema.touchChordLeading())
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
         
@@ -47,6 +55,23 @@ class SGTouchChordViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "titleContainer") {
             self.titleViewController = segue.destination as! TitleViewController
+        }else if (segue.identifier == "oneColumnContainer") {
+            self.oneColumnViewController = segue.destination as! SGOneColumnViewController
+        }
+        else if (segue.identifier == "twoColumnContainer") {
+            self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
+        }
+        else if (segue.identifier == "threeColumnContainer") {
+            self.threeColumnViewController = segue.destination as! SGThreeColumnViewController
+        }
+        else if (segue.identifier == "fourColumnContainer") {
+            //self.fourColumnViewController = segue.destination as! SGFourColumnViewController
+        }
+        else if (segue.identifier == "fretboardContainer") {
+            self.fretboardViewController = segue.destination as! SGFretboardViewController
+        }
+        else if (segue.identifier == "eventsContainer") {
+            self.tuningsEventViewController = segue.destination as! SGTuningsEventViewController
         }
     }
     

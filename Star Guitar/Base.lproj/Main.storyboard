@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toM-AU-VK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-3013"/>
+            <point key="canvasLocation" x="1412" y="-3083"/>
         </scene>
         <!--Debug Tuning Fretboard View Controller-->
         <scene sceneID="l4h-Bl-Rur">
@@ -907,7 +907,7 @@
                                         <rect key="frame" x="348" y="37" width="177" height="434"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
-                                            <segue destination="yaW-mS-19j" kind="embed" id="8C0-Kp-TgY"/>
+                                            <segue destination="yaW-mS-19j" kind="embed" identifier="fourColumnContainer" id="8C0-Kp-TgY"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Jk-Eq-RQR">
@@ -941,15 +941,15 @@
                     <connections>
                         <outlet property="eventsContainer" destination="hb4-IA-IIl" id="ZU4-k6-tS2"/>
                         <outlet property="fourColumnContainer" destination="V8f-k1-2ar" id="neQ-KW-ly8"/>
+                        <outlet property="fretboardContainer" destination="0Jk-Eq-RQR" id="I54-cg-hP4"/>
                         <outlet property="oneColumnContainer" destination="zhA-Zf-XQv" id="vgb-TM-yPB"/>
                         <outlet property="threeColumnContainer" destination="adZ-Al-g77" id="BIB-dy-Rwp"/>
-                        <outlet property="tuningsResultContainer" destination="0Jk-Eq-RQR" id="bui-Yb-30e"/>
                         <outlet property="twoChordColumnContainer" destination="iUg-Gq-P1X" id="ggU-Y3-f9J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRW-IB-DDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638.8671875" y="-2396.09375"/>
+            <point key="canvasLocation" x="1444" y="-2396"/>
         </scene>
         <!--Fretboard View Controller-->
         <scene sceneID="Skd-W8-fot">
@@ -983,7 +983,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhE-7W-6ah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="-1855"/>
+            <point key="canvasLocation" x="1682" y="-1433"/>
         </scene>
     </scenes>
     <resources>
@@ -994,11 +994,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rdS-U1-l5E"/>
+        <segue reference="9j0-fh-ruf"/>
+        <segue reference="Jvi-6X-jUO"/>
+        <segue reference="u3i-JV-qd5"/>
+        <segue reference="jsn-5H-REY"/>
+        <segue reference="P8N-wi-0t0"/>
         <segue reference="1Xg-Ew-c00"/>
-        <segue reference="gsJ-HH-i3y"/>
-        <segue reference="8It-5U-mgF"/>
-        <segue reference="n9T-ZH-D9Q"/>
-        <segue reference="rd8-Il-Unn"/>
     </inferredMetricsTieBreakers>
 </document>
