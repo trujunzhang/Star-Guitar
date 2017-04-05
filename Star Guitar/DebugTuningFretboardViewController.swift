@@ -1,5 +1,5 @@
 //
-//  DebugTuningCustomResultsViewController.swift
+//  DebugTuningFretboardViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/31/17.
@@ -10,10 +10,7 @@ import Foundation
 
 import UIKit
 
-class DebugTuningCustomResultsViewController: UIViewController {
-    
-    
-    @IBOutlet weak var resultsBoarderContaier: UIView!
+class DebugTuningFretboardViewController: UIViewController {
     
     @IBOutlet weak var tuningsResultContainer: UIView!
     
@@ -26,8 +23,6 @@ class DebugTuningCustomResultsViewController: UIViewController {
 
         FretboardLayout(self.view).layoutFretboard(self.view, forFretboardView: tuningsResultContainer, 0,0 )
 
-        let type = FretboardBorderType.left
-        FretboardViewHelper().addAsBoarder(self.view,tuningsResultContainer,type)
     }
     
     override func didReceiveMemoryWarning() {

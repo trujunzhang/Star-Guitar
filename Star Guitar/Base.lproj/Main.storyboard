@@ -269,10 +269,10 @@
             </objects>
             <point key="canvasLocation" x="1375" y="-3013"/>
         </scene>
-        <!--Debug Tuning Custom Results View Controller-->
+        <!--Debug Tuning Fretboard View Controller-->
         <scene sceneID="l4h-Bl-Rur">
             <objects>
-                <viewController id="5tY-2B-nuz" customClass="DebugTuningCustomResultsViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5tY-2B-nuz" customClass="DebugTuningFretboardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LzG-b0-25k"/>
                         <viewControllerLayoutGuide type="bottom" id="ABg-9G-g64"/>
@@ -288,18 +288,9 @@
                                     <segue destination="i3e-Az-bxt" kind="embed" identifier="customResultContainer" id="v2Q-Dx-3hV"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjC-7o-lQe" userLabel="resultsBoarderContaier">
-                                <rect key="frame" x="-3002" y="-1004" width="420" height="560"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725490196078" green="0.23137254901960785" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="resultsBoarderContaier" destination="OjC-7o-lQe" id="I5a-bm-bdv"/>
-                        <outlet property="tuningsResultContainer" destination="aJv-9B-FnZ" id="DaL-Ba-MPX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZW-zY-yA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -757,7 +748,7 @@
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BOb-B4-pj2">
-                        <rect key="frame" x="0.0" y="0.0" width="486" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="493" height="71"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -969,7 +960,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Fd-b1-CuL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hcS-fP-sHP">
-                        <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
+                        <rect key="frame" x="0.0" y="0.0" width="424" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -1003,11 +994,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9j0-fh-ruf"/>
-        <segue reference="Jvi-6X-jUO"/>
-        <segue reference="u3i-JV-qd5"/>
+        <segue reference="FND-d6-ff7"/>
+        <segue reference="bMz-Sy-Vwk"/>
+        <segue reference="S0d-Dx-XmK"/>
+        <segue reference="Nx6-BO-F9s"/>
+        <segue reference="v2Q-Dx-3hV"/>
         <segue reference="jsn-5H-REY"/>
-        <segue reference="P8N-wi-0t0"/>
-        <segue reference="1Xg-Ew-c00"/>
     </inferredMetricsTieBreakers>
 </document>
