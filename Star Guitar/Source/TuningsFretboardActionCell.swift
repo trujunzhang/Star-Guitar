@@ -1,5 +1,5 @@
 //
-//  TuningsCustomResultsCollectionView.swift
+//  TuningsFretboardActionCell.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/31/17.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-open class TuningsCustomResultsActionCell: UICollectionViewCell {
+open class TuningsFretboardActionCell: UICollectionViewCell {
     
     //override open var isHighlighted: Bool {
     //    willSet { // make lightgray background show immediately(使灰背景立即出现)
@@ -80,7 +80,7 @@ open class TuningsCustomResultsActionCell: UICollectionViewCell {
 }
 
 
-public struct TuningsCustomResultsActionRow: Row, Equatable {
+public struct TuningsFretboardActionRow: Row, Equatable {
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
@@ -92,7 +92,7 @@ public struct TuningsCustomResultsActionRow: Row, Equatable {
     public func render(viewCell: UIView) {
         let row = self
         
-        let cell = (viewCell as? TuningsCustomResultsActionCell)
+        let cell = (viewCell as? TuningsFretboardActionCell)
         
         cell?.eventLabel.text = row.title
     }
@@ -105,7 +105,7 @@ public struct TuningsCustomResultsActionRow: Row, Equatable {
     public let subtitle: Subtitle? = nil
     
     /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: TuningsCustomResultsActionCell.self)
+    public let cellReuseIdentifier: String = String(describing: TuningsFretboardActionCell.self)
     
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?

@@ -1,5 +1,5 @@
 //
-//  SGOneColumnViewController.swift
+//  SGFretboardViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/27/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SGCustomResultViewController: QuickCollectionViewController {
+class SGFretboardViewController: QuickCollectionViewController {
     
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
@@ -18,17 +18,17 @@ class SGCustomResultViewController: QuickCollectionViewController {
         
         layout.itemSize = CGSize(width: FretboardColumnSchema.resultsItemWidth(), height: FretboardColumnSchema.resultsItemHeight()) // cell的寬、高
         
-        collectionView.register(TuningsCustomResultsActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsCustomResultsActionCell.self))
+        collectionView.register(TuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsFretboardActionCell.self))
     }
     
     func generateRows() -> Section {
         return Section(title: nil, rows: [
-            TuningsCustomResultsActionRow(title: "2", action: toggleNote),
-            TuningsCustomResultsActionRow(title: "3", action: toggleNote),
-            TuningsCustomResultsActionRow(title: "4", action: toggleNote),
-            TuningsCustomResultsActionRow(title: "5", action: toggleNote),
-            TuningsCustomResultsActionRow(title: "6", action: toggleNote),
-            TuningsCustomResultsActionRow(title: "7", action: toggleNote),
+            TuningsFretboardActionRow(title: "2", action: toggleNote),
+            TuningsFretboardActionRow(title: "3", action: toggleNote),
+            TuningsFretboardActionRow(title: "4", action: toggleNote),
+            TuningsFretboardActionRow(title: "5", action: toggleNote),
+            TuningsFretboardActionRow(title: "6", action: toggleNote),
+            TuningsFretboardActionRow(title: "7", action: toggleNote),
             ])
     }
     

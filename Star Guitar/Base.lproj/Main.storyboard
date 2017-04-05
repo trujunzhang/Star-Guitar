@@ -285,7 +285,7 @@
                                 <rect key="frame" x="100" y="100" width="424" height="560"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="i3e-Az-bxt" kind="embed" identifier="customResultContainer" id="v2Q-Dx-3hV"/>
+                                    <segue destination="i3e-Az-bxt" kind="embed" identifier="fretboardContainer" id="v2Q-Dx-3hV"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -822,7 +822,7 @@
                                         <rect key="frame" x="486" y="0.0" width="404" height="404"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
-                                            <segue destination="i3e-Az-bxt" kind="embed" identifier="customResultContainer" id="8It-5U-mgF"/>
+                                            <segue destination="i3e-Az-bxt" kind="embed" identifier="fretboardContainer" id="8It-5U-mgF"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-wK-hcL">
@@ -914,7 +914,7 @@
                                         <rect key="frame" x="587" y="21" width="404" height="404"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
-                                            <segue destination="i3e-Az-bxt" kind="embed" identifier="customResultContainer" id="u3i-JV-qd5"/>
+                                            <segue destination="i3e-Az-bxt" kind="embed" identifier="fretboardContainer" id="u3i-JV-qd5"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb4-IA-IIl">
@@ -951,16 +951,16 @@
             </objects>
             <point key="canvasLocation" x="1638.8671875" y="-2396.09375"/>
         </scene>
-        <!--Custom Result View Controller-->
+        <!--Fretboard View Controller-->
         <scene sceneID="Skd-W8-fot">
             <objects>
-                <viewController id="i3e-Az-bxt" customClass="SGCustomResultViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i3e-Az-bxt" customClass="SGFretboardViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tbU-ng-D0K"/>
                         <viewControllerLayoutGuide type="bottom" id="1Fd-b1-CuL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hcS-fP-sHP">
-                        <rect key="frame" x="0.0" y="0.0" width="424" height="560"/>
+                        <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -998,7 +998,7 @@
         <segue reference="bMz-Sy-Vwk"/>
         <segue reference="S0d-Dx-XmK"/>
         <segue reference="Nx6-BO-F9s"/>
-        <segue reference="v2Q-Dx-3hV"/>
         <segue reference="jsn-5H-REY"/>
+        <segue reference="8It-5U-mgF"/>
     </inferredMetricsTieBreakers>
 </document>
