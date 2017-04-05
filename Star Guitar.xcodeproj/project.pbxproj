@@ -50,7 +50,7 @@
 		5E8B8FD61E7CFF69009DFEF1 /* StringsLayoutSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B8FD51E7CFF69009DFEF1 /* StringsLayoutSchema.swift */; };
 		5E8D11D41E89F93100898679 /* TapActionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D11D31E89F93100898679 /* TapActionTableView.swift */; };
 		5E914D451E8E9D9C00371E3C /* SGTouchChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */; };
-		5E95786C1E925D620008F7D8 /* TuningsStandardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786B1E925D620008F7D8 /* TuningsStandardSettings.swift */; };
+		5E95786C1E925D620008F7D8 /* SGTuningsStandardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */; };
 		5E95786E1E9307840008F7D8 /* BaseTuningsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */; };
 		5E98A4961E8E0A6400F9A56D /* DebugTuningCustomResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E98A4951E8E0A6400F9A56D /* DebugTuningCustomResultsViewController.swift */; };
 		5E9C6E271E855EA9006F93B4 /* FontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */; };
@@ -177,7 +177,7 @@
 		5E8B8FD51E7CFF69009DFEF1 /* StringsLayoutSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringsLayoutSchema.swift; path = "Star Guitar/StringsLayoutSchema.swift"; sourceTree = "<group>"; };
 		5E8D11D31E89F93100898679 /* TapActionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapActionTableView.swift; sourceTree = "<group>"; };
 		5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTouchChordViewController.swift; sourceTree = "<group>"; };
-		5E95786B1E925D620008F7D8 /* TuningsStandardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsStandardSettings.swift; sourceTree = "<group>"; };
+		5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsStandardSettings.swift; sourceTree = "<group>"; };
 		5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTuningsLayout.swift; sourceTree = "<group>"; };
 		5E98A4951E8E0A6400F9A56D /* DebugTuningCustomResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTuningCustomResultsViewController.swift; sourceTree = "<group>"; };
 		5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ErasITC-Demi.ttf"; sourceTree = "<group>"; };
@@ -274,25 +274,6 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		5E0C28891E88B9D500E34584 /* TuningsStandard */ = {
-			isa = PBXGroup;
-			children = (
-				5E25253C1E892228007E660E /* Columns */,
-				5EA049881E7E83FA003E402F /* SGTuningsStandardViewController.swift */,
-				5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */,
-				5E95786B1E925D620008F7D8 /* TuningsStandardSettings.swift */,
-			);
-			name = TuningsStandard;
-			sourceTree = "<group>";
-		};
-		5E25253C1E892228007E660E /* Columns */ = {
-			isa = PBXGroup;
-			children = (
-				5EB135051E8977BB00DA6F6E /* SGTuningTypeViewController.swift */,
-			);
-			name = Columns;
-			sourceTree = "<group>";
-		};
 		5E2D89901E8E73DE00D6AEF0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,14 +366,12 @@
 		5E4B6BFE1E7C9957006B811D /* Star Guitar */ = {
 			isa = PBXGroup;
 			children = (
-				5E914D431E8E9D3900371E3C /* TouchChord */,
+				5ED3F8841E94BEB8006B845D /* Tunings */,
 				5E2D89901E8E73DE00D6AEF0 /* Extensions */,
 				5E98A4941E8E0A4900F9A56D /* Debug */,
 				5E7F0BE51E8DE45D00E5569F /* Layout */,
 				5EF0AE171E8DE1B80026F0B4 /* TuningResults */,
 				5EF0AE101E8DDFAD0026F0B4 /* TuningColumns */,
-				5E0C28891E88B9D500E34584 /* TuningsStandard */,
-				5EF0AE0F1E8DDF240026F0B4 /* TuningsCustom */,
 				5E9C6E221E8554CB006F93B4 /* Support Files */,
 				5EB5D01F1E84124F0018359D /* SwiftGen */,
 				5E5A05691E83748C001B53A5 /* Utils */,
@@ -458,14 +437,6 @@
 			name = Layout;
 			sourceTree = "<group>";
 		};
-		5E914D431E8E9D3900371E3C /* TouchChord */ = {
-			isa = PBXGroup;
-			children = (
-				5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */,
-			);
-			name = TouchChord;
-			sourceTree = "<group>";
-		};
 		5E98A4941E8E0A4900F9A56D /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +476,18 @@
 			name = SwiftGen;
 			sourceTree = "<group>";
 		};
+		5ED3F8841E94BEB8006B845D /* Tunings */ = {
+			isa = PBXGroup;
+			children = (
+				5EA049881E7E83FA003E402F /* SGTuningsStandardViewController.swift */,
+				5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */,
+				5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */,
+				5EA049871E7E83FA003E402F /* SGTuningsCustomViewController.swift */,
+				5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */,
+			);
+			name = Tunings;
+			sourceTree = "<group>";
+		};
 		5EDFBD611E85EFFD00C91F26 /* tables */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,14 +496,6 @@
 				5E5F6D681E86577600B8D5DA /* SGEffectLayout.swift */,
 			);
 			name = tables;
-			sourceTree = "<group>";
-		};
-		5EF0AE0F1E8DDF240026F0B4 /* TuningsCustom */ = {
-			isa = PBXGroup;
-			children = (
-				5EA049871E7E83FA003E402F /* SGTuningsCustomViewController.swift */,
-			);
-			name = TuningsCustom;
 			sourceTree = "<group>";
 		};
 		5EF0AE101E8DDFAD0026F0B4 /* TuningColumns */ = {
@@ -532,6 +507,7 @@
 				5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */,
 				5EBEFB4B1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift */,
 				5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */,
+				5EB135051E8977BB00DA6F6E /* SGTuningTypeViewController.swift */,
 				5EB135091E897B6400DA6F6E /* SGTuningsEventViewController.swift */,
 			);
 			name = TuningColumns;
@@ -917,7 +893,7 @@
 				5E5F6D651E86553300B8D5DA /* SGEffectViewController.swift in Sources */,
 				5EB1350A1E897B6400DA6F6E /* SGTuningsEventViewController.swift in Sources */,
 				5EA0498A1E7E83FA003E402F /* SGTuningsStandardViewController.swift in Sources */,
-				5E95786C1E925D620008F7D8 /* TuningsStandardSettings.swift in Sources */,
+				5E95786C1E925D620008F7D8 /* SGTuningsStandardSettings.swift in Sources */,
 				5E04A58B1E89DFBA00238BB4 /* SGStandardResultsViewController.swift in Sources */,
 				5EACA69C1E8DFCEB0050270B /* ThreeColumnTableView.swift in Sources */,
 				5EA992D41E7EF660007EBC9E /* TableHeaderViewController.swift in Sources */,
