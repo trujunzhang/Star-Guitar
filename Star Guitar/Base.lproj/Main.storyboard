@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zzi-fa-RIO">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -757,7 +757,7 @@
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BOb-B4-pj2">
-                        <rect key="frame" x="0.0" y="0.0" width="493" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="486" height="71"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -969,7 +969,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Fd-b1-CuL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hcS-fP-sHP">
-                        <rect key="frame" x="0.0" y="0.0" width="424" height="560"/>
+                        <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -1003,11 +1003,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v2Q-Dx-3hV"/>
-        <segue reference="FND-d6-ff7"/>
-        <segue reference="Nx6-BO-F9s"/>
-        <segue reference="S0d-Dx-XmK"/>
-        <segue reference="bMz-Sy-Vwk"/>
-        <segue reference="gsJ-HH-i3y"/>
+        <segue reference="9j0-fh-ruf"/>
+        <segue reference="Jvi-6X-jUO"/>
+        <segue reference="u3i-JV-qd5"/>
+        <segue reference="jsn-5H-REY"/>
+        <segue reference="P8N-wi-0t0"/>
+        <segue reference="1Xg-Ew-c00"/>
     </inferredMetricsTieBreakers>
 </document>

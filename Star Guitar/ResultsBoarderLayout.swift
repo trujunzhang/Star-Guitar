@@ -24,7 +24,11 @@ struct ResultsBoarderSchema {
     public static func outBoardSize() -> Int {
         return 40
     }
-        
+    
+    public static func marginLeft() -> Int {
+        return 60  + SGScreenLayout.sharedInstance.deviceIndex * 20
+    }
+    
 }
 
 class ResultsBoarderHelper{
@@ -86,8 +90,6 @@ class ResultsBoarderLayout: BaseTuningsLayout {
     
     //  6X14
     func layoutHorizonCircles(_ itemWidth:Int) -> ResultsBoarderLayout {
-        var views:[UIView] = [UIView]()
-
         let circleWH = 10
         
         for i in 0...5{
@@ -113,8 +115,6 @@ class ResultsBoarderLayout: BaseTuningsLayout {
     
     //  6X14
     func layoutVirticalCircles(_ itemHeight:Int) -> ResultsBoarderLayout {
-        var views:[UIView] = [UIView]()
-        
         let circleWH = 10
         
         for i in 0...13{
