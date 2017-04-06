@@ -139,28 +139,27 @@ class TuningsStandardSettings: Object {
     
 }
 
-class TuningsStandardSettingsModel {
-    public static func getDefaultResults() -> String {
-        return String(format: "%@;%@;%@;%@;%@",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1"
+class TuningsFactory{
+    
+    public lazy var standardResultCells: [[ColumnResultItem]]  = {
+        return [[ColumnResultItem]]()
+    }()
+
+    public static func getStandardResultsCells() -> [[ColumnResultItem]]{
+        let standardResultString = String(format: "%@;%@;%@;%@;%@",
+                                          "4-0,9-0,2-1,7-1,11-1,4-2",
+                                          "2-0,9-0,2-1,7-1,11-1,4-2",
+                                          "-1,-1,-1,-1,-1,-1",
+                                          "-1,-1,-1,-1,-1,-1",
+                                          "-1,-1,-1,-1,-1,-1"
         )
-    }
-    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
-    
-    init() {
-        // Empty here.
-        self.convert(TuningsStandardSettingsModel.getDefaultResults())
+
+        return TuningsFactory.convert(standardResultString)
     }
     
-    init( _ results: String) {
-        self.convert(results)
-    }
-    
-    private func convert(_ results: String){
+    public static func convert(_ results: String) -> [[ColumnResultItem]]{
+        var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
+        
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let twoColumns = TwoColumnLetterType.getTitles()
         let rows = (results.components(separatedBy: ";"))
@@ -180,8 +179,38 @@ class TuningsStandardSettingsModel {
                 }
                 resultColumn.append(item)
             }
-            self.resultCells.append(resultColumn)
+            resultCells.append(resultColumn)
         }
+        
+        return resultCells
+    }
+
+    
+}
+
+class TuningsStandardSettingsModel {
+    public static func getDefaultResults() -> String {
+        return String(format: "%@;%@;%@;%@;%@",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1",
+                      "-1,-1,-1,-1,-1,-1"
+        )
+    }
+    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
+    
+
+    
+    init() {
+        // Empty here.
+        //self.resultCells = TuningsFactory.convert(TuningsStandardSettingsModel.getDefaultResults())
+        
+        self.resultCells = TuningsFactory.getStandardResultsCells()
+    }
+    
+    init( _ results: String) {
+        self.resultCells = TuningsFactory.convert(results)
     }
     
     public func getResults() -> String{
