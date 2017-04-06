@@ -16,8 +16,6 @@ public enum FretboardBorderType: Int {
     case bottom = 3
 }
 
-
-
 struct FretboardBorderSchema {
     
     // ==== ResultsBoarder
@@ -35,16 +33,16 @@ class FretboardViewHelper{
     
     let fretboardBoarderView =  FretboardBoarderView()
     
-    func addAsBoarder(_ pageContainer:UIView,_ tuningsResultContainer:UIView, _ boarderType:FretboardBorderType)  {
+    func addAsBoarder(_ pageContainer:UIView,_ fretboardView:UIView, _ boarderType:FretboardBorderType)  {
         
         pageContainer.addSubview(fretboardBoarderView)
         
         
         fretboardBoarderView.snp.makeConstraints { (make) -> Void in
-            make.leading.equalTo(tuningsResultContainer).offset(-FretboardBorderSchema.outBoardSize())
-            make.trailing.equalTo(tuningsResultContainer).offset(FretboardBorderSchema.outBoardSize())
-            make.top.equalTo(tuningsResultContainer).offset(-FretboardBorderSchema.outBoardSize())
-            make.bottom.equalTo(tuningsResultContainer).offset(FretboardBorderSchema.outBoardSize())
+            make.leading.equalTo(fretboardView).offset(-FretboardBorderSchema.outBoardSize())
+            make.trailing.equalTo(fretboardView).offset(FretboardBorderSchema.outBoardSize())
+            make.top.equalTo(fretboardView).offset(-FretboardBorderSchema.outBoardSize())
+            make.bottom.equalTo(fretboardView).offset(FretboardBorderSchema.outBoardSize())
         }
         
         pageContainer.sendSubview(toBack: fretboardBoarderView)

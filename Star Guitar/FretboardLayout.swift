@@ -80,7 +80,7 @@ class FretboardLayout: BaseTuningsLayout {
             make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())
         }
         
-        // Add boarder effect to the tuning results view.
+        // Add boarder effect to the fretboard view.
         let type = FretboardBorderType.top
         FretboardViewHelper().addAsBoarder(pageView!,fretboardView,type)
     }

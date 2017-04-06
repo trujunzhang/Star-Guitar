@@ -56,12 +56,14 @@ class StandardResultsLayout: BaseTuningsLayout {
 
     override func layoutResultsContainer(_ leftColumn: UIView, forResultView resultView: UIView,_ offLeading:Int) {
         resultView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(StandardResultsHeaderTitlesSchema.marginTop())
             make.leading.equalTo(leftColumn).offset(offLeading + StandResultsColumnSchema.resultsMarginLeft())
             make.width.equalTo(StandResultsColumnSchema.resultsColumnWidth())
             make.height.equalTo(StandResultsColumnSchema.resultsColumnHeight())
         }
 
+        // Add titles to the tuning results view.
+        StandardResultsViewHelper().addAsTitles(pageView!,resultView)
     }
 
 }

@@ -30,6 +30,7 @@
 		5E4B6C151E7C9957006B811D /* Star_GuitarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B6C141E7C9957006B811D /* Star_GuitarTests.swift */; };
 		5E4B6C201E7C9957006B811D /* Star_GuitarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B6C1F1E7C9957006B811D /* Star_GuitarUITests.swift */; };
 		5E5089CA1E80E67B006485C6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5089C91E80E67B006485C6 /* AudioToolbox.framework */; };
+		5E5124751E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5124741E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift */; };
 		5E5A05681E837487001B53A5 /* SoundPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A05671E837487001B53A5 /* SoundPlayerManager.swift */; };
 		5E5F6D651E86553300B8D5DA /* SGEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6D641E86553300B8D5DA /* SGEffectViewController.swift */; };
 		5E5F6D671E86563F00B8D5DA /* SGViewsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6D661E86563F00B8D5DA /* SGViewsExtension.swift */; };
@@ -158,6 +159,7 @@
 		5E4B6C1F1E7C9957006B811D /* Star_GuitarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_GuitarUITests.swift; sourceTree = "<group>"; };
 		5E4B6C211E7C9957006B811D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E5089C91E80E67B006485C6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5E5124741E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsHeaderTitlesLayout.swift; sourceTree = "<group>"; };
 		5E5A05671E837487001B53A5 /* SoundPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayerManager.swift; sourceTree = "<group>"; };
 		5E5F6D641E86553300B8D5DA /* SGEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGEffectViewController.swift; sourceTree = "<group>"; };
 		5E5F6D661E86563F00B8D5DA /* SGViewsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGViewsExtension.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				5E7F0BE81E8DE55D00E5569F /* OneColumnLayout.swift */,
 				5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */,
 				5E7F0BEC1E8DE72B00E5569F /* StandardResultsLayout.swift */,
+				5E5124741E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift */,
 				5E7F0BEE1E8DE82E00E5569F /* TuningsTypeLayout.swift */,
 				5E7F0BF01E8DE8BD00E5569F /* TuningsEventsLayout.swift */,
 				5E7FC0DF1E8DF90400033679 /* ThreeColumnSchema.swift */,
@@ -864,6 +867,7 @@
 				5EF0AE141E8DDFE60026F0B4 /* SGFourColumnViewController.swift in Sources */,
 				5E98A4961E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift in Sources */,
 				5E7FC0E01E8DF90400033679 /* ThreeColumnSchema.swift in Sources */,
+				5E5124751E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift in Sources */,
 				5EB5D0231E84126C0018359D /* StoryboardExtension.swift in Sources */,
 				5EB5D0211E8412640018359D /* ImagesExtension.swift in Sources */,
 				5E5F74CA1E8EA2F60056E607 /* TwoChordColumnLayout.swift in Sources */,
