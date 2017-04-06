@@ -41,7 +41,7 @@ class TuningsTypeLayout: BaseTuningsLayout {
 
     func layoutTuningTypeContainer(_ leftColumn: UIView, forView containerView: UIView,_ offLeading:CGFloat) {
         containerView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(30)
+            make.top.equalToSuperview().offset(30 + SGScreenLayout.sharedInstance.deviceIndex * 16 )
             make.leading.equalTo(leftColumn).offset(Int(offLeading) + TuningTypeSchema.tuningsTypeMarginLeft())
             make.width.equalTo(TuningTypeSchema.itemWidth())
             make.height.equalTo(TuningTypeSchema.tuningsTypesColumnHeight())

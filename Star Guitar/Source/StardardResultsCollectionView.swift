@@ -61,14 +61,14 @@ open class StandardResultsActionCell: UICollectionViewCell {
         letterLabel.font = UIFont.letterFont()
         letterLabel.textColor = .black
         letterLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(-10)
+            make.centerX.equalToSuperview().offset(-(10 + SGScreenLayout.sharedInstance.deviceIndex * 2))
             make.centerY.equalToSuperview()
         }
         
         numberLabel.font = UIFont.letterFont()
         numberLabel.textColor = .black
         numberLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(10)
+            make.centerX.equalToSuperview().offset(10 + SGScreenLayout.sharedInstance.deviceIndex * 2)
             make.centerY.equalToSuperview()
         }
         
