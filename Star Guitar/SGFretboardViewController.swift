@@ -23,12 +23,12 @@ class SGFretboardViewController: QuickCollectionViewController {
     
     func generateRows() -> Section {
         return Section(title: nil, rows: [
-            TuningsFretboardActionRow(title: "2", action: toggleNote),
-            TuningsFretboardActionRow(title: "3", action: toggleNote),
-            TuningsFretboardActionRow(title: "4", action: toggleNote),
-            TuningsFretboardActionRow(title: "5", action: toggleNote),
-            TuningsFretboardActionRow(title: "6", action: toggleNote),
-            TuningsFretboardActionRow(title: "7", action: toggleNote),
+            TuningsFretboardActionRow(title: "", action: toggleNote),
+            TuningsFretboardActionRow(title: "", action: toggleNote),
+            TuningsFretboardActionRow(title: "", action: toggleNote),
+            TuningsFretboardActionRow(title: "", action: toggleNote),
+            TuningsFretboardActionRow(title: "", action: toggleNote),
+            TuningsFretboardActionRow(title: "", action: toggleNote),
             ])
     }
     
