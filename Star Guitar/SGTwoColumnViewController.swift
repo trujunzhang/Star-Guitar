@@ -20,19 +20,27 @@ class SGTwoColumnViewController: QuickTableViewController {
 
         tableView.register(TwoColumnActionCell.self, forCellReuseIdentifier: String(describing: TwoColumnActionCell.self))
     }
+    
+    func setupRows(enabledClick:Bool)  {
+        var action: ((Row) -> Void)? = nil
+        if(enabledClick){
+            action = toggleNote
+        }
+        var rows: [Row] = [Row]()
+        for (_, title) in TwoColumnLetterType.getTitles().enumerated(){
+            let row = TwoColumnActionRow(title: title, action: action)
+            rows.append(row)
+        }
+        
+        tableContents = [Section(title: nil, rows: rows)]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        var rows: [Row] = [Row]()
-        for (_, title) in TwoColumnLetterType.getTitles().enumerated(){
-            let row = TwoColumnActionRow(title: title, action: toggleNote)
-            rows.append(row)
-        }
-        
-        tableContents = [Section(title: nil, rows: rows)]
+        self.setupRows(enabledClick: false)
     }
     
     public func updateCell(rowIndex:Int){

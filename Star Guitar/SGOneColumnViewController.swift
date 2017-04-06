@@ -20,19 +20,27 @@ class SGOneColumnViewController: QuickTableViewController {
         
         tableView.register(OneColumnActionCell.self, forCellReuseIdentifier: String(describing: OneColumnActionCell.self))
     }
+    
+    func setupRows(enabledClick:Bool)  {
+        var action: ((Row) -> Void)? = nil
+        if(enabledClick){
+            action = toggleNote
+        }
+        var rows: [Row] = [Row]()
+        for (_, item) in OneColumnLetterType.getOneColumnLetterItems().enumerated(){
+            let row = OneColumnActionRow(item: item, action: action)
+            rows.append(row)
+        }
+        
+        tableContents = [Section(title: nil, rows: rows)]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
-        var rows: [Row] = [Row]()
-        for (_, item) in OneColumnLetterType.getOneColumnLetterItems().enumerated(){
-            let row = OneColumnActionRow(item: item, action: nil)
-            rows.append(row)
-        }
-
-        tableContents = [Section(title: nil, rows: rows)]
+        self.setupRows(enabledClick: false)
     }
     
     public func updateCell(rowIndex:Int){

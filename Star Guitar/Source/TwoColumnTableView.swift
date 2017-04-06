@@ -64,7 +64,6 @@ public struct TwoColumnActionRow: Row, Equatable {
         return OneColumnSchema.oneColumnItemHeight()
     }
     
-    
     public func render(viewCell: UIView) {
         _ = (viewCell as? TwoColumnActionCell)
     }
