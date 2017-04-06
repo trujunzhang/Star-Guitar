@@ -32,9 +32,7 @@ class SGTwoColumnViewController: QuickTableViewController {
             rows.append(row)
         }
         
-        tableContents = [
-            Section(title: nil, rows: rows)
-        ]
+        tableContents = [Section(title: nil, rows: rows)]
     }
     
     public func updateCell(rowIndex:Int){
@@ -43,9 +41,6 @@ class SGTwoColumnViewController: QuickTableViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
-        self.delegate?.toggleTwoColumnNumber(tableContents[0].rows[0])
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ujv-wT-rz0">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -471,11 +471,11 @@
                         <viewControllerLayoutGuide type="bottom" id="aKP-bS-LI9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wXu-mY-631">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckn-nG-eg4" userLabel="BackArrow">
-                                <rect key="frame" x="20" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="20" y="0.0" width="48" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="M0D-Lf-yBJ"/>
                                 </constraints>
@@ -485,19 +485,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVJ-Mh-uhc" userLabel="title">
-                                <rect key="frame" x="76" y="-2" width="124" height="58"/>
+                                <rect key="frame" x="76" y="18" width="124" height="58"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP1-AB-az9" userLabel="subtitle">
-                                <rect key="frame" x="216" y="50" width="0.0" height="0.0"/>
+                                <rect key="frame" x="216" y="70" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWC-Ok-69A" userLabel="divide">
-                                <rect key="frame" x="0.0" y="56" width="1024" height="4"/>
+                                <rect key="frame" x="0.0" y="76" width="1024" height="4"/>
                                 <color key="backgroundColor" red="0.15993532538414001" green="0.67110615968704224" blue="0.88774442672729492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="xvh-xl-9I8"/>
@@ -748,7 +748,7 @@
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BOb-B4-pj2">
-                        <rect key="frame" x="0.0" y="0.0" width="486" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="493" height="71"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
@@ -994,11 +994,11 @@
         <image name="muteSelected" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9j0-fh-ruf"/>
-        <segue reference="Jvi-6X-jUO"/>
-        <segue reference="u3i-JV-qd5"/>
-        <segue reference="jsn-5H-REY"/>
-        <segue reference="1Xg-Ew-c00"/>
-        <segue reference="50A-81-dxo"/>
+        <segue reference="bMz-Sy-Vwk"/>
+        <segue reference="S0d-Dx-XmK"/>
+        <segue reference="FND-d6-ff7"/>
+        <segue reference="Nx6-BO-F9s"/>
+        <segue reference="gsJ-HH-i3y"/>
+        <segue reference="8It-5U-mgF"/>
     </inferredMetricsTieBreakers>
 </document>

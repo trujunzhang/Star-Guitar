@@ -76,7 +76,6 @@ public struct OneColumnActionRow: Row, Equatable {
         return OneColumnSchema.oneColumnItemHeight()
     }
 
-
     public func render(viewCell: UIView) {
         let cell = (viewCell as? OneColumnActionCell)
         if let item = self.item{
@@ -88,7 +87,6 @@ public struct OneColumnActionRow: Row, Equatable {
 
     /// The title text of the row.
     public var title: String = ""
-
 
     public var item: OneColumnLetterItem? = nil
 

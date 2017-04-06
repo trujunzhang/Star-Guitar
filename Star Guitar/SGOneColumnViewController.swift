@@ -28,14 +28,11 @@ class SGOneColumnViewController: QuickTableViewController {
 
         var rows: [Row] = [Row]()
         for (_, item) in OneColumnLetterType.getOneColumnLetterItems().enumerated(){
-            let row = OneColumnActionRow(item: item, action: toggleNote)
+            let row = OneColumnActionRow(item: item, action: nil)
             rows.append(row)
         }
 
-        tableContents = [
-            Section(title: nil, rows: rows)
-        ]
-
+        tableContents = [Section(title: nil, rows: rows)]
     }
     
     public func updateCell(rowIndex:Int){
@@ -44,9 +41,6 @@ class SGOneColumnViewController: QuickTableViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
-        self.delegate?.toggleOneColumnLetter(tableContents[0].rows[0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +51,4 @@ class SGOneColumnViewController: QuickTableViewController {
     private func toggleNote(_ sender: Row) {
         self.delegate?.toggleOneColumnLetter(sender)
     }
-
-
 }

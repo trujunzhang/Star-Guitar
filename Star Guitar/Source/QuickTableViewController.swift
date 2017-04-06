@@ -47,10 +47,6 @@ open class QuickTableViewController: UIViewController,
         }
     }
 
-    public func updateGuitarCells() {
-        tableView.reloadSections(IndexSet(integer: 0), with: .none)
-    }
-
     // MARK: - Initialization
 
     /**
@@ -181,7 +177,11 @@ open class QuickTableViewController: UIViewController,
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         let row = tableContents[indexPath.section].rows[indexPath.row]
 
-        return row.shouldHighlightRowAt()
+        if (row.action) != nil{
+            return row.shouldHighlightRowAt()
+        }
+        
+        return false
     }
 
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
