@@ -27,6 +27,8 @@ class StandardResultsViewHelper{
     
     let titlesView =  UIView()
     
+    let titles:[String] = ["1st","2nd","3rd","4th","5th","6th"]
+    
     func addAsTitles(_ pageContainer:UIView,_ tuningsResultContainer:UIView)  {
         pageContainer.addSubview(titlesView)
         
@@ -40,6 +42,25 @@ class StandardResultsViewHelper{
         }
         
         pageContainer.sendSubview(toBack: titlesView)
+        
+        self.generateTitleViews()
+    }
+    
+    func generateTitleViews()  {
+        
+        for title in self.titles{
+            let textLabel = UILabel()
+            textLabel.text = title
+            textLabel.font = UIFont.oneColumnFont()
+            textLabel.textAlignment = .center
+            textLabel.textColor = .black
+            titlesView.addSubview(textLabel)
+            
+            textLabel.snp.makeConstraints { (make) -> Void in
+                make.centerX.equalToSuperview()
+                make.bottom.equalToSuperview()
+            }
+        }
     }
 }
 
