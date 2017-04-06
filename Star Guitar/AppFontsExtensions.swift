@@ -80,5 +80,9 @@ extension UIFont {
         let fontSize = 20 + SGScreenLayout.sharedInstance.deviceIndex * 4
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(fontSize))
     }
+    
+    static func resultsTitleFont() -> UIFont {
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(24))
+    }
 
 }

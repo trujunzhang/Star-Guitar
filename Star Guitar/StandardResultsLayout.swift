@@ -23,11 +23,11 @@ struct StandResultsColumnSchema {
         return UIEdgeInsets(top: 6, left: 5, bottom: 6, right: 5)
     }
 
-    public static func resultsItemWidth() -> Int {
+    public static func itemWidth() -> Int {
         return 55 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(StandResultsColumnSchema.resultsItemEdgeInsets().left) + Int(StandResultsColumnSchema.resultsItemEdgeInsets().right))
     }
 
-    public static func resultsItemHeight() -> Int {
+    public static func itemHeight() -> Int {
         return 80 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(StandResultsColumnSchema.resultsItemEdgeInsets().top) + Int(StandResultsColumnSchema.resultsItemEdgeInsets().bottom))
     }
 
@@ -40,12 +40,12 @@ struct StandResultsColumnSchema {
     }
 
     public static func resultsColumnWidth() -> CGFloat {
-        let itemsWidth = (StandResultsColumnSchema.resultsItemWidth() + StandResultsColumnSchema.resultsLineSpacing()) * 6
+        let itemsWidth = (StandResultsColumnSchema.itemWidth() + StandResultsColumnSchema.resultsLineSpacing()) * 6
         return CGFloat(integerLiteral: itemsWidth)
     }
 
     public static func resultsColumnHeight() -> CGFloat {
-        let itemsHeight = (StandResultsColumnSchema.resultsItemHeight() + StandResultsColumnSchema.resultsInteritemSpacing()) * 5
+        let itemsHeight = (StandResultsColumnSchema.itemHeight() + StandResultsColumnSchema.resultsInteritemSpacing()) * 5
         return CGFloat(integerLiteral: itemsHeight )
     }
 
@@ -62,7 +62,7 @@ class StandardResultsLayout: BaseTuningsLayout {
             make.height.equalTo(StandResultsColumnSchema.resultsColumnHeight())
         }
 
-        // Add titles to the tuning results view.
+        // Add titles  to the tuning results view.
         StandardResultsViewHelper().addAsTitles(pageView!,resultView)
     }
 

@@ -32,7 +32,7 @@ class StandardResultsViewHelper{
     func addAsTitles(_ pageContainer:UIView,_ tuningsResultContainer:UIView)  {
         pageContainer.addSubview(titlesView)
         
-        titlesView.backgroundColor  = .red
+        titlesView.backgroundColor  = UIColor(named: .transparent)
 
         titlesView.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(tuningsResultContainer)
@@ -48,13 +48,24 @@ class StandardResultsViewHelper{
     
     func generateTitleViews()  {
         
-        for title in self.titles{
+        for (index,title) in self.titles.enumerated(){
+            let itemView = UIView()
+            
             let textLabel = UILabel()
             textLabel.text = title
-            textLabel.font = UIFont.oneColumnFont()
+            textLabel.font = UIFont.resultsTitleFont()
             textLabel.textAlignment = .center
             textLabel.textColor = .black
-            titlesView.addSubview(textLabel)
+            itemView.addSubview(textLabel)
+            
+            titlesView.addSubview(itemView)
+ 
+            itemView.snp.makeConstraints { (make) -> Void in
+                make.leading.equalToSuperview().offset(StandResultsColumnSchema.itemWidth() * index)
+                make.bottom.equalToSuperview()
+                make.width.equalTo(StandResultsColumnSchema.itemWidth())
+                make.height.equalTo(StandardResultsHeaderTitlesSchema.getHeight())
+            }
             
             textLabel.snp.makeConstraints { (make) -> Void in
                 make.centerX.equalToSuperview()
