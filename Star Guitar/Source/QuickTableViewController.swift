@@ -89,6 +89,10 @@ open class QuickTableViewController: UIViewController,
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.clearAllSelection()
+    }
+    
+    public func clearAllSelection(){
         if let indexPath = tableView.indexPathForSelectedRow, clearsSelectionOnViewWillAppear {
             tableView.deselectRow(at: indexPath, animated: true)
         }

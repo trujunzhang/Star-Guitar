@@ -25,15 +25,9 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
     func toggleCell(_ columnResultItem: ColumnResultItem){
         let letterIndex = columnResultItem.letterIndex
         let numberIndex = columnResultItem.numberIndex
-        
-        if letterIndex != -1{
-            oneColumnViewController.updateCell(rowIndex: letterIndex)
-        }
-        
-        if numberIndex != -1{
-            twoColumnViewController.updateCell(rowIndex: numberIndex)
-        }
-        
+
+        oneColumnViewController.updateCell(rowIndex: letterIndex)
+        twoColumnViewController.updateCell(rowIndex: numberIndex)
         
         tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(columnResultItem)
     }

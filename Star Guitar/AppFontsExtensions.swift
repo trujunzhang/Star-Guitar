@@ -60,7 +60,7 @@ extension UIFont {
     }
 
     static func TuningsTypesFont() -> UIFont {
-        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(36))
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(40))
     }
     
     static func TuningsThreeColumnFont() -> UIFont {
