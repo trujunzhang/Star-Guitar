@@ -13,7 +13,7 @@ struct StandardResultsHeaderTitlesSchema {
     
     // ==== ResultsBoarder
     public static func marginTop() -> Int {
-        return 80  + SGScreenLayout.sharedInstance.deviceIndex * 20
+        return 40  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
     
     public static func getHeight() -> Int{
@@ -37,7 +37,7 @@ class StandardResultsViewHelper{
         titlesView.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(tuningsResultContainer)
             make.trailing.equalTo(tuningsResultContainer)
-            make.top.equalTo(tuningsResultContainer).offset(-StandardResultsHeaderTitlesSchema.getHeight())
+            make.top.equalTo(tuningsResultContainer).offset(-StandardResultsHeaderTitlesSchema.getHeight() + 10)
             make.height.equalTo(StandardResultsHeaderTitlesSchema.getHeight())
         }
         
