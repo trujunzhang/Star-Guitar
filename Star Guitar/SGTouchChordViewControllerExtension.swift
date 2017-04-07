@@ -13,3 +13,16 @@ extension SGTouchChordViewController{
     
     
 }
+
+extension SGTouchChordViewController: OneColumnProviderProtocol{
+    
+    func toggleOneColumnLetter(_ sender: Row) {
+        let row = sender as! OneColumnActionRow
+        
+        let letterIndex = (row.item?.type.rawValue)!
+        tuningsChordSettingsUtils.updateOneColumnLetter(letterIndex)
+        
+        //self.updateSelectedNoteCell()
+    }
+    
+}

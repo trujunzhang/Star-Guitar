@@ -22,7 +22,7 @@ class SGTouchChordViewController: UIViewController {
     
     
     var oneColumnViewController: SGOneColumnViewController!
-    var twoColumnViewController: SGTwoColumnViewController!
+    var twoChordColumnViewController: SGTwoChordColumnViewController!
     var threeChordColumnViewController: SGThreeChordColumnViewController!
     var fourColumnChordViewController: SGFouChordrColumnViewController!
     var fretboardViewController: SGFretboardViewController!
@@ -36,6 +36,13 @@ class SGTouchChordViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
         self.titleViewController.setTitle(title: "1 Touch Chord")
+        
+        oneColumnViewController.delegate = self
+        //twoChordColumnViewController.delegate = self
+        //threeColumnViewController.delegate = self
+        //tuningsEventViewController.delegate = self
+        
+        //fretboardViewController.delegate = self
         
         
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
@@ -60,8 +67,8 @@ class SGTouchChordViewController: UIViewController {
         }else if (segue.identifier == "oneColumnContainer") {
             self.oneColumnViewController = segue.destination as! SGOneColumnViewController
         }
-        else if (segue.identifier == "twoColumnContainer") {
-            self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
+        else if (segue.identifier == "twoChordColumnContainer") {
+            self.twoChordColumnViewController = segue.destination as! SGTwoChordColumnViewController
         }
         else if (segue.identifier == "threeChordColumnContainer") {
             self.threeChordColumnViewController = segue.destination as! SGThreeChordColumnViewController

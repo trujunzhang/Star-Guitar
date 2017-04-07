@@ -1,5 +1,5 @@
 //
-//  SGTwoColumnChordViewController.swift
+//  SGTwoChordColumnViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/31/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SGTwoColumnChordViewController: QuickTableViewController {
+class SGTwoChordColumnViewController: QuickTableViewController {
     
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
