@@ -23,8 +23,8 @@ class SGTouchChordViewController: UIViewController {
     
     var oneColumnViewController: SGOneColumnViewController!
     var twoColumnViewController: SGTwoColumnViewController!
-    var threeColumnViewController: SGThreeColumnViewController!
-    var fourColumnChordViewController: SGFourColumnChordViewController!
+    var threeChordColumnViewController: SGThreeChordColumnViewController!
+    var fourColumnChordViewController: SGFouChordrColumnViewController!
     var fretboardViewController: SGFretboardViewController!
     var tuningsEventViewController: SGTuningsEventViewController!
     
@@ -61,11 +61,11 @@ class SGTouchChordViewController: UIViewController {
         else if (segue.identifier == "twoColumnContainer") {
             self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
         }
-        else if (segue.identifier == "threeColumnContainer") {
-            self.threeColumnViewController = segue.destination as! SGThreeColumnViewController
+        else if (segue.identifier == "threeChordColumnContainer") {
+            self.threeChordColumnViewController = segue.destination as! SGThreeChordColumnViewController
         }
-        else if (segue.identifier == "fourColumnChordContainer") {
-            self.fourColumnChordViewController = segue.destination as! SGFourColumnChordViewController
+        else if (segue.identifier == "fourChordColumnContainer") {
+            self.fourColumnChordViewController = segue.destination as! SGFouChordrColumnViewController
         }
         else if (segue.identifier == "fretboardContainer") {
             self.fretboardViewController = segue.destination as! SGFretboardViewController

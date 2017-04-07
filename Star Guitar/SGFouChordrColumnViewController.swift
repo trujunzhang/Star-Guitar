@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SGFourColumnChordViewController: QuickTableViewController {
+class SGFouChordrColumnViewController: QuickTableViewController {
     
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)

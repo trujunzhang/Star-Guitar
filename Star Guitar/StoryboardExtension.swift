@@ -103,11 +103,12 @@ enum StoryboardScene {
 enum StoryboardSegue {
   enum Main: String, StoryboardSegueType {
     case eventsContainer
-    case fourColumnChordContainer
+    case fourChordColumnContainer
     case fretboardContainer
     case guitarTypesContainer
     case oneColumnContainer
     case standardResultContainer
+    case threeChordColumnContainer
     case threeColumnContainer
     case titleContainer
     case twoChordColumnContainer
