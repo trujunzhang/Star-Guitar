@@ -40,7 +40,7 @@ class SGFourColumnChordViewController: QuickTableViewController {
     }
     
     private func toggleNote(_ sender: Row) {
-        let x = 0
+
     }
     
     

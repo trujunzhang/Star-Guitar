@@ -23,6 +23,8 @@
 		5E36C7881E83F56300B7C97F /* DevicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36C7871E83F56300B7C97F /* DevicesManager.swift */; };
 		5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E40D8EF1E85F83200588AB6 /* SGScreenLayout.swift */; };
 		5E42AA011E8E6C1E00392EBD /* FretboardBorderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42AA001E8E6C1E00392EBD /* FretboardBorderLayout.swift */; };
+		5E45A88C1E97BF4700552A94 /* SGTouchChordViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A88B1E97BF4700552A94 /* SGTouchChordViewControllerExtension.swift */; };
+		5E45A88E1E97BF5500552A94 /* SGTuningsCustomViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A88D1E97BF5500552A94 /* SGTuningsCustomViewControllerExtension.swift */; };
 		5E4B6C001E7C9957006B811D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B6BFF1E7C9957006B811D /* AppDelegate.swift */; };
 		5E4B6C051E7C9957006B811D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B6C031E7C9957006B811D /* Main.storyboard */; };
 		5E4B6C071E7C9957006B811D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B6C061E7C9957006B811D /* Assets.xcassets */; };
@@ -85,7 +87,6 @@
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
 		5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */; };
 		5EF0AE121E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */; };
-		5EF0AE141E8DDFE60026F0B4 /* SGFourColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */; };
 		5EF0AE161E8DE1590026F0B4 /* SGFretboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */; };
 		65B8C820CF4D809D92DBEFDA /* readme.org in Resources */ = {isa = PBXBuildFile; fileRef = 65B8CF7C240DD7CA4FD7D622 /* readme.org */; };
 		7E08DFC8246FFC850240E9B7 /* Pods_Star_GuitarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B21822E2E8B20F7CAE202D /* Pods_Star_GuitarUITests.framework */; };
@@ -146,6 +147,8 @@
 		5E36C7871E83F56300B7C97F /* DevicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesManager.swift; sourceTree = "<group>"; };
 		5E40D8EF1E85F83200588AB6 /* SGScreenLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGScreenLayout.swift; sourceTree = "<group>"; };
 		5E42AA001E8E6C1E00392EBD /* FretboardBorderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretboardBorderLayout.swift; sourceTree = "<group>"; };
+		5E45A88B1E97BF4700552A94 /* SGTouchChordViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTouchChordViewControllerExtension.swift; sourceTree = "<group>"; };
+		5E45A88D1E97BF5500552A94 /* SGTuningsCustomViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsCustomViewControllerExtension.swift; sourceTree = "<group>"; };
 		5E4B6BFC1E7C9957006B811D /* Star Guitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Guitar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B6BFF1E7C9957006B811D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E4B6C041E7C9957006B811D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,7 +215,6 @@
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
 		5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsSharpActionCell.swift; sourceTree = "<group>"; };
 		5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGThreeColumnViewController.swift; sourceTree = "<group>"; };
-		5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFourColumnViewController.swift; sourceTree = "<group>"; };
 		5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFretboardViewController.swift; sourceTree = "<group>"; };
 		65B8CF7C240DD7CA4FD7D622 /* readme.org */ = {isa = PBXFileReference; lastKnownFileType = file.org; path = readme.org; sourceTree = "<group>"; };
 		99B1C9C149B4F76D17A77688 /* Pods-Star Guitar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Guitar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star Guitar/Pods-Star Guitar.release.xcconfig"; sourceTree = "<group>"; };
@@ -486,7 +488,9 @@
 				5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */,
 				5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */,
 				5EA049871E7E83FA003E402F /* SGTuningsCustomViewController.swift */,
+				5E45A88D1E97BF5500552A94 /* SGTuningsCustomViewControllerExtension.swift */,
 				5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */,
+				5E45A88B1E97BF4700552A94 /* SGTouchChordViewControllerExtension.swift */,
 			);
 			name = Tunings;
 			sourceTree = "<group>";
@@ -507,7 +511,6 @@
 				5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */,
 				5EB135031E89769500DA6F6E /* SGTwoColumnViewController.swift */,
 				5EF0AE111E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift */,
-				5EF0AE131E8DDFE60026F0B4 /* SGFourColumnViewController.swift */,
 				5EBEFB4B1E8E9EBF00EB2851 /* SGTwoColumnChordViewController.swift */,
 				5E6816491E8EA143009CAA09 /* SGFourColumnChordViewController.swift */,
 				5EB135051E8977BB00DA6F6E /* SGTuningTypeViewController.swift */,
@@ -864,7 +867,6 @@
 				5EB135041E89769500DA6F6E /* SGTwoColumnViewController.swift in Sources */,
 				5EF0AE121E8DDFDB0026F0B4 /* SGThreeColumnViewController.swift in Sources */,
 				5E914D451E8E9D9C00371E3C /* SGTouchChordViewController.swift in Sources */,
-				5EF0AE141E8DDFE60026F0B4 /* SGFourColumnViewController.swift in Sources */,
 				5E98A4961E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift in Sources */,
 				5E7FC0E01E8DF90400033679 /* ThreeColumnSchema.swift in Sources */,
 				5E5124751E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift in Sources */,
@@ -872,6 +874,7 @@
 				5EB5D0211E8412640018359D /* ImagesExtension.swift in Sources */,
 				5E5F74CA1E8EA2F60056E607 /* TwoChordColumnLayout.swift in Sources */,
 				5EC545A91E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift in Sources */,
+				5E45A88C1E97BF4700552A94 /* SGTouchChordViewControllerExtension.swift in Sources */,
 				5E5F74CC1E8EA3600056E607 /* FourColumnLayout.swift in Sources */,
 				5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */,
 				5E2D89921E8E755B00D6AEF0 /* FretboardBoarderView.swift in Sources */,
@@ -895,6 +898,7 @@
 				5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */,
 				5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */,
 				5E5F6D651E86553300B8D5DA /* SGEffectViewController.swift in Sources */,
+				5E45A88E1E97BF5500552A94 /* SGTuningsCustomViewControllerExtension.swift in Sources */,
 				5EB1350A1E897B6400DA6F6E /* SGTuningsEventViewController.swift in Sources */,
 				5EA0498A1E7E83FA003E402F /* SGTuningsStandardViewController.swift in Sources */,
 				5E95786C1E925D620008F7D8 /* SGTuningsStandardSettings.swift in Sources */,
