@@ -23,6 +23,8 @@ class SGTuningsCustomViewController: UIViewController {
     var threeColumnViewController: SGThreeColumnViewController!
     var fretboardViewController: SGFretboardViewController!
     var tuningsEventViewController: SGTuningsEventViewController!
+    
+    var tuningsCustomSettingsUtils = TuningsCustomSettingsUtils()
 
     override func viewDidLoad() {
         super.viewDidLoad()
