@@ -29,6 +29,7 @@
 		5E45A8921E97C50800552A94 /* SGTuningsCustomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A8911E97C50800552A94 /* SGTuningsCustomSettings.swift */; };
 		5E45A8941E97C54300552A94 /* SGTuningsBaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A8931E97C54300552A94 /* SGTuningsBaseSettings.swift */; };
 		5E45A8971E97C6BC00552A94 /* SGTuningsChordSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A8961E97C6BC00552A94 /* SGTuningsChordSettings.swift */; };
+		5E45A8991E97CAE400552A94 /* SGFretboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45A8981E97CAE400552A94 /* SGFretboardSettings.swift */; };
 		5E4B6C001E7C9957006B811D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B6BFF1E7C9957006B811D /* AppDelegate.swift */; };
 		5E4B6C051E7C9957006B811D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B6C031E7C9957006B811D /* Main.storyboard */; };
 		5E4B6C071E7C9957006B811D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B6C061E7C9957006B811D /* Assets.xcassets */; };
@@ -157,6 +158,7 @@
 		5E45A8911E97C50800552A94 /* SGTuningsCustomSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsCustomSettings.swift; sourceTree = "<group>"; };
 		5E45A8931E97C54300552A94 /* SGTuningsBaseSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsBaseSettings.swift; sourceTree = "<group>"; };
 		5E45A8961E97C6BC00552A94 /* SGTuningsChordSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsChordSettings.swift; sourceTree = "<group>"; };
+		5E45A8981E97CAE400552A94 /* SGFretboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFretboardSettings.swift; sourceTree = "<group>"; };
 		5E4B6BFC1E7C9957006B811D /* Star Guitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Guitar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B6BFF1E7C9957006B811D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E4B6C041E7C9957006B811D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */,
 				5E45A8911E97C50800552A94 /* SGTuningsCustomSettings.swift */,
 				5E45A8961E97C6BC00552A94 /* SGTuningsChordSettings.swift */,
+				5E45A8981E97CAE400552A94 /* SGFretboardSettings.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				5EBB16EC1E7EE6C700CD109D /* TitleViewController.swift in Sources */,
 				5E180B4B1E93344E00237530 /* TwoColumnTableView.swift in Sources */,
 				5EB135081E8977F300DA6F6E /* OneColumnTableView.swift in Sources */,
+				5E45A8991E97CAE400552A94 /* SGFretboardSettings.swift in Sources */,
 				5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */,
 				5E45A8901E97C21200552A94 /* SGThreeChordColumnViewController.swift in Sources */,
 				5EBEFB4C1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift in Sources */,
