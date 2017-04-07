@@ -28,6 +28,8 @@ class SGTouchChordViewController: UIViewController {
     var fretboardViewController: SGFretboardViewController!
     var tuningsEventViewController: SGTuningsEventViewController!
     
+    var tuningsChordSettingsUtils = TuningsChordSettingsUtils()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

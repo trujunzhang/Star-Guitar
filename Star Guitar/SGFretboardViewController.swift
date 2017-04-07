@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol FretboardProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleCell(_ row: TuningsFretboardActionRow)
+}
+
 class SGFretboardViewController: QuickCollectionViewController {
+    weak var delegate : FretboardProviderProtocol?
     
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
@@ -52,7 +57,7 @@ class SGFretboardViewController: QuickCollectionViewController {
     }
     
     private func toggleNote(_ sender: Row) {
-        let x = 0
+        delegate?.toggleCell(sender as! TuningsFretboardActionRow)
     }
     
     

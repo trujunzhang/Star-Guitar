@@ -1,5 +1,5 @@
 //
-//  SGOneColumnViewController.swift
+//  SGThreeColumnViewController.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/27/17.
@@ -8,8 +8,15 @@
 
 import UIKit
 
-class SGThreeColumnViewController: QuickTableViewController {
 
+protocol ThreeColumnProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleThreeTopColumnNumber(_ sender: Row)
+    func toggleThreeBottonColumnNumber(_ sender: Row)
+}
+
+class SGThreeColumnViewController: QuickTableViewController {
+    weak var delegate : ThreeColumnProviderProtocol?
+    
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
 
@@ -60,11 +67,11 @@ class SGThreeColumnViewController: QuickTableViewController {
     }
 
     private func toggleThreeColumnTopRow(_ sender: Row) {
-        let x = 0
+         self.delegate?.toggleThreeTopColumnNumber(sender)
     }
 
     private func toggleThreeColumnBottomRow(_ sender: Row) {
-        let x = 0
+         self.delegate?.toggleThreeBottonColumnNumber(sender)
     }
 
 }

@@ -33,6 +33,13 @@ class SGTuningsCustomViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.titleViewController.setTitleWithSubtitle(title: "Tuning", subtitle: "Custom")
 
+        
+        oneColumnViewController.delegate = self
+        twoColumnViewController.delegate = self
+        threeColumnViewController.delegate = self
+        tuningsEventViewController.delegate = self
+        
+        fretboardViewController.delegate = self
 
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)

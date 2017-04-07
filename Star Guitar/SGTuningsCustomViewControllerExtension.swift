@@ -12,7 +12,17 @@ extension SGTuningsCustomViewController{
     
 }
 
-
+extension SGTuningsCustomViewController: FretboardProviderProtocol{
+    
+    func toggleCell(_ row: TuningsFretboardActionRow){
+        //let letterIndex = columnResultItem.letterIndex
+        //let numberIndex = columnResultItem.numberIndex
+        
+        //oneColumnViewController.updateCell(rowIndex: letterIndex)
+        //twoColumnViewController.updateCell(rowIndex: numberIndex)
+    }
+    
+}
 
 extension SGTuningsCustomViewController: OneColumnProviderProtocol{
     
@@ -20,7 +30,7 @@ extension SGTuningsCustomViewController: OneColumnProviderProtocol{
         let row = sender as! OneColumnActionRow
         
         let letterIndex = (row.item?.type.rawValue)!
-        //tuningsCustomSettingsUtils.updateOneColumnLetter(letterIndex)
+        tuningsCustomSettingsUtils.updateOneColumnLetter(letterIndex)
         
         //self.updateSelectedNoteCell()
     }
@@ -33,9 +43,36 @@ extension SGTuningsCustomViewController: TwoColumnProviderProtocol{
     func toggleTwoColumnNumber(_ sender: Row) {
         let row = sender as! TwoColumnActionRow
         
-        //tuningsCustomSettingsUtils.updateTwoColumnNumber(row.title)
+        tuningsCustomSettingsUtils.updateTwoColumnNumber(row.title)
         
         //self.updateSelectedNoteCell()
+    }
+    
+}
+
+
+extension SGTuningsCustomViewController: ThreeColumnProviderProtocol{
+    
+    func toggleThreeTopColumnNumber(_ sender: Row) {
+        let row = sender as! ThreeColumnActionRow
+        
+    }
+    
+    func toggleThreeBottonColumnNumber(_ sender: Row) {
+        let row = sender as! ThreeColumnActionRow
+        
+    }
+    
+}
+
+
+
+
+
+extension SGTuningsCustomViewController: TuningsEventProviderProtocol{
+    
+    func onTuningEventTapped(_ sender: Row) {
+        
     }
     
 }
