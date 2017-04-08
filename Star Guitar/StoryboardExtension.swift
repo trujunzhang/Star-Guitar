@@ -46,8 +46,8 @@ enum StoryboardScene {
   enum Main: String, StoryboardSceneType {
     static let storyboardName = "Main"
 
-    static func initialViewController() -> Star_Guitar.SGTouchChordViewController {
-      guard let vc = storyboard().instantiateInitialViewController() as? Star_Guitar.SGTouchChordViewController else {
+    static func initialViewController() -> Star_Guitar.SGTuningsCustomViewController {
+      guard let vc = storyboard().instantiateInitialViewController() as? Star_Guitar.SGTuningsCustomViewController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
       }
       return vc
@@ -109,7 +109,6 @@ enum StoryboardSegue {
     case oneColumnContainer
     case standardResultContainer
     case threeChordColumnContainer
-    case threeColumnContainer
     case titleContainer
     case twoChordColumnContainer
     case twoColumnContainer

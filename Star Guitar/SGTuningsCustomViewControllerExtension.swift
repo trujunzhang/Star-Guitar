@@ -51,14 +51,14 @@ extension SGTuningsCustomViewController: TwoColumnProviderProtocol{
 }
 
 
-extension SGTuningsCustomViewController: ThreeColumnProviderProtocol{
+extension SGTuningsCustomViewController: ThreeChordColumnProviderProtocol{
     
     func toggleThreeTopColumnNumber(_ sender: Row) {
         let row = sender as! ThreeColumnActionRow
         
     }
     
-    func toggleThreeBottonColumnNumber(_ sender: Row) {
+    func toggleThreeBottomColumnNumber(_ sender: Row) {
         let row = sender as! ThreeColumnActionRow
         
     }

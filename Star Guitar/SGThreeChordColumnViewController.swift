@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 
+protocol ThreeChordColumnProviderProtocol : class {    // 'class' means only class types can implement it
+    func toggleThreeTopColumnNumber(_ sender: Row)
+    func toggleThreeBottomColumnNumber(_ sender: Row)
+}
+
 class SGThreeChordColumnViewController: QuickTableViewController {
-    
+     weak var delegate : ThreeChordColumnProviderProtocol?
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
         
@@ -63,11 +68,11 @@ class SGThreeChordColumnViewController: QuickTableViewController {
     }
     
     private func toggleThreeColumnTopRow(_ sender: Row) {
-        let x = 0
+        self.delegate?.toggleThreeTopColumnNumber(sender)
     }
     
     private func toggleThreeColumnBottomRow(_ sender: Row) {
-        let x = 0
+        self.delegate?.toggleThreeBottomColumnNumber(sender)
     }
     
 }

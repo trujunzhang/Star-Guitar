@@ -20,7 +20,7 @@ class SGTuningsCustomViewController: UIViewController {
     
     var oneColumnViewController: SGOneColumnViewController!
     var twoColumnViewController: SGTwoColumnViewController!
-    var threeColumnViewController: SGThreeColumnViewController!
+    var threeChordColumnViewController: SGThreeChordColumnViewController!
     var fretboardViewController: SGFretboardViewController!
     var tuningsEventViewController: SGTuningsEventViewController!
     
@@ -36,7 +36,7 @@ class SGTuningsCustomViewController: UIViewController {
         
         oneColumnViewController.delegate = self
         twoColumnViewController.delegate = self
-        threeColumnViewController.delegate = self
+        threeChordColumnViewController.delegate = self
         tuningsEventViewController.delegate = self
         
         fretboardViewController.delegate = self
@@ -65,8 +65,8 @@ class SGTuningsCustomViewController: UIViewController {
         else if (segue.identifier == "twoColumnContainer") {
             self.twoColumnViewController = segue.destination as! SGTwoColumnViewController
         }
-        else if (segue.identifier == "threeColumnContainer") {
-            self.threeColumnViewController = segue.destination as! SGThreeColumnViewController
+        else if (segue.identifier == "threeChordColumnContainer") {
+            self.threeChordColumnViewController = segue.destination as! SGThreeChordColumnViewController
         }
         else if (segue.identifier == "fretboardContainer") {
             self.fretboardViewController = segue.destination as! SGFretboardViewController
