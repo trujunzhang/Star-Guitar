@@ -642,7 +642,7 @@
 					5E4B6BFB1E7C9956006B811D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MT4792P63V;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5E4B6C0F1E7C9957006B811D = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1102,8 +1102,8 @@
 			baseConfigurationReference = B9FBC8D701EDF0542B0333BE /* Pods-Star Guitar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = MT4792P63V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/realm-swift",
@@ -1113,8 +1113,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Socialinfotech.GuitarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1915a1b6-ed39-4089-9714-35167aef8d1d";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.Socialinfotech.GuitarApp";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1125,8 +1125,8 @@
 			baseConfigurationReference = 99B1C9C149B4F76D17A77688 /* Pods-Star Guitar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = MT4792P63V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/realm-swift",
@@ -1136,8 +1136,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Socialinfotech.GuitarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1915a1b6-ed39-4089-9714-35167aef8d1d";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS: com.Socialinfotech.GuitarApp";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
