@@ -53,6 +53,10 @@ class SGGuitarTypesViewController: QuickTableViewController {
         ]
 
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.clearAllSelection()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,8 +78,6 @@ class SGGuitarTypesViewController: QuickTableViewController {
     }
 
     private func showDetail(_ sender: Row) {
-        self.clearAllSelection()
-        
         let title = sender.title
         
         var viewController: UIViewController? = nil
