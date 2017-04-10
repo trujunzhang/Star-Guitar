@@ -15,7 +15,9 @@ extension UITableViewCell{
     func setupSelectedBackground()  {
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor(named: .selectedHighLine)
-        selectedBackgroundView = selectedView
+        self.selectedBackgroundView = selectedView
+        
+        self.contentView.sendSubview(toBack: self.selectedBackgroundView!)
     }
     
 }

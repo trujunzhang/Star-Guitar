@@ -51,12 +51,13 @@ open class TuningsActionCell: UITableViewCell {
     
     private func setUpAppearance() {
         backgroundColor = .clear
-
-        self.setupSelectedBackground()
         
         contentView.addSubview(iconImageView)
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
+        
+        // Here, First send 'backRowView' to back.
+        self.setupSelectedBackground()
         
         iconImageView.snp.makeConstraints { (make) -> Void in
             make.centerY.equalToSuperview()
