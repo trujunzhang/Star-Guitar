@@ -77,8 +77,8 @@ class FretboardBorderLayout: BaseTuningsLayout {
         
         self.convertBoarderType(boarderType)
         
-        self.centerVerticleOff = (self.verticalBoarderType == FretboardBorderType.left) ? 8 : -8
-        self.centerHorizonOff = (self.horizonBoarderType == FretboardBorderType.top) ? 8 : -8
+        self.centerVerticleOff = (self.verticalBoarderType == FretboardBorderType.left) ? 8 : -4
+        self.centerHorizonOff = (self.horizonBoarderType == FretboardBorderType.top) ? 5 : -5
     }
     
     func layoutBoarderView(_ horizonRectView: UIView,_ verticalRectView: UIView) -> FretboardBorderLayout {
