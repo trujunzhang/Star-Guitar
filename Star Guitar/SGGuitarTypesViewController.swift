@@ -13,6 +13,7 @@ class SGGuitarTypesViewController: QuickTableViewController {
         super.configTableView(tableView)
 
         tableView.register(TapActionCell.self, forCellReuseIdentifier: String(describing: TapActionCell.self))
+        tableView.register(TuningsActionCell.self, forCellReuseIdentifier: String(describing: TuningsActionCell.self))
     }
 
     func getGuitarTypesSection() -> Section {
@@ -39,9 +40,9 @@ class SGGuitarTypesViewController: QuickTableViewController {
         // Do any additional setup after loading the view.
 
         let tuningsSection = Section(title: "Tunings", rows: [
-                TapActionRow(title: "Standard", action: showDetail),
-                TapActionRow(title: "Custom", action: showDetail),
-                TapActionRow(title: "1 Touch Chords", action: showDetail)
+                TuningsActionRow(title: "Standard", action: showDetail),
+                TuningsActionRow(title: "Custom", action: showDetail),
+                TuningsActionRow(title: "1 Touch Chords", action: showDetail)
         ]
         )
 
@@ -73,6 +74,8 @@ class SGGuitarTypesViewController: QuickTableViewController {
     }
 
     private func showDetail(_ sender: Row) {
+        self.clearAllSelection()
+        
         let title = sender.title
         
         var viewController: UIViewController? = nil

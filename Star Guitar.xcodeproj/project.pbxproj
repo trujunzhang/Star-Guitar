@@ -81,6 +81,7 @@
 		5EBB16EC1E7EE6C700CD109D /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB16EB1E7EE6C700CD109D /* TitleViewController.swift */; };
 		5EBEFB4C1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEFB4B1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift */; };
 		5EC545A91E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */; };
+		5EC6FCD41E9B19B600C91EBD /* TuningsSettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC6FCD31E9B19B600C91EBD /* TuningsSettingsTableView.swift */; };
 		5EC7B7791E842E320086EFB1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; };
 		5EC7B77A1E842E320086EFB1 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EC7B77B1E842E320086EFB1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7781E842E320086EFB1 /* RealmSwift.framework */; };
@@ -215,6 +216,7 @@
 		5EBB16EB1E7EE6C700CD109D /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		5EBEFB4B1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTwoChordColumnViewController.swift; sourceTree = "<group>"; };
 		5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsStandardViewControllerExtension.swift; sourceTree = "<group>"; };
+		5EC6FCD31E9B19B600C91EBD /* TuningsSettingsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsSettingsTableView.swift; sourceTree = "<group>"; };
 		5EC7B7771E842E320086EFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Frameworks/realm-swift/Realm.framework"; sourceTree = "<group>"; };
 		5EC7B7781E842E320086EFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Frameworks/realm-swift/RealmSwift.framework"; sourceTree = "<group>"; };
 		5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsEventCollectionView.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */,
 				5EACA69B1E8DFCEB0050270B /* ThreeColumnTableView.swift */,
 				5ED3F8801E94BC4F006B845D /* UITableViewCellExtensions.swift */,
+				5EC6FCD31E9B19B600C91EBD /* TuningsSettingsTableView.swift */,
 			);
 			name = TableViews;
 			sourceTree = "<group>";
@@ -948,6 +951,7 @@
 				5E45A8991E97CAE400552A94 /* SGFretboardSettings.swift in Sources */,
 				5E2545E01E8602E400AA504F /* ColorsExtension.swift in Sources */,
 				5E45A8901E97C21200552A94 /* SGThreeChordColumnViewController.swift in Sources */,
+				5EC6FCD41E9B19B600C91EBD /* TuningsSettingsTableView.swift in Sources */,
 				5EBEFB4C1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift in Sources */,
 				5E04A58D1E89E03900238BB4 /* StardardResultsCollectionView.swift in Sources */,
 			);
