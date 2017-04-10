@@ -74,7 +74,10 @@ class FretboardLayout: BaseTuningsLayout {
         fretboardView.backgroundColor = UIColor(named: .transparent)
         
         var topOff = FretboardBorderSchema.outBoardSize() + 4
-        //topOff = 0
+        if(type == FretboardBorderType.left || type == FretboardBorderType.bottom){
+            topOff = 20
+        }
+
         
         fretboardView.snp.makeConstraints { (make) -> Void in
             make.top.equalToSuperview().offset(topOff)
