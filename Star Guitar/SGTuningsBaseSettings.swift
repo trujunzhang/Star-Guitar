@@ -11,6 +11,12 @@ import UIKit
 import RealmSwift
 
 
+public enum FretboardBorderType: Int {
+    case left = 0
+    case right = 1
+    case top = 2
+    case bottom = 3
+}
 
 public struct OneColumnLetterItem {
     var letter: String = ""

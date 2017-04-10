@@ -21,7 +21,8 @@ class DebugTuningFretboardViewController: UIViewController {
         
         // Do any additional setup after loading the view.
 
-        FretboardLayout(self.view).layoutFretboard(self.view, forFretboardView: tuningsResultContainer, 0,0 )
+        let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
+        FretboardLayout(self.view).layoutFretboard(self.view, forFretboardView: tuningsResultContainer, 0,0, type )
 
     }
     

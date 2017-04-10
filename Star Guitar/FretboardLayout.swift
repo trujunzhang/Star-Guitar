@@ -70,7 +70,7 @@ struct FretboardColumnSchema {
 
 class FretboardLayout: BaseTuningsLayout {
     
-    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int) {
+    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int,_ type:FretboardBorderType) {
         fretboardView.backgroundColor = UIColor(named: .transparent)
         
         fretboardView.snp.makeConstraints { (make) -> Void in
@@ -81,7 +81,7 @@ class FretboardLayout: BaseTuningsLayout {
         }
         
         // Add boarder effect to the fretboard view.
-        let type = FretboardBorderType.top
+        //let type = FretboardBorderType.top
         FretboardViewHelper().addAsBoarder(pageView!,fretboardView,type)
     }
     

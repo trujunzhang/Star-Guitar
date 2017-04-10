@@ -50,7 +50,8 @@ class SGTouchChordViewController: UIViewController {
         ThreeColumnLayout(self.view).layoutContainer(twoChordColumnContainer, forThirdColumnView: threeColumnContainer, 50,ThreeColumnSchema.threeChordColumnWidth())
         FourColumnLayout(self.view).layoutContainer(threeColumnContainer, forColumnView: fourColumnContainer)
         
-        FretboardLayout(self.view).layoutFretboard(fourColumnContainer, forFretboardView: fretboardContainer,0,FretboardColumnSchema.touchChordLeading())
+        let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
+        FretboardLayout(self.view).layoutFretboard(fourColumnContainer, forFretboardView: fretboardContainer,0,FretboardColumnSchema.touchChordLeading(), type)
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
         

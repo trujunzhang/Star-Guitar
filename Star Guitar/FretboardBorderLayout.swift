@@ -9,12 +9,7 @@
 import Foundation
 import UIKit
 
-public enum FretboardBorderType: Int {
-    case left = 0
-    case right = 1
-    case top = 2
-    case bottom = 3
-}
+
 
 struct FretboardBorderSchema {
     

@@ -127,6 +127,9 @@ class GuitarSettingsUtils: AnyObject {
         return self.parseFretBoardRows()[0] == "1"
     }
 
+    public func isUpsideDown() -> Bool {
+        return self.parseFretBoardRows()[2] == "1"
+    }
 
     public func getGuitarTypeRowType(_ index: Int) -> TableRowType {
         if (settingsModel?.guitarType == index) {
@@ -204,6 +207,29 @@ class GuitarSettingsUtils: AnyObject {
 
     public func setFingerSlider(_ newValue: Bool) {
         settingsModel?.fingerSlider = newValue
+    }
+    
+    /**
+     * 1. FretboardBorderType.top
+     *  this one is the default position of the app when it is in its right hand mode
+     * 2. FretboardBorderType.right
+     *  the left hand setting reverses the settings and makes everything go from right to left instead of left to right
+     * 3. FretboardBorderType.left
+     *  when the upside down setting is on the buttons go from bottom to top
+     * 4. FretboardBorderType.bottom
+     *  the left hand upside down setting takes the left hand setting and flips it upside down
+     */
+    public func getCurrentFretboardBorderType() -> FretboardBorderType{
+        if self.isLeftHanded() && self.isUpsideDown() {
+            return FretboardBorderType.bottom  // the left hand upside down setting
+        }
+        else if self.isLeftHanded(){
+            return FretboardBorderType.right // the left hand setting
+        }
+        else if self.isUpsideDown(){
+            return FretboardBorderType.left //  when the upside down setting is on
+        }
+        return FretboardBorderType.top // when it is in its right hand mode
     }
 
     public func readSettings() {
