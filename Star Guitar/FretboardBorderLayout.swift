@@ -63,6 +63,9 @@ class FretboardBorderLayout: BaseTuningsLayout {
     let horizonCirclesContainer = UIView()
     let verticalCirclesContainer = UIView()
     
+    var centerVerticleOff = 5
+    var centerHorizonOff = 5
+    
     init(_ pageView: UIView,withType boarderType:FretboardBorderType) {
         super.init(pageView)
         
@@ -73,6 +76,9 @@ class FretboardBorderLayout: BaseTuningsLayout {
         pageView.addSubview(verticalCirclesContainer)
         
         self.convertBoarderType(boarderType)
+        
+        self.centerVerticleOff = (self.verticalBoarderType == FretboardBorderType.left) ? 8 : -8
+        self.centerHorizonOff = (self.horizonBoarderType == FretboardBorderType.top) ? 8 : -8
     }
     
     func layoutBoarderView(_ horizonRectView: UIView,_ verticalRectView: UIView) -> FretboardBorderLayout {
@@ -96,7 +102,7 @@ class FretboardBorderLayout: BaseTuningsLayout {
 
             circleView.snp.makeConstraints { (make) -> Void in
                 make.leading.equalToSuperview().offset(((itemWidth-circleWH)/2) + itemWidth * i)
-                make.centerY.equalToSuperview()
+                make.centerY.equalToSuperview().offset(self.centerHorizonOff)
                 make.width.equalTo(circleWH)
                 make.height.equalTo(circleWH)
             }
@@ -121,7 +127,7 @@ class FretboardBorderLayout: BaseTuningsLayout {
             
             circleView.snp.makeConstraints { (make) -> Void in
                 make.top.equalToSuperview().offset(((itemHeight-circleWH)/2) + itemHeight * i)
-                make.centerX.equalToSuperview()
+                make.centerX.equalToSuperview().offset(self.centerVerticleOff)
                 make.width.equalTo(circleWH)
                 make.height.equalTo(circleWH)
             }

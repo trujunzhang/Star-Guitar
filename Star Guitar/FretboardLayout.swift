@@ -73,8 +73,11 @@ class FretboardLayout: BaseTuningsLayout {
     func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int,_ type:FretboardBorderType) {
         fretboardView.backgroundColor = UIColor(named: .transparent)
         
+        var topOff = FretboardBorderSchema.outBoardSize() + 4
+        //topOff = 0
+        
         fretboardView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(FretboardBorderSchema.outBoardSize() + 4)
+            make.top.equalToSuperview().offset(topOff)
             make.leading.equalTo(leftColumn).offset(leading)
             make.width.equalTo(FretboardColumnSchema.resultsColumnWidth())
             make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())
