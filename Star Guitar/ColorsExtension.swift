@@ -39,9 +39,6 @@ enum ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#626364"></span>
   /// Alpha: 100% <br/> (0x626364ff)
   case tableRowBG
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
-  /// Alpha: 0% <br/> (0xffffff00)
-  case transparent
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3f3b3a"></span>
   /// Alpha: 100% <br/> (0x3f3b3aff)
   case vcbg
@@ -61,8 +58,6 @@ enum ColorName {
       return 0x999999ff
     case .tableRowBG:
       return 0x626364ff
-    case .transparent:
-      return 0xffffff00
     case .vcbg:
       return 0x3f3b3aff
     case .vcHeaderDivide:

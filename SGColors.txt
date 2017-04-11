@@ -2,7 +2,6 @@ VCBG:#3F3B3A
 VCHeaderDivide:#33ACE0
 HeaderSectionDivide:#5D5A5A
 TableRowBG:#626364
-Transparent:#ffffff00
 Mutes:#29ABE2
 ResultsBoarder:#00ff00
 SelectedHighLine:#999999
