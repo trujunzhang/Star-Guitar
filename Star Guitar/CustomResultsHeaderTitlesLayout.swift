@@ -18,7 +18,7 @@ struct CustomResultsHeaderTitlesSchema {
     }
 
     public static func marginTop(_ type:FretboardBorderType) -> Int {
-        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? -4 : -60
+        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? -4 : -28
         return -CustomResultsHeaderTitlesSchema.getHeight() + 10 + off
     }
 

@@ -32,7 +32,7 @@ struct FretboardBorderSchema {
     
     public static func getTopOffOnCustom(_ type:FretboardBorderType) -> Int {
         let defaultTopOff = FretboardBorderSchema.getDefaultTopOff(type)
-        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? 14 : 0
+        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? 14 : 14
         return defaultTopOff + off
     }
     
