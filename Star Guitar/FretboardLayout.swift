@@ -87,9 +87,14 @@ class FretboardLayout: BaseTuningsLayout {
         }
         
         // Add boarder effect to the fretboard view.
-        //let type = FretboardBorderType.top
         FretboardViewHelper().addAsBoarder(pageView!,fretboardView,type)
     }
+    
+    func addAsTitles(forFretboardViewOnCustom fretboardView: UIView)  {
+        // Add titles  to the tuning results view.
+        CustomResultsViewHelper().addAsTitles(pageView!,fretboardView)
+    }
+    
     
 }
 

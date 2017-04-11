@@ -93,6 +93,7 @@
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
 		5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */; };
 		5EF0AE161E8DE1590026F0B4 /* SGFretboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */; };
+		5EFD9A3B1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */; };
 		65B8C820CF4D809D92DBEFDA /* readme.org in Resources */ = {isa = PBXBuildFile; fileRef = 65B8CF7C240DD7CA4FD7D622 /* readme.org */; };
 		7E08DFC8246FFC850240E9B7 /* Pods_Star_GuitarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B21822E2E8B20F7CAE202D /* Pods_Star_GuitarUITests.framework */; };
 		836E8F64D81F50CE9E8D863A /* Pods_Star_GuitarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A08FE230578901C27BD3228 /* Pods_Star_GuitarTests.framework */; };
@@ -226,6 +227,7 @@
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
 		5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsSharpActionCell.swift; sourceTree = "<group>"; };
 		5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFretboardViewController.swift; sourceTree = "<group>"; };
+		5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResultsHeaderTitlesLayout.swift; sourceTree = "<group>"; };
 		65B8CF7C240DD7CA4FD7D622 /* readme.org */ = {isa = PBXFileReference; lastKnownFileType = file.org; path = readme.org; sourceTree = "<group>"; };
 		99B1C9C149B4F76D17A77688 /* Pods-Star Guitar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Guitar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star Guitar/Pods-Star Guitar.release.xcconfig"; sourceTree = "<group>"; };
 		9F863FA67DE41B0188EE20CC /* Pods-Star GuitarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star GuitarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star GuitarUITests/Pods-Star GuitarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */,
 				5E7F0BEC1E8DE72B00E5569F /* StandardResultsLayout.swift */,
 				5E5124741E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift */,
+				5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */,
 				5E7F0BEE1E8DE82E00E5569F /* TuningsTypeLayout.swift */,
 				5E7F0BF01E8DE8BD00E5569F /* TuningsEventsLayout.swift */,
 				5E7FC0DF1E8DF90400033679 /* ThreeColumnSchema.swift */,
@@ -944,6 +947,7 @@
 				5E4B6C001E7C9957006B811D /* AppDelegate.swift in Sources */,
 				5E5F6D691E86577600B8D5DA /* SGEffectLayout.swift in Sources */,
 				5E7F0BEF1E8DE82E00E5569F /* TuningsTypeLayout.swift in Sources */,
+				5EFD9A3B1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift in Sources */,
 				5E7F0BF11E8DE8BD00E5569F /* TuningsEventsLayout.swift in Sources */,
 				5EBB16EC1E7EE6C700CD109D /* TitleViewController.swift in Sources */,
 				5E180B4B1E93344E00237530 /* TwoColumnTableView.swift in Sources */,

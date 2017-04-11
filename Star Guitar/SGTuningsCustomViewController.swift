@@ -9,9 +9,9 @@
 import UIKit
 
 class SGTuningsCustomViewController: UIViewController {
-
+    
     var titleViewController: TitleViewController!
-
+    
     @IBOutlet weak var oneColumnContainer: UIView!
     @IBOutlet weak var twoColumnContainer: UIView!
     @IBOutlet weak var threeColumnContainer: UIView!
@@ -25,14 +25,14 @@ class SGTuningsCustomViewController: UIViewController {
     var tuningsEventViewController: SGTuningsEventViewController!
     
     var tuningsCustomSettingsUtils = TuningsCustomSettingsUtils()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
         self.titleViewController.setTitleWithSubtitle(title: "Tuning", subtitle: "Custom")
-
+        
         
         oneColumnViewController.delegate = self
         twoColumnViewController.delegate = self
@@ -40,23 +40,25 @@ class SGTuningsCustomViewController: UIViewController {
         tuningsEventViewController.delegate = self
         
         fretboardViewController.delegate = self
-
+        
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)
         ThreeColumnLayout(self.view).layoutContainer(twoColumnContainer, forThirdColumnView: threeColumnContainer,0,ThreeColumnSchema.threeColumnWidth())
         
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
-        FretboardLayout(self.view).layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer,0,TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft(),type)
+        let fretboardLayout:FretboardLayout = FretboardLayout(self.view)
+        fretboardLayout.layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer,0,TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft(),type)
+        fretboardLayout.addAsTitles(forFretboardViewOnCustom: fretboardContainer)
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "titleContainer") {
             self.titleViewController = segue.destination as! TitleViewController
@@ -76,5 +78,5 @@ class SGTuningsCustomViewController: UIViewController {
             self.tuningsEventViewController = segue.destination as! SGTuningsEventViewController
         }
     }
-
+    
 }
