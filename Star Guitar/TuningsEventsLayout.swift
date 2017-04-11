@@ -42,7 +42,7 @@ struct EventsSchema {
     }
 
     public static func marginBottom() -> Int{
-        return -14
+        return -4 - SGScreenLayout.sharedInstance.deviceIndex * 10
     }
 
 }
