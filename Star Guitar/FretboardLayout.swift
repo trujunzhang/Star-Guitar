@@ -84,11 +84,5 @@ class FretboardLayout: BaseTuningsLayout {
         FretboardViewHelper().addAsBoarder(pageView!,fretboardView,type)
     }
     
-    func addAsTitles(forFretboardViewOnCustom fretboardView: UIView)  {
-        // Add titles  to the tuning results view.
-        CustomResultsViewHelper().addAsTitles(pageView!,fretboardView)
-    }
-    
-    
 }
 

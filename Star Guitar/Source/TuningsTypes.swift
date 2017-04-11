@@ -29,11 +29,7 @@ open class TuningsTypeActionCell: UICollectionViewCell {
             eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): .clear
         }
     }
-    
 
-    // MARK: Initializer
-
-    
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)

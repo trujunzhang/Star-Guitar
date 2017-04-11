@@ -13,14 +13,15 @@ import UIKit
 struct CustomResultsHeaderTitlesSchema {
     
     // ==== ResultsBoarder
-    public static func marginTop() -> Int {
-        return 40  + SGScreenLayout.sharedInstance.deviceIndex * 20
-    }
-    
     public static func getHeight() -> Int{
         return 40  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
-    
+
+    public static func marginTop(_ type:FretboardBorderType) -> Int {
+        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? -4 : -60
+        return -CustomResultsHeaderTitlesSchema.getHeight() + 10 + off
+    }
+
 }
 
 
@@ -30,7 +31,7 @@ class CustomResultsViewHelper{
     
     let titles:[String] = ["6st","5nd","4rd","3th","2th","1th"]
     
-    func addAsTitles(_ pageContainer:UIView,_ fretboardView:UIView)  {
+    func addAsTitles(_ pageContainer:UIView,_ fretboardView:UIView, _ type:FretboardBorderType)  {
         pageContainer.addSubview(titlesView)
         
         titlesView.backgroundColor  = .clear
@@ -38,7 +39,7 @@ class CustomResultsViewHelper{
         titlesView.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(fretboardView)
             make.trailing.equalTo(fretboardView)
-            make.top.equalTo(fretboardView).offset(-CustomResultsHeaderTitlesSchema.getHeight() + 10)
+            make.top.equalTo(fretboardView).offset(CustomResultsHeaderTitlesSchema.marginTop(type))
             make.height.equalTo(CustomResultsHeaderTitlesSchema.getHeight())
         }
         
