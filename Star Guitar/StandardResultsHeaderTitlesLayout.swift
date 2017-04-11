@@ -32,7 +32,7 @@ class StandardResultsViewHelper{
     func addAsTitles(_ pageContainer:UIView,_ tuningsResultContainer:UIView)  {
         pageContainer.addSubview(titlesView)
         
-        titlesView.backgroundColor  = UIColor(named: .transparent)
+        titlesView.backgroundColor  = .clear
 
         titlesView.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(tuningsResultContainer)

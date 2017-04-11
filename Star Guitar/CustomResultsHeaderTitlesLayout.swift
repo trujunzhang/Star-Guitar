@@ -33,7 +33,7 @@ class CustomResultsViewHelper{
     func addAsTitles(_ pageContainer:UIView,_ fretboardView:UIView)  {
         pageContainer.addSubview(titlesView)
         
-        titlesView.backgroundColor  = UIColor(named: .transparent)
+        titlesView.backgroundColor  = .clear
         
         titlesView.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(fretboardView)
@@ -54,7 +54,7 @@ class CustomResultsViewHelper{
             
             let textLabel = UILabel()
             textLabel.text = title
-            textLabel.font = UIFont.resultsTitleFont()
+            textLabel.font = UIFont.resultsCustomTitleFont()
             textLabel.textAlignment = .center
             textLabel.textColor = .black
             itemView.addSubview(textLabel)

@@ -70,15 +70,9 @@ struct FretboardColumnSchema {
 
 class FretboardLayout: BaseTuningsLayout {
     
-    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int,_ type:FretboardBorderType) {
-        fretboardView.backgroundColor = UIColor(named: .transparent)
-        
-        var topOff = FretboardBorderSchema.outBoardSize() + 4
-        if(type == FretboardBorderType.left || type == FretboardBorderType.bottom){
-            topOff = 20
-        }
-
-        
+    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int,_ type:FretboardBorderType, _ topOff: Int) {
+        fretboardView.backgroundColor = .clear
+                
         fretboardView.snp.makeConstraints { (make) -> Void in
             make.top.equalToSuperview().offset(topOff)
             make.leading.equalTo(leftColumn).offset(leading)

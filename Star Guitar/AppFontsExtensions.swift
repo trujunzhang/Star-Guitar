@@ -84,5 +84,9 @@ extension UIFont {
     static func resultsTitleFont() -> UIFont {
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(28 + SGScreenLayout.sharedInstance.deviceIndex * 8))
     }
+    
+    static func resultsCustomTitleFont() -> UIFont {
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(24 + SGScreenLayout.sharedInstance.deviceIndex * 6))
+    }
 
 }

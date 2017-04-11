@@ -22,6 +22,20 @@ struct FretboardBorderSchema {
         return 60  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
     
+    public static func getDefaultTopOff(_ type:FretboardBorderType) -> Int {
+        var topOff = FretboardBorderSchema.outBoardSize() + 4
+        if(type == FretboardBorderType.left || type == FretboardBorderType.bottom){
+            topOff = 20
+        }
+        return topOff
+    }
+    
+    public static func getTopOffOnCustom(_ type:FretboardBorderType) -> Int {
+        let defaultTopOff = FretboardBorderSchema.getDefaultTopOff(type)
+        var topOff = defaultTopOff + 20
+        return topOff
+    }
+    
 }
 
 class FretboardViewHelper{

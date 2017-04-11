@@ -56,7 +56,7 @@ open class QuickCollectionViewController: UIViewController,
     }
 
     open func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
-        collectionView.backgroundColor = UIColor(named: .transparent)
+        collectionView.backgroundColor = .clear
 
         layout.sectionInset =  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) // section與section之間的距離
         layout.itemSize = CGSize(width: 80, height: 120) // cell的寬、高

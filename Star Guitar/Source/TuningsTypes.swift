@@ -20,13 +20,13 @@ open class TuningsTypeActionCell: UICollectionViewCell {
     
     override open var isHighlighted: Bool {
         willSet { // make lightgray background show immediately(使灰背景立即出现)
-            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .transparent)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : .clear
         }
     }
     
     override open var isSelected: Bool {
         willSet { // keep lightGray background (保留灰背景)
-            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .transparent)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): .clear
         }
     }
     
@@ -57,7 +57,7 @@ open class TuningsTypeActionCell: UICollectionViewCell {
 
     private func setUpAppearance() {
         backgroundColor = .clear
-        //backgroundColor = UIColor(named: .transparent)
+        //backgroundColor = .clear
 
         contentView.addSubview(eventLabel)
         contentView.addSubview(backRowView)
@@ -77,7 +77,7 @@ open class TuningsTypeActionCell: UICollectionViewCell {
             make.leading.equalToSuperview().offset(edgeInsets.left)
             make.trailing.equalToSuperview().offset(-edgeInsets.right)
         }
-        backRowView.backgroundColor = UIColor(named: .transparent)
+        backRowView.backgroundColor = .clear
     }
 
 }

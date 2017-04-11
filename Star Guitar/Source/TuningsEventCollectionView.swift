@@ -18,13 +18,13 @@ open class TuningsEventsActionCell: UICollectionViewCell {
     
     override open var isHighlighted: Bool {
         willSet { // make lightgray background show immediately(使灰背景立即出现)
-            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .transparent)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : .clear
         }
     }
     
     override open var isSelected: Bool {
         willSet { // keep lightGray background (保留灰背景)
-            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .transparent)
+            eventLabel.backgroundColor = newValue ? UIColor(named: .selectedHighLine): .clear
         }
     }
 
@@ -50,7 +50,7 @@ open class TuningsEventsActionCell: UICollectionViewCell {
     // MARK: Private Methods
 
     private func setUpAppearance() {
-        backgroundColor = UIColor(named: .transparent)
+        backgroundColor = .clear
 
         contentView.addSubview(eventLabel)
         eventLabel.font = UIFont.TuningsEventsFont()

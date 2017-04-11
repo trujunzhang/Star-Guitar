@@ -22,7 +22,7 @@ class DebugTuningFretboardViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
-        FretboardLayout(self.view).layoutFretboard(self.view, forFretboardView: tuningsResultContainer, 0,0, type )
+        FretboardLayout(self.view).layoutFretboard(self.view, forFretboardView: tuningsResultContainer, 0,0, type,FretboardBorderSchema.getDefaultTopOff(type) )
 
     }
     

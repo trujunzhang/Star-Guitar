@@ -47,7 +47,7 @@ class SGTuningsCustomViewController: UIViewController {
         
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
         let fretboardLayout:FretboardLayout = FretboardLayout(self.view)
-        fretboardLayout.layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer,0,TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft(),type)
+        fretboardLayout.layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer,0,TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft(),type, FretboardBorderSchema.getTopOffOnCustom(type))
         fretboardLayout.addAsTitles(forFretboardViewOnCustom: fretboardContainer)
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)

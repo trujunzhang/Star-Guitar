@@ -42,7 +42,7 @@ class StringsLayoutSchema: AnyObject {
         for (index, box) in stringsView.enumerated() {
             box.tag = index
 
-            box.backgroundColor = UIColor(named: .transparent)
+            box.backgroundColor = .clear
 
             //box.backgroundColor = .yellow
 
@@ -69,7 +69,7 @@ class StringsLayoutSchema: AnyObject {
                         make.height.equalTo(8)
                         make.centerY.equalToSuperview()
                     }
-                    imageView.backgroundColor = UIColor(named: .transparent)
+                    imageView.backgroundColor = .clear
                     imageView.image = UIImage(asset: .string14)
                 }
             }

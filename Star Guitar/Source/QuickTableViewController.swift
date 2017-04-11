@@ -67,7 +67,7 @@ open class QuickTableViewController: UIViewController,
     }
 
     open func configTableView(_ tableView: UITableView) {
-        tableView.backgroundColor = UIColor(named: .transparent)
+        tableView.backgroundColor = .clear
     }
 
     // MARK: - UIViewController
@@ -136,7 +136,7 @@ open class QuickTableViewController: UIViewController,
         if height != UITableViewAutomaticDimension{
             let frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: height)
             let footerView = UIView(frame: frame)
-            footerView.backgroundColor = UIColor(named: .transparent)
+            footerView.backgroundColor = .clear
             return footerView
         }
         return nil
