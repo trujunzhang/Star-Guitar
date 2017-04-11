@@ -30,17 +30,20 @@ struct EventsSchema {
         return 10
     }
 
-    public static func eventsColumnWidth() -> CGFloat {
+    public static func columnWidth() -> CGFloat {
         let itemsWidth = (EventsSchema.itemWidth() * 4 + EventsSchema.eventsLineSpacing()) + 100
         let eventsWidth = CGFloat(integerLiteral: itemsWidth) + EventsSchema.edgeInsets().left + EventsSchema.edgeInsets().right
         return eventsWidth
     }
 
-    public static func eventsColumnHeight() -> CGFloat {
+    public static func columnHeight() -> CGFloat {
         let itemsHeight = (EventsSchema.itemHeight() + 10)
         return CGFloat(integerLiteral: itemsHeight + 20) + EventsSchema.edgeInsets().top + EventsSchema.edgeInsets().bottom
     }
 
+    public static func marginBottom() -> Int{
+        return -14
+    }
 
 }
 
@@ -49,9 +52,9 @@ class TuningsEventsLayout: BaseTuningsLayout {
     override func layoutContainer(_ leftColumn: UIView, forView containerView: UIView) {
         containerView.snp.makeConstraints { (make) -> Void in
             make.trailing.equalToSuperview().offset(-120)
-            make.bottom.equalToSuperview().offset(-14)
-            make.width.equalTo(EventsSchema.eventsColumnWidth())
-            make.height.equalTo(EventsSchema.eventsColumnHeight())
+            make.bottom.equalToSuperview().offset(EventsSchema.marginBottom())
+            make.width.equalTo(EventsSchema.columnWidth())
+            make.height.equalTo(EventsSchema.columnHeight())
         }
 
     }
