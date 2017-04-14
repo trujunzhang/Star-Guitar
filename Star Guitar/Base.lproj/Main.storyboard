@@ -643,7 +643,7 @@
                                     <action selector="mute6Tapped:" destination="cCD-EU-e4z" eventType="touchUpInside" id="eKl-rH-bip"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veP-oF-JTc" userLabel="Fingure">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veP-oF-JTc" userLabel="FingerSlide">
                                 <rect key="frame" x="0.0" y="258" width="400" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -687,8 +687,9 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="fingerSliderCell" destination="veP-oF-JTc" id="jDN-Ju-PWn"/>
-                        <outlet property="fingerSliderLabel" destination="yA7-1I-2Am" id="Hes-T7-hZd"/>
+                        <outlet property="fingerSlideCell" destination="veP-oF-JTc" id="A6e-SP-1Mg"/>
+                        <outlet property="fingerSlideLabel" destination="yA7-1I-2Am" id="6yb-Y9-6zB"/>
+                        <outlet property="fingerSlideSwich" destination="bHh-iu-Yan" id="6pk-FY-YIm"/>
                         <outlet property="mute1Button" destination="fep-Wc-gSl" id="0jG-se-KoH"/>
                         <outlet property="mute2Button" destination="kf5-Ek-YV9" id="RDw-Qw-y9Z"/>
                         <outlet property="mute3Button" destination="yVF-cg-EBy" id="Xnw-D4-GIy"/>
@@ -698,7 +699,6 @@
                         <outlet property="muteStringsCell" destination="afD-Ip-DwT" id="xJi-sk-rLa"/>
                         <outlet property="muteStringsLabel" destination="Won-OJ-eiq" id="vZd-rI-dzM"/>
                         <outlet property="rightSwitchPanel" destination="7tQ-ep-sua" id="eKL-Js-ybp"/>
-                        <outlet property="sliderSwich" destination="bHh-iu-Yan" id="GAR-rG-Y7Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7n-DA-hDn" userLabel="First Responder" sceneMemberID="firstResponder"/>

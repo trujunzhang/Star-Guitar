@@ -442,7 +442,6 @@
 				5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */,
 				5E5A05671E837487001B53A5 /* SoundPlayerManager.swift */,
 				5E36C7871E83F56300B7C97F /* DevicesManager.swift */,
-				5E40D8EF1E85F83200588AB6 /* SGScreenLayout.swift */,
 				5E5F6D661E86563F00B8D5DA /* SGViewsExtension.swift */,
 			);
 			name = Utils;
@@ -464,6 +463,8 @@
 				5E42AA001E8E6C1E00392EBD /* FretboardBorderLayout.swift */,
 				5E5F74C91E8EA2F60056E607 /* TwoChordColumnLayout.swift */,
 				5E5F74CB1E8EA3600056E607 /* FourColumnLayout.swift */,
+				5E5F6D681E86577600B8D5DA /* SGEffectLayout.swift */,
+				5E40D8EF1E85F83200588AB6 /* SGScreenLayout.swift */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -526,7 +527,6 @@
 			children = (
 				5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */,
 				5E5F6D641E86553300B8D5DA /* SGEffectViewController.swift */,
-				5E5F6D681E86577600B8D5DA /* SGEffectLayout.swift */,
 			);
 			name = tables;
 			sourceTree = "<group>";

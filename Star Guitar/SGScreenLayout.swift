@@ -56,8 +56,8 @@ struct SGSettingsScreen {
         return self.secondButtonsWHInEffectSection() + 12
     }
 
-    // === Settings's slider
-    public static func sliderMarginTop() -> Int {
+    // === Settings's FingerSlide
+    public static func fingerSlideMarginTop() -> Int {
         return -5
     }
 

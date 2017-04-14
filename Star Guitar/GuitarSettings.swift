@@ -14,7 +14,7 @@ public enum TableRowType: Int {
     case Selected = 0
     case RightArrow = 1
     case Empty = 2
-
+    
     func getImage() -> UIImage? {
         switch self {
         case .Selected:
@@ -38,11 +38,11 @@ enum GuitarType: Int {
     public static func getGuitarTypeTitles() -> [String] {
         return ["Acoustic", "Electric", "Bass(6 strng)", "Spanish", "Harp(6 string)"]
     }
-
+    
     public static func getGuitarType(_ title: String) -> Int {
         return GuitarType.getGuitarTypeTitles().index(of: title)!
     }
-
+    
 }
 
 
@@ -50,15 +50,15 @@ enum FretboardType: Int {
     case LeftHanded = 0
     case RightHanded = 1
     case UpsideDown = 2
-
+    
     public static func getFretboardTitles() -> [String] {
         return ["Left Handed", "Right Handed", "Upside Down"]
     }
-
+    
     public static func getFretboardType(_ title: String) -> Int {
         return FretboardType.getFretboardTitles().index(of: title)!
     }
-
+    
 }
 
 //
@@ -66,9 +66,9 @@ enum FretboardType: Int {
 // Realm Object
 //
 class GuitarSettings: Object {
-
+    
     dynamic var id = 0
-
+    
     override static func primaryKey() -> String? {
         return "id"
     }
@@ -76,49 +76,49 @@ class GuitarSettings: Object {
     dynamic var guitarType = GuitarType.Electric.rawValue
     
     dynamic var fretboardRows: String = "0,1,1"
-
+    
     dynamic var muteArray: String = "0,0,1,1,0,0"
-
-    dynamic var fingerSlider: Bool = true
+    
+    dynamic var fingerSlide: Bool = true
 }
 
 class GuilarSettingsModel {
     var guitarType = GuitarType.Electric.rawValue
     var fretboardRows: String = "0,1,1"
     var muteArray: String = "0,0,1,1,0,0"
-    var fingerSlider: Bool = true
-
+    var fingerSlide: Bool = true
+    
     init() {
         // Empty here.
     }
-
-    init(_ guitarType: Int, _ fretboardRows: String, _ muteArray: String, _ fingerSlider: Bool) {
+    
+    init(_ guitarType: Int, _ fretboardRows: String, _ muteArray: String, _ fingerSlide: Bool) {
         self.guitarType = guitarType
         self.fretboardRows = fretboardRows
         self.muteArray = muteArray
-        self.fingerSlider = fingerSlider
+        self.fingerSlide = fingerSlide
     }
-
+    
     public static func convert(_ settings: GuitarSettings) -> GuilarSettingsModel {
-        return GuilarSettingsModel(settings.guitarType, settings.fretboardRows, settings.muteArray, settings.fingerSlider)
+        return GuilarSettingsModel(settings.guitarType, settings.fretboardRows, settings.muteArray, settings.fingerSlide)
     }
-
+    
     public func generate() -> GuitarSettings {
         let settings = GuitarSettings()
         settings.guitarType = self.guitarType
         settings.fretboardRows = self.fretboardRows
         settings.muteArray = self.muteArray
-        settings.fingerSlider = self.fingerSlider
+        settings.fingerSlide = self.fingerSlide
         return settings
     }
 }
 
 class GuitarSettingsUtils: AnyObject {
     static let sharedInstance = GuitarSettingsUtils()
-
+    
     private var settings: GuitarSettings?
     private var settingsModel: GuilarSettingsModel?
-
+    
     init() {
         self.readSettings()
     }
@@ -126,39 +126,39 @@ class GuitarSettingsUtils: AnyObject {
     public func isLeftHanded() -> Bool {
         return self.parseFretBoardRows()[0] == "1"
     }
-
+    
     public func isUpsideDown() -> Bool {
         return self.parseFretBoardRows()[2] == "1"
     }
-
+    
     public func getGuitarTypeRowType(_ index: Int) -> TableRowType {
         if (settingsModel?.guitarType == index) {
             return TableRowType.Selected
         }
-
+        
         return TableRowType.Empty
     }
-
+    
     private func parseFretBoardRows() -> [String] {
         //settingsModel.fretboardRows.components(separatedBy: ",").flatMap({ Int($0) }) // [Int]
         return (settingsModel?.fretboardRows.components(separatedBy: ","))!
     }
-
+    
     public func getFretboardTypeRowType(_ index: Int) -> TableRowType {
         if (self.parseFretBoardRows()[index] == "1") {
             return TableRowType.Selected
         }
-
+        
         return TableRowType.Empty
     }
-
+    
     public func setGuitarType(_ title: String) {
         settingsModel?.guitarType = GuitarType.getGuitarType(title)
     }
-
+    
     public func setFretboardType(_ title: String) {
         var arrToSave = self.parseFretBoardRows()
-
+        
         let fretboardType = FretboardType.getFretboardType(title)
         switch fretboardType {
         case FretboardType.LeftHanded.rawValue:
@@ -176,17 +176,17 @@ class GuitarSettingsUtils: AnyObject {
             break
         default: break
         }
-
+        
         let newFretBoard = arrToSave.map {
             String(describing: $0)
-        }.joined(separator: ",")
+            }.joined(separator: ",")
         self.settingsModel?.fretboardRows = newFretBoard
     }
-
+    
     public func getMuteArray() -> [String] {
         return (settingsModel?.muteArray.components(separatedBy: ","))!
     }
-
+    
     public func setMuteArray(_ index: Int) {
         var arrToSave = self.getMuteArray()
         var newValue = "1"
@@ -196,17 +196,17 @@ class GuitarSettingsUtils: AnyObject {
         arrToSave[index] = newValue
         let newFretBoard = arrToSave.map {
             String(describing: $0)
-        }.joined(separator: ",")
+            }.joined(separator: ",")
         self.settingsModel?.muteArray = newFretBoard
-
+        
     }
-
-    public func getFingerSlider() -> Bool {
-        return (settingsModel?.fingerSlider)!
+    
+    public func getFingerSlide() -> Bool {
+        return (settingsModel?.fingerSlide)!
     }
-
-    public func setFingerSlider(_ newValue: Bool) {
-        settingsModel?.fingerSlider = newValue
+    
+    public func setFingerSlide(_ newValue: Bool) {
+        settingsModel?.fingerSlide = newValue
     }
     
     /**
@@ -231,7 +231,7 @@ class GuitarSettingsUtils: AnyObject {
         }
         return FretboardBorderType.top // when it is in its right hand mode
     }
-
+    
     public func readSettings() {
         if let existSetting = self.readGuitarSettings() {
             self.settings = existSetting
@@ -240,23 +240,23 @@ class GuitarSettingsUtils: AnyObject {
             self.settingsModel = GuilarSettingsModel()
         }
     }
-
+    
     private func readGuitarSettings() -> GuitarSettings? {
         let realm = try! Realm()
-
+        
         let items = realm.objects(GuitarSettings.self)
         if (items.count == 1) {
             return items[0]
         }
-
+        
         return nil
     }
-
+    
     public func writeSettings() {
         // Get the default Realm
         let realm = try! Realm()
         // You only need to do this once (per thread)
-
+        
         // Add to the Realm inside a transaction
         if let lastSettings = self.settings {
             // Update an object with a transaction
@@ -264,18 +264,18 @@ class GuitarSettingsUtils: AnyObject {
                 lastSettings.guitarType = (self.settingsModel?.guitarType)!
                 lastSettings.fretboardRows = (self.settingsModel?.fretboardRows)!
                 lastSettings.muteArray = (self.settingsModel?.muteArray)!
-                lastSettings.fingerSlider = (self.settingsModel?.fingerSlider)!
+                lastSettings.fingerSlide = (self.settingsModel?.fingerSlide)!
             }
         } else {
             // No exist, create it.
             try! realm.write {
                 realm.create(GuitarSettings.self, value:
-                [
+                    [
                         "guitarType": (self.settingsModel?.guitarType)!,
                         "fretboardRows": (self.settingsModel?.fretboardRows)!,
                         "muteArray": (self.settingsModel?.muteArray)!,
-                        "fingerSlider": (self.settingsModel?.fingerSlider)!
-                ]
+                        "fingerSlide": (self.settingsModel?.fingerSlide)!
+                    ]
                 )
             }
             // Then, read it again.

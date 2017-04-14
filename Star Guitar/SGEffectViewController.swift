@@ -26,16 +26,16 @@ class SGEffectViewController: UIViewController {
     var muteButtons: [UIButton] = [UIButton]()
 
     // Third Line
-    @IBOutlet weak var fingerSliderCell: UIView!
-    @IBOutlet weak var fingerSliderLabel: UILabel!
+    @IBOutlet weak var fingerSlideCell: UIView!
+    @IBOutlet weak var fingerSlideLabel: UILabel!
     @IBOutlet weak var rightSwitchPanel: UIView!
 
-    @IBOutlet weak var sliderSwich: UISwitch!
+    @IBOutlet weak var fingerSlideSwich: UISwitch!
 
     @IBAction func switchValueChanged(_ sender: Any) {
-        let isOn = self.sliderSwich.isOn
+        let isOn = self.fingerSlideSwich.isOn
 
-        GuitarSettingsUtils.sharedInstance.setFingerSlider(isOn)
+        GuitarSettingsUtils.sharedInstance.setFingerSlide(isOn)
     }
 
     @IBAction func mute1Tapped(_ sender: Any) {
@@ -74,8 +74,8 @@ class SGEffectViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        sliderSwich.onTintColor = UIColor(named: .mutes)
-        sliderSwich.tintColor = UIColor(named: .vcbg)
+        fingerSlideSwich.onTintColor = UIColor(named: .mutes)
+        fingerSlideSwich.tintColor = UIColor(named: .vcbg)
 
         self.muteButtons = [
                 mute1Button, mute2Button, mute3Button,
@@ -85,9 +85,9 @@ class SGEffectViewController: UIViewController {
         SGEffectLayout(self.view)
                 .layoutMuteStrings(muteStringsCell, muteStringsLabel)
                 .layoutButtons(muteButtons, topCell: muteStringsCell)
-                .layoutSlider(fingerSliderCell, fingerSliderLabel, rightSwitchPanel, topCell: mute1Button)
+                .layoutFingerSlide(fingerSlideCell, fingerSlideLabel, rightSwitchPanel, topCell: mute1Button)
 
-        self.sliderSwich.setOn(GuitarSettingsUtils.sharedInstance.getFingerSlider(), animated: false)
+        self.fingerSlideSwich.setOn(GuitarSettingsUtils.sharedInstance.getFingerSlide(), animated: false)
     }
 
     override func didReceiveMemoryWarning() {
