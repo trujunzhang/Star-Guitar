@@ -33,6 +33,7 @@ class CustomResultsViewHelper{
         /**
          * On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
          * And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
+         * And this also need to be for the one touch tuning
          */
         if(GuitarSettingsUtils.sharedInstance.isLeftHanded()){
             return ["1st","2nd","3rd","4th","5th","6th"] // And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th

@@ -50,8 +50,15 @@ class SGTouchChordViewController: UIViewController {
         ThreeColumnLayout(self.view).layoutContainer(twoChordColumnContainer, forThirdColumnView: threeColumnContainer, 50,ThreeColumnSchema.threeChordColumnWidth())
         FourColumnLayout(self.view).layoutContainer(threeColumnContainer, forColumnView: fourColumnContainer)
         
+        /**
+         * On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
+         * And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
+         * And this also need to be for the one touch tuning
+         */
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
-        FretboardLayout(self.view).layoutFretboard(fourColumnContainer, forFretboardView: fretboardContainer,0,FretboardColumnSchema.touchChordLeading(), type,FretboardBorderSchema.getDefaultTopOff(type))
+        FretboardLayout(self.view).layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer,0,TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft(),type, FretboardBorderSchema.getTopOffOnCustom(type))
+        
+        CustomResultsViewHelper().addAsTitles(self.view,fretboardContainer,type)
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)
         

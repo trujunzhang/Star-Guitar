@@ -55,9 +55,7 @@ class FretboardViewHelper{
         }
         
         pageContainer.sendSubview(toBack: fretboardBoarderView)
-        
-        //let type = FretboardBorderType.left
-        
+
         //fretboardBoarderView.backgroundColor = .blue
         
         // 6X14
