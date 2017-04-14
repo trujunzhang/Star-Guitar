@@ -3,7 +3,6 @@
 ==================
 
 TODO:
-
 [4/14/17, 8:43:07 AM] K_M: On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
 [4/14/17, 8:43:11 AM] K_M: And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
 [4/14/17, 8:43:15 AM] K_M: And this also need to be for the one touch tuning
@@ -24,7 +23,6 @@ TODO:
 ==================
 
 TODO: 
-
 * [3/30/17, 4:05:00 AM] K_M: There are two small things that need to change on the settings page.
     The left hand / right hand options need to toggle between each other, not work independently of each other
 

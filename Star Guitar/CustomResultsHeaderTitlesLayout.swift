@@ -16,12 +16,12 @@ struct CustomResultsHeaderTitlesSchema {
     public static func getHeight() -> Int{
         return 40  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
-
+    
     public static func marginTop(_ type:FretboardBorderType) -> Int {
         let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? -4 : -28
         return -CustomResultsHeaderTitlesSchema.getHeight() + 10 + off
     }
-
+    
 }
 
 
@@ -29,7 +29,17 @@ class CustomResultsViewHelper{
     
     let titlesView =  UIView()
     
-    let titles:[String] = ["6st","5nd","4rd","3th","2th","1th"]
+    func getTitles() -> [String] {
+        /**
+         * On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
+         * And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
+         */
+        if(GuitarSettingsUtils.sharedInstance.isLeftHanded()){
+            return ["1st","2nd","3rd","4th","5th","6th"] // And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
+        }
+        
+        return ["6st","5nd","4rd","3th","2th","1th"] // On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
+    }
     
     func addAsTitles(_ pageContainer:UIView,_ fretboardView:UIView, _ type:FretboardBorderType)  {
         pageContainer.addSubview(titlesView)
@@ -50,7 +60,7 @@ class CustomResultsViewHelper{
     
     func generateTitleViews()  {
         
-        for (index,title) in self.titles.enumerated(){
+        for (index,title) in self.getTitles().enumerated(){
             let itemView = UIView()
             
             let textLabel = UILabel()
