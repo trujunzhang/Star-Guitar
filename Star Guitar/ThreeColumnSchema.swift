@@ -42,6 +42,8 @@ class ThreeColumnLayout: BaseTuningsLayout {
     
     func layoutContainer(_ leftColumn: UIView, forThirdColumnView columnView: UIView,_ offX: Int,_ width:Int) {
         
+        //columnView.backgroundColor = .red
+        
         columnView.snp.makeConstraints { (make) -> Void in
             make.top.equalToSuperview()
             make.leading.equalTo(leftColumn).offset(ThreeColumnSchema.threeColumbMarginLeft() + offX)

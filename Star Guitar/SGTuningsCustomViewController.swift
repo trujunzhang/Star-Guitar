@@ -51,7 +51,9 @@ class SGTuningsCustomViewController: UIViewController {
          * And this also need to be for the one touch tuning
          */
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
-        FretboardLayout(self.view).layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer,0,TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft(),type, FretboardBorderSchema.getTopOffOnCustom(type))
+        let leading = TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft()
+        FretboardLayout(self.view)
+            .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.getTopOffOnCustom(type))
         
         CustomResultsViewHelper().addAsTitles(self.view,fretboardContainer,type)
         

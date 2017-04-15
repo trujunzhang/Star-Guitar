@@ -70,7 +70,7 @@ struct FretboardColumnSchema {
 
 class FretboardLayout: BaseTuningsLayout {
     
-    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ offLeading:Int,_ leading: Int,_ type:FretboardBorderType, _ topOff: Int) {
+    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ leading: Int,_ type:FretboardBorderType, _ topOff: Int) {
         fretboardView.backgroundColor = .clear
                 
         fretboardView.snp.makeConstraints { (make) -> Void in

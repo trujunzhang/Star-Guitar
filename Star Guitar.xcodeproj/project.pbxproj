@@ -60,7 +60,6 @@
 		5E914D451E8E9D9C00371E3C /* SGTouchChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */; };
 		5E95786C1E925D620008F7D8 /* SGTuningsStandardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */; };
 		5E95786E1E9307840008F7D8 /* BaseTuningsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */; };
-		5E98A4961E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E98A4951E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift */; };
 		5E9C6E271E855EA9006F93B4 /* FontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */; };
 		5E9C6E291E855EB2006F93B4 /* AppFontsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */; };
 		5EA049861E7E83B1003E402F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA049851E7E83B1003E402F /* MainViewController.swift */; };
@@ -195,7 +194,6 @@
 		5E914D441E8E9D9C00371E3C /* SGTouchChordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTouchChordViewController.swift; sourceTree = "<group>"; };
 		5E95786B1E925D620008F7D8 /* SGTuningsStandardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsStandardSettings.swift; sourceTree = "<group>"; };
 		5E95786D1E9307840008F7D8 /* BaseTuningsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTuningsLayout.swift; sourceTree = "<group>"; };
-		5E98A4951E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTuningFretboardViewController.swift; sourceTree = "<group>"; };
 		5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ErasITC-Demi.ttf"; sourceTree = "<group>"; };
 		5E9C6E261E855EA9006F93B4 /* FontsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsExtension.swift; sourceTree = "<group>"; };
 		5E9C6E281E855EB2006F93B4 /* AppFontsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFontsExtensions.swift; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 			children = (
 				5ED3F8841E94BEB8006B845D /* Tunings */,
 				5E2D89901E8E73DE00D6AEF0 /* Extensions */,
-				5E98A4941E8E0A4900F9A56D /* Debug */,
 				5E7F0BE51E8DE45D00E5569F /* Layout */,
 				5EF0AE171E8DE1B80026F0B4 /* TuningResults */,
 				5EF0AE101E8DDFAD0026F0B4 /* TuningColumns */,
@@ -467,14 +464,6 @@
 				5E8B8FD51E7CFF69009DFEF1 /* MainStringsLayout.swift */,
 			);
 			name = Layout;
-			sourceTree = "<group>";
-		};
-		5E98A4941E8E0A4900F9A56D /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-				5E98A4951E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift */,
-			);
-			name = Debug;
 			sourceTree = "<group>";
 		};
 		5E9C6E221E8554CB006F93B4 /* Support Files */ = {
@@ -892,7 +881,6 @@
 				5E7FC0E21E8DF99600033679 /* FretboardLayout.swift in Sources */,
 				5EB135041E89769500DA6F6E /* SGTwoColumnViewController.swift in Sources */,
 				5E914D451E8E9D9C00371E3C /* SGTouchChordViewController.swift in Sources */,
-				5E98A4961E8E0A6400F9A56D /* DebugTuningFretboardViewController.swift in Sources */,
 				5E7FC0E01E8DF90400033679 /* ThreeColumnSchema.swift in Sources */,
 				5E5124751E962518007B4967 /* StandardResultsHeaderTitlesLayout.swift in Sources */,
 				5EB5D0231E84126C0018359D /* StoryboardExtension.swift in Sources */,
