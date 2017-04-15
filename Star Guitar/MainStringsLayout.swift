@@ -1,5 +1,5 @@
 //
-//  StringsLayoutSchema.swift
+//  MainStringsLayout.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/18/17.
@@ -9,36 +9,38 @@
 import SnapKit
 
 
+
+class MainStringsSchema: AnyObject {
+    
+    public static func tralingOffXArray(_ backgroundIndex:Int) -> [Int]{
+        return [[0, 4, 8, 0, 4, 9]][backgroundIndex]
+    }
+    
+    public static func marginTop() -> Int{
+        return [230,297,42][SGScreenLayout.sharedInstance.deviceIndex]
+    }
+    
+    public static func marginRight() -> Int{
+        return [-144,-192,-70][SGScreenLayout.sharedInstance.deviceIndex]
+    }
+    
+    public static func itemHeight() -> Int{
+        return [57,78,34][SGScreenLayout.sharedInstance.deviceIndex]
+    }
+    
+}
+
 //var bounds = UIScreen.main.bounds
 //var width = bounds.size.width
 //var height = bounds.size.height
 
-class StringsLayoutSchema: AnyObject {
-    let trailingOffY = [0, 0, 0, 0, 0, 0]
-    let trailingOffX = [
-            [0, 4, 8, 0, 4, 9],
-    ]
-
-    let layoutOffs = [
-            // iPad
-            // 1024×768
-            //[226, -144, 57], //iPad mini,iPad Air,iPad Air2,iPad Pro(9.7)
-            [230, -144, 57], //iPad mini,iPad Air,iPad Air2,iPad Pro(9.7)
-
-            // 1366×1024
-            [311, -192, 76], //iPadPro12Inch
-
-            // Testing(iPhone)
-            [42, -70, 34], //iPhone4s
-    ]
-
+class MainStringsLayout: AnyObject {
 
     func layout(_ bgImageView: UIImageView, _ stringsView: Array<UIView>, _ backgroundIndex: Int) {
-        let tralingOffXArray = self.trailingOffX[backgroundIndex]
+        let tralingOffXArray = MainStringsSchema.tralingOffXArray(backgroundIndex)
 
-        var off = self.layoutOffs[DevicesManager.getDeviceIndex()]
         let boxHeight = 44
-        let topY = off[0]
+        let topY = MainStringsSchema.marginTop()
         for (index, box) in stringsView.enumerated() {
             box.tag = index
 
@@ -48,9 +50,9 @@ class StringsLayoutSchema: AnyObject {
 
             box.snp.makeConstraints { (make) -> Void in
                 make.leading.equalTo(0)
-                make.trailing.equalTo(off[1] + tralingOffXArray[index])
+                make.trailing.equalTo(MainStringsSchema.marginRight() + tralingOffXArray[index])
                 make.height.equalTo(boxHeight)
-                make.top.equalToSuperview().offset(topY + off[2] * index)
+                make.top.equalToSuperview().offset(topY + MainStringsSchema.itemHeight() * index)
             }
 
             for view in box.subviews {

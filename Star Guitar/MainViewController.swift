@@ -91,7 +91,7 @@ class MainViewController: UIViewController {
 
         self.soundPlayerManager.prepareSounds(count: stringsView.count, withFormat: "4%d", withType: "wav")
 
-        StringsLayoutSchema().layout(bgImageView, stringsView, backgroundIndex)
+        MainStringsLayout().layout(bgImageView, stringsView, backgroundIndex)
     }
 
     override func didReceiveMemoryWarning() {
