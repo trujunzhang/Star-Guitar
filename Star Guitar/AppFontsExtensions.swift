@@ -56,7 +56,7 @@ extension UIFont {
     }
 
     static func oneColumnSharpFont() -> UIFont {
-        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(24))
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(20))
     }
 
     static func TuningsTypesFont() -> UIFont {
