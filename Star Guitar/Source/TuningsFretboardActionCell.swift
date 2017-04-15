@@ -64,7 +64,7 @@ open class TuningsFretboardActionCell: UICollectionViewCell {
             make.centerY.equalToSuperview()
         }
         
-        let edgeInsets = FretboardColumnSchema.resultsItemEdgeInsets()
+        let edgeInsets = FretboardColumnSchema.edgeInsets()
         backRowView.snp.makeConstraints { (make) -> Void in
             make.top.equalToSuperview().offset(edgeInsets.top)
             make.bottom.equalToSuperview().offset(-edgeInsets.bottom)

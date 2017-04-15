@@ -14,20 +14,12 @@ import UIKit
 struct FourColumnSchema {
     
     // ==== Three Column
-    public static func fourColumbMarginLeft() -> Int {
+    public static func marginLeft() -> Int {
         return 72 + SGScreenLayout.sharedInstance.deviceIndex * 40
     }
     
-    public static func fourColumnWidth() -> Int {
+    public static func width() -> Int {
         return 160 + SGScreenLayout.sharedInstance.deviceIndex * 20
-    }
-    
-    public static func fourColumnItemHeight() -> Int {
-        return 40 + SGScreenLayout.sharedInstance.deviceIndex * 18
-    }
-    
-    public static func threeColumnTableViewHeightForFooterInFirstSection() -> CGFloat {
-        return CGFloat(10 + SGScreenLayout.sharedInstance.deviceIndex * 10)
     }
     
 }
@@ -39,8 +31,8 @@ class FourColumnLayout: BaseTuningsLayout {
         
         columnView.snp.makeConstraints { (make) -> Void in
             make.top.equalToSuperview()
-            make.leading.equalTo(leftColumn).offset(FourColumnSchema.fourColumbMarginLeft() + 104)
-            make.width.equalTo(FourColumnSchema.fourColumnWidth())
+            make.leading.equalTo(leftColumn).offset(FourColumnSchema.marginLeft() + 108)
+            make.width.equalTo(FourColumnSchema.width())
             make.bottom.equalToSuperview()
         }
         

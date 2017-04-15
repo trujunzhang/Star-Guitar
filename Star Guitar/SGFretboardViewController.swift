@@ -21,7 +21,7 @@ class SGFretboardViewController: QuickCollectionViewController {
         // Debug
         //collectionView.backgroundColor = .red
         
-        layout.itemSize = CGSize(width: FretboardColumnSchema.resultsItemWidth(), height: FretboardColumnSchema.resultsItemHeight()) // cell的寬、高
+        layout.itemSize = CGSize(width: FretboardColumnSchema.itemWidth(), height: FretboardColumnSchema.itemHeight()) // cell的寬、高
         
         collectionView.register(TuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsFretboardActionCell.self))
     }

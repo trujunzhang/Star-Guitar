@@ -56,7 +56,7 @@ class SGTouchChordViewController: UIViewController {
          * And this also need to be for the one touch tuning
          */
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
-        let leading = TuningTypeSchema.itemWidth() + FretboardColumnSchema.resultsMarginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft()
+        let leading = FretboardColumnSchema.touchChordLeading()
         FretboardLayout(self.view)
             .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.getTopOffOnCustom(type))
         

@@ -18,51 +18,51 @@ import UIKit
 struct FretboardColumnSchema {
    
     // ==== Results
-    public static func resultsMarginLeft() -> Int {
+    public static func marginLeft() -> Int {
         return 32 + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
     
-    public static func resultsItemEdgeInsets() -> UIEdgeInsets {
+    public static func edgeInsets() -> UIEdgeInsets {
         return UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4)
     }
     
-    public static func resultsItemWidth() -> Int {
-        return 56 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.resultsItemEdgeInsets().left) + Int(FretboardColumnSchema.resultsItemEdgeInsets().right))
+    public static func itemWidth() -> Int {
+        return 56 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.edgeInsets().left) + Int(FretboardColumnSchema.edgeInsets().right))
     }
     
-    public static func resultsItemHeight() -> Int {
-        return 32 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.resultsItemEdgeInsets().top) + Int(FretboardColumnSchema.resultsItemEdgeInsets().bottom))
+    public static func itemHeight() -> Int {
+        return 32 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.edgeInsets().top) + Int(FretboardColumnSchema.edgeInsets().bottom))
     }
     
-    public static func resultsLineSpacing() -> Int {
+    public static func lineSpacing() -> Int {
         return 0
     }
     
-    public static func resultsInteritemSpacing() -> Int {
+    public static func interitemSpacing() -> Int {
         return 0
     }
     
-    public static func resultsBoardWidth() -> Int {
+    public static func boardWidth() -> Int {
         return 12
     }
     
-    public static func resultsBoardHeight() -> Int {
+    public static func boardHeight() -> Int {
         return 12
     }
     
     public static func resultsColumnWidth() -> CGFloat {
-        let itemsWidth = (FretboardColumnSchema.resultsItemWidth() + FretboardColumnSchema.resultsLineSpacing()) * 6
+        let itemsWidth = (FretboardColumnSchema.itemWidth() + FretboardColumnSchema.lineSpacing()) * 6
         return CGFloat(integerLiteral: itemsWidth)
     }
     
     public static func resultsColumnHeight() -> CGFloat {
-        let itemsHeight = (FretboardColumnSchema.resultsItemHeight() + FretboardColumnSchema.resultsInteritemSpacing()) * 14
+        let itemsHeight = (FretboardColumnSchema.itemHeight() + FretboardColumnSchema.interitemSpacing()) * 14
         return CGFloat(integerLiteral: itemsHeight )
     }
 
     
     public static func touchChordLeading() -> Int {
-        return 200 + SGScreenLayout.sharedInstance.deviceIndex * 40
+        return 380 + SGScreenLayout.sharedInstance.deviceIndex * 40
     }
     
 }

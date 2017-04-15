@@ -55,12 +55,12 @@ class FretboardViewHelper{
         }
         
         pageContainer.sendSubview(toBack: fretboardBoarderView)
-
+        
         //fretboardBoarderView.backgroundColor = .blue
         
         // 6X14
         // 6 * 70(w), 14 * 40(h)
-        fretboardBoarderView.drawBoarder(boarderType,FretboardColumnSchema.resultsItemWidth(),FretboardColumnSchema.resultsItemHeight())
+        fretboardBoarderView.drawBoarder(boarderType,FretboardColumnSchema.itemWidth(),FretboardColumnSchema.itemHeight())
     }
     
 }
@@ -111,7 +111,7 @@ class FretboardBorderLayout: BaseTuningsLayout {
             
             circleView.backgroundColor = UIColor(named: .resultsBoarder)
             circleView.layer.cornerRadius = CGFloat(circleWH / 2)
-
+            
             circleView.snp.makeConstraints { (make) -> Void in
                 make.leading.equalToSuperview().offset(((itemWidth-circleWH)/2) + itemWidth * i)
                 make.centerY.equalToSuperview().offset(self.centerHorizonOff)
@@ -212,7 +212,7 @@ class FretboardBorderLayout: BaseTuningsLayout {
                 make.bottom.equalToSuperview()
                 make.width.equalTo(offValue)
             }
-
+            
         case .top:
             rectView.snp.makeConstraints { (make) -> Void in
                 make.top.equalToSuperview().offset(offValue-8)
@@ -226,7 +226,7 @@ class FretboardBorderLayout: BaseTuningsLayout {
                 make.trailing.equalToSuperview()
                 make.height.equalTo(offValue)
             }
-
+            
         case .bottom:
             rectView.snp.makeConstraints { (make) -> Void in
                 make.bottom.equalToSuperview().offset(-offValue + 8)
