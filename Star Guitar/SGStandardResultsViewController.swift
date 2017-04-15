@@ -82,7 +82,6 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 let section = indexPath.section
                 let rowIndex = indexPath.row
                 tableContents[section].rows[rowIndex] = self.generateRow(item)
-                self.collectionView?.reloadItems(at: selectedItems)
                 self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }
         }
