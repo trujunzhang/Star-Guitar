@@ -17,7 +17,7 @@ class MainStringsSchema: AnyObject {
     }
     
     public static func marginTop() -> Int{
-        return [230,297,42][SGScreenLayout.sharedInstance.deviceIndex]
+        return [216,297,42][SGScreenLayout.sharedInstance.deviceIndex]
     }
     
     public static func marginRight() -> Int{
@@ -25,7 +25,7 @@ class MainStringsSchema: AnyObject {
     }
     
     public static func itemHeight() -> Int{
-        return [57,78,34][SGScreenLayout.sharedInstance.deviceIndex]
+        return [58,78,34][SGScreenLayout.sharedInstance.deviceIndex]
     }
     
 }
