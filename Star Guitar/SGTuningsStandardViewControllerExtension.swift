@@ -22,14 +22,19 @@ extension SGTuningsStandardViewController{
 
 extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
     
-    func toggleCell(_ columnResultItem: ColumnResultItem){
-        let letterIndex = columnResultItem.letterIndex
-        let numberIndex = columnResultItem.numberIndex
+    func toggleCell(_ item: ColumnResultItem){
+        let letterIndex = item.letterIndex
+        let numberIndex = item.numberIndex
+     
+        let canClick = item.canClick
+        
+        oneColumnViewController.setupRows(enabledClick: canClick)
+        twoColumnViewController.setupRows(enabledClick: canClick)
 
         oneColumnViewController.updateCell(rowIndex: letterIndex)
         twoColumnViewController.updateCell(rowIndex: numberIndex)
         
-        tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(columnResultItem)
+        tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(item)
     }
     
 }

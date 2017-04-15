@@ -92,8 +92,10 @@ public class ColumnResultItem {
     var letterIndex = -1
     var numberIndex = -1
     
+    var canClick = false
+    
     init(){
-        
+        self.canClick = true
     }
     
     func updateLetter(letterIndex:Int,oneColumnLetterItem: OneColumnLetterItem) {
