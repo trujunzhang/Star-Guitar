@@ -44,11 +44,11 @@ extension UIFont {
     }
 
     static func pageTitleFont() -> UIFont {
-        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(54))
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(44))
     }
 
     static func pageSubtitleFont() -> UIFont {
-        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(42))
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(32))
     }
 
     static func oneColumnFont() -> UIFont {

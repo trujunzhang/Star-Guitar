@@ -431,9 +431,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckn-nG-eg4" userLabel="BackArrow">
-                                <rect key="frame" x="20" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="20" y="0.0" width="56" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="M0D-Lf-yBJ"/>
+                                    <constraint firstAttribute="width" constant="56" id="M0D-Lf-yBJ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="BackArrow"/>
                                 <connections>
@@ -441,13 +441,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVJ-Mh-uhc" userLabel="title">
-                                <rect key="frame" x="76" y="-2" width="124" height="58"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <rect key="frame" x="92" y="2" width="128" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP1-AB-az9" userLabel="subtitle">
-                                <rect key="frame" x="216" y="50" width="0.0" height="0.0"/>
+                                <rect key="frame" x="232" y="8" width="0.0" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -461,15 +461,17 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="uWC-Ok-69A" firstAttribute="top" secondItem="Ckn-nG-eg4" secondAttribute="bottom" constant="8" id="26n-JM-nfL"/>
-                            <constraint firstItem="KVJ-Mh-uhc" firstAttribute="leading" secondItem="Ckn-nG-eg4" secondAttribute="trailing" constant="8" id="9jD-fL-lWF"/>
+                            <constraint firstItem="KVJ-Mh-uhc" firstAttribute="top" secondItem="wXu-mY-631" secondAttribute="top" constant="2" id="1Hm-af-NuN"/>
+                            <constraint firstItem="uWC-Ok-69A" firstAttribute="top" secondItem="Ckn-nG-eg4" secondAttribute="bottom" id="26n-JM-nfL"/>
+                            <constraint firstItem="KVJ-Mh-uhc" firstAttribute="leading" secondItem="Ckn-nG-eg4" secondAttribute="trailing" constant="16" id="9jD-fL-lWF"/>
                             <constraint firstItem="uWC-Ok-69A" firstAttribute="leading" secondItem="wXu-mY-631" secondAttribute="leading" id="BO4-RP-Cr3"/>
                             <constraint firstItem="Ckn-nG-eg4" firstAttribute="top" secondItem="4nX-BT-MoM" secondAttribute="bottom" id="H9t-6f-BQw"/>
                             <constraint firstItem="Ckn-nG-eg4" firstAttribute="leading" secondItem="wXu-mY-631" secondAttribute="leading" constant="20" id="ICB-8m-GaK"/>
                             <constraint firstAttribute="trailing" secondItem="uWC-Ok-69A" secondAttribute="trailing" id="K3u-fM-TgG"/>
+                            <constraint firstItem="wP1-AB-az9" firstAttribute="top" secondItem="wXu-mY-631" secondAttribute="top" constant="8" id="RPi-gP-c1C"/>
                             <constraint firstItem="aKP-bS-LI9" firstAttribute="top" secondItem="uWC-Ok-69A" secondAttribute="bottom" id="b2X-pP-DzX"/>
-                            <constraint firstItem="uWC-Ok-69A" firstAttribute="top" secondItem="wP1-AB-az9" secondAttribute="bottom" constant="6" id="nLV-45-4so"/>
-                            <constraint firstItem="wP1-AB-az9" firstAttribute="leading" secondItem="KVJ-Mh-uhc" secondAttribute="trailing" constant="16" id="u9a-8B-6Db"/>
+                            <constraint firstItem="uWC-Ok-69A" firstAttribute="top" secondItem="wP1-AB-az9" secondAttribute="bottom" id="nLV-45-4so"/>
+                            <constraint firstItem="wP1-AB-az9" firstAttribute="leading" secondItem="KVJ-Mh-uhc" secondAttribute="trailing" constant="12" id="u9a-8B-6Db"/>
                             <constraint firstItem="uWC-Ok-69A" firstAttribute="top" secondItem="KVJ-Mh-uhc" secondAttribute="bottom" id="zx8-ad-ji5"/>
                         </constraints>
                     </view>
@@ -960,11 +962,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackArrow" width="32" height="32"/>
+        <image name="BackArrow" width="21" height="21"/>
         <image name="Bg1" width="1200" height="900"/>
         <image name="Settings" width="256" height="256"/>
         <image name="muteNormal" width="31" height="31"/>
-        <image name="muteSelected" width="30" height="29"/>
+        <image name="muteSelected" width="13" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1Xg-Ew-c00"/>
