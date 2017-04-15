@@ -56,6 +56,7 @@ open class TapActionCell: UITableViewCell {
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
         
+        iconImageView.contentMode = .center
         iconImageView.snp.makeConstraints { (make) -> Void in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().offset(-30)
