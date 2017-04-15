@@ -431,9 +431,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckn-nG-eg4" userLabel="BackArrow">
-                                <rect key="frame" x="20" y="0.0" width="56" height="56"/>
+                                <rect key="frame" x="20" y="0.0" width="48" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="M0D-Lf-yBJ"/>
+                                    <constraint firstAttribute="width" constant="48" id="M0D-Lf-yBJ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="BackArrow"/>
                                 <connections>
@@ -441,13 +441,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVJ-Mh-uhc" userLabel="title">
-                                <rect key="frame" x="92" y="2" width="128" height="54"/>
+                                <rect key="frame" x="84" y="2" width="128" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP1-AB-az9" userLabel="subtitle">
-                                <rect key="frame" x="232" y="8" width="0.0" height="48"/>
+                                <rect key="frame" x="224" y="8" width="0.0" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

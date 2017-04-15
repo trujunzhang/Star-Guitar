@@ -15,7 +15,7 @@ struct EventsSchema {
 
     // ==== Events
     public static func itemWidth() -> Int {
-        return 112 + SGScreenLayout.sharedInstance.deviceIndex * 10
+        return 104 + SGScreenLayout.sharedInstance.deviceIndex * 10
     }
 
     public static func itemHeight() -> Int {
@@ -23,11 +23,11 @@ struct EventsSchema {
     }
 
     public static func edgeInsets() -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
 
     public static func eventsLineSpacing() -> Int {
-        return 10
+        return 0
     }
 
     public static func columnWidth() -> CGFloat {
@@ -51,7 +51,7 @@ class TuningsEventsLayout: BaseTuningsLayout {
 
     override func layoutContainer(_ leftColumn: UIView, forView containerView: UIView) {
         containerView.snp.makeConstraints { (make) -> Void in
-            make.trailing.equalToSuperview().offset(-120)
+            make.trailing.equalToSuperview().offset(-60)
             make.bottom.equalToSuperview().offset(EventsSchema.marginBottom())
             make.width.equalTo(EventsSchema.columnWidth())
             make.height.equalTo(EventsSchema.columnHeight())
