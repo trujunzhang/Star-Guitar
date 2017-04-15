@@ -44,7 +44,7 @@ extension UIFont {
     }
 
     static func pageTitleFont() -> UIFont {
-        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(56))
+        return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(54))
     }
 
     static func pageSubtitleFont() -> UIFont {
