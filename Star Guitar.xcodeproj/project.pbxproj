@@ -47,6 +47,7 @@
 		5E61BDB51E8E4D2500CAB2B6 /* TuningsFretboardActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61BDB41E8E4D2500CAB2B6 /* TuningsFretboardActionCell.swift */; };
 		5E61EC461E85EEA400FC5511 /* SGSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */; };
 		5E68164A1E8EA143009CAA09 /* SGFouChordrColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6816491E8EA143009CAA09 /* SGFouChordrColumnViewController.swift */; };
+		5E763FB81EA342A6002B371A /* SGFretboardViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763FB71EA342A6002B371A /* SGFretboardViewControllerExtension.swift */; };
 		5E78D1E41E856F7600410CEE /* ErasITC-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */; };
 		5E7F0BE91E8DE55D00E5569F /* OneColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F0BE81E8DE55D00E5569F /* OneColumnLayout.swift */; };
 		5E7F0BEB1E8DE69E00E5569F /* TwoColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */; };
@@ -182,6 +183,7 @@
 		5E61BDB41E8E4D2500CAB2B6 /* TuningsFretboardActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsFretboardActionCell.swift; sourceTree = "<group>"; };
 		5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSettingsViewController.swift; sourceTree = "<group>"; };
 		5E6816491E8EA143009CAA09 /* SGFouChordrColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFouChordrColumnViewController.swift; sourceTree = "<group>"; };
+		5E763FB71EA342A6002B371A /* SGFretboardViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFretboardViewControllerExtension.swift; sourceTree = "<group>"; };
 		5E7F0BE81E8DE55D00E5569F /* OneColumnLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneColumnLayout.swift; sourceTree = "<group>"; };
 		5E7F0BEA1E8DE69E00E5569F /* TwoColumnLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoColumnLayout.swift; sourceTree = "<group>"; };
 		5E7F0BEC1E8DE72B00E5569F /* StandardResultsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsLayout.swift; sourceTree = "<group>"; };
@@ -344,11 +346,10 @@
 		5E435E601E91E030008BE96D /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				5EE2B8F21EA336500061AB1C /* FretboardBorder */,
+				5EE2B8F21EA336500061AB1C /* TuningsFretboard */,
 				5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */,
 				5E04A58C1E89E03800238BB4 /* StardardResultsCollectionView.swift */,
 				5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */,
-				5E61BDB41E8E4D2500CAB2B6 /* TuningsFretboardActionCell.swift */,
 				5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */,
 				5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */,
 			);
@@ -521,11 +522,12 @@
 			name = tables;
 			sourceTree = "<group>";
 		};
-		5EE2B8F21EA336500061AB1C /* FretboardBorder */ = {
+		5EE2B8F21EA336500061AB1C /* TuningsFretboard */ = {
 			isa = PBXGroup;
 			children = (
+				5E61BDB41E8E4D2500CAB2B6 /* TuningsFretboardActionCell.swift */,
 			);
-			name = FretboardBorder;
+			name = TuningsFretboard;
 			sourceTree = "<group>";
 		};
 		5EF0AE101E8DDFAD0026F0B4 /* TuningColumns */ = {
@@ -547,6 +549,7 @@
 			children = (
 				5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */,
 				5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */,
+				5E763FB71EA342A6002B371A /* SGFretboardViewControllerExtension.swift */,
 			);
 			name = TuningResults;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 				5E8B8FD61E7CFF69009DFEF1 /* MainStringsLayout.swift in Sources */,
 				5E9C6E291E855EB2006F93B4 /* AppFontsExtensions.swift in Sources */,
 				5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */,
+				5E763FB81EA342A6002B371A /* SGFretboardViewControllerExtension.swift in Sources */,
 				5E45A8921E97C50800552A94 /* SGTuningsCustomSettings.swift in Sources */,
 				5EA049891E7E83FA003E402F /* SGTuningsCustomViewController.swift in Sources */,
 				5EF0AE161E8DE1590026F0B4 /* SGFretboardViewController.swift in Sources */,

@@ -70,7 +70,6 @@ public protocol Row {
     func getRowHeight(indexPath: IndexPath) -> CGFloat
 
     func shouldHighlightRowAt() -> Bool
-    
 }
 
 extension Row {

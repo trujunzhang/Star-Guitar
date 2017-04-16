@@ -44,7 +44,7 @@ struct FretboardBorderSchema {
 
 class FretboardViewBoarderTypeHelper{
     
-    var horizonBoarderType:FretboardBorderType =  FretboardBorderType.left
+    var horizonBoarderType:FretboardBorderType =  FretboardBorderType.top
     var verticalBoarderType:FretboardBorderType =  FretboardBorderType.left
     
     var centerVerticleOff = 5

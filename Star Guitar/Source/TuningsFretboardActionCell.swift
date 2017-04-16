@@ -24,7 +24,6 @@ open class TuningsFretboardActionCell: UICollectionViewCell {
         }
     }
     
-    
     public let eventLabel = UILabel()
     
     let backRowView = UIView()
@@ -90,11 +89,9 @@ public struct TuningsFretboardActionRow: Row, Equatable {
     }
     
     public func render(viewCell: UIView) {
-        let row = self
-        
         let cell = (viewCell as? TuningsFretboardActionCell)
         
-        cell?.eventLabel.text = row.title
+        cell?.eventLabel.text = self.title
     }
     
     

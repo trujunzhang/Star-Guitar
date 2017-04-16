@@ -15,6 +15,8 @@ protocol FretboardProviderProtocol : class {    // 'class' means only class type
 class SGFretboardViewController: QuickCollectionViewController {
     weak var delegate : FretboardProviderProtocol?
     
+    let fretboardViewBoarderTypeHelper = FretboardViewBoarderTypeHelper()
+    
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
         
@@ -26,39 +28,24 @@ class SGFretboardViewController: QuickCollectionViewController {
         collectionView.register(TuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsFretboardActionCell.self))
     }
     
-    func generateRows() -> Section {
-        return Section(title: nil, rows: [
-            TuningsFretboardActionRow(title: "", action: toggleNote),
-            TuningsFretboardActionRow(title: "", action: toggleNote),
-            TuningsFretboardActionRow(title: "", action: toggleNote),
-            TuningsFretboardActionRow(title: "", action: toggleNote),
-            TuningsFretboardActionRow(title: "", action: toggleNote),
-            TuningsFretboardActionRow(title: "", action: toggleNote),
-            ])
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
+        fretboardViewBoarderTypeHelper.convertBoarderType(type)
         
-        // 6X5
-        let sections = [
-            self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(),
-            self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(),
-            self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows()
-        ]
-        tableContents = sections
+
+        tableContents = self.generateFretboardSections()
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    private func toggleNote(_ sender: Row) {
-        delegate?.toggleCell(sender as! TuningsFretboardActionRow)
-    }
+
     
     
 }
