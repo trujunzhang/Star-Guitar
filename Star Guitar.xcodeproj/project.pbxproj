@@ -344,6 +344,7 @@
 		5E435E601E91E030008BE96D /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
+				5EE2B8F21EA336500061AB1C /* FretboardBorder */,
 				5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */,
 				5E04A58C1E89E03800238BB4 /* StardardResultsCollectionView.swift */,
 				5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */,
@@ -518,6 +519,13 @@
 				5E5F6D641E86553300B8D5DA /* SGEffectViewController.swift */,
 			);
 			name = tables;
+			sourceTree = "<group>";
+		};
+		5EE2B8F21EA336500061AB1C /* FretboardBorder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FretboardBorder;
 			sourceTree = "<group>";
 		};
 		5EF0AE101E8DDFAD0026F0B4 /* TuningColumns */ = {

@@ -166,7 +166,6 @@ public struct NavigationRow: Row, Equatable, IconEnabled {
 
     }
 
-    public var tableRowType: TableRowType = TableRowType.Empty
 
     /// The title text of the row.
     public var title: String = ""
@@ -186,17 +185,13 @@ public struct NavigationRow: Row, Equatable, IconEnabled {
     public var action: ((Row) -> Void)?
 
     ///
-    public init(title: String, subtitle: Subtitle, icon: Icon? = nil, action: ((Row) -> Void)? = nil, tableRowType: TableRowType) {
+    public init(title: String, subtitle: Subtitle, icon: Icon? = nil, action: ((Row) -> Void)? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.icon = icon
         self.action = action
-        self.tableRowType = tableRowType
     }
 
-    public init(title: String, subtitle: Subtitle, icon: Icon? = nil, action: ((Row) -> Void)? = nil) {
-        self.init(title: title, subtitle: subtitle, icon: icon, action: action, tableRowType: TableRowType.RightArrow)
-    }
 
     private init() {
     }
@@ -226,19 +221,16 @@ public struct SwitchRow: Row, Equatable, IconEnabled {
     }
 
     public func render(viewCell: UIView) {
-        let row = self
-        var cell = viewCell 
-        (cell as? SwitchCell)?.textLabel?.text = row.title
+        let cell = viewCell  as? SwitchCell
+        cell?.textLabel?.text = self.title
 
-        let switchControl = (cell as? SwitchCell)?.switchControl
-        switchControl?.isOn = row.switchValue
+        let switchControl = cell? .switchControl
+        switchControl?.isOn = self.switchValue
 
         if switchControl?.actions(forTarget: self, forControlEvent: .valueChanged) == nil {
             //switchControl?.addTarget(self, action: .didToggleSwitch, for: UIControlEvents.valueChanged)
         }
     }
-
-    public var tableRowType: TableRowType = TableRowType.Empty
 
 
     /// The title text of the row.
