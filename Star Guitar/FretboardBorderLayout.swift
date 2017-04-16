@@ -35,7 +35,7 @@ struct FretboardBorderSchema {
         if(type == FretboardBorderType.top || type == FretboardBorderType.right){
             return 16
         }
-        return 20 + 14
+        return 20 + 14 + SGScreenLayout.sharedInstance.deviceIndex * 14
     }
     
 }

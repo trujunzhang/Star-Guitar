@@ -71,9 +71,9 @@ public struct HorizonTuningsFretboardActionRow: Row, Equatable {
         let circleWH = 10
         
         if let cell = (viewCell as? HorizonTuningsFretboardActionCell){
-            var circleOff = -8
+            var circleOff = -CustomResultsHeaderTitlesSchema.horizonCircleViewOffY()
             if(self.item?.isTop)!{
-                circleOff = 8
+                circleOff = CustomResultsHeaderTitlesSchema.horizonCircleViewOffY()
                 cell.rectView.snp.makeConstraints { (make) -> Void in
                     make.bottom.equalToSuperview()
                     make.leading.equalToSuperview()

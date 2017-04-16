@@ -39,7 +39,6 @@ class SGFretboardViewController: QuickCollectionViewController {
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
         fretboardViewBoarderTypeHelper.convertBoarderType(type)
         
-        
         tableContents = self.generateFretboardSections()
     }        
     

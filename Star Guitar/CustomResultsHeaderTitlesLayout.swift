@@ -16,16 +16,22 @@ struct CustomResultsHeaderTitlesSchema {
     public static func getHeight() -> Int{
         return 30  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
-    
-    public static func marginTop(_ type:FretboardBorderType) -> Int {
-        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? -4 : -28
-        return -CustomResultsHeaderTitlesSchema.getHeight() + 10 - 4
-    }
-    
-    
+
     public static func marginLeft(_ type:FretboardBorderType) -> Int {
         let off = (type == FretboardBorderType.left || type == FretboardBorderType.top) ? FretboardColumnSchema.itemWidth() : 0
         return  off
+    }
+    
+    public static func titlesViewMarginTop() -> Int{
+        return 64
+    }
+    
+    public static func horizonCircleViewOffY() -> Int{
+        return 8 + SGScreenLayout.sharedInstance.deviceIndex * 8
+    }
+    
+    public static func verticalCircleViewOffX() -> Int{
+        return 22 + SGScreenLayout.sharedInstance.deviceIndex * 8
     }
 }
 
@@ -55,12 +61,11 @@ class CustomResultsViewHelper{
         titlesView.backgroundColor  = .clear
         
         //titlesView.backgroundColor = .blue
-        
-        let marginTop = CustomResultsHeaderTitlesSchema.marginTop(type)
+
         titlesView.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(fretboardView).offset(CustomResultsHeaderTitlesSchema.marginLeft(type))
             make.trailing.equalTo(fretboardView)
-            make.top.equalToSuperview().offset(64)
+            make.top.equalToSuperview().offset(CustomResultsHeaderTitlesSchema.titlesViewMarginTop())
             make.height.equalTo(CustomResultsHeaderTitlesSchema.getHeight())
         }
         

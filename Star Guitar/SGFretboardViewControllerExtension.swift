@@ -27,13 +27,13 @@ extension SGFretboardViewController{
         let item = FretboardBorderGreenItem(isLeft:isLeft,position)
         var rowsWithBoarder = [Row]()
         if(isLeft){
-            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(item: item, action: toggleNote))
+            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(item: item, action: verticalActionNote))
         }
         for row in rows{
             rowsWithBoarder.append(row)
         }
         if(!isLeft){
-            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(item: item, action: toggleNote))
+            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(item: item, action: verticalActionNote))
         }
         
         return Section(title: nil, rows: rowsWithBoarder)
@@ -44,12 +44,12 @@ extension SGFretboardViewController{
         let isTop =  fretboardViewBoarderTypeHelper.isTop()
         
         let rows = [
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
             ]
         
         let isLeft =  fretboardViewBoarderTypeHelper.isLeft()
@@ -95,5 +95,13 @@ extension SGFretboardViewController{
     
     private func toggleNote(_ sender: Row) {
         delegate?.toggleCell(sender as! TuningsFretboardActionRow)
+    }
+    
+    private func horizonActionNote(_ sender: Row) {
+        let _: FretboardBorderGreenItem = (sender as! HorizonTuningsFretboardActionRow).item!
+    }
+    
+    private func verticalActionNote(_ sender: Row) {
+        let _: FretboardBorderGreenItem = (sender as! VerticalTuningsFretboardActionRow).item!
     }
 }

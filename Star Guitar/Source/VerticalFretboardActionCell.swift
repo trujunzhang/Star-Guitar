@@ -70,9 +70,9 @@ public struct VerticalTuningsFretboardActionRow: Row, Equatable {
         let circleWH = 10
         
         if let cell = (viewCell as? VerticalTuningsFretboardActionCell){
-            var circleOff = -22
+            var circleOff = -CustomResultsHeaderTitlesSchema.verticalCircleViewOffX()
             if(self.item?.isLeft)!{
-                circleOff = 22
+                circleOff = CustomResultsHeaderTitlesSchema.verticalCircleViewOffX()
                 cell.rectView.snp.makeConstraints { (make) -> Void in
                     make.top.equalToSuperview()
                     make.bottom.equalToSuperview()

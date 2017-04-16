@@ -34,29 +34,13 @@ struct FretboardColumnSchema {
         return 32 + SGScreenLayout.sharedInstance.deviceIndex * 20 + (Int(FretboardColumnSchema.edgeInsets().top) + Int(FretboardColumnSchema.edgeInsets().bottom))
     }
     
-    public static func lineSpacing() -> Int {
-        return 0
-    }
-    
-    public static func interitemSpacing() -> Int {
-        return 0
-    }
-    
-    public static func boardWidth() -> Int {
-        return 12
-    }
-    
-    public static func boardHeight() -> Int {
-        return 12
-    }
-    
     public static func resultsColumnWidth() -> CGFloat {
-        let itemsWidth = (FretboardColumnSchema.itemWidth() + FretboardColumnSchema.lineSpacing()) * (6 + 1)
+        let itemsWidth = (FretboardColumnSchema.itemWidth() ) * (6 + 1)
         return CGFloat(integerLiteral: itemsWidth)
     }
     
     public static func resultsColumnHeight() -> CGFloat {
-        let itemsHeight = (FretboardColumnSchema.itemHeight() + FretboardColumnSchema.interitemSpacing()) * (14 + 1)
+        let itemsHeight = (FretboardColumnSchema.itemHeight() ) * (14 + 1)
         return CGFloat(integerLiteral: itemsHeight )
     }
 
