@@ -44,13 +44,10 @@ class SGFretboardViewController: QuickCollectionViewController {
         
         let isLeft = fretboardViewBoarderTypeHelper.isLeft()
         if(isLeft){
-            
+            self.collectionView?.selectItem(at: IndexPath(row: 6,section:sectionIndex), animated: false, scrollPosition: .top)
         }else{
-            
+             self.collectionView?.selectItem(at: IndexPath(row: 0,section:sectionIndex), animated: false, scrollPosition: .top)
         }
-        
-
-        
     }
     
     override func viewDidLoad() {
