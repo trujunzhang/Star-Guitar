@@ -11,6 +11,16 @@ import UIKit
 import RealmSwift
 
 
+public struct FretboardBorderGreenItem {
+    var isHorizon: Bool = false
+    var position:Int = 0
+    
+    init(_ isHorizon: Bool,position:Int) {
+        self.isHorizon = isHorizon
+        self.position = position
+    }
+}
+
 public enum FretboardBorderType: Int {
     case left = 0
     case right = 1

@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol FretboardBoarderViewProviderProtocol : class {    // 'class' means only class types can implement it
+    func onGreenButtonTapped(_ item: FretboardBorderGreenItem)
+}
+
 class FretboardBoarderView: UIView {
+    
+    weak var delegate : FretboardBoarderViewProviderProtocol?
+
     
     let horizonRectView = UIView()
     let verticalRectView = UIView()
@@ -24,6 +31,7 @@ class FretboardBoarderView: UIView {
             .layoutBoarderView(horizonRectView,verticalRectView )
             .layoutHorizonCircles(itemWidth)
             .layoutVirticalCircles(itemHeight)
+            .end()
     }
     
 }

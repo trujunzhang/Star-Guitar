@@ -38,118 +38,12 @@ struct FretboardBorderSchema {
     
 }
 
-class FretboardViewHelper{
-    
-    let fretboardBoarderView =  FretboardBoarderView()
-    
-    func addAsBoarder(_ pageContainer:UIView,_ fretboardView:UIView, _ boarderType:FretboardBorderType)  {
-        
-        pageContainer.addSubview(fretboardBoarderView)
-        
-        
-        fretboardBoarderView.snp.makeConstraints { (make) -> Void in
-            make.leading.equalTo(fretboardView).offset(-FretboardBorderSchema.outBoardSize())
-            make.trailing.equalTo(fretboardView).offset(FretboardBorderSchema.outBoardSize())
-            make.top.equalTo(fretboardView).offset(-FretboardBorderSchema.outBoardSize())
-            make.bottom.equalTo(fretboardView).offset(FretboardBorderSchema.outBoardSize())
-        }
-        
-        pageContainer.sendSubview(toBack: fretboardBoarderView)
-        
-        //fretboardBoarderView.backgroundColor = .blue
-        
-        // 6X14
-        // 6 * 70(w), 14 * 40(h)
-        fretboardBoarderView.drawBoarder(boarderType,FretboardColumnSchema.itemWidth(),FretboardColumnSchema.itemHeight())
-    }
-    
-}
-
-
-
-class FretboardBorderLayout: BaseTuningsLayout {
+class FretboardViewBoarderTypeHelper{
     
     var horizonBoarderType:FretboardBorderType =  FretboardBorderType.left
     var verticalBoarderType:FretboardBorderType =  FretboardBorderType.left
     
-    let horizonCirclesContainer = UIView()
-    let verticalCirclesContainer = UIView()
-    
-    var centerVerticleOff = 5
-    var centerHorizonOff = 5
-    
-    init(_ pageView: UIView,withType boarderType:FretboardBorderType) {
-        super.init(pageView)
-        
-        horizonCirclesContainer.backgroundColor = .clear
-        verticalCirclesContainer.backgroundColor = .clear
-        
-        pageView.addSubview(horizonCirclesContainer)
-        pageView.addSubview(verticalCirclesContainer)
-        
-        self.convertBoarderType(boarderType)
-        
-        self.centerVerticleOff = (self.verticalBoarderType == FretboardBorderType.left) ? 8 : -4
-        self.centerHorizonOff = (self.horizonBoarderType == FretboardBorderType.top) ? 5 : -5
-    }
-    
-    func layoutBoarderView(_ horizonRectView: UIView,_ verticalRectView: UIView) -> FretboardBorderLayout {
-        self.layoutReactView(horizonRectView,horizonCirclesContainer,self.horizonBoarderType)
-        self.layoutReactView(verticalRectView,verticalCirclesContainer, self.verticalBoarderType)
-        
-        return self
-    }
-    
-    //  6X14
-    func layoutHorizonCircles(_ itemWidth:Int) -> FretboardBorderLayout {
-        let circleWH = 10
-        
-        for i in 0...5{
-            let circleView = UIView()
-            
-            horizonCirclesContainer.addSubview(circleView)
-            
-            circleView.backgroundColor = UIColor(named: .resultsBoarder)
-            circleView.layer.cornerRadius = CGFloat(circleWH / 2)
-            
-            circleView.snp.makeConstraints { (make) -> Void in
-                make.leading.equalToSuperview().offset(((itemWidth-circleWH)/2) + itemWidth * i)
-                make.centerY.equalToSuperview().offset(self.centerHorizonOff)
-                make.width.equalTo(circleWH)
-                make.height.equalTo(circleWH)
-            }
-        }
-        
-        
-        return self
-    }
-    
-    
-    //  6X14
-    func layoutVirticalCircles(_ itemHeight:Int) -> FretboardBorderLayout {
-        let circleWH = 10
-        
-        for i in 0...13{
-            let circleView = UIView()
-            
-            verticalCirclesContainer.addSubview(circleView)
-            
-            circleView.backgroundColor = UIColor(named: .resultsBoarder)
-            circleView.layer.cornerRadius = CGFloat(circleWH / 2)
-            
-            circleView.snp.makeConstraints { (make) -> Void in
-                make.top.equalToSuperview().offset(((itemHeight-circleWH)/2) + itemHeight * i)
-                make.centerX.equalToSuperview().offset(self.centerVerticleOff)
-                make.width.equalTo(circleWH)
-                make.height.equalTo(circleWH)
-            }
-        }
-        
-        
-        return self
-    }
-    
-    private func convertBoarderType(_ boarderType:FretboardBorderType){
+    public func convertBoarderType(_ boarderType:FretboardBorderType){
         switch boarderType {
         case .left:
             //   *
@@ -181,6 +75,142 @@ class FretboardBorderLayout: BaseTuningsLayout {
             self.verticalBoarderType = FretboardBorderType.right
         }
     }
+}
+
+class FretboardViewHelper{
+    
+    let fretboardBoarderView =  FretboardBoarderView()
+    
+    func addAsBoarder(_ pageContainer:UIView,_ fretboardView:UIView, _ boarderType:FretboardBorderType) ->FretboardViewHelper {
+        
+        pageContainer.addSubview(fretboardBoarderView)
+        
+        
+        fretboardBoarderView.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(fretboardView).offset(-FretboardBorderSchema.outBoardSize())
+            make.trailing.equalTo(fretboardView).offset(FretboardBorderSchema.outBoardSize())
+            make.top.equalTo(fretboardView).offset(-FretboardBorderSchema.outBoardSize())
+            make.bottom.equalTo(fretboardView).offset(FretboardBorderSchema.outBoardSize())
+        }
+        
+        pageContainer.sendSubview(toBack: fretboardBoarderView)
+        
+        //fretboardBoarderView.backgroundColor = .blue
+        
+        // 6X14
+        // 6 * 70(w), 14 * 40(h)
+        fretboardBoarderView.drawBoarder(boarderType,FretboardColumnSchema.itemWidth(),FretboardColumnSchema.itemHeight())
+        
+        return self
+    }
+    
+    func setDelegate(_ delegate : FretboardBoarderViewProviderProtocol) {
+        fretboardBoarderView.delegate = delegate
+    }
+    
+}
+
+
+
+class FretboardBorderLayout: BaseTuningsLayout {
+    let fretboardViewBoarderTypeHelper = FretboardViewBoarderTypeHelper()
+
+    let horizonCirclesContainer = UIView()
+    let verticalCirclesContainer = UIView()
+    
+    var centerVerticleOff = 5
+    var centerHorizonOff = 5
+    
+    init(_ pageView: UIView,withType boarderType:FretboardBorderType) {
+        super.init(pageView)
+        
+        horizonCirclesContainer.backgroundColor = .clear
+        verticalCirclesContainer.backgroundColor = .clear
+        
+        horizonCirclesContainer.backgroundColor = .orange
+        verticalCirclesContainer.backgroundColor = .orange
+        
+        pageView.addSubview(horizonCirclesContainer)
+        pageView.addSubview(verticalCirclesContainer)
+        
+        fretboardViewBoarderTypeHelper.convertBoarderType(boarderType)
+        
+        self.centerVerticleOff = (fretboardViewBoarderTypeHelper.verticalBoarderType == FretboardBorderType.left) ? 8 : -4
+        self.centerHorizonOff = (fretboardViewBoarderTypeHelper.horizonBoarderType == FretboardBorderType.top) ? 5 : -5
+    }
+    
+    func layoutBoarderView(_ horizonRectView: UIView,_ verticalRectView: UIView) -> FretboardBorderLayout {
+        self.layoutReactView(horizonRectView,horizonCirclesContainer,fretboardViewBoarderTypeHelper.horizonBoarderType)
+        self.layoutReactView(verticalRectView,verticalCirclesContainer, fretboardViewBoarderTypeHelper.verticalBoarderType)
+        
+        return self
+    }
+    
+    //  6X14
+    func layoutHorizonCircles(_ itemWidth:Int) -> FretboardBorderLayout {
+        let circleWH = 10
+        
+        for i in 0...5{
+            let circleView = UIView()
+            
+            let button = UIButton()
+            //button.backgroundColor = [.red,.black,.yellow,.blue,.white,.yellow][i]
+            button.backgroundColor = .clear
+            
+            horizonCirclesContainer.addSubview(circleView)
+            horizonCirclesContainer.addSubview(button)
+            
+            circleView.backgroundColor = UIColor(named: .resultsBoarder)
+            circleView.layer.cornerRadius = CGFloat(circleWH / 2)
+            
+            circleView.snp.makeConstraints { (make) -> Void in
+                make.leading.equalToSuperview().offset(((itemWidth-circleWH)/2) + itemWidth * i)
+                make.centerY.equalToSuperview().offset(self.centerHorizonOff)
+                make.width.equalTo(circleWH)
+                make.height.equalTo(circleWH)
+            }
+            
+            button.snp.makeConstraints { (make) -> Void in
+                make.leading.equalToSuperview().offset(itemWidth * i)
+                make.top.equalToSuperview()
+                make.width.equalTo(itemWidth)
+                make.height.equalToSuperview()
+            }
+        }
+        
+        return self
+    }
+    
+
+    //  6X14
+    func layoutVirticalCircles(_ itemHeight:Int) -> FretboardBorderLayout {
+        let circleWH = 10
+        
+        for i in 0...13{
+            let circleView = UIView()
+            
+            verticalCirclesContainer.addSubview(circleView)
+            
+            circleView.backgroundColor = UIColor(named: .resultsBoarder)
+            circleView.layer.cornerRadius = CGFloat(circleWH / 2)
+            
+            circleView.snp.makeConstraints { (make) -> Void in
+                make.top.equalToSuperview().offset(((itemHeight-circleWH)/2) + itemHeight * i)
+                make.centerX.equalToSuperview().offset(self.centerVerticleOff)
+                make.width.equalTo(circleWH)
+                make.height.equalTo(circleWH)
+            }
+        }
+        
+        
+        return self
+    }
+    
+    func end()  {
+        
+    }
+    
+   
     
     func layoutReactView(_ rectView: UIView,_ circlesContainer: UIView, _ boarderType:FretboardBorderType) {
         let reactWH = 4

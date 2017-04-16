@@ -66,7 +66,11 @@ extension SGTuningsCustomViewController: ThreeChordColumnProviderProtocol{
 }
 
 
-
+extension SGTuningsCustomViewController: FretboardBoarderViewProviderProtocol{
+    func onGreenButtonTapped(_ item: FretboardBorderGreenItem){
+        
+    }
+}
 
 
 extension SGTuningsCustomViewController: TuningsEventProviderProtocol{

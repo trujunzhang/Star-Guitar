@@ -60,6 +60,10 @@ class SGTouchChordViewController: UIViewController {
         FretboardLayout(self.view)
             .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.getTopOffOnCustom(type))
         
+        // Add boarder effect to the fretboard view.
+        FretboardViewHelper().addAsBoarder(self.view,fretboardContainer,type)
+        
+        // Add titles to the fretboard view
         CustomResultsViewHelper().addAsTitles(self.view,fretboardContainer,type)
         
         TuningsEventsLayout(self.view).layoutContainer(self.view, forView: eventsContainer)

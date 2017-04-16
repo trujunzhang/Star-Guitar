@@ -62,7 +62,7 @@ struct FretboardColumnSchema {
 
     
     public static func touchChordLeading() -> Int {
-        return 380 + SGScreenLayout.sharedInstance.deviceIndex * 40
+        return 380 + SGScreenLayout.sharedInstance.deviceIndex * 60
     }
     
 }
@@ -78,10 +78,7 @@ class FretboardLayout: BaseTuningsLayout {
             make.leading.equalTo(leftColumn).offset(leading)
             make.width.equalTo(FretboardColumnSchema.resultsColumnWidth())
             make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())
-        }
-        
-        // Add boarder effect to the fretboard view.
-        FretboardViewHelper().addAsBoarder(pageView!,fretboardView,type)
+        }                
     }
     
 }
