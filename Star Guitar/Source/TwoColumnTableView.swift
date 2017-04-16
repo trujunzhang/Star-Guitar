@@ -21,7 +21,7 @@ open class TwoColumnActionCell: UITableViewCell {
      - parameter style:           Unused. It always uses `UITableViewCellStyle.Default`.
      - parameter reuseIdentifier: A string used to identify the cell object if it is to be reused for drawing multiple rows of a table view.
      
-     - returns: An initialized `TapActionCell` object.
+     - returns: An initialized `TwoColumnActionCell` object.
      */
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
@@ -74,7 +74,7 @@ public struct TwoColumnActionRow: Row, Equatable {
     /// Subtitle is disabled in TapActionRow.
     public let subtitle: Subtitle? = nil
     
-    /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
+    /// The value is **TwoColumnActionCell**, as the reuse identifier of the table view cell to display the row.
     public let cellReuseIdentifier: String = String(describing: TwoColumnActionCell.self)
     
     /// A closure as the tap action when the row is selected.

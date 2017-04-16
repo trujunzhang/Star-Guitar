@@ -93,7 +93,7 @@ public struct OneColumnActionRow: Row, Equatable {
     /// Subtitle is disabled in TapActionRow.
     public let subtitle: Subtitle? = nil
 
-    /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
+    /// The value is **OneColumnActionCell**, as the reuse identifier of the table view cell to display the row.
     public let cellReuseIdentifier: String = String(describing: OneColumnActionCell.self)
 
     /// A closure as the tap action when the row is selected.

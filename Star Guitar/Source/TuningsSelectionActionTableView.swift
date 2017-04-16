@@ -1,5 +1,5 @@
 //
-//  TapActionRow.swift
+//  TuningsSelectionActionTableView.swift
 //  Star Guitar
 //
 //  Created by djzhang on 3/28/17.
@@ -12,7 +12,7 @@ import UIKit
 
 /// A `UITableViewCell` subclass with the title text center aligned.
 
-open class TapActionCell: UITableViewCell {
+open class TuningsSelectionActionCell: UITableViewCell {
 
     public let iconImageView: UIImageView = UIImageView()
 
@@ -78,12 +78,12 @@ open class TapActionCell: UITableViewCell {
 }
 
 
-// MARK: - TapActionRow
+// MARK: - TuningsSelectionActionRow
 
 
 /// A struct that represents a row that triggers certain action when seleced.
 
-public struct TapActionRow: Row, Equatable {
+public struct TuningsSelectionActionRow: Row, Equatable {
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
@@ -93,7 +93,7 @@ public struct TapActionRow: Row, Equatable {
     }
 
     public func render(viewCell: UIView) {
-        let cell = (viewCell as? TapActionCell)
+        let cell = (viewCell as? TuningsSelectionActionCell)
         cell?.iconImageView.image = tableRowType.getImage()
     }
     public var tableRowType: TableRowType = TableRowType.Empty
@@ -104,8 +104,8 @@ public struct TapActionRow: Row, Equatable {
     /// Subtitle is disabled in TapActionRow.
     public let subtitle: Subtitle? = nil
 
-    /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: TapActionCell.self)
+    /// The value is **TuningsSelectionActionCell**, as the reuse identifier of the table view cell to display the row.
+    public let cellReuseIdentifier: String = String(describing: TuningsSelectionActionCell.self)
 
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?

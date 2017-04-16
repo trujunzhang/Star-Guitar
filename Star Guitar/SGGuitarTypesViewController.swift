@@ -12,14 +12,14 @@ class SGGuitarTypesViewController: QuickTableViewController {
     open override func configTableView(_ tableView: UITableView) {
         super.configTableView(tableView)
 
-        tableView.register(TapActionCell.self, forCellReuseIdentifier: String(describing: TapActionCell.self))
+        tableView.register(TuningsSelectionActionCell.self, forCellReuseIdentifier: String(describing: TuningsSelectionActionCell.self))
         tableView.register(TuningsActionCell.self, forCellReuseIdentifier: String(describing: TuningsActionCell.self))
     }
 
     func getGuitarTypesSection() -> Section {
         var guitarTypes: [Row] = [Row]()
         for (index, title) in GuitarType.getGuitarTypeTitles().enumerated(){
-            let row = TapActionRow(title: title, action: switchGuitarType, tableRowType: GuitarSettingsUtils.sharedInstance.getGuitarTypeRowType(index))
+            let row = TuningsSelectionActionRow(title: title, action: switchGuitarType, tableRowType: GuitarSettingsUtils.sharedInstance.getGuitarTypeRowType(index))
             guitarTypes.append(row)
         }
         return Section(title: "GuitarTypes", rows: guitarTypes)
@@ -28,7 +28,7 @@ class SGGuitarTypesViewController: QuickTableViewController {
     func getFretboardSection() -> Section {
         var fretBoards: [Row] = [Row]()
         for (index, title) in FretboardType.getFretboardTitles().enumerated(){
-            let row = TapActionRow(title: title, action: switchFretboard, tableRowType: GuitarSettingsUtils.sharedInstance.getFretboardTypeRowType(index))
+            let row = TuningsSelectionActionRow(title: title, action: switchFretboard, tableRowType: GuitarSettingsUtils.sharedInstance.getFretboardTypeRowType(index))
             fretBoards.append(row)
         }
         return Section(title: "Fretboard", rows: fretBoards)

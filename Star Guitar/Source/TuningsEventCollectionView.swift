@@ -88,7 +88,7 @@ public struct TuningsEventsActionRow: Row, Equatable {
     /// Subtitle is disabled in TapActionRow.
     public let subtitle: Subtitle? = nil
 
-    /// The value is **TapActionCell**, as the reuse identifier of the table view cell to display the row.
+    /// The value is **TuningsEventsActionCell**, as the reuse identifier of the table view cell to display the row.
     public let cellReuseIdentifier: String = String(describing: TuningsEventsActionCell.self)
 
     /// A closure as the tap action when the row is selected.
