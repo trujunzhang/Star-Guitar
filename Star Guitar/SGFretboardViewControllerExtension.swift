@@ -13,7 +13,8 @@ extension SGFretboardViewController{
     
     
     private func generateRows() -> Section {
-        var verticalBoarderType:FretboardBorderType =  FretboardBorderType.left
+        let verticalBoarderType:FretboardBorderType =  FretboardBorderType.left
+        
         return Section(title: nil, rows: [
             TuningsFretboardActionRow(title: "1", action: toggleNote),
             TuningsFretboardActionRow(title: "2", action: toggleNote),
@@ -24,9 +25,8 @@ extension SGFretboardViewController{
             ])
     }
     
-     func generateFretboardSections() -> [Section]{
-        var horizonBoarderType:FretboardBorderType =  FretboardBorderType.top
-        
+    func generateFretboardSections() -> [Section]{
+        let horizonBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.horizonBoarderType
         
         // 6X5
         let sections = [
@@ -38,10 +38,26 @@ extension SGFretboardViewController{
         var sectionsWithBoarder = [Section]()
         
         if(horizonBoarderType == FretboardBorderType.top){
-            //sectionsWithBoarder.append()
+            sectionsWithBoarder.append(self.generateHorizonBoarderRow())
         }
-        
+        for section in sections{
+            sectionsWithBoarder.append(section)
+        }
+        if(horizonBoarderType == FretboardBorderType.bottom){
+            sectionsWithBoarder.append(self.generateHorizonBoarderRow())
+        }
         return sections
+    }
+    
+    private func generateHorizonBoarderRow() -> Section {
+        return Section(title: nil, rows: [
+            TuningsFretboardActionRow(title: "x", action: toggleNote),
+            TuningsFretboardActionRow(title: "x", action: toggleNote),
+            TuningsFretboardActionRow(title: "x", action: toggleNote),
+            TuningsFretboardActionRow(title: "x", action: toggleNote),
+            TuningsFretboardActionRow(title: "x", action: toggleNote),
+            TuningsFretboardActionRow(title: "x", action: toggleNote),
+            ])
     }
     
     
