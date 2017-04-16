@@ -56,13 +56,10 @@ class SGTouchChordViewController: UIViewController {
          * And this also need to be for the one touch tuning
          */
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
-        let leading = FretboardColumnSchema.touchChordLeading()
+        let leading = FretboardColumnSchema.touchChordLeading(type)
         FretboardLayout(self.view)
-            .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.marginTop(type))
-        
-        // Add boarder effect to the fretboard view.
-        FretboardViewHelper().addAsBoarder(self.view,fretboardContainer,type)
-        
+            .layoutFretboard(threeColumnContainer,fretboardContainer, leading, type)
+
         // Add titles to the fretboard view
         CustomResultsViewHelper().addAsTitles(self.view,fretboardContainer,type)
         

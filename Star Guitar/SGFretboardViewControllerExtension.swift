@@ -12,8 +12,8 @@ import Foundation
 extension SGFretboardViewController{
     
     
-    private func generateRows() -> Section {
-        let verticalBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.verticalBoarderType
+    private func generateRows(_ position:Int) -> Section {
+        let isLeft =  fretboardViewBoarderTypeHelper.isLeft()
         
         let rows = [
             TuningsFretboardActionRow(title: "1", action: toggleNote),
@@ -24,75 +24,74 @@ extension SGFretboardViewController{
             TuningsFretboardActionRow(title: "6", action: toggleNote),
             ]
         
+        let item = FretboardBorderGreenItem(isLeft:isLeft,position)
         var rowsWithBoarder = [Row]()
-        if(verticalBoarderType == FretboardBorderType.left){
-            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(title: "y", action: toggleNote))
+        if(isLeft){
+            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(item: item, action: toggleNote))
         }
         for row in rows{
             rowsWithBoarder.append(row)
         }
-        if(verticalBoarderType == FretboardBorderType.right){
-            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(title: "y", action: toggleNote))
+        if(!isLeft){
+            rowsWithBoarder.append(VerticalTuningsFretboardActionRow(item: item, action: toggleNote))
         }
         
         return Section(title: nil, rows: rowsWithBoarder)
     }
     
-    private func generateHorizonBoarderRow() -> Section {
-        let verticalBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.verticalBoarderType
+    private func generateTopBottomRow() -> Section {
+
+        let isTop =  fretboardViewBoarderTypeHelper.isTop()
         
         let rows = [
-            HorizonTuningsFretboardActionRow(title: "x", action: toggleNote),
-            HorizonTuningsFretboardActionRow(title: "x", action: toggleNote),
-            HorizonTuningsFretboardActionRow(title: "x", action: toggleNote),
-            HorizonTuningsFretboardActionRow(title: "x", action: toggleNote),
-            HorizonTuningsFretboardActionRow(title: "x", action: toggleNote),
-            HorizonTuningsFretboardActionRow(title: "x", action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
+            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: toggleNote),
             ]
         
+        let isLeft =  fretboardViewBoarderTypeHelper.isLeft()
         var rowsWithBoarder = [Row]()
-        if(verticalBoarderType == FretboardBorderType.left){
-            rowsWithBoarder.append(TuningsFretboardActionRow(title: "-", action: toggleNote))
+        if(isLeft){
+            rowsWithBoarder.append(TuningsFretboardEmptyRow())
         }
         for row in rows{
             rowsWithBoarder.append(row)
         }
-        if(verticalBoarderType == FretboardBorderType.right){
-            rowsWithBoarder.append(TuningsFretboardActionRow(title: "-", action: toggleNote))
+        if(!isLeft){
+            rowsWithBoarder.append(TuningsFretboardEmptyRow())
         }
         
         return Section(title: nil, rows: rowsWithBoarder)
     }
     
     private func generateSections() -> [Section]{
-        // 6X5
-        let sections = [
-            self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(),
-            self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(),
-            self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows()
-        ]
+        // 6X13
+        var sections = [Section]()
+        for index in 0...13{
+            sections.append(self.generateRows(index))
+        }
         return sections
     }
     
     func generateFretboardSections() -> [Section]{
-        let horizonBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.horizonBoarderType
+        let isTop =  fretboardViewBoarderTypeHelper.isTop()
         
         var sectionsWithBoarder = [Section]()
         
-        if(horizonBoarderType == FretboardBorderType.top){
-            sectionsWithBoarder.append(self.generateHorizonBoarderRow())
+        if(isTop){
+            sectionsWithBoarder.append(self.generateTopBottomRow())
         }
         for section in self.generateSections(){
             sectionsWithBoarder.append(section)
         }
-        if(horizonBoarderType == FretboardBorderType.bottom){
-            sectionsWithBoarder.append(self.generateHorizonBoarderRow())
+        if(!isTop){
+            sectionsWithBoarder.append(self.generateTopBottomRow())
         }
         return sectionsWithBoarder
     }
-    
-    
-    
     
     private func toggleNote(_ sender: Row) {
         delegate?.toggleCell(sender as! TuningsFretboardActionRow)

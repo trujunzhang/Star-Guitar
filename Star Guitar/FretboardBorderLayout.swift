@@ -32,12 +32,10 @@ struct FretboardBorderSchema {
     }
 
     public static func marginTop(_ type:FretboardBorderType) -> Int {
-        var topOff = FretboardBorderSchema.outBoardSize() + 4
-        if(type == FretboardBorderType.left || type == FretboardBorderType.bottom){
-            topOff = 20
+        if(type == FretboardBorderType.top || type == FretboardBorderType.right){
+            return 16
         }
-        let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? 14 : 14
-        return topOff + off
+        return 20 + 14
     }
     
 }
@@ -49,6 +47,14 @@ class FretboardViewBoarderTypeHelper{
     
     var centerVerticleOff = 5
     var centerHorizonOff = 5
+    
+    public func isLeft() -> Bool{
+        return verticalBoarderType == FretboardBorderType.left
+    }
+    
+    public func isTop() -> Bool {
+        return horizonBoarderType == FretboardBorderType.top
+    }
     
     public func convertBoarderType(_ boarderType:FretboardBorderType){
         switch boarderType {

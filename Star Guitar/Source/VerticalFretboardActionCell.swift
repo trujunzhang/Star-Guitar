@@ -15,13 +15,13 @@ open class VerticalTuningsFretboardActionCell: UICollectionViewCell {
     
     override open var isSelected: Bool {
         willSet { // keep lightGray background (保留灰背景)
-            backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .tableRowBG)
+            //backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .tableRowBG)
         }
     }
     
-    public let eventLabel = UILabel()
-    
-    let backRowView = UIView()
+    let circleView = UIView()
+    let circleWH = 10
+    let rectView = UIView()
     
     // MARK: Initializer
     override init(frame: CGRect) {
@@ -45,31 +45,13 @@ open class VerticalTuningsFretboardActionCell: UICollectionViewCell {
     
     private func setUpAppearance() {
         backgroundColor = .clear
-        backgroundColor = .red
         
-        contentView.addSubview(eventLabel)
-        contentView.addSubview(backRowView)
-        contentView.sendSubview(toBack: backRowView)
+        contentView.addSubview(circleView)
+        contentView.addSubview(rectView)
         
-        eventLabel.font = UIFont.tableRowFont()
-        eventLabel.textColor = .black
-        eventLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
-        
-        let edgeInsets = FretboardColumnSchema.edgeInsets()
-        backRowView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(edgeInsets.top)
-            make.bottom.equalToSuperview().offset(-edgeInsets.bottom)
-            make.leading.equalToSuperview().offset(edgeInsets.left)
-            make.trailing.equalToSuperview().offset(-edgeInsets.right)
-        }
-        backRowView.backgroundColor = UIColor(named: .tableRowBG)
-        
-        //backRowView.layer.cornerRadius = 30
-        
-        
+        rectView.backgroundColor = UIColor(named: .resultsBoarder)
+        circleView.backgroundColor = UIColor(named: .resultsBoarder)
+        circleView.layer.cornerRadius = CGFloat(circleWH / 2)
     }
 }
 
@@ -84,11 +66,38 @@ public struct VerticalTuningsFretboardActionRow: Row, Equatable {
     }
     
     public func render(viewCell: UIView) {
-        let cell = (viewCell as? VerticalTuningsFretboardActionCell)
+        let reactWH = 4
+        let circleWH = 10
         
-        cell?.eventLabel.text = self.title
+        if let cell = (viewCell as? VerticalTuningsFretboardActionCell){
+            var circleOff = -22
+            if(self.item?.isLeft)!{
+                circleOff = 22
+                cell.rectView.snp.makeConstraints { (make) -> Void in
+                    make.top.equalToSuperview()
+                    make.bottom.equalToSuperview()
+                    make.trailing.equalToSuperview()
+                    make.width.equalTo(reactWH)
+                }
+            }else{
+                cell.rectView.snp.makeConstraints { (make) -> Void in
+                    make.top.equalToSuperview()
+                    make.bottom.equalToSuperview()
+                    make.leading.equalToSuperview()
+                    make.width.equalTo(reactWH)
+                }
+            }
+            
+            cell.circleView.snp.makeConstraints { (make) -> Void in
+                make.centerX.equalToSuperview().offset(circleOff)
+                make.centerY.equalToSuperview()
+                make.width.equalTo(circleWH)
+                make.height.equalTo(circleWH)
+            }
+        }
     }
     
+    public var item: FretboardBorderGreenItem?
     
     /// The title text of the row.
     public var title: String = ""
@@ -103,8 +112,8 @@ public struct VerticalTuningsFretboardActionRow: Row, Equatable {
     public var action: ((Row) -> Void)?
     
     ///
-    public init(title: String, action: ((Row) -> Void)?) {
-        self.title = title
+    public init(item: FretboardBorderGreenItem, action: ((Row) -> Void)?) {
+        self.item = item
         self.action = action
     }
     

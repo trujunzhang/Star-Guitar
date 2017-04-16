@@ -28,7 +28,7 @@ class SGFretboardViewController: QuickCollectionViewController {
         collectionView.register(TuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsFretboardActionCell.self))
         collectionView.register(HorizonTuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: HorizonTuningsFretboardActionCell.self))
         collectionView.register(VerticalTuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: VerticalTuningsFretboardActionCell.self))
-        
+        collectionView.register(TuningsFretboardEmptyCell.self, forCellWithReuseIdentifier: String(describing: TuningsFretboardEmptyCell.self))
         
     }
     
@@ -41,8 +41,7 @@ class SGFretboardViewController: QuickCollectionViewController {
         
         
         tableContents = self.generateFretboardSections()
-    }
-    
+    }        
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

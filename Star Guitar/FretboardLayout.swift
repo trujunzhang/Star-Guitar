@@ -61,7 +61,10 @@ struct FretboardColumnSchema {
     }
 
     
-    public static func touchChordLeading() -> Int {
+    public static func touchChordLeading(_ type:FretboardBorderType) -> Int {
+        if(type == FretboardBorderType.left || type == FretboardBorderType.top){
+            return 320 + SGScreenLayout.sharedInstance.deviceIndex * 60
+        }
         return 380 + SGScreenLayout.sharedInstance.deviceIndex * 60
     }
     
@@ -70,11 +73,11 @@ struct FretboardColumnSchema {
 
 class FretboardLayout: BaseTuningsLayout {
     
-    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ leading: Int,_ type:FretboardBorderType, _ marginTop: Int) {
+    func layoutFretboard(_ leftColumn: UIView,_ fretboardView: UIView,_ leading: Int,_ type:FretboardBorderType) {
         fretboardView.backgroundColor = .clear
                 
         fretboardView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(marginTop)
+            make.top.equalToSuperview().offset(FretboardBorderSchema.marginTop(type))
             make.leading.equalTo(leftColumn).offset(leading)
             make.width.equalTo(FretboardColumnSchema.resultsColumnWidth())
             make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())

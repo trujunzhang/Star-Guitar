@@ -95,6 +95,7 @@
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
 		5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */; };
 		5EF0AE161E8DE1590026F0B4 /* SGFretboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */; };
+		5EF1178E1EA35EB300556256 /* TuningsFretboardEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1178D1EA35EB300556256 /* TuningsFretboardEmptyCell.swift */; };
 		5EFD9A3B1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */; };
 		65B8C820CF4D809D92DBEFDA /* readme.org in Resources */ = {isa = PBXBuildFile; fileRef = 65B8CF7C240DD7CA4FD7D622 /* readme.org */; };
 		7E08DFC8246FFC850240E9B7 /* Pods_Star_GuitarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B21822E2E8B20F7CAE202D /* Pods_Star_GuitarUITests.framework */; };
@@ -231,6 +232,7 @@
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
 		5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsSharpActionCell.swift; sourceTree = "<group>"; };
 		5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFretboardViewController.swift; sourceTree = "<group>"; };
+		5EF1178D1EA35EB300556256 /* TuningsFretboardEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsFretboardEmptyCell.swift; sourceTree = "<group>"; };
 		5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResultsHeaderTitlesLayout.swift; sourceTree = "<group>"; };
 		65B8CF7C240DD7CA4FD7D622 /* readme.org */ = {isa = PBXFileReference; lastKnownFileType = file.org; path = readme.org; sourceTree = "<group>"; };
 		99B1C9C149B4F76D17A77688 /* Pods-Star Guitar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Guitar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star Guitar/Pods-Star Guitar.release.xcconfig"; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				5E61BDB41E8E4D2500CAB2B6 /* TuningsFretboardActionCell.swift */,
 				5E763FB91EA349D9002B371A /* VerticalFretboardActionCell.swift */,
 				5E763FBB1EA34B21002B371A /* HorizonFretboardActionCell.swift */,
+				5EF1178D1EA35EB300556256 /* TuningsFretboardEmptyCell.swift */,
 			);
 			name = TuningsFretboard;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				5E45A8971E97C6BC00552A94 /* SGTuningsChordSettings.swift in Sources */,
 				5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */,
 				5E2D89921E8E755B00D6AEF0 /* FretboardBoarderView.swift in Sources */,
+				5EF1178E1EA35EB300556256 /* TuningsFretboardEmptyCell.swift in Sources */,
 				5EA049861E7E83B1003E402F /* MainViewController.swift in Sources */,
 				5EB2469D1E8983AC009B9A07 /* QuickCollectionViewController.swift in Sources */,
 				5E7F0BED1E8DE72B00E5569F /* StandardResultsLayout.swift in Sources */,

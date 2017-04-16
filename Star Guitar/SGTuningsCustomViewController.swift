@@ -53,10 +53,7 @@ class SGTuningsCustomViewController: UIViewController {
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
         let leading = TuningTypeSchema.itemWidth() + FretboardColumnSchema.marginLeft() + FretboardBorderSchema.outBoardSize() + FretboardBorderSchema.marginLeft()
         FretboardLayout(self.view)
-            .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.marginTop(type))
-        
-        // Add boarder effect to the fretboard view.
-        //FretboardViewHelper().addAsBoarder(self.view,fretboardContainer,type)
+            .layoutFretboard(threeColumnContainer, fretboardContainer, leading, type)
         
         // Add titles to the fretboard view
         CustomResultsViewHelper().addAsTitles(self.view,fretboardContainer,type)
