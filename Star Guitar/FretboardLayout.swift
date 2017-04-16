@@ -51,7 +51,7 @@ struct FretboardColumnSchema {
     }
     
     public static func resultsColumnWidth() -> CGFloat {
-        let itemsWidth = (FretboardColumnSchema.itemWidth() + FretboardColumnSchema.lineSpacing()) * 6
+        let itemsWidth = (FretboardColumnSchema.itemWidth() + FretboardColumnSchema.lineSpacing()) * (6 + 1)
         return CGFloat(integerLiteral: itemsWidth)
     }
     

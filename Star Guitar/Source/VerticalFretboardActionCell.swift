@@ -1,17 +1,18 @@
 //
-//  TuningsFretboardActionCell.swift
+//  VerticalFretboardActionCell.swift
 //  Star Guitar
 //
-//  Created by djzhang on 3/31/17.
+//  Created by djzhang on 4/16/17.
 //  Copyright © 2017 djzhang. All rights reserved.
 //
+
 
 import Foundation
 import UIKit
 
 
-open class TuningsFretboardActionCell: UICollectionViewCell {
-
+open class VerticalTuningsFretboardActionCell: UICollectionViewCell {
+    
     override open var isSelected: Bool {
         willSet { // keep lightGray background (保留灰背景)
             backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .tableRowBG)
@@ -44,7 +45,7 @@ open class TuningsFretboardActionCell: UICollectionViewCell {
     
     private func setUpAppearance() {
         backgroundColor = .clear
-        //backgroundColor = UIColor(named: .tableRowBG)
+        backgroundColor = .red
         
         contentView.addSubview(eventLabel)
         contentView.addSubview(backRowView)
@@ -73,7 +74,7 @@ open class TuningsFretboardActionCell: UICollectionViewCell {
 }
 
 
-public struct TuningsFretboardActionRow: Row, Equatable {
+public struct VerticalTuningsFretboardActionRow: Row, Equatable {
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
@@ -83,7 +84,7 @@ public struct TuningsFretboardActionRow: Row, Equatable {
     }
     
     public func render(viewCell: UIView) {
-        let cell = (viewCell as? TuningsFretboardActionCell)
+        let cell = (viewCell as? VerticalTuningsFretboardActionCell)
         
         cell?.eventLabel.text = self.title
     }
@@ -96,7 +97,7 @@ public struct TuningsFretboardActionRow: Row, Equatable {
     public let subtitle: Subtitle? = nil
     
     /// The value is **TuningsFretboardActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: TuningsFretboardActionCell.self)
+    public let cellReuseIdentifier: String = String(describing: VerticalTuningsFretboardActionCell.self)
     
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?
@@ -112,5 +113,6 @@ public struct TuningsFretboardActionRow: Row, Equatable {
     
     
 }
+
 
 

@@ -26,6 +26,10 @@ class SGFretboardViewController: QuickCollectionViewController {
         layout.itemSize = CGSize(width: FretboardColumnSchema.itemWidth(), height: FretboardColumnSchema.itemHeight()) // cell的寬、高
         
         collectionView.register(TuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsFretboardActionCell.self))
+        collectionView.register(HorizonTuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: HorizonTuningsFretboardActionCell.self))
+        collectionView.register(VerticalTuningsFretboardActionCell.self, forCellWithReuseIdentifier: String(describing: VerticalTuningsFretboardActionCell.self))
+        
+        
     }
     
     override func viewDidLoad() {
@@ -35,17 +39,17 @@ class SGFretboardViewController: QuickCollectionViewController {
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
         fretboardViewBoarderTypeHelper.convertBoarderType(type)
         
-
+        
         tableContents = self.generateFretboardSections()
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     
 }
