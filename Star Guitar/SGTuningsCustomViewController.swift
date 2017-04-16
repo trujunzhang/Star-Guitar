@@ -56,7 +56,7 @@ class SGTuningsCustomViewController: UIViewController {
             .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.marginTop(type))
         
         // Add boarder effect to the fretboard view.
-        FretboardViewHelper().addAsBoarder(self.view,fretboardContainer,type).setDelegate(self)
+        FretboardViewHelper().addAsBoarder(self.view,fretboardContainer,type)
         
         // Add titles to the fretboard view
         CustomResultsViewHelper().addAsTitles(self.view,fretboardContainer,type)

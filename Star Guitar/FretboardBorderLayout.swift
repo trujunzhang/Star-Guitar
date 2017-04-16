@@ -96,7 +96,7 @@ class FretboardViewHelper{
     
     let fretboardBoarderView =  FretboardBoarderView()
     
-    func addAsBoarder(_ pageContainer:UIView,_ fretboardView:UIView, _ boarderType:FretboardBorderType) ->FretboardViewHelper {
+    func addAsBoarder(_ pageContainer:UIView,_ fretboardView:UIView, _ boarderType:FretboardBorderType)  {
         
         pageContainer.addSubview(fretboardBoarderView)
         
@@ -115,14 +115,9 @@ class FretboardViewHelper{
         // 6X14
         // 6 * 70(w), 14 * 40(h)
         fretboardBoarderView.drawBoarder(boarderType,FretboardColumnSchema.itemWidth(),FretboardColumnSchema.itemHeight())
-        
-        return self
     }
     
-    func setDelegate(_ delegate : FretboardBoarderViewProviderProtocol) {
-        fretboardBoarderView.delegate = delegate
-    }
-    
+
 }
 
 
