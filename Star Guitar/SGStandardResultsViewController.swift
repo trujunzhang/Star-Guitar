@@ -15,12 +15,6 @@ protocol StandardResultsProviderProtocol : class {    // 'class' means only clas
 class SGStandardResultsViewController: QuickCollectionViewController {
     weak var delegate : StandardResultsProviderProtocol?
     
-    private var selectedRow: Row?
-    
-    public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
-        //collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
-    }
-    
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
         
@@ -34,14 +28,13 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     func generateResultsRows(_ tuningsStandardSettingsUtils:TuningsStandardSettingsUtils) {
         var sections = [Section]()
         
-        let resultCells = tuningsStandardSettingsUtils.getResultCells()
-        for resultRow in resultCells{
+        let currentCells = tuningsStandardSettingsUtils.getCurrentResultCells()
+        for cellsRow in currentCells{
             var rows: [Row] = [Row]()
-            for item in resultRow{
+            for item in cellsRow{
                 rows.append(self.generateRow(item))
             }
-            let section = Section(title: nil, rows: rows)
-            sections.append(section)
+            sections.append(Section(title: nil, rows: rows))
         }
         
         tableContents = sections

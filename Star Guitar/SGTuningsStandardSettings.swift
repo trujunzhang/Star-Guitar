@@ -35,7 +35,7 @@ class TuningsStandardSettings: Object {
     }
     
     // 6X5
-    dynamic var results: String = TuningsStandardSettingsModel.getDefaultResults()
+    dynamic var results: String = TuningsStandardSettingsModel.getStandardTypeResults()
     
 }
 
@@ -45,7 +45,7 @@ class TuningsStandardFactory{
         return [[ColumnResultItem]]()
     }()
 
-    public static func getStandardResultsCells() -> [[ColumnResultItem]]{
+    public static func getStandardRightHandResultsCellsx() -> [[ColumnResultItem]]{
         let standardResultString = String(format: "%@;%@;%@;%@;%@",
                                           "4-0,9-0,2-1,7-1,11-1,4-2",
                                           "2-0,9-0,2-1,7-1,11-1,4-2",
@@ -55,6 +55,34 @@ class TuningsStandardFactory{
         )
 
         return TuningsStandardFactory.convert(standardResultString)
+    }
+    
+    public static func getStandardLeftHandResultsCellsx() -> [[ColumnResultItem]]{
+        let standardResultString = String(format: "%@;%@;%@;%@;%@",
+                                          "4-2,11-1,7-1,2-1,9-0,4-2",
+                                          "4-2,11-1,7-1,2-1,9-0,2-0",
+                                          "2-2,9-1,7-1,2-1,9-0,2-0",
+                                          "4-2,0-2,7-1,0-1,7-0,0-0",
+                                          "-1,-1,-1,-1,-1,-1"
+        )
+        
+        return TuningsStandardFactory.convert(standardResultString)
+    }
+    
+    public static func getTypeCResultsCells() -> [[ColumnResultItem]]{
+        let standardResultString = String(format: "%@;%@;%@;%@;%@",
+                                          "4-2,11-1,7-1,2-1,9-0,4-2",
+                                          "4-2,11-1,7-1,2-1,9-0,2-0",
+                                          "2-2,9-1,7-1,2-1,9-0,2-0",
+                                          "4-2,0-2,7-1,0-1,7-0,0-0",
+                                          "-1,-1,-1,-1,-1,-1"
+        )
+        
+        return TuningsStandardFactory.convert(standardResultString)
+    }
+    
+    public static func getCurrentResultsCell() -> [[ColumnResultItem]] {
+        return TuningsStandardFactory.getStandardLeftHandResultsCellsx()
     }
     
     public static func convert(_ results: String) -> [[ColumnResultItem]]{
@@ -89,7 +117,7 @@ class TuningsStandardFactory{
 }
 
 class TuningsStandardSettingsModel {
-    public static func getDefaultResults() -> String {
+    public static func getStandardTypeResults() -> String {
         return String(format: "%@;%@;%@;%@;%@",
                       "-1,-1,-1,-1,-1,-1",
                       "-1,-1,-1,-1,-1,-1",
@@ -98,27 +126,26 @@ class TuningsStandardSettingsModel {
                       "-1,-1,-1,-1,-1,-1"
         )
     }
-    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
-
+    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
     init() {
         // Empty here.
         //self.resultCells = TuningsFactory.convert(TuningsStandardSettingsModel.getDefaultResults())
         
-        self.resultCells = TuningsStandardFactory.getStandardResultsCells()
+        //self.resultCells = TuningsStandardFactory.getStandardResultsCells()
     }
     
     init( _ results: String) {
         self.resultCells = TuningsStandardFactory.convert(results)
     }
     
-    public func getResults() -> String{
-        return ""
-    }
+    //public func getResults() -> String{
+        //return ""
+    //}
     
-    public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
-        return TuningsStandardSettingsModel( settings.results)
+    public static func convert(_ settings: TuningsStandardSettings,_ results: String) -> TuningsStandardSettingsModel {
+        return TuningsStandardSettingsModel(results)
     }
     
     public func generate() -> TuningsStandardSettings {
@@ -132,6 +159,8 @@ class TuningsStandardSettingsModel {
 
 class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
+    var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
+    
     private var settings: TuningsStandardSettings?
     private var settingsModel: TuningsStandardSettingsModel?
         
@@ -143,8 +172,12 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
         return self.currentColumnResultItem
     }
     
-    public func getResultCells() -> [[ColumnResultItem]]{
-        return (self.settingsModel?.resultCells)!
+    public func getCurrentResultCells() -> [[ColumnResultItem]]{
+        return TuningsStandardFactory.getCurrentResultsCell()
+    }
+    
+    public func setCurrentStandardTuningsType(_ title: String){
+         self.currentStandardTuningsType = TuningsStandardType.getTypeIndex(title)
     }
     
     override init() {
@@ -155,7 +188,7 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     public func readSettings() {
         if let existSetting = self.readStandardSettings() {
             self.settings = existSetting
-            self.settingsModel = TuningsStandardSettingsModel.convert(existSetting)
+            //self.settingsModel = TuningsStandardSettingsModel.convert(existSetting)
         } else {
             self.settingsModel = TuningsStandardSettingsModel()
         }
@@ -181,16 +214,16 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
         if let lastSettings = self.settings {
             // Update an object with a transaction
             try! realm.write {
-                lastSettings.results = (self.settingsModel?.getResults())!
+                //lastSettings.results = (self.settingsModel?.getResults())!
             }
         } else {
             // No exist, create it.
             try! realm.write {
-                realm.create(GuitarSettings.self, value:
-                    [
-                        "results": (self.settingsModel?.getResults())!
-                    ]
-                )
+                //realm.create(GuitarSettings.self, value:
+                    //[
+                      //  "results": (self.settingsModel?.getResults())!
+                    //]
+                //)
             }
             // Then, read it again.
             self.readSettings()

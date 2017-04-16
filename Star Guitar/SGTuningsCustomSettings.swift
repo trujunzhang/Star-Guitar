@@ -48,19 +48,15 @@ class TuningsCustomSettingsModel {
         // Empty here.
         //self.resultCells = TuningsFactory.convert(TuningsStandardSettingsModel.getDefaultResults())
         
-        self.resultCells = TuningsStandardFactory.getStandardResultsCells()
+        //self.resultCells = TuningsStandardFactory.getStandardResultsCells()
     }
     
     init( _ results: String) {
         self.resultCells = TuningsStandardFactory.convert(results)
     }
-    
-    public func getResults() -> String{
-        return ""
-    }
-    
-    public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
-        return TuningsStandardSettingsModel( settings.results)
+
+    public static func convert(_ settings: TuningsStandardSettings,_ results: String) -> TuningsStandardSettingsModel {
+        return TuningsStandardSettingsModel( results)
     }
     
     public func generate() -> TuningsStandardSettings {

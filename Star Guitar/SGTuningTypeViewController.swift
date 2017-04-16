@@ -33,23 +33,36 @@ class SGTuningsTypeViewController: QuickCollectionViewController {
 
         // Do any additional setup after loading the view.
 
-
-        tableContents = [
-                Section(title: nil, rows: [
-                        TuningsTypeActionRow(title: "Stardand", action: tuningsTypeTapped),
-                        TuningsTypeActionRow(title: "Drop D", action: tuningsTypeTapped),
-                        TuningsTypeActionRow(title: "Dadgad", action: tuningsTypeTapped),
-                        TuningsTypeActionRow(title: "Open C", action: tuningsTypeTapped),
-                        TuningsTypeActionRow(title: "Custom", action: tuningsTypeTapped),
-                ])
-
-        ]
-
+        var rows: [Row] = [Row]()
+        for (_, title) in TuningsStandardType.getTitles().enumerated(){
+            let row = TuningsTypeActionRow(title: title, action: tuningsTypeTapped)
+            rows.append(row)
+        }
+        
+        tableContents = [Section(title: nil, rows: rows)]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func toggleCurrentTuningsType(_ item: ColumnResultItem)  {
+        let index = TuningsStandardType.getTypeIndex(item)
+        var needSelectCell = true
+        if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
+            if selectedItems.count == 1{
+                let indexPath = selectedItems[0]
+                let rowIndex = indexPath.row
+                if(index == rowIndex){
+                    needSelectCell = false
+                }
+            }
+        }
+        if(needSelectCell){
+            self.collectionView?.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+        }
+        
     }
 
     private func tuningsTypeTapped(_ sender: Row) {

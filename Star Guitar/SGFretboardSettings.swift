@@ -45,9 +45,6 @@ class TuningsFretboardSettingsModel {
         //self.resultCells = TuningsFretboardSettingsModel.convert(results)
     }
     
-    public func getResults() -> String{
-        return ""
-    }
     
     public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
         return TuningsStandardSettingsModel( settings.results)

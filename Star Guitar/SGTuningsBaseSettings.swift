@@ -30,6 +30,34 @@ public struct OneColumnLetterItem {
     }
 }
 
+enum TuningsStandardType: Int {
+    case Stardand = 0
+    case DropD = 1
+    case Dadgad = 2
+    case OpenC = 3
+    case Custom = 4
+    
+    public static func getTitles() -> [String] {
+        return [
+            "Stardand","Drop D","Dadgad","Open C","Custom"
+        ]
+    }
+    
+    public static func getTypeIndex(_ title: String) -> Int {
+        return TuningsStandardType.getTitles().index(of: title)!
+    }
+    
+    public static func getTypeIndex(_ item: ColumnResultItem) -> Int{
+        if(item.letterIndex == -1 && item.numberIndex == -1){
+            return TuningsStandardType.Custom.rawValue
+        }else if(item.letterIndex == 7 && item.numberIndex == 0){
+            return TuningsStandardType.OpenC.rawValue
+        }
+        
+        return TuningsStandardType.Stardand.rawValue
+    }
+}
+
 enum OneColumnLetterType: Int {
     case C = 0
     case CSharp = 1
@@ -96,6 +124,10 @@ public class ColumnResultItem {
     
     init(){
         self.canClick = true
+    }
+    
+    func isOpenC() -> Bool {
+        return (letterIndex == 7) && (numberIndex == 0)
     }
     
     func updateLetter(letterIndex:Int,oneColumnLetterItem: OneColumnLetterItem) {

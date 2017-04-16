@@ -34,6 +34,8 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
         oneColumnViewController.updateCell(rowIndex: letterIndex)
         twoColumnViewController.updateCell(rowIndex: numberIndex)
         
+        tuningsTypeViewController.toggleCurrentTuningsType(item)
+        
         tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(item)
     }
     
@@ -69,7 +71,7 @@ extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
 extension SGTuningsStandardViewController: TuningsTypeProviderProtocol{
     
     func toggleTuningType(_ sender: Row) {
-        
+         standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
     }
     
 }
