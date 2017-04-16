@@ -13,7 +13,7 @@ extension SGFretboardViewController{
     
     
     private func generateRows() -> Section {
-        let verticalBoarderType:FretboardBorderType =  FretboardBorderType.left
+        let verticalBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.verticalBoarderType
         
         return Section(title: nil, rows: [
             TuningsFretboardActionRow(title: "1", action: toggleNote),
@@ -25,22 +25,25 @@ extension SGFretboardViewController{
             ])
     }
     
-    func generateFretboardSections() -> [Section]{
-        let horizonBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.horizonBoarderType
-        
+    private func generateSections() -> [Section]{
         // 6X5
         let sections = [
             self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(),
             self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows(),
             self.generateRows(), self.generateRows(), self.generateRows(), self.generateRows()
         ]
+        return sections
+    }
+    
+    func generateFretboardSections() -> [Section]{
+        let horizonBoarderType:FretboardBorderType =  fretboardViewBoarderTypeHelper.horizonBoarderType
         
         var sectionsWithBoarder = [Section]()
         
         if(horizonBoarderType == FretboardBorderType.top){
             sectionsWithBoarder.append(self.generateHorizonBoarderRow())
         }
-        for section in sections{
+        for section in self.generateSections(){
             sectionsWithBoarder.append(section)
         }
         if(horizonBoarderType == FretboardBorderType.bottom){
