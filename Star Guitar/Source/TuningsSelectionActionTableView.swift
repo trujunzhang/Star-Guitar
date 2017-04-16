@@ -27,7 +27,7 @@ open class TuningsSelectionActionCell: UITableViewCell {
      - parameter style:           Unused. It always uses `UITableViewCellStyle.Default`.
      - parameter reuseIdentifier: A string used to identify the cell object if it is to be reused for drawing multiple rows of a table view.
      
-     - returns: An initialized `TapActionCell` object.
+     - returns: An initialized `TuningsSelectionActionCell` object.
      */
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
