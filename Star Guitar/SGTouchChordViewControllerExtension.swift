@@ -21,12 +21,12 @@ extension SGTouchChordViewController: FretboardProviderProtocol{
         
     }
     
-    func toggleHorizonCell(_ row: FretboardBorderGreenItem){
-        
+    func toggleHorizonCell(_ item: FretboardBorderGreenItem){
+        fretboardViewController.setVerticalSelectedCells(item.position)
     }
     
-    func toggleVerticalCell(_ row: FretboardBorderGreenItem){
-        
+    func toggleVerticalCell(_ item: FretboardBorderGreenItem){
+        fretboardViewController.setHorizonSelectedCells(item.position)
     }
     
 }
