@@ -22,7 +22,7 @@ class SGTuningsTypeViewController: QuickCollectionViewController {
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
         
-        collectionView.backgroundColor = .red
+        //collectionView.backgroundColor = .red
         
         layout.itemSize = CGSize(width: TuningTypeSchema.itemWidth(), height: TuningTypeSchema.itemHeight()) // cell的寬、高
         
