@@ -70,11 +70,11 @@ struct FretboardColumnSchema {
 
 class FretboardLayout: BaseTuningsLayout {
     
-    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ leading: Int,_ type:FretboardBorderType, _ topOff: Int) {
+    func layoutFretboard(_ leftColumn: UIView, forFretboardView fretboardView: UIView,_ leading: Int,_ type:FretboardBorderType, _ marginTop: Int) {
         fretboardView.backgroundColor = .clear
                 
         fretboardView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(topOff)
+            make.top.equalToSuperview().offset(marginTop)
             make.leading.equalTo(leftColumn).offset(leading)
             make.width.equalTo(FretboardColumnSchema.resultsColumnWidth())
             make.height.equalTo(FretboardColumnSchema.resultsColumnHeight())

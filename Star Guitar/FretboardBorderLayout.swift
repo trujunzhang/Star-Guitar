@@ -14,6 +14,15 @@ import UIKit
 struct FretboardBorderSchema {
     
     // ==== ResultsBoarder
+    
+    public static func horizonWidth() -> Int {
+        return 40
+    }
+    
+    public static func verticalHeight() -> Int {
+        return 40
+    }
+    
     public static func outBoardSize() -> Int {
         return 40
     }
@@ -22,7 +31,7 @@ struct FretboardBorderSchema {
         return 60  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
     
-    public static func getDefaultTopOff(_ type:FretboardBorderType) -> Int {
+    public static func getDefaultTopOffxxx(_ type:FretboardBorderType) -> Int {
         var topOff = FretboardBorderSchema.outBoardSize() + 4
         if(type == FretboardBorderType.left || type == FretboardBorderType.bottom){
             topOff = 20
@@ -30,8 +39,8 @@ struct FretboardBorderSchema {
         return topOff
     }
     
-    public static func getTopOffOnCustom(_ type:FretboardBorderType) -> Int {
-        let defaultTopOff = FretboardBorderSchema.getDefaultTopOff(type)
+    public static func marginTop(_ type:FretboardBorderType) -> Int {
+        let defaultTopOff = FretboardBorderSchema.getDefaultTopOffxxx(type)
         let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? 14 : 14
         return defaultTopOff + off
     }
@@ -123,8 +132,6 @@ class FretboardBorderLayout: BaseTuningsLayout {
 
     let horizonCirclesContainer = UIView()
     let verticalCirclesContainer = UIView()
-    
-
     
     init(_ pageView: UIView,withType boarderType:FretboardBorderType) {
         super.init(pageView)

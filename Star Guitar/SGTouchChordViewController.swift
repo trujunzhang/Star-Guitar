@@ -58,7 +58,7 @@ class SGTouchChordViewController: UIViewController {
         let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
         let leading = FretboardColumnSchema.touchChordLeading()
         FretboardLayout(self.view)
-            .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.getTopOffOnCustom(type))
+            .layoutFretboard(threeColumnContainer, forFretboardView: fretboardContainer, leading,type, FretboardBorderSchema.marginTop(type))
         
         // Add boarder effect to the fretboard view.
         FretboardViewHelper().addAsBoarder(self.view,fretboardContainer,type)
