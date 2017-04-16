@@ -22,7 +22,8 @@ class SGTuningsTypeViewController: QuickCollectionViewController {
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
         super.configCollectionView(collectionView, forLayout: layout)
         
-        layout.sectionInset = TuningTypeSchema.edgeInsets() // section與section之間的距離
+        collectionView.backgroundColor = .red
+        
         layout.itemSize = CGSize(width: TuningTypeSchema.itemWidth(), height: TuningTypeSchema.itemHeight()) // cell的寬、高
         
         collectionView.register(TuningsTypeActionCell.self, forCellWithReuseIdentifier: String(describing: TuningsTypeActionCell.self))

@@ -66,12 +66,11 @@ open class TuningsTypeActionCell: UICollectionViewCell {
             make.centerY.equalToSuperview()
         }
         
-        let edgeInsets = TuningTypeSchema.edgeInsets()
         backRowView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(edgeInsets.top)
-            make.bottom.equalToSuperview().offset(-edgeInsets.bottom)
-            make.leading.equalToSuperview().offset(edgeInsets.left)
-            make.trailing.equalToSuperview().offset(-edgeInsets.right)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         backRowView.backgroundColor = .clear
     }

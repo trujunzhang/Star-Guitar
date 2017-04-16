@@ -22,8 +22,8 @@ struct TuningTypeSchema {
         return 90 + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
     
-    public static func edgeInsets() -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    public static func marginTop() -> Int {
+        return 40 + SGScreenLayout.sharedInstance.deviceIndex * 16
     }
 
     public static func tuningsTypeMarginLeft() -> Int {
@@ -31,7 +31,7 @@ struct TuningTypeSchema {
     }
 
     public static func tuningsTypesColumnHeight() -> Int {
-        return TuningTypeSchema.itemHeight() * 5 + SGScreenLayout.sharedInstance.deviceIndex * 20
+        return TuningTypeSchema.itemHeight() * 5
     }
 
 }
@@ -41,7 +41,7 @@ class TuningsTypeLayout: BaseTuningsLayout {
 
     func layoutTuningTypeContainer(_ leftColumn: UIView, forView containerView: UIView,_ offLeading:CGFloat) {
         containerView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(30 + SGScreenLayout.sharedInstance.deviceIndex * 16 )
+            make.top.equalToSuperview().offset(TuningTypeSchema.marginTop() )
             make.leading.equalTo(leftColumn).offset(Int(offLeading) + TuningTypeSchema.tuningsTypeMarginLeft())
             make.width.equalTo(TuningTypeSchema.itemWidth())
             make.height.equalTo(TuningTypeSchema.tuningsTypesColumnHeight())
