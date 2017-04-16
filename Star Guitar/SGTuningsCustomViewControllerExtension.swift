@@ -23,7 +23,7 @@ extension SGTuningsCustomViewController: FretboardProviderProtocol{
     }
     
     func toggleHorizonCell(_ item: FretboardBorderGreenItem){
-        //fretboardViewController.setHorizonSelectedCells(item.position)
+        fretboardViewController.setVerticalSelectedCells(item.position)
     }
     
     func toggleVerticalCell(_ item: FretboardBorderGreenItem){

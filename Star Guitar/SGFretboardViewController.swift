@@ -50,6 +50,21 @@ class SGFretboardViewController: QuickCollectionViewController {
         }
     }
     
+    public func setVerticalSelectedCells(_ rowIndex: Int){
+        self.deselectAllCells()
+        
+        for section in 1...13 {
+            self.collectionView?.selectItem(at: IndexPath(row: rowIndex,section:section), animated: false, scrollPosition: .top)
+        }
+        
+        let isTop = fretboardViewBoarderTypeHelper.isTop()
+        if(isTop){
+            self.collectionView?.selectItem(at: IndexPath(row: rowIndex,section:14), animated: false, scrollPosition: .top)
+        }else{
+            self.collectionView?.selectItem(at: IndexPath(row: rowIndex,section:0), animated: false, scrollPosition: .top)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

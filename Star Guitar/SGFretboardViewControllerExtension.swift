@@ -42,23 +42,14 @@ extension SGFretboardViewController{
     private func generateTopBottomRow() -> Section {
 
         let isTop =  fretboardViewBoarderTypeHelper.isTop()
-        
-        let rows = [
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,0), action: horizonActionNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,1), action: horizonActionNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,2), action: horizonActionNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,3), action: horizonActionNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,4), action: horizonActionNote),
-            HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,5), action: horizonActionNote),
-            ]
-        
         let isLeft =  fretboardViewBoarderTypeHelper.isLeft()
         var rowsWithBoarder = [Row]()
         if(isLeft){
             rowsWithBoarder.append(TuningsFretboardEmptyRow())
         }
-        for row in rows{
-            rowsWithBoarder.append(row)
+        let offIndex = (fretboardViewBoarderTypeHelper.isLeft() ? 1 : 0)
+        for index in 0...5{
+            rowsWithBoarder.append(HorizonTuningsFretboardActionRow(item: FretboardBorderGreenItem(isTop:isTop,index + offIndex), action: horizonActionNote))
         }
         if(!isLeft){
             rowsWithBoarder.append(TuningsFretboardEmptyRow())
