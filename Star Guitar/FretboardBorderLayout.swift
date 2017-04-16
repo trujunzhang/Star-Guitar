@@ -30,19 +30,14 @@ struct FretboardBorderSchema {
     public static func marginLeft() -> Int {
         return 60  + SGScreenLayout.sharedInstance.deviceIndex * 20
     }
-    
-    public static func getDefaultTopOffxxx(_ type:FretboardBorderType) -> Int {
+
+    public static func marginTop(_ type:FretboardBorderType) -> Int {
         var topOff = FretboardBorderSchema.outBoardSize() + 4
         if(type == FretboardBorderType.left || type == FretboardBorderType.bottom){
             topOff = 20
         }
-        return topOff
-    }
-    
-    public static func marginTop(_ type:FretboardBorderType) -> Int {
-        let defaultTopOff = FretboardBorderSchema.getDefaultTopOffxxx(type)
         let off = (type == FretboardBorderType.left || type == FretboardBorderType.bottom) ? 14 : 14
-        return defaultTopOff + off
+        return topOff + off
     }
     
 }
