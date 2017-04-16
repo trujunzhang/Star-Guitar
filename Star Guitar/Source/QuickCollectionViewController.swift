@@ -46,8 +46,15 @@ open class QuickCollectionViewController: UIViewController,
         }
     }
     
+    public func deselectAllCells(){
+        for indexPath in self.collectionView?.indexPathsForSelectedItems ?? [] {
+            self.collectionView?.deselectItem(at: indexPath, animated: false)
+        }
+    }
+    
     public func setDefaultSelectedCells(_ collectionView: UICollectionView){
         // Setup the default selected cells for children class
+        //fatalError("Subclasses need to implement the `setDefaultSelectedCells()` method.")
     }
 
     deinit {

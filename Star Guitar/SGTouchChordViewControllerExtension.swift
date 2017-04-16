@@ -14,6 +14,22 @@ extension SGTouchChordViewController{
     
 }
 
+
+extension SGTouchChordViewController: FretboardProviderProtocol{
+    
+    func toggleCell(_ row: TuningsFretboardActionRow){
+        
+    }
+    
+    func toggleHorizonCell(_ row: FretboardBorderGreenItem){
+        
+    }
+    
+    func toggleVerticalCell(_ row: FretboardBorderGreenItem){
+        
+    }
+    
+}
 extension SGTouchChordViewController: OneColumnProviderProtocol{
     
     func toggleOneColumnLetter(_ sender: Row) {

@@ -22,6 +22,14 @@ extension SGTuningsCustomViewController: FretboardProviderProtocol{
         //twoColumnViewController.updateCell(rowIndex: numberIndex)
     }
     
+    func toggleHorizonCell(_ item: FretboardBorderGreenItem){
+        //fretboardViewController.setHorizonSelectedCells(item.position)
+    }
+    
+    func toggleVerticalCell(_ item: FretboardBorderGreenItem){
+        fretboardViewController.setHorizonSelectedCells(item.position)
+    }
+    
 }
 
 extension SGTuningsCustomViewController: OneColumnProviderProtocol{

@@ -42,7 +42,7 @@ class SGTouchChordViewController: UIViewController {
         //threeColumnViewController.delegate = self
         //tuningsEventViewController.delegate = self
         
-        //fretboardViewController.delegate = self
+        fretboardViewController.delegate = self
         
         
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
