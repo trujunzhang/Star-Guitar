@@ -117,7 +117,7 @@ public struct TuningsActionRow: Row, Equatable {
         self.title = title
         self.action = action
     }
-
+    
     private init() {
     }
     
