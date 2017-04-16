@@ -56,7 +56,7 @@ struct FretboardColumnSchema {
     }
     
     public static func resultsColumnHeight() -> CGFloat {
-        let itemsHeight = (FretboardColumnSchema.itemHeight() + FretboardColumnSchema.interitemSpacing()) * 14
+        let itemsHeight = (FretboardColumnSchema.itemHeight() + FretboardColumnSchema.interitemSpacing()) * (14 + 1)
         return CGFloat(integerLiteral: itemsHeight )
     }
 

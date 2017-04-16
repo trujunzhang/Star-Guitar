@@ -46,7 +46,7 @@ extension SGFretboardViewController{
         if(horizonBoarderType == FretboardBorderType.bottom){
             sectionsWithBoarder.append(self.generateHorizonBoarderRow())
         }
-        return sections
+        return sectionsWithBoarder
     }
     
     private func generateHorizonBoarderRow() -> Section {
