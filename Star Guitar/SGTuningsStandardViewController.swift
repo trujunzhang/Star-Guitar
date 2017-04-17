@@ -47,7 +47,7 @@ class SGTuningsStandardViewController: UIViewController {
         // Left hand and Right hand
         // 1: Left handed: [Results,TuningsType]
         // 2: Right handed: [TuningsType,Results]
-        if(GuitarSettingsUtils.sharedInstance.isLeftHanded()){
+        if(GuitarConfigureAsync.sharedInstance.isLeftHanded()){
             StandardResultsLayout(self.view).layoutResultsContainer(twoColumnContainer, forResultView: tuningsResultContainer,80)
             TuningsTypeLayout(self.view).layoutTuningTypeContainer(tuningsResultContainer, forView: tuningsTypesContainer,StandResultsColumnSchema.resultsColumnWidth())
         }else{

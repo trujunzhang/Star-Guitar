@@ -84,14 +84,9 @@
 		5EBEFB4C1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEFB4B1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift */; };
 		5EC545A91E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */; };
 		5EC6FCD41E9B19B600C91EBD /* TuningsSettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC6FCD31E9B19B600C91EBD /* TuningsSettingsTableView.swift */; };
-		5EC7B7791E842E320086EFB1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; };
-		5EC7B77A1E842E320086EFB1 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7771E842E320086EFB1 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EC7B77B1E842E320086EFB1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7781E842E320086EFB1 /* RealmSwift.framework */; };
-		5EC7B77C1E842E320086EFB1 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC7B7781E842E320086EFB1 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5ED0CB8C1E898BA000B4E604 /* TuningsEventCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */; };
 		5ED3F8811E94BC4F006B845D /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3F8801E94BC4F006B845D /* UITableViewCellExtensions.swift */; };
 		5ED3F8831E94BD73006B845D /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */; };
-		5ED4FE0F1E843BB5000ACF23 /* GuitarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */; };
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
 		5EE3EA7C1EA5742500BD3B66 /* GuitarConfigureAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3EA7B1EA5742500BD3B66 /* GuitarConfigureAsync.swift */; };
 		5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */; };
@@ -129,8 +124,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5EC7B77C1E842E320086EFB1 /* RealmSwift.framework in Embed Frameworks */,
-				5EC7B77A1E842E320086EFB1 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,12 +218,9 @@
 		5EBEFB4B1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTwoChordColumnViewController.swift; sourceTree = "<group>"; };
 		5EC545A81E91F467009A6F85 /* SGTuningsStandardViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGTuningsStandardViewControllerExtension.swift; sourceTree = "<group>"; };
 		5EC6FCD31E9B19B600C91EBD /* TuningsSettingsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsSettingsTableView.swift; sourceTree = "<group>"; };
-		5EC7B7771E842E320086EFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Frameworks/realm-swift/Realm.framework"; sourceTree = "<group>"; };
-		5EC7B7781E842E320086EFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Frameworks/realm-swift/RealmSwift.framework"; sourceTree = "<group>"; };
 		5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsEventCollectionView.swift; sourceTree = "<group>"; };
 		5ED3F8801E94BC4F006B845D /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
-		5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarSettings.swift; sourceTree = "<group>"; };
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
 		5EE3EA7B1EA5742500BD3B66 /* GuitarConfigureAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarConfigureAsync.swift; sourceTree = "<group>"; };
 		5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsSharpActionCell.swift; sourceTree = "<group>"; };
@@ -251,9 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC7B7791E842E320086EFB1 /* Realm.framework in Frameworks */,
 				5E5089CA1E80E67B006485C6 /* AudioToolbox.framework in Frameworks */,
-				5EC7B77B1E842E320086EFB1 /* RealmSwift.framework in Frameworks */,
 				EFA24BB5804D8C644D627F74 /* Pods_Star_Guitar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,8 +268,6 @@
 		4AA28E9DB74067F300768ABC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EC7B7771E842E320086EFB1 /* Realm.framework */,
-				5EC7B7781E842E320086EFB1 /* RealmSwift.framework */,
 				5E5089C91E80E67B006485C6 /* AudioToolbox.framework */,
 				437CAC15545F2C9EEC9B8573 /* Pods_Star_Guitar.framework */,
 				0A08FE230578901C27BD3228 /* Pods_Star_GuitarTests.framework */,
@@ -310,7 +296,6 @@
 		5E2E05071E7F6D2E00353190 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */,
 				5EDFBD611E85EFFD00C91F26 /* tables */,
 				5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */,
 				5EE3EA7B1EA5742500BD3B66 /* GuitarConfigureAsync.swift */,
@@ -596,7 +581,6 @@
 				332F67A9682F39AFD4B47325 /* [CP] Embed Pods Frameworks */,
 				3F19BFD2951D80224F8BBE23 /* [CP] Copy Pods Resources */,
 				5EC7B77D1E842E320086EFB1 /* Embed Frameworks */,
-				5EC7B77E1E842E7B0086EFB1 /* RealmSwift */,
 				5E55E0BB1E89D1D300C5052E /* HockeySDK */,
 			);
 			buildRules = (
@@ -823,20 +807,6 @@
 			shellPath = /bin/sh;
 			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
-		5EC7B77E1E842E7B0086EFB1 /* RealmSwift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = RealmSwift;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
-		};
 		7ECE21E77315022C354C0D8E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -936,7 +906,6 @@
 				5EA748021E7E089C00E5BB86 /* QuickTableViewController.swift in Sources */,
 				5EB135061E8977BB00DA6F6E /* SGTuningTypeViewController.swift in Sources */,
 				5E04A5911E89ED1D00238BB4 /* TuningsTypes.swift in Sources */,
-				5ED4FE0F1E843BB5000ACF23 /* GuitarSettings.swift in Sources */,
 				5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */,
 				5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */,
 				5E45A8941E97C54300552A94 /* SGTuningsBaseSettings.swift in Sources */,

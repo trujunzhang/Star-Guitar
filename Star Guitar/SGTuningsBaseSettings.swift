@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
-
 
 public struct FretboardBorderGreenItem {
     var isLeft: Bool = false

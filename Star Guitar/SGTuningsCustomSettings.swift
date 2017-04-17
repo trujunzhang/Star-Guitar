@@ -8,26 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
-
-
-
-//
-// ===
-// Realm Object
-//
-class TuningsCustomSettings: Object {
-    
-    dynamic var id = 0
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    // 6X5
-    dynamic var results: String = TuningsCustomSettingsModel.getDefaultResults()
-    
-}
 
 
 class TuningsCustomSettingsModel {
@@ -49,14 +29,6 @@ class TuningsCustomSettingsModel {
         self.resultCells = TuningsStandardFactory.convert(results)
     }
 
-    public static func convert(_ settings: TuningsStandardSettings,_ results: String) -> TuningsStandardSettingsModel {
-        return TuningsStandardSettingsModel( results)
-    }
-    
-    public func generate() -> TuningsStandardSettings {
-        let settings = TuningsStandardSettings()
-        return settings
-    }
 }
 
 

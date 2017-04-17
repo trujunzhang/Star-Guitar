@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
-
 
 /**
  *
@@ -21,23 +19,6 @@ import RealmSwift
  clicked on
  *
  */
-
-//
-// ===
-// Realm Object
-//
-class TuningsStandardSettings: Object {
-    
-    dynamic var id = 0
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    // 6X5
-    dynamic var results: String = TuningsStandardSettingsModel.getStandardTypeResults()
-    
-}
 
 class TuningsStandardFactory{
     
@@ -135,17 +116,7 @@ class TuningsStandardSettingsModel {
     init( _ results: String) {
         self.resultCells = TuningsStandardFactory.convert(results)
     }
-    
-    public static func convert(_ settings: TuningsStandardSettings,_ results: String) -> TuningsStandardSettingsModel {
-        return TuningsStandardSettingsModel(results)
     }
-    
-    public func generate() -> TuningsStandardSettings {
-        let settings = TuningsStandardSettings()
-        //settings.results = self.results
-        return settings
-    }
-}
 
 
 
@@ -153,7 +124,6 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
     var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
     
-    private var settings: TuningsStandardSettings?
     private var settingsModel: TuningsStandardSettingsModel?
         
     public func toggleCurrentColumnResultItem(_ item: ColumnResultItem) {

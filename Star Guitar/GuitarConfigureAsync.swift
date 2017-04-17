@@ -10,8 +10,79 @@ import Foundation
 import UIKit
 import SwiftyUserDefaults
 
+
+enum GuitarType: Int {
+    case Acoustic = 0
+    case Electric = 1
+    case Bass = 2
+    case Classical = 3
+    case Ukulele = 4
+    
+    public static func getGuitarTypeTitles() -> [String] {
+        return ["Acoustic", "Electric", "Bass(6 strng)", "Spanish", "Harp(6 string)"]
+    }
+    
+    public static func getGuitarType(_ title: String) -> Int {
+        return GuitarType.getGuitarTypeTitles().index(of: title)!
+    }
+    
+}
+
+
+enum FretboardType: Int {
+    case LeftHanded = 0
+    case RightHanded = 1
+    case UpsideDown = 2
+    
+    public static func getFretboardTitles() -> [String] {
+        return ["Left Handed", "Right Handed", "Upside Down"]
+    }
+    
+    public static func getFretboardType(_ title: String) -> Int {
+        return FretboardType.getFretboardTitles().index(of: title)!
+    }
+    
+}
+
+
+
 class GuitarConfigureAsync{
     static let sharedInstance = GuitarConfigureAsync()
+
+    // ======================
+    // Status
+    // ======================
+    public func isLeftHanded() -> Bool {
+        return self.parseFretBoardRows()[0] == "1"
+    }
+    
+    public func isUpsideDown() -> Bool {
+        return self.parseFretBoardRows()[2] == "1"
+    }
+
+    
+    /**
+     * 1. FretboardBorderType.top
+     *  this one is the default position of the app when it is in its right hand mode
+     * 2. FretboardBorderType.right
+     *  the left hand setting reverses the settings and makes everything go from right to left instead of left to right
+     * 3. FretboardBorderType.left
+     *  when the upside down setting is on the buttons go from bottom to top
+     * 4. FretboardBorderType.bottom
+     *  the left hand upside down setting takes the left hand setting and flips it upside down
+     */
+    public func getCurrentFretboardBorderType() -> FretboardBorderType{
+        if self.isLeftHanded() && self.isUpsideDown() {
+            return FretboardBorderType.bottom  // the left hand upside down setting
+        }
+        else if self.isLeftHanded(){
+            return FretboardBorderType.right // the left hand setting
+        }
+        else if self.isUpsideDown(){
+            return FretboardBorderType.left //  when the upside down setting is on
+        }
+        return FretboardBorderType.top // when it is in its right hand mode
+    }
     
     // ======================
     // guitarType

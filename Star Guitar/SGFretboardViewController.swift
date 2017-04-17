@@ -69,7 +69,7 @@ class SGFretboardViewController: QuickCollectionViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let type = GuitarSettingsUtils.sharedInstance.getCurrentFretboardBorderType()
+        let type = GuitarConfigureAsync.sharedInstance.getCurrentFretboardBorderType()
         fretboardViewBoarderTypeHelper.convertBoarderType(type)
         
         tableContents = self.generateFretboardSections()

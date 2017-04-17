@@ -640,14 +640,14 @@
                                                     <action selector="switchValueChanged:" destination="cCD-EU-e4z" eventType="valueChanged" id="bW1-T4-4KZ"/>
                                                 </connections>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-bK-4Xw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-bK-4Xw">
                                                 <rect key="frame" x="2" y="9" width="28" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-WY-Vq0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-WY-Vq0">
                                                 <rect key="frame" x="98" y="8.5" width="28" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
@@ -969,11 +969,11 @@
         <image name="muteSelected" width="38" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="50A-81-dxo"/>
+        <segue reference="1Xg-Ew-c00"/>
         <segue reference="ct1-Gu-d0b"/>
         <segue reference="8It-5U-mgF"/>
-        <segue reference="n9T-ZH-D9Q"/>
         <segue reference="rd8-Il-Unn"/>
-        <segue reference="1Xg-Ew-c00"/>
         <segue reference="rdS-U1-l5E"/>
     </inferredMetricsTieBreakers>
 </document>

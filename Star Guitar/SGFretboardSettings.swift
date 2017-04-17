@@ -8,9 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
-
-
 
 class TuningsFretboardSettingsModel {
     // 6X12
@@ -36,14 +33,5 @@ class TuningsFretboardSettingsModel {
     
     init() {
     }
-    
-    
-    public static func convert(_ settings: TuningsStandardSettings) -> TuningsStandardSettingsModel {
-        return TuningsStandardSettingsModel( settings.results)
-    }
-    
-    public func generate() -> TuningsStandardSettings {
-        let settings = TuningsStandardSettings()
-        return settings
-    }
+
 }

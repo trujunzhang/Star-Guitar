@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
-
 
 class TuningsChordSettingsUtils: TuningsBaseSettingsUtils {
     
