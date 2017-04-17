@@ -10,31 +10,13 @@ import Foundation
 import UIKit
 import RealmSwift
 
-public enum TableRowType: Int {
-    case Selected = 0
-    case RightArrow = 1
-    case Empty = 2
-    
-    func getImage() -> UIImage? {
-        switch self {
-        case .Selected:
-            return Asset.selected.image
-        case .RightArrow:
-            return Asset.rightArrow.image
-        case .Empty:
-            return nil
-        }
-    }
-}
-
-
 enum GuitarType: Int {
     case Acoustic = 0
     case Electric = 1
     case Bass = 2
     case Classical = 3
     case Ukulele = 4
-
+    
     public static func getGuitarTypeTitles() -> [String] {
         return ["Acoustic", "Electric", "Bass(6 strng)", "Spanish", "Harp(6 string)"]
     }
@@ -72,7 +54,7 @@ class GuitarSettings: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
-
+    
     dynamic var guitarType = GuitarType.Electric.rawValue
     
     dynamic var fretboardRows: String = "0,1,1"
@@ -131,12 +113,12 @@ class GuitarSettingsUtils: AnyObject {
         return self.parseFretBoardRows()[2] == "1"
     }
     
-    public func getGuitarTypeRowType(_ index: Int) -> TableRowType {
+    public func getGuitarTypeRowType(_ index: Int) -> UIImage? {
         if (settingsModel?.guitarType == index) {
-            return TableRowType.Selected
+            return Asset.selected.image
         }
         
-        return TableRowType.Empty
+        return nil
     }
     
     private func parseFretBoardRows() -> [String] {
@@ -144,12 +126,12 @@ class GuitarSettingsUtils: AnyObject {
         return (settingsModel?.fretboardRows.components(separatedBy: ","))!
     }
     
-    public func getFretboardTypeRowType(_ index: Int) -> TableRowType {
+    public func getFretboardTypeRowType(_ index: Int) -> UIImage? {
         if (self.parseFretBoardRows()[index] == "1") {
-            return TableRowType.Selected
+            return Asset.selected.image
         }
         
-        return TableRowType.Empty
+        return nil
     }
     
     public func setGuitarType(_ title: String) {
@@ -242,11 +224,15 @@ class GuitarSettingsUtils: AnyObject {
     }
     
     private func readGuitarSettings() -> GuitarSettings? {
-        let realm = try! Realm()
-        
-        let items = realm.objects(GuitarSettings.self)
-        if (items.count == 1) {
-            return items[0]
+        do {
+            let realm = try! Realm()
+            
+            let items = realm.objects(GuitarSettings.self)
+            if (items.count == 1) {
+                return items[0]
+            }
+        } catch let _ as NSError {
+            
         }
         
         return nil
@@ -254,32 +240,38 @@ class GuitarSettingsUtils: AnyObject {
     
     public func writeSettings() {
         // Get the default Realm
-        let realm = try! Realm()
-        // You only need to do this once (per thread)
-        
-        // Add to the Realm inside a transaction
-        if let lastSettings = self.settings {
-            // Update an object with a transaction
-            try! realm.write {
-                lastSettings.guitarType = (self.settingsModel?.guitarType)!
-                lastSettings.fretboardRows = (self.settingsModel?.fretboardRows)!
-                lastSettings.muteArray = (self.settingsModel?.muteArray)!
-                lastSettings.fingerSlide = (self.settingsModel?.fingerSlide)!
+        do {
+            let realm = try! Realm()
+            
+            // You only need to do this once (per thread)
+            
+            // Add to the Realm inside a transaction
+            if let lastSettings = self.settings {
+                // Update an object with a transaction
+                try! realm.write {
+                    lastSettings.guitarType = (self.settingsModel?.guitarType)!
+                    lastSettings.fretboardRows = (self.settingsModel?.fretboardRows)!
+                    lastSettings.muteArray = (self.settingsModel?.muteArray)!
+                    lastSettings.fingerSlide = (self.settingsModel?.fingerSlide)!
+                }
+            } else {
+                // No exist, create it.
+                try! realm.write {
+                    realm.create(GuitarSettings.self, value:
+                        [
+                            "guitarType": (self.settingsModel?.guitarType)!,
+                            "fretboardRows": (self.settingsModel?.fretboardRows)!,
+                            "muteArray": (self.settingsModel?.muteArray)!,
+                            "fingerSlide": (self.settingsModel?.fingerSlide)!
+                        ]
+                    )
+                }
+                // Then, read it again.
+                self.readSettings()
             }
-        } else {
-            // No exist, create it.
-            try! realm.write {
-                realm.create(GuitarSettings.self, value:
-                    [
-                        "guitarType": (self.settingsModel?.guitarType)!,
-                        "fretboardRows": (self.settingsModel?.fretboardRows)!,
-                        "muteArray": (self.settingsModel?.muteArray)!,
-                        "fingerSlide": (self.settingsModel?.fingerSlide)!
-                    ]
-                )
-            }
-            // Then, read it again.
-            self.readSettings()
+            
+        } catch let _ as NSError {
+            
         }
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Parse-Server</key>
+	<dict>
+		<key>REST_API_KEY</key>
+		<string>Phw4lZR9rN4xBd1UJfSEeHKGzGBb2zMrATPo2Apk</string>
+		<key>CLIENT_KEY</key>
+		<string>z4luMqp9Mxe2KmPnHf3qa7UprPXk4EKaRGMs0M5X</string>
+		<key>SERVER_URL_DEV</key>
+		<string>http://localhost:1337/parse</string>
+		<key>SERVER_URL</key>
+		<string>http://localhost:1337/parse</string>
+		<key>APP_ID</key>
+		<string>O98z3RfcgTA1aO2QpbpDpY4WirJbHa49Om1uM6pg</string>
+		<key>MASTER_KEY</key>
+		<string>iNAZA6eJ0xGpC9ad4ce69On7Oe3lRmf9b4Wtic5Z</string>
+	</dict>
+</dict>
+</plist>

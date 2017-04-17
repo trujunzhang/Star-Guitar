@@ -49,6 +49,6 @@ class SGSettingsViewController: UIViewController {
 
 extension SGSettingsViewController:TitleViewBackButtonProviderProtocol{
     func onBackButtonClick(){
-         GuitarSettingsUtils.sharedInstance.writeSettings()
+         //GuitarSettingsUtils.sharedInstance.writeSettings()
     }
 }

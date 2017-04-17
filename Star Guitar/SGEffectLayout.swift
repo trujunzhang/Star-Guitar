@@ -37,7 +37,7 @@ class SGEffectLayout {
     
     // 6 mute buttons
     func layoutButtons(_ buttons: [UIButton], topCell cell: UIView) -> SGEffectLayout {
-        let muteArray: [String] = GuitarSettingsUtils.sharedInstance.getMuteArray()
+        let muteArray: [String] = GuitarConfigureAsync.sharedInstance.parseMuteArray()
         
         for (index, button) in buttons.enumerated() {
             button.tag = index

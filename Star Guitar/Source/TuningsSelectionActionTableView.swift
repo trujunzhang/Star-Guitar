@@ -94,9 +94,13 @@ public struct TuningsSelectionActionRow: Row, Equatable {
 
     public func render(viewCell: UIView) {
         let cell = (viewCell as? TuningsSelectionActionCell)
-        cell?.iconImageView.image = tableRowType.getImage()
+        cell?.iconImageView.image = nil
+        if let rowImage = self.tableRowImage{
+            cell?.iconImageView.image = rowImage
+        }
     }
-    public var tableRowType: TableRowType = TableRowType.Empty
+    
+    public var tableRowImage: UIImage?
 
     /// The title text of the row.
     public var title: String = ""
@@ -111,15 +115,12 @@ public struct TuningsSelectionActionRow: Row, Equatable {
     public var action: ((Row) -> Void)?
 
     ///
-    public init(title: String, action: ((Row) -> Void)?, tableRowType: TableRowType) {
+    public init(title: String, action: ((Row) -> Void)?, tableRowImage: UIImage?) {
         self.title = title
         self.action = action
-        self.tableRowType = tableRowType
+        self.tableRowImage = tableRowImage
     }
 
-    public init(title: String, action: ((Row) -> Void)?) {
-        self.init(title: title, action: action, tableRowType: TableRowType.RightArrow)
-    }
 
     private init() {
     }

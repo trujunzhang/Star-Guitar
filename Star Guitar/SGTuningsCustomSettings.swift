@@ -42,13 +42,7 @@ class TuningsCustomSettingsModel {
     }
     var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
-    
-    
     init() {
-        // Empty here.
-        //self.resultCells = TuningsFactory.convert(TuningsStandardSettingsModel.getDefaultResults())
-        
-        //self.resultCells = TuningsStandardFactory.getStandardResultsCells()
     }
     
     init( _ results: String) {
@@ -61,7 +55,6 @@ class TuningsCustomSettingsModel {
     
     public func generate() -> TuningsStandardSettings {
         let settings = TuningsStandardSettings()
-        //settings.results = self.results
         return settings
     }
 }
@@ -72,9 +65,6 @@ class TuningsCustomSettingsUtils: TuningsBaseSettingsUtils {
 
     override init() {
         super.init()
-        //self.readSettings()
     }
-    
-    
-    
+
 }

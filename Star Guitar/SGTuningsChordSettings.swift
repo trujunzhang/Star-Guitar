@@ -15,7 +15,6 @@ class TuningsChordSettingsUtils: TuningsBaseSettingsUtils {
     
     override init() {
         super.init()
-        //self.readSettings()
     }
     
     

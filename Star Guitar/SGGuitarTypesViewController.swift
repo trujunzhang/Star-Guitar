@@ -19,7 +19,7 @@ class SGGuitarTypesViewController: QuickTableViewController {
     func getGuitarTypesSection() -> Section {
         var guitarTypes: [Row] = [Row]()
         for (index, title) in GuitarType.getGuitarTypeTitles().enumerated(){
-            let row = TuningsSelectionActionRow(title: title, action: switchGuitarType, tableRowType: GuitarSettingsUtils.sharedInstance.getGuitarTypeRowType(index))
+            let row = TuningsSelectionActionRow(title: title, action: switchGuitarType, tableRowImage: GuitarConfigureAsync.sharedInstance.getGuitarTypeRowType(index))
             guitarTypes.append(row)
         }
         return Section(title: "GuitarTypes", rows: guitarTypes)
@@ -27,8 +27,13 @@ class SGGuitarTypesViewController: QuickTableViewController {
 
     func getFretboardSection() -> Section {
         var fretBoards: [Row] = [Row]()
+        let fretboardTypeArray:[String] =  GuitarConfigureAsync.sharedInstance.parseFretBoardRows()
         for (index, title) in FretboardType.getFretboardTitles().enumerated(){
-            let row = TuningsSelectionActionRow(title: title, action: switchFretboard, tableRowType: GuitarSettingsUtils.sharedInstance.getFretboardTypeRowType(index))
+            var tableRowImage:UIImage? = nil
+            if(fretboardTypeArray[index] == "1"){
+                tableRowImage = Asset.selected.image
+            }
+            let row = TuningsSelectionActionRow(title: title, action: switchFretboard, tableRowImage: tableRowImage)
             fretBoards.append(row)
         }
         return Section(title: "Fretboard", rows: fretBoards)
@@ -66,13 +71,13 @@ class SGGuitarTypesViewController: QuickTableViewController {
     // MARK: - Actions
 
     private func switchGuitarType(_ sender: Row) {
-        GuitarSettingsUtils.sharedInstance.setGuitarType(sender.title)
+        GuitarConfigureAsync.sharedInstance.setGuitarType(sender.title)
 
         tableContents[0] = self.getGuitarTypesSection()
     }
 
     private func switchFretboard(_ sender: Row) {
-        GuitarSettingsUtils.sharedInstance.setFretboardType(sender.title)
+        GuitarConfigureAsync.sharedInstance.setFretboardType(sender.title)
 
         tableContents[2] = self.getFretboardSection()
     }

@@ -58,7 +58,7 @@ class TuningsStandardFactory{
     }
     
     public static func getStandardLeftHandResultsCellsx() -> [[ColumnResultItem]]{
-        let standardResultString = String(format: "%@;%@;%@;%@;%@",
+        let standardLeftHandResultString = String(format: "%@;%@;%@;%@;%@",
                                           "4-2,11-1,7-1,2-1,9-0,4-2",
                                           "4-2,11-1,7-1,2-1,9-0,2-0",
                                           "2-2,9-1,7-1,2-1,9-0,2-0",
@@ -66,11 +66,11 @@ class TuningsStandardFactory{
                                           "-1,-1,-1,-1,-1,-1"
         )
         
-        return TuningsStandardFactory.convert(standardResultString)
+        return TuningsStandardFactory.convert(standardLeftHandResultString)
     }
     
     public static func getTypeCResultsCells() -> [[ColumnResultItem]]{
-        let standardResultString = String(format: "%@;%@;%@;%@;%@",
+        let typeCResultString = String(format: "%@;%@;%@;%@;%@",
                                           "4-2,11-1,7-1,2-1,9-0,4-2",
                                           "4-2,11-1,7-1,2-1,9-0,2-0",
                                           "2-2,9-1,7-1,2-1,9-0,2-0",
@@ -78,7 +78,7 @@ class TuningsStandardFactory{
                                           "-1,-1,-1,-1,-1,-1"
         )
         
-        return TuningsStandardFactory.convert(standardResultString)
+        return TuningsStandardFactory.convert(typeCResultString)
     }
     
     public static func getCurrentResultsCell() -> [[ColumnResultItem]] {
@@ -130,19 +130,11 @@ class TuningsStandardSettingsModel {
     var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
     
     init() {
-        // Empty here.
-        //self.resultCells = TuningsFactory.convert(TuningsStandardSettingsModel.getDefaultResults())
-        
-        //self.resultCells = TuningsStandardFactory.getStandardResultsCells()
     }
     
     init( _ results: String) {
         self.resultCells = TuningsStandardFactory.convert(results)
     }
-    
-    //public func getResults() -> String{
-        //return ""
-    //}
     
     public static func convert(_ settings: TuningsStandardSettings,_ results: String) -> TuningsStandardSettingsModel {
         return TuningsStandardSettingsModel(results)
@@ -182,51 +174,5 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
     override init() {
         super.init()
-        self.readSettings()
-    }
-    
-    public func readSettings() {
-        if let existSetting = self.readStandardSettings() {
-            self.settings = existSetting
-            //self.settingsModel = TuningsStandardSettingsModel.convert(existSetting)
-        } else {
-            self.settingsModel = TuningsStandardSettingsModel()
-        }
-    }
-    
-    private func readStandardSettings() ->TuningsStandardSettings? {
-        let realm = try! Realm()
-        
-        let items = realm.objects(TuningsStandardSettings.self)
-        if (items.count == 1) {
-            return items[0]
-        }
-        
-        return nil
-    }
-    
-    public func writeSettings() {
-        // Get the default Realm
-        let realm = try! Realm()
-        // You only need to do this once (per thread)
-        
-        // Add to the Realm inside a transaction
-        if let lastSettings = self.settings {
-            // Update an object with a transaction
-            try! realm.write {
-                //lastSettings.results = (self.settingsModel?.getResults())!
-            }
-        } else {
-            // No exist, create it.
-            try! realm.write {
-                //realm.create(GuitarSettings.self, value:
-                    //[
-                      //  "results": (self.settingsModel?.getResults())!
-                    //]
-                //)
-            }
-            // Then, read it again.
-            self.readSettings()
-        }
     }
 }

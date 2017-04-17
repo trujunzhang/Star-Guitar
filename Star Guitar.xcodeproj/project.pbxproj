@@ -93,7 +93,9 @@
 		5ED3F8831E94BD73006B845D /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */; };
 		5ED4FE0F1E843BB5000ACF23 /* GuitarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */; };
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
+		5EE3EA7C1EA5742500BD3B66 /* GuitarConfigureAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3EA7B1EA5742500BD3B66 /* GuitarConfigureAsync.swift */; };
 		5EEDA1C01E93296B0012DCFB /* StandardResultsSharpActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */; };
+		5EEFF4511EA57044007C04C8 /* Star-guitar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EEFF4501EA57044007C04C8 /* Star-guitar.plist */; };
 		5EF0AE161E8DE1590026F0B4 /* SGFretboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */; };
 		5EF1178E1EA35EB300556256 /* TuningsFretboardEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1178D1EA35EB300556256 /* TuningsFretboardEmptyCell.swift */; };
 		5EFD9A3B1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */; };
@@ -230,7 +232,9 @@
 		5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarSettings.swift; sourceTree = "<group>"; };
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
+		5EE3EA7B1EA5742500BD3B66 /* GuitarConfigureAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarConfigureAsync.swift; sourceTree = "<group>"; };
 		5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardResultsSharpActionCell.swift; sourceTree = "<group>"; };
+		5EEFF4501EA57044007C04C8 /* Star-guitar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Star-guitar.plist"; sourceTree = "<group>"; };
 		5EF0AE151E8DE1590026F0B4 /* SGFretboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFretboardViewController.swift; sourceTree = "<group>"; };
 		5EF1178D1EA35EB300556256 /* TuningsFretboardEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsFretboardEmptyCell.swift; sourceTree = "<group>"; };
 		5EFD9A3A1E9D2ACE00130858 /* CustomResultsHeaderTitlesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResultsHeaderTitlesLayout.swift; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 				5ED4FE0E1E843BB5000ACF23 /* GuitarSettings.swift */,
 				5EDFBD611E85EFFD00C91F26 /* tables */,
 				5E61EC451E85EEA400FC5511 /* SGSettingsViewController.swift */,
+				5EE3EA7B1EA5742500BD3B66 /* GuitarConfigureAsync.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 		5E9C6E221E8554CB006F93B4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EEFF4501EA57044007C04C8 /* Star-guitar.plist */,
 				5E9C6E251E855917006F93B4 /* ErasITC-Demi.ttf */,
 			);
 			name = "Support Files";
@@ -702,6 +708,7 @@
 				5E4B6C071E7C9957006B811D /* Assets.xcassets in Resources */,
 				5E3211BE1E82BAE500988E5D /* 45.wav in Resources */,
 				5E3211BC1E82BAE500988E5D /* 43.wav in Resources */,
+				5EEFF4511EA57044007C04C8 /* Star-guitar.plist in Resources */,
 				5E4B6C051E7C9957006B811D /* Main.storyboard in Resources */,
 				5E3211BD1E82BAE500988E5D /* 44.wav in Resources */,
 				5E3211BA1E82BAE400988E5D /* 41.wav in Resources */,
@@ -784,7 +791,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3F19BFD2951D80224F8BBE23 /* [CP] Copy Pods Resources */ = {
@@ -872,7 +879,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FEBA1751295DEB406054457B /* [CP] Check Pods Manifest.lock */ = {
@@ -887,7 +894,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -968,6 +975,7 @@
 				5E45A8901E97C21200552A94 /* SGThreeChordColumnViewController.swift in Sources */,
 				5EC6FCD41E9B19B600C91EBD /* TuningsSettingsTableView.swift in Sources */,
 				5EBEFB4C1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift in Sources */,
+				5EE3EA7C1EA5742500BD3B66 /* GuitarConfigureAsync.swift in Sources */,
 				5E763FBC1EA34B21002B371A /* HorizonFretboardActionCell.swift in Sources */,
 				5E04A58D1E89E03900238BB4 /* StardardResultsCollectionView.swift in Sources */,
 			);

@@ -14,6 +14,10 @@ target 'Star Guitar' do
   # betas, and analyze your test coverage with HockeyApp.
   pod 'HockeySDK', '~> 4.1.4'
 
+  pod 'SwiftyConfiguration'
+
+  pod 'SwiftyUserDefaults'
+
   # pod 'Reveal-SDK', :configurations => ['Debug']
 
   #pod 'AudioKit', '~> 3.5'
@@ -23,6 +27,9 @@ target 'Star Guitar' do
   target 'Star GuitarTests' do
     inherit! :search_paths
     # Pods for testing
+
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'Star GuitarUITests' do

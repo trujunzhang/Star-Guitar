@@ -35,14 +35,6 @@ class TuningsFretboardSettingsModel {
     
     
     init() {
-        // Empty here.
-        //self.resultCells = TuningsFactory.convert(TuningsStandardSettingsModel.getDefaultResults())
-        
-        //self.resultCells = TuningsFretboardSettingsModel.getStandardResultsCells()
-    }
-    
-    init( _ results: String) {
-        //self.resultCells = TuningsFretboardSettingsModel.convert(results)
     }
     
     
@@ -52,7 +44,6 @@ class TuningsFretboardSettingsModel {
     
     public func generate() -> TuningsStandardSettings {
         let settings = TuningsStandardSettings()
-        //settings.results = self.results
         return settings
     }
 }

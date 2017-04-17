@@ -35,7 +35,7 @@ class SGEffectViewController: UIViewController {
     @IBAction func switchValueChanged(_ sender: Any) {
         let isOn = self.fingerSlideSwich.isOn
 
-        GuitarSettingsUtils.sharedInstance.setFingerSlide(isOn)
+        GuitarConfigureAsync.sharedInstance.setFingerSlide(isOn)
     }
 
     @IBAction func mute1Tapped(_ sender: Any) {
@@ -67,7 +67,7 @@ class SGEffectViewController: UIViewController {
         let isSelected = button.isSelected
         button.isSelected = !isSelected
 
-        GuitarSettingsUtils.sharedInstance.setMuteArray(index)
+        GuitarConfigureAsync.sharedInstance.setMuteArray(index)
     }
 
     override func viewDidLoad() {
@@ -87,7 +87,7 @@ class SGEffectViewController: UIViewController {
                 .layoutButtons(muteButtons, topCell: muteStringsCell)
                 .layoutFingerSlide(fingerSlideCell, fingerSlideLabel, rightSwitchPanel, topCell: mute1Button)
 
-        self.fingerSlideSwich.setOn(GuitarSettingsUtils.sharedInstance.getFingerSlide(), animated: false)
+        self.fingerSlideSwich.setOn(GuitarConfigureAsync.sharedInstance.getFingerSlide(), animated: false)
     }
 
     override func didReceiveMemoryWarning() {
