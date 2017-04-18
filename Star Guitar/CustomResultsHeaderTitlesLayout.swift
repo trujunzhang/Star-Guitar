@@ -47,10 +47,10 @@ class CustomResultsViewHelper{
          * And this also need to be for the one touch tuning
          */
         if(GuitarConfigureAsync.sharedInstance.isLeftHanded()){
-            return ["1st","2nd","3rd","4th","5th","6th"] // And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
+            return GuitarPlist.guitarPlistDict.Title1To6 //["1st","2nd","3rd","4th","5th","6th"] // And the left hand tuning needs to be 1st 2nd 3rd 4th 5th 6th
         }
         
-        return ["6st","5nd","4rd","3th","2th","1th"] // On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
+        return GuitarPlist.guitarPlistDict.Title6To1 // ["6th","5nd","4rd","3th","2th","1th"] // On the custom tuning in the right hand mode,  the numbers need to be 6th 5th 4th 3rd 2nd 1st
     }
     
     func addAsTitles(_ pageContainer:UIView,_ fretboardView:UIView, _ type:FretboardBorderType)  {

@@ -21,7 +21,6 @@ class SGFouChordrColumnViewController: QuickTableViewController {
         
         // Do any additional setup after loading the view.
         
-        
         tableContents = [
             Section(title: nil, rows: [
                 ThreeColumnActionRow(title: "Root", action: toggleNote),
