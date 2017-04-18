@@ -53,9 +53,8 @@ enum TuningsStandardType: Int {
     case Custom = 4
     
     public static func getTitles() -> [String] {
-        return [
-            "Stardand","Drop D","Dadgad","Open C","Custom"
-        ]
+        // "Stardand","Drop D","Dadgad","Open C","Custom"
+        return GuitarPlist.guitarPlistDict.TuningsStandardType
     }
     
     public static func getTypeIndex(_ title: String) -> Int {
@@ -107,7 +106,7 @@ enum OneColumnLetterType: Int {
 }
 
 
-enum TwoColumnLetterType: Int {
+enum TwoColumnNumberType: Int {
     case N2 = 0
     case N3 = 1
     case N4 = 2
@@ -115,13 +114,12 @@ enum TwoColumnLetterType: Int {
     case N6 = 4
     
     public static func getTitles() -> [String] {
-        return [
-            "2","3","4","5","6"
-        ]
+        // "2","3","4","5","6"
+        return GuitarPlist.guitarPlistDict.TwoColumnNumber
     }
     
     public static func getTypeIndex(_ title: String) -> Int {
-        return TwoColumnLetterType.getTitles().index(of: title)!
+        return TwoColumnNumberType.getTitles().index(of: title)!
     }
     
 }
@@ -154,7 +152,7 @@ public class ColumnResultItem {
     
     func updateNumber(number:String) {
         self.number = number
-        self.numberIndex = TwoColumnLetterType.getTypeIndex(number)
+        self.numberIndex = TwoColumnNumberType.getTypeIndex(number)
     }
     
     init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {

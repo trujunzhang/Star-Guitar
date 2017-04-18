@@ -27,7 +27,7 @@ class SGTwoColumnViewController: QuickTableViewController {
             action = toggleNote
         }
         var rows: [Row] = [Row]()
-        for (_, title) in TwoColumnLetterType.getTitles().enumerated(){
+        for (_, title) in TwoColumnNumberType.getTitles().enumerated(){
             let row = TwoColumnActionRow(title: title, action: action)
             rows.append(row)
         }

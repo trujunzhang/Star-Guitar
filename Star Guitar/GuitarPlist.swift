@@ -13,9 +13,15 @@ import SwiftyConfiguration
 extension Keys {
     static let Title1To6 = Key<[String]>("Title1To6")
     static let Title6To1 = Key<[String]>("Title6To1")
+    static let TwoColumnNumber = Key<[String]>("TwoColumnNumber")
+    static let TuningsStandardType = Key<[String]>("TuningsStandardType")
     
 }
 
+/*
+ * GuitarPlist.guitarPlistDict.TwoColumnNumber
+ *
+ */
 class GuitarPlist{
     public class var guitarPlistDict:GuitarPlistDict {
         struct ClassConstantWrapper {
@@ -28,6 +34,8 @@ class GuitarPlist{
         
         var Title1To6: [String]
         var Title6To1: [String]
+        var TwoColumnNumber: [String]
+        var TuningsStandardType: [String]
         
         init () {
             let plistPath = Bundle.main.path(forResource: "Star-guitar", ofType: "plist")!
@@ -35,6 +43,8 @@ class GuitarPlist{
             
             Title1To6   = config.get(.Title1To6)!
             Title6To1   = config.get(.Title6To1)!
+            TwoColumnNumber   = config.get(.TwoColumnNumber)!
+            TuningsStandardType   = config.get(.TuningsStandardType)!
         }
     }
 }

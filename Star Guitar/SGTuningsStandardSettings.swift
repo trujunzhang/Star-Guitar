@@ -70,7 +70,7 @@ class TuningsStandardFactory{
         var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
         
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
-        let twoColumns = TwoColumnLetterType.getTitles()
+        let twoColumns = TwoColumnNumberType.getTitles()
         let rows = (results.components(separatedBy: ";"))
         for row in rows{
             var resultColumn = [ColumnResultItem]()

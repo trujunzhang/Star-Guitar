@@ -20,5 +20,22 @@
             <string>2nd</string>
             <string>1st</string>
         </array>
+        <key>TwoColumnNumber</key>
+        <array>
+            <string>2</string>
+            <string>3</string>
+            <string>4</string>
+            <string>5</string>
+            <string>6</string>
+        </array>
+        <key>TuningsStandardType</key>
+        <array>
+            <string>Stardand</string>
+            <string>Drop D</string>
+            <string>Dadgad</string>
+            <string>Open C</string>
+            <string>Custom</string>
+        </array>
+        
     </dict>
 </plist>
