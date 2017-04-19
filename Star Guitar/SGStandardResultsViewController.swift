@@ -22,6 +22,11 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         
         collectionView.register(StandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsActionCell.self))
         collectionView.register(StandardResultsSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsSharpActionCell.self))
+        
+
+        collectionView.register(StandardResultsNoHighActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsNoHighActionCell.self))
+        collectionView.register(StandardResultsNoHighSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsNoHighSharpActionCell.self))
+        
     }
     
     // 6X5

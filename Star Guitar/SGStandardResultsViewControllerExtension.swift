@@ -11,18 +11,23 @@ import Foundation
 
 extension SGStandardResultsViewController{
     
-    public  func getStandardResultsActionRow(_ item:ColumnResultItem) ->Row{
-        var action: ((Row) -> Void)? = toggleNote
-        if(item.haveSharp){
-            return StandardResultsSharpActionRow(item: item, action: action)
+    public func getStandardResultsActionRow(_ item:ColumnResultItem) ->Row{
+        let canHighlight = item.canHighlight
+        if(canHighlight){
+            if(item.haveSharp){
+                return StandardResultsSharpActionRow(item: item, action: toggleNote)
+            }
+            return StandardResultsActionRow(item: item, action: toggleNote)
+        }else{
+            if(item.haveSharp){
+                return StandardResultsNoHighSharpActionRow(item: item, action: nil)
+            }
+            return StandardResultsNoHighActionRow(item: item, action: nil)
         }
-        return StandardResultsActionRow(item: item, action: action)
     }
     
     private func toggleNote(_ sender: Row) {
-        if let _row = sender as? StandardResultsActionRow{
-            delegate?.toggleCell(_row.item!)
-        }else if let _row = sender as? StandardResultsSharpActionRow{
+        if let _row = sender as? StandardResultsBasicActionRow{
             delegate?.toggleCell(_row.item!)
         }
     }

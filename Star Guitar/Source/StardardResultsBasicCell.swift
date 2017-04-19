@@ -50,7 +50,9 @@ public class StandardResultsBasicActionRow: Row, Equatable {
     public let subtitle: Subtitle? = nil
     
     /// The value is **StandardResultsActionCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: StandardResultsActionCell.self)
+    
+    public var cellReuseIdentifier: String { return  String(describing: StandardResultsBasicActionCell.self)}
+    //public let cellReuseIdentifier: String = String(describing: StandardResultsBasicActionCell.self)
     
     /// A closure as the tap action when the row is selected.
     public var action: ((Row) -> Void)?

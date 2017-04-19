@@ -21,6 +21,12 @@ open class StandardResultsNoHighSharpActionCell: StandardResultsSharpActionCell 
     
 }
 
+public class StandardResultsNoHighSharpActionRow: StandardResultsSharpActionRow {
+    
+    /// The value is **StandardResultsActionCell**, as the reuse identifier of the table view cell to display the row.
+    public override var cellReuseIdentifier: String { return  String(describing: StandardResultsNoHighSharpActionCell.self)}
+}
+
 open class StandardResultsSharpActionCell: StandardResultsActionCell {
     
     public let sharpLabel = UILabel()
@@ -72,6 +78,9 @@ open class StandardResultsSharpActionCell: StandardResultsActionCell {
 
 
 public class StandardResultsSharpActionRow: StandardResultsBasicActionRow {
+    
+    /// The value is **StandardResultsActionCell**, as the reuse identifier of the table view cell to display the row.
+    public override var cellReuseIdentifier: String { return  String(describing: StandardResultsSharpActionCell.self)}
     
     public override func render(viewCell: UIView) {
         let cell = (viewCell as? StandardResultsSharpActionCell)
