@@ -39,36 +39,36 @@
         <key>standardLeftHandResultString</key>
         <array>
             <array>
-                <string>4-2-0</string>
-                <string>11-1-0</string>
-                <string>7-1-0</string>
-                <string>2-1-0</string>
-                <string>9-0-0</string>
-                <string>4-2-0</string>
+                <string>4-2-1</string>
+                <string>11-1-1</string>
+                <string>7-1-1</string>
+                <string>2-1-1</string>
+                <string>9-0-1</string>
+                <string>4-2-1</string>
             </array>
             <array>
-                <string>4-2-0</string>
-                <string>11-1-0</string>
-                <string>7-1-0</string>
-                <string>2-1-0</string>
-                <string>9-0-0</string>
-                <string>2-0-0</string>
-            </array>
-            <array>
-                <string>2-2-1</string>
-                <string>9-1-1</string>
+                <string>4-2-1</string>
+                <string>11-1-1</string>
                 <string>7-1-1</string>
                 <string>2-1-1</string>
                 <string>9-0-1</string>
                 <string>2-0-1</string>
             </array>
             <array>
-                <string>4-2-0</string>
-                <string>0-2-0</string>
+                <string>2-2-0</string>
+                <string>9-1-0</string>
                 <string>7-1-0</string>
-                <string>0-1-0</string>
-                <string>7-0-0</string>
-                <string>0-0-0</string>
+                <string>2-1-0</string>
+                <string>9-0-0</string>
+                <string>2-0-0</string>
+            </array>
+            <array>
+                <string>4-2-1</string>
+                <string>0-2-1</string>
+                <string>7-1-1</string>
+                <string>0-1-1</string>
+                <string>7-0-1</string>
+                <string>0-0-1</string>
             </array>
             <array>
                 <string>-1</string>
