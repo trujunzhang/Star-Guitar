@@ -22,15 +22,20 @@ extension SGTuningsStandardViewController{
 
 extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
     
+    /**
+     * (2017-04-19)
+     * 2. with the standard tuning, the 3 middle turnings to not highlight the name when it is chosen
+     *
+     */
     func toggleCell(_ item: ColumnResultItem){
         let letterIndex = item.letterIndex
         let numberIndex = item.numberIndex
-     
+        
         let canClick = item.canClick
         
         oneColumnViewController.setupRows(enabledClick: canClick)
         twoColumnViewController.setupRows(enabledClick: canClick)
-
+        
         oneColumnViewController.updateCell(rowIndex: letterIndex)
         twoColumnViewController.updateCell(rowIndex: numberIndex)
         
@@ -71,7 +76,7 @@ extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
 extension SGTuningsStandardViewController: TuningsTypeProviderProtocol{
     
     func toggleTuningType(_ sender: Row) {
-         standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
+        standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
     }
     
 }

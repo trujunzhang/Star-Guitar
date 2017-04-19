@@ -25,7 +25,7 @@ class TuningsStandardFactory{
     public lazy var standardResultCells: [[ColumnResultItem]]  = {
         return [[ColumnResultItem]]()
     }()
-
+    
     public static func getStandardRightHandResultsCellsx() -> [[ColumnResultItem]]{
         let standardResultString = String(format: "%@;%@;%@;%@;%@",
                                           "4-0,9-0,2-1,7-1,11-1,4-2",
@@ -34,17 +34,17 @@ class TuningsStandardFactory{
                                           "0-0,7-0,0-1,7-1,0-2,4-2",
                                           "-1,-1,-1,-1,-1,-1"
         )
-
+        
         return TuningsStandardFactory.convert(standardResultString)
     }
     
     public static func getStandardLeftHandResultsCellsx() -> [[ColumnResultItem]]{
         let standardLeftHandResultString = String(format: "%@;%@;%@;%@;%@",
-                                          "4-2,11-1,7-1,2-1,9-0,4-2",
-                                          "4-2,11-1,7-1,2-1,9-0,2-0",
-                                          "2-2,9-1,7-1,2-1,9-0,2-0",
-                                          "4-2,0-2,7-1,0-1,7-0,0-0",
-                                          "-1,-1,-1,-1,-1,-1"
+                                                  "4-2,11-1,7-1,2-1,9-0,4-2",
+                                                  "4-2,11-1,7-1,2-1,9-0,2-0",
+                                                  "2-2,9-1,7-1,2-1,9-0,2-0",
+                                                  "4-2,0-2,7-1,0-1,7-0,0-0",
+                                                  "-1,-1,-1,-1,-1,-1"
         )
         
         return TuningsStandardFactory.convert(standardLeftHandResultString)
@@ -52,11 +52,11 @@ class TuningsStandardFactory{
     
     public static func getTypeCResultsCells() -> [[ColumnResultItem]]{
         let typeCResultString = String(format: "%@;%@;%@;%@;%@",
-                                          "4-2,11-1,7-1,2-1,9-0,4-2",
-                                          "4-2,11-1,7-1,2-1,9-0,2-0",
-                                          "2-2,9-1,7-1,2-1,9-0,2-0",
-                                          "4-2,0-2,7-1,0-1,7-0,0-0",
-                                          "-1,-1,-1,-1,-1,-1"
+                                       "4-2,11-1,7-1,2-1,9-0,4-2",
+                                       "4-2,11-1,7-1,2-1,9-0,2-0",
+                                       "2-2,9-1,7-1,2-1,9-0,2-0",
+                                       "4-2,0-2,7-1,0-1,7-0,0-0",
+                                       "-1,-1,-1,-1,-1,-1"
         )
         
         return TuningsStandardFactory.convert(typeCResultString)
@@ -67,15 +67,23 @@ class TuningsStandardFactory{
     }
     
     public static func convert(_ results: String) -> [[ColumnResultItem]]{
+        let rows = (results.components(separatedBy: ";"))
+        //let columns = (row.components(separatedBy: ","))
+        //return TuningsStandardFactory.convert(rows:rows)
+        
+        return [[ColumnResultItem]]()
+    }
+    
+    public static func convert(rows: [[String]]) -> [[ColumnResultItem]]{
         var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
         
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let twoColumns = TwoColumnNumberType.getTitles()
-        let rows = (results.components(separatedBy: ";"))
-        for row in rows{
+        
+        for oneLine in rows{
             var resultColumn = [ColumnResultItem]()
-            let columns = (row.components(separatedBy: ","))
-            for column in columns{
+
+            for column in oneLine{
                 var item = ColumnResultItem()
                 if(column != "-1"){
                     let array = (column.components(separatedBy: "-")).flatMap({ Int($0) })
@@ -93,7 +101,7 @@ class TuningsStandardFactory{
         
         return resultCells
     }
-
+    
     
 }
 
@@ -116,7 +124,7 @@ class TuningsStandardSettingsModel {
     init( _ results: String) {
         self.resultCells = TuningsStandardFactory.convert(results)
     }
-    }
+}
 
 
 
@@ -125,7 +133,7 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
     
     private var settingsModel: TuningsStandardSettingsModel?
-        
+    
     public func toggleCurrentColumnResultItem(_ item: ColumnResultItem) {
         return self.currentColumnResultItem = item
     }
@@ -135,11 +143,11 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     }
     
     public func getCurrentResultCells() -> [[ColumnResultItem]]{
-        return TuningsStandardFactory.getCurrentResultsCell()
+        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString)
     }
     
     public func setCurrentStandardTuningsType(_ title: String){
-         self.currentStandardTuningsType = TuningsStandardType.getTypeIndex(title)
+        self.currentStandardTuningsType = TuningsStandardType.getTypeIndex(title)
     }
     
     override init() {

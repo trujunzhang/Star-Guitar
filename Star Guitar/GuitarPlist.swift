@@ -15,6 +15,7 @@ extension Keys {
     static let Title6To1 = Key<[String]>("Title6To1")
     static let TwoColumnNumber = Key<[String]>("TwoColumnNumber")
     static let TuningsStandardType = Key<[String]>("TuningsStandardType")
+    static let standardLeftHandResultString = Key<[[String]]>("standardLeftHandResultString")
     
 }
 
@@ -36,6 +37,7 @@ class GuitarPlist{
         var Title6To1: [String]
         var TwoColumnNumber: [String]
         var TuningsStandardType: [String]
+        var standardLeftHandResultString: [[String]]
         
         init () {
             let plistPath = Bundle.main.path(forResource: "Star-guitar", ofType: "plist")!
@@ -45,6 +47,8 @@ class GuitarPlist{
             Title6To1   = config.get(.Title6To1)!
             TwoColumnNumber   = config.get(.TwoColumnNumber)!
             TuningsStandardType   = config.get(.TuningsStandardType)!
+            standardLeftHandResultString   = config.get(.standardLeftHandResultString)!
         }
+
     }
 }

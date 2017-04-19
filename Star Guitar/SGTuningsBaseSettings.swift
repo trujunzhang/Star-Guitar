@@ -134,9 +134,20 @@ public class ColumnResultItem {
     var numberIndex = -1
     
     var canClick = false
+    var canHighlight = true
+    
     
     init(){
         self.canClick = true
+    }
+    
+    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
+        self.letterIndex = letterIndex
+        self.numberIndex = numberIndex
+        
+        self.letter = oneColumnLetterItem.letter
+        self.haveSharp = oneColumnLetterItem.haveSharp
+        self.number = number
     }
     
     func isOpenC() -> Bool {
@@ -153,15 +164,6 @@ public class ColumnResultItem {
     func updateNumber(number:String) {
         self.number = number
         self.numberIndex = TwoColumnNumberType.getTypeIndex(number)
-    }
-    
-    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
-        self.letterIndex = letterIndex
-        self.numberIndex = numberIndex
-        
-        self.letter = oneColumnLetterItem.letter
-        self.haveSharp = oneColumnLetterItem.haveSharp
-        self.number = number
     }
 }
 

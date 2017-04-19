@@ -28,6 +28,9 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     func generateResultsRows(_ tuningsStandardSettingsUtils:TuningsStandardSettingsUtils) {
         var sections = [Section]()
         
+        // ============================
+        // Get the Current Result Cells
+        // ============================
         let currentCells = tuningsStandardSettingsUtils.getCurrentResultCells()
         for cellsRow in currentCells{
             var rows: [Row] = [Row]()

@@ -1,7 +1,9 @@
 1.0.24 / 2017-04-18
 ==================
 1. Removed "Realm-swift".  
-  
+2. with the standard tuning, the 3 middle turnings to not highlight the name when it is chosen
+
+
 1.0.20 / 2017-04-14
 ==================
 

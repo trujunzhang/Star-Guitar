@@ -36,6 +36,49 @@
             <string>Open C</string>
             <string>Custom</string>
         </array>
-        
+        <key>standardLeftHandResultString</key>
+        <array>
+            <array>
+                <string>4-2</string>
+                <string>11-1</string>
+                <string>7-1</string>
+                <string>2-1</string>
+                <string>9-0</string>
+                <string>4-2</string>
+            </array>
+            <array>
+                <string>4-2</string>
+                <string>11-1</string>
+                <string>7-1</string>
+                <string>2-1</string>
+                <string>9-0</string>
+                <string>2-0</string>
+            </array>
+            <array>
+                <string>2-2</string>
+                <string>9-1</string>
+                <string>7-1</string>
+                <string>2-1</string>
+                <string>9-0</string>
+                <string>2-0</string>
+            </array>
+            <array>
+                <string>4-2</string>
+                <string>0-2</string>
+                <string>7-1</string>
+                <string>0-1</string>
+                <string>7-0</string>
+                <string>0-0</string>
+            </array>
+            <array>
+                <string>-1</string>
+                <string>-1</string>
+                <string>-1</string>
+                <string>-1</string>
+                <string>-1</string>
+                <string>-1</string>
+            </array>
+            
+        </array>
     </dict>
 </plist>
