@@ -151,7 +151,7 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     }
     
     public func getCurrentResultCells() -> [[ColumnResultItem]]{
-        return TuningsStandardFactory.getCurrentResultsCell()
+        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString)
     }
     
     public func setCurrentStandardTuningsType(_ title: String){
