@@ -139,15 +139,18 @@ public class ColumnResultItem {
     
     init(){
         self.canClick = true
+        self.canHighlight = true
     }
     
-    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
+    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String,canHighlight:Bool) {
         self.letterIndex = letterIndex
         self.numberIndex = numberIndex
         
         self.letter = oneColumnLetterItem.letter
         self.haveSharp = oneColumnLetterItem.haveSharp
         self.number = number
+        
+        self.canHighlight = canHighlight
     }
     
     func isOpenC() -> Bool {

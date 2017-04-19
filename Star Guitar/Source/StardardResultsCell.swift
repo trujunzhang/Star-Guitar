@@ -1,16 +1,15 @@
 //
-//  StandardResultsSharpActionCell.swift
+//  TuningsQuickTableView.swift
 //  Star Guitar
 //
-//  Created by djzhang on 4/4/17.
+//  Created by djzhang on 3/28/17.
 //  Copyright © 2017 djzhang. All rights reserved.
 //
-
 
 import Foundation
 import UIKit
 
-open class StandardResultsNoHighSharpActionCell: StandardResultsSharpActionCell {
+open class StandardResultsNoHighActionCell: StandardResultsActionCell {
     override func setCellHighlighted(_ newValue:Bool) {
         // No Highlighted
     }
@@ -21,10 +20,7 @@ open class StandardResultsNoHighSharpActionCell: StandardResultsSharpActionCell 
     
 }
 
-open class StandardResultsSharpActionCell: StandardResultsActionCell {
-    
-    public let sharpLabel = UILabel()
-    
+open class StandardResultsActionCell: StandardResultsBasicActionCell {
     // MARK: Private Methods
     
     override func setUpAppearance() {
@@ -32,7 +28,6 @@ open class StandardResultsSharpActionCell: StandardResultsActionCell {
         //backgroundColor = UIColor(named: .tableRowBG)
         
         contentView.addSubview(letterLabel)
-        contentView.addSubview(sharpLabel)
         contentView.addSubview(numberLabel)
         contentView.addSubview(backRowView)
         contentView.sendSubview(toBack: backRowView)
@@ -40,21 +35,14 @@ open class StandardResultsSharpActionCell: StandardResultsActionCell {
         letterLabel.font = UIFont.letterFont()
         letterLabel.textColor = .black
         letterLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(-16)
+            make.centerX.equalToSuperview().offset(-(10 + SGScreenLayout.sharedInstance.deviceIndex * 2))
             make.centerY.equalToSuperview()
-        }
-        
-        sharpLabel.font = UIFont.letterSharpFont()
-        sharpLabel.textColor = .black
-        sharpLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-12)
         }
         
         numberLabel.font = UIFont.letterFont()
         numberLabel.textColor = .black
         numberLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(16)
+            make.centerX.equalToSuperview().offset(10 + SGScreenLayout.sharedInstance.deviceIndex * 2)
             make.centerY.equalToSuperview()
         }
         
@@ -71,16 +59,15 @@ open class StandardResultsSharpActionCell: StandardResultsActionCell {
 }
 
 
-public class StandardResultsSharpActionRow: StandardResultsBasicActionRow {
+public class StandardResultsActionRow: StandardResultsBasicActionRow {
     
     public override func render(viewCell: UIView) {
-        let cell = (viewCell as? StandardResultsSharpActionCell)
+        let cell = (viewCell as? StandardResultsActionCell)
         
         cell?.letterLabel.text = self.item?.letter
-        cell?.sharpLabel.text = "#"
         cell?.numberLabel.text = self.item?.number
     }
     
-    
 }
+
 

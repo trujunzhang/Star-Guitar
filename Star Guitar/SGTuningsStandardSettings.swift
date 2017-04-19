@@ -95,11 +95,12 @@ class TuningsStandardFactory{
                 var item = ColumnResultItem()
                 if(column != "-1"){
                     let array = (column.components(separatedBy: "-")).flatMap({ Int($0) })
-                    if(array.count == 2){
+                    if(array.count == 3){
                         let letterIndex = array[0]
                         let numberIndex = array[1]
+                        let canHighlight = array[2]
                         let oneColumnLetterItem = oneColumns[letterIndex]
-                        item = ColumnResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex])
+                        item = ColumnResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:(canHighlight == 1))
                     }
                 }
                 resultColumn.append(item)

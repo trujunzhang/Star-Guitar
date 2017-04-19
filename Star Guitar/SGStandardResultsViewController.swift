@@ -35,21 +35,13 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         for cellsRow in currentCells{
             var rows: [Row] = [Row]()
             for item in cellsRow{
-                rows.append(self.generateRow(item))
+                rows.append(self.getStandardResultsActionRow(item))
             }
             sections.append(Section(title: nil, rows: rows))
         }
         
         tableContents = sections
     }
-    
-    private func generateRow(_ item:ColumnResultItem) -> Row{
-        if(item.haveSharp){
-            return StandardResultsSharpActionRow(item: item, action: toggleNote)
-        }
-        return StandardResultsActionRow(item: item, action: toggleNote)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,13 +55,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func toggleNote(_ sender: Row) {
-        if let _row = sender as? StandardResultsActionRow{
-            delegate?.toggleCell(_row.item!)
-        }else if let _row = sender as? StandardResultsSharpActionRow{
-            delegate?.toggleCell(_row.item!)
-        }
-    }
+
     
     public func updateCell(item:ColumnResultItem){
         if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
@@ -77,7 +63,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 let indexPath = selectedItems[0]
                 let section = indexPath.section
                 let rowIndex = indexPath.row
-                tableContents[section].rows[rowIndex] = self.generateRow(item)
+                tableContents[section].rows[rowIndex] = self.getStandardResultsActionRow(item)
                 self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }
         }
