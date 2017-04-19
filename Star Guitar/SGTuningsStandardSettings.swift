@@ -26,7 +26,7 @@ class TuningsStandardFactory{
         return [[ColumnResultItem]]()
     }()
     
-    public static func getStandardRightHandResultsCellsx() -> [[ColumnResultItem]]{
+    public static func getStandardRightHandResultsCells() -> [[ColumnResultItem]]{
         let standardResultString = String(format: "%@;%@;%@;%@;%@",
                                           "4-0,9-0,2-1,7-1,11-1,4-2",
                                           "2-0,9-0,2-1,7-1,11-1,4-2",
@@ -38,7 +38,7 @@ class TuningsStandardFactory{
         return TuningsStandardFactory.convert(standardResultString)
     }
     
-    public static func getStandardLeftHandResultsCellsx() -> [[ColumnResultItem]]{
+    public static func getStandardLeftHandResultsCells() -> [[ColumnResultItem]]{
         let standardLeftHandResultString = String(format: "%@;%@;%@;%@;%@",
                                                   "4-2,11-1,7-1,2-1,9-0,4-2",
                                                   "4-2,11-1,7-1,2-1,9-0,2-0",
@@ -63,15 +63,23 @@ class TuningsStandardFactory{
     }
     
     public static func getCurrentResultsCell() -> [[ColumnResultItem]] {
-        return TuningsStandardFactory.getStandardLeftHandResultsCellsx()
+        return TuningsStandardFactory.getStandardLeftHandResultsCells()
     }
     
     public static func convert(_ results: String) -> [[ColumnResultItem]]{
-        let rows = (results.components(separatedBy: ";"))
-        //let columns = (row.components(separatedBy: ","))
-        //return TuningsStandardFactory.convert(rows:rows)
+        var rows = [[String]]()
+        let lines = (results.components(separatedBy: ";"))
         
-        return [[ColumnResultItem]]()
+        for oneLine in lines{
+            var resultColumn = [String]()
+            let columns = (oneLine.components(separatedBy: ","))
+            for column in columns{
+                resultColumn.append(column)
+            }
+            rows.append(resultColumn)
+        }
+        
+        return TuningsStandardFactory.convert(rows:rows)
     }
     
     public static func convert(rows: [[String]]) -> [[ColumnResultItem]]{
@@ -82,7 +90,7 @@ class TuningsStandardFactory{
         
         for oneLine in rows{
             var resultColumn = [ColumnResultItem]()
-
+            
             for column in oneLine{
                 var item = ColumnResultItem()
                 if(column != "-1"){
@@ -143,7 +151,7 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     }
     
     public func getCurrentResultCells() -> [[ColumnResultItem]]{
-        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString)
+        return TuningsStandardFactory.getCurrentResultsCell()
     }
     
     public func setCurrentStandardTuningsType(_ title: String){
