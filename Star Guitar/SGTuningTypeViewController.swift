@@ -16,7 +16,7 @@ class SGTuningsTypeViewController: QuickCollectionViewController {
     weak var delegate : TuningsTypeProviderProtocol?
 
     public override func setDefaultSelectedCells(_ collectionView: UICollectionView){
-        //collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
+        collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
     
     open override func configCollectionView(_ collectionView: UICollectionView, forLayout layout: UICollectionViewFlowLayout) {
@@ -61,7 +61,7 @@ class SGTuningsTypeViewController: QuickCollectionViewController {
             }
         }
         if(needSelectCell){
-            self.collectionView?.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+            self.collectionView?.selectItem(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .top)
         }
         
     }
