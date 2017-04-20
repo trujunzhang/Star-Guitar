@@ -19,6 +19,7 @@ public class StandardResultItem {
     var canClick = false
     var canHighlight = true
     
+    var indexPath: IndexPath?
     
     init(){
         self.canClick = true
