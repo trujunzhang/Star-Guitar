@@ -23,6 +23,10 @@ open class StandardResultsNoHighActionCell: StandardResultsActionCell {
 public class StandardResultsNoHighActionRow: StandardResultsActionRow {
     /// The value is **StandardResultsActionCell**, as the reuse identifier of the table view cell to display the row.
     public override var cellReuseIdentifier: String { return  String(describing: StandardResultsNoHighActionCell.self)}
+    
+    public override func shouldHighlightRowAt() -> Bool {
+        return false
+    }
 }
 
 open class StandardResultsActionCell: StandardResultsBasicActionCell {

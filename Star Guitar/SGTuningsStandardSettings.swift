@@ -79,10 +79,10 @@ class TuningsStandardFactory{
             rows.append(resultColumn)
         }
         
-        return TuningsStandardFactory.convert(rows:rows)
+        return TuningsStandardFactory.convert(rows:rows, middleHighLight: false)
     }
     
-    public static func convert(rows: [[String]]) -> [[ColumnResultItem]]{
+    public static func convert(rows: [[String]], middleHighLight:Bool) -> [[ColumnResultItem]]{
         var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
         
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
@@ -98,9 +98,13 @@ class TuningsStandardFactory{
                     if(array.count == 3){
                         let letterIndex = array[0]
                         let numberIndex = array[1]
-                        let canHighlight = array[2]
+                        var canHighlight = (array[2] == 1)
+                        if(middleHighLight){
+                            canHighlight = true
+                        }
+                        
                         let oneColumnLetterItem = oneColumns[letterIndex]
-                        item = ColumnResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:(canHighlight == 1))
+                        item = ColumnResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:canHighlight)
                     }
                 }
                 resultColumn.append(item)
@@ -152,7 +156,8 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     }
     
     public func getCurrentResultCells() -> [[ColumnResultItem]]{
-        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString)
+        let middleHighLight = TuningsStandardType.canMiddleHighLight(self.currentStandardTuningsType)
+        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString,middleHighLight:middleHighLight)
     }
     
     public func setCurrentStandardTuningsType(_ title: String){

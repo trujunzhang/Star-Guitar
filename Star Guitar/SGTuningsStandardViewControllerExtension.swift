@@ -76,6 +76,11 @@ extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
 extension SGTuningsStandardViewController: TuningsTypeProviderProtocol{
     
     func toggleTuningType(_ sender: Row) {
+        // Step1: Toggle the current Standard Tunings Type
+        tuningsStandardSettingsUtils.setCurrentStandardTuningsType(sender.title)
+        //let type = tuningsStandardSettingsUtils.currentStandardTuningsType
+        
+        // Step2: Reload the Standard Results Grid.
         standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
     }
     

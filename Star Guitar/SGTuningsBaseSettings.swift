@@ -61,6 +61,19 @@ enum TuningsStandardType: Int {
         return TuningsStandardType.getTitles().index(of: title)!
     }
     
+    /**
+     * 1.0.27 / 2017-04-20
+     * ==================
+     *  In the standard tuning. I need the three middle turnings (drop d, dadgad, open c) to be highlighted when they are touched
+     *
+     */
+    public static func canMiddleHighLight(_ tuningsType: Int) -> Bool{
+        if(tuningsType == TuningsStandardType.DropD.rawValue || tuningsType == TuningsStandardType.Dadgad.rawValue || tuningsType == TuningsStandardType.OpenC.rawValue){
+                    return true
+        }
+        return false
+    }
+    
     public static func getTypeIndex(_ item: ColumnResultItem) -> Int{
         if(item.letterIndex == -1 && item.numberIndex == -1){
             return TuningsStandardType.Custom.rawValue

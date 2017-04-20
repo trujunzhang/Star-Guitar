@@ -124,7 +124,13 @@ open class QuickCollectionViewController: UIViewController,
     }
     
     public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+        let row = tableContents[indexPath.section].rows[indexPath.row]
+        
+        if (row.action) != nil{
+            return row.shouldHighlightRowAt()
+        }
+        
+        return false
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

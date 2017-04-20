@@ -1,5 +1,13 @@
+
+1.0.26 / 2017-04-20
+==================
+
+ 1. In the standard tuning. I need the three middle turnings (drop d, dadgad, open c) to be highlighted when they are touched
+ 2. Also the left hand and right hand are backward in the standard tuning
+
 1.0.24 / 2017-04-18
 ==================
+
 1. Removed "Realm-swift".  
 2. with the standard tuning, the 3 middle turnings to not highlight the name when it is chosen
 
