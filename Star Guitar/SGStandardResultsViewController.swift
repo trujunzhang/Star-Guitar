@@ -23,7 +23,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         collectionView.register(StandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsActionCell.self))
         collectionView.register(StandardResultsSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsSharpActionCell.self))
         
-
+        
         collectionView.register(StandardResultsNoHighActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsNoHighActionCell.self))
         collectionView.register(StandardResultsNoHighSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsNoHighSharpActionCell.self))
         
@@ -60,8 +60,6 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     public func updateCell(item:ColumnResultItem){
         if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
             if selectedItems.count == 1{
@@ -72,7 +70,25 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
             }
         }
+    }
+    
+    public func updateMiddleSectionHighLighter(_ tuningsStandardSettingsUtils:TuningsStandardSettingsUtils){
+        let currentStandardTuningsType:Int = tuningsStandardSettingsUtils.currentStandardTuningsType
         
+        let canMiddleHighLight = TuningsStandardType.canMiddleHighLight(currentStandardTuningsType)
+        
+        var newRow = [Row]()
+        for row in tableContents[2].rows{
+            if let currentRow = row as? StandardResultsBasicActionRow{
+                if let item = currentRow.item{
+                    item.canHighlight = canMiddleHighLight
+                    newRow.append(self.getStandardResultsActionRow(item))
+                }
+            }
+        }
+
+        tableContents[2].rows = newRow
+        self.collectionView?.reloadSections(IndexSet(integer: 2))
         
     }
     

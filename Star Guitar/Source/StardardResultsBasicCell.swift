@@ -41,6 +41,10 @@ public class StandardResultsBasicActionRow: Row, Equatable {
         fatalError("Subclasses need to implement the `render()` method.")
     }
     
+    public func setAction(action: ((Row) -> Void)?){
+        self.action = action
+    }
+    
     public var item:ColumnResultItem? = nil
     
     /// The title text of the row.

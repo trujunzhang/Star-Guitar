@@ -74,15 +74,31 @@ enum TuningsStandardType: Int {
         return false
     }
     
-    public static func getTypeIndex(_ item: ColumnResultItem) -> Int{
+    public static func toggleTypeIndex(_ item: ColumnResultItem) -> TuningsStandardType?{
         if(item.letterIndex == -1 && item.numberIndex == -1){
-            return TuningsStandardType.Custom.rawValue
+            return TuningsStandardType.Custom
         }else if(item.letterIndex == 7 && item.numberIndex == 0){
-            return TuningsStandardType.OpenC.rawValue
+            return TuningsStandardType.OpenC
         }
         
-        return TuningsStandardType.Stardand.rawValue
+        return nil
     }
+    
+    public static func needSelectCellType(_ item: ColumnResultItem,_ selectedItems:[IndexPath]) -> TuningsStandardType?{
+        if let tuningsStandardType:TuningsStandardType = TuningsStandardType.toggleTypeIndex(item){
+            if selectedItems.count == 1{
+                let indexPath = selectedItems[0]
+                let rowIndex = indexPath.row
+                if(tuningsStandardType.rawValue == rowIndex){
+                    return nil
+                }
+                
+                return tuningsStandardType
+            }
+        }
+        return nil
+    }
+    
 }
 
 enum OneColumnLetterType: Int {

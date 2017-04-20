@@ -47,23 +47,10 @@ class SGTuningsTypeViewController: QuickCollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    func toggleCurrentTuningsType(_ item: ColumnResultItem)  {
-        let index = TuningsStandardType.getTypeIndex(item)
-        var needSelectCell = true
-        if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
-            if selectedItems.count == 1{
-                let indexPath = selectedItems[0]
-                let rowIndex = indexPath.row
-                if(index == rowIndex){
-                    needSelectCell = false
-                }
-            }
-        }
-        if(needSelectCell){
-            self.collectionView?.selectItem(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .top)
-        }
-        
+    func toggleCurrentTuningsType(_ tuningsStandardType:TuningsStandardType)  {
+        self.collectionView?.selectItem(at: IndexPath(row: tuningsStandardType.rawValue, section: 0), animated: false, scrollPosition: .top)
     }
 
     private func tuningsTypeTapped(_ sender: Row) {

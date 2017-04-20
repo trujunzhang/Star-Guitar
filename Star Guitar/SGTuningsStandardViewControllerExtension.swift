@@ -33,15 +33,38 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
         
         let canClick = item.canClick
         
+        // Step1: Toggle oneColumnLetter and twoColumnNumber's click.
         oneColumnViewController.setupRows(enabledClick: canClick)
         twoColumnViewController.setupRows(enabledClick: canClick)
         
+        // Step2: Update oneColumnLetter and twoColumnNumber's selected cell.
         oneColumnViewController.updateCell(rowIndex: letterIndex)
         twoColumnViewController.updateCell(rowIndex: numberIndex)
-        
-        tuningsTypeViewController.toggleCurrentTuningsType(item)
-        
+
+        // Step3: Save the selected Result item.
         tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(item)
+        
+
+        if let selectedItems = tuningsTypeViewController.getSelectedItems(){
+            if let tuningsStandardType:TuningsStandardType = TuningsStandardType.needSelectCellType(item,selectedItems){
+                
+                // Step4: Save tunings tpye.
+                tuningsStandardSettingsUtils.setCurrentStandardTuningsType(tuningsStandardType)
+                
+                
+                // Step5: Check and update the Standard tunings type's selected cell.
+                tuningsTypeViewController.toggleCurrentTuningsType(tuningsStandardType)
+                
+                
+                // Step6: Check and update the result's middle section's highlighter.
+                standardResultsViewController.updateMiddleSectionHighLighter(tuningsStandardSettingsUtils)
+            }
+        }
+
+        
+       
+        
+        
     }
     
 }
@@ -78,6 +101,7 @@ extension SGTuningsStandardViewController: TuningsTypeProviderProtocol{
     func toggleTuningType(_ sender: Row) {
         // Step1: Toggle the current Standard Tunings Type
         tuningsStandardSettingsUtils.setCurrentStandardTuningsType(sender.title)
+        
         //let type = tuningsStandardSettingsUtils.currentStandardTuningsType
         
         // Step2: Reload the Standard Results Grid.

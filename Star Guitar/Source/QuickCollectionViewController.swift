@@ -143,6 +143,10 @@ open class QuickCollectionViewController: UIViewController,
         }
     }
     
+    public func getSelectedItems() ->[IndexPath]?{
+        return self.collectionView?.indexPathsForSelectedItems
+    }
+    
 }
 
 

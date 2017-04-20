@@ -156,12 +156,16 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     }
     
     public func getCurrentResultCells() -> [[ColumnResultItem]]{
-        let middleHighLight = TuningsStandardType.canMiddleHighLight(self.currentStandardTuningsType)
-        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString,middleHighLight:middleHighLight)
+        let canMiddleHighLight = TuningsStandardType.canMiddleHighLight(self.currentStandardTuningsType)
+        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString,middleHighLight:canMiddleHighLight)
     }
     
     public func setCurrentStandardTuningsType(_ title: String){
         self.currentStandardTuningsType = TuningsStandardType.getTypeIndex(title)
+    }
+    
+    public func setCurrentStandardTuningsType(_ type: TuningsStandardType){
+        self.currentStandardTuningsType = type.rawValue
     }
     
     override init() {
