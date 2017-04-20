@@ -21,51 +21,6 @@ import UIKit
  */
 
 class TuningsStandardFactory{
-    
-    public lazy var standardResultCells: [[ColumnResultItem]]  = {
-        return [[ColumnResultItem]]()
-    }()
-    
-    public static func getStandardRightHandResultsCells() -> [[ColumnResultItem]]{
-        let standardResultString = String(format: "%@;%@;%@;%@;%@",
-                                          "4-0,9-0,2-1,7-1,11-1,4-2",
-                                          "2-0,9-0,2-1,7-1,11-1,4-2",
-                                          "2-0,9-0,2-1,7-1,9-1,2-2",
-                                          "0-0,7-0,0-1,7-1,0-2,4-2",
-                                          "-1,-1,-1,-1,-1,-1"
-        )
-        
-        return TuningsStandardFactory.convert(standardResultString)
-    }
-    
-    public static func getStandardLeftHandResultsCells() -> [[ColumnResultItem]]{
-        let standardLeftHandResultString = String(format: "%@;%@;%@;%@;%@",
-                                                  "4-2,11-1,7-1,2-1,9-0,4-2",
-                                                  "4-2,11-1,7-1,2-1,9-0,2-0",
-                                                  "2-2,9-1,7-1,2-1,9-0,2-0",
-                                                  "4-2,0-2,7-1,0-1,7-0,0-0",
-                                                  "-1,-1,-1,-1,-1,-1"
-        )
-        
-        return TuningsStandardFactory.convert(standardLeftHandResultString)
-    }
-    
-    public static func getTypeCResultsCells() -> [[ColumnResultItem]]{
-        let typeCResultString = String(format: "%@;%@;%@;%@;%@",
-                                       "4-2,11-1,7-1,2-1,9-0,4-2",
-                                       "4-2,11-1,7-1,2-1,9-0,2-0",
-                                       "2-2,9-1,7-1,2-1,9-0,2-0",
-                                       "4-2,0-2,7-1,0-1,7-0,0-0",
-                                       "-1,-1,-1,-1,-1,-1"
-        )
-        
-        return TuningsStandardFactory.convert(typeCResultString)
-    }
-    
-    public static func getCurrentResultsCell() -> [[ColumnResultItem]] {
-        return TuningsStandardFactory.getStandardLeftHandResultsCells()
-    }
-    
     public static func convert(_ results: String) -> [[ColumnResultItem]]{
         var rows = [[String]]()
         let lines = (results.components(separatedBy: ";"))
@@ -118,34 +73,9 @@ class TuningsStandardFactory{
     
 }
 
-class TuningsStandardSettingsModel {
-    public static func getStandardTypeResults() -> String {
-        return String(format: "%@;%@;%@;%@;%@",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1"
-        )
-    }
-    
-    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
-    
-    init() {
-    }
-    
-    init( _ results: String) {
-        self.resultCells = TuningsStandardFactory.convert(results)
-    }
-}
-
-
-
 class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
     var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
-    
-    private var settingsModel: TuningsStandardSettingsModel?
     
     public func toggleCurrentColumnResultItem(_ item: ColumnResultItem) {
         return self.currentColumnResultItem = item
@@ -157,6 +87,7 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
     public func getCurrentResultCells() -> [[ColumnResultItem]]{
         let canMiddleHighLight = TuningsStandardType.canMiddleHighLight(self.currentStandardTuningsType)
+        
         return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString,middleHighLight:canMiddleHighLight)
     }
     
