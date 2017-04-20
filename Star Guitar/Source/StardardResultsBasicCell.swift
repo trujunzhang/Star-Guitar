@@ -45,7 +45,7 @@ public class StandardResultsBasicActionRow: Row, Equatable {
         self.action = action
     }
     
-    public var item:ColumnResultItem? = nil
+    public var item:StandardResultItem? = nil
     
     /// The title text of the row.
     public var title: String = ""
@@ -62,7 +62,7 @@ public class StandardResultsBasicActionRow: Row, Equatable {
     public var action: ((Row) -> Void)?
     
     ///
-    public init(item:ColumnResultItem, action: ((Row) -> Void)?) {
+    public init(item:StandardResultItem, action: ((Row) -> Void)?) {
         self.item = item
         self.action = action
     }

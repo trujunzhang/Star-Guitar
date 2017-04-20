@@ -11,23 +11,7 @@ import UIKit
 
 
 class TuningsCustomSettingsModel {
-    public static func getDefaultResults() -> String {
-        return String(format: "%@;%@;%@;%@;%@",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1",
-                      "-1,-1,-1,-1,-1,-1"
-        )
-    }
-    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
-    
-    init() {
-    }
-    
-    init( _ results: String) {
-        self.resultCells = TuningsStandardFactory.convert(results)
-    }
+   
 
 }
 

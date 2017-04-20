@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+
 /**
  *
  * The first thing that must be clicked is the
@@ -21,7 +23,7 @@ import UIKit
  */
 
 class TuningsStandardFactory{
-    public static func convert(_ results: String) -> [[ColumnResultItem]]{
+    public static func convert(_ results: String) -> [[StandardResultItem]]{
         var rows = [[String]]()
         let lines = (results.components(separatedBy: ";"))
         
@@ -37,17 +39,17 @@ class TuningsStandardFactory{
         return TuningsStandardFactory.convert(rows:rows, middleHighLight: false)
     }
     
-    public static func convert(rows: [[String]], middleHighLight:Bool) -> [[ColumnResultItem]]{
-        var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
+    public static func convert(rows: [[String]], middleHighLight:Bool) -> [[StandardResultItem]]{
+        var resultCells: [[StandardResultItem]] = [[StandardResultItem]]()
         
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let twoColumns = TwoColumnNumberType.getTitles()
         
         for oneLine in rows{
-            var resultColumn = [ColumnResultItem]()
+            var resultColumn = [StandardResultItem]()
             
             for column in oneLine{
-                var item = ColumnResultItem()
+                var item = StandardResultItem()
                 if(column != "-1"){
                     let array = (column.components(separatedBy: "-")).flatMap({ Int($0) })
                     if(array.count == 3){
@@ -59,7 +61,7 @@ class TuningsStandardFactory{
                         }
                         
                         let oneColumnLetterItem = oneColumns[letterIndex]
-                        item = ColumnResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:canHighlight)
+                        item = StandardResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:canHighlight)
                     }
                 }
                 resultColumn.append(item)
@@ -77,15 +79,15 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
     var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
     
-    public func toggleCurrentColumnResultItem(_ item: ColumnResultItem) {
-        return self.currentColumnResultItem = item
+    public func toggleCurrentStandardResultItem(_ item: StandardResultItem) {
+        return self.currentStandardResultItem = item
     }
     
-    public func getCurrentColumnResultItem() -> ColumnResultItem{
-        return self.currentColumnResultItem
+    public func getCurrentStandardResultItem() -> StandardResultItem{
+        return self.currentStandardResultItem
     }
     
-    public func getCurrentResultCells() -> [[ColumnResultItem]]{
+    public func getCurrentResultCells() -> [[StandardResultItem]]{
         let canMiddleHighLight = TuningsStandardType.canMiddleHighLight(self.currentStandardTuningsType)
         
         return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString,middleHighLight:canMiddleHighLight)

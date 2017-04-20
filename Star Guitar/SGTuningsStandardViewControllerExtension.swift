@@ -13,7 +13,7 @@ import Foundation
 extension SGTuningsStandardViewController{
     
     func updateSelectedNoteCell() {
-        let item = tuningsStandardSettingsUtils.getCurrentColumnResultItem()
+        let item = tuningsStandardSettingsUtils.getCurrentStandardResultItem()
         
         standardResultsViewController.updateCell(item: item)
     }
@@ -27,7 +27,7 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
      * 2. with the standard tuning, the 3 middle turnings to not highlight the name when it is chosen
      *
      */
-    func toggleCell(_ item: ColumnResultItem){
+    func toggleCell(_ item: StandardResultItem){
         let letterIndex = item.letterIndex
         let numberIndex = item.numberIndex
         
@@ -42,7 +42,7 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
         twoColumnViewController.updateCell(rowIndex: numberIndex)
 
         // Step3: Save the selected Result item.
-        tuningsStandardSettingsUtils.toggleCurrentColumnResultItem(item)
+        tuningsStandardSettingsUtils.toggleCurrentStandardResultItem(item)
         
 
         if let selectedItems = tuningsTypeViewController.getSelectedItems(){

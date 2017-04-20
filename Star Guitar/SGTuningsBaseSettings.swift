@@ -74,7 +74,7 @@ enum TuningsStandardType: Int {
         return false
     }
     
-    public static func toggleTypeIndex(_ item: ColumnResultItem) -> TuningsStandardType?{
+    public static func toggleTypeIndex(_ item: StandardResultItem) -> TuningsStandardType?{
         if(item.letterIndex == -1 && item.numberIndex == -1){
             return TuningsStandardType.Custom
         }else if(item.letterIndex == 7 && item.numberIndex == 0){
@@ -84,7 +84,7 @@ enum TuningsStandardType: Int {
         return nil
     }
     
-    public static func needSelectCellType(_ item: ColumnResultItem,_ selectedItems:[IndexPath]) -> TuningsStandardType?{
+    public static func needSelectCellType(_ item: StandardResultItem,_ selectedItems:[IndexPath]) -> TuningsStandardType?{
         if let tuningsStandardType:TuningsStandardType = TuningsStandardType.toggleTypeIndex(item){
             if selectedItems.count == 1{
                 let indexPath = selectedItems[0]
@@ -160,53 +160,8 @@ enum TwoColumnNumberType: Int {
 }
 
 
-public class ColumnResultItem {
-    var letter: String = ""
-    var haveSharp: Bool = false
-    var number: String = ""
-    
-    var letterIndex = -1
-    var numberIndex = -1
-    
-    var canClick = false
-    var canHighlight = true
-    
-    
-    init(){
-        self.canClick = true
-        self.canHighlight = true
-    }
-    
-    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String,canHighlight:Bool) {
-        self.letterIndex = letterIndex
-        self.numberIndex = numberIndex
-        
-        self.letter = oneColumnLetterItem.letter
-        self.haveSharp = oneColumnLetterItem.haveSharp
-        self.number = number
-        
-        self.canHighlight = canHighlight
-    }
-    
-    func isOpenC() -> Bool {
-        return (letterIndex == 7) && (numberIndex == 0)
-    }
-    
-    func updateLetter(letterIndex:Int,oneColumnLetterItem: OneColumnLetterItem) {
-        self.letterIndex = letterIndex
-        
-        self.letter = oneColumnLetterItem.letter
-        self.haveSharp = oneColumnLetterItem.haveSharp
-    }
-    
-    func updateNumber(number:String) {
-        self.number = number
-        self.numberIndex = TwoColumnNumberType.getTypeIndex(number)
-    }
-}
-
 class TuningsBaseSettingsUtils: AnyObject {
-    var currentColumnResultItem = ColumnResultItem()
+    var currentStandardResultItem = StandardResultItem()
     
     init() {
     }
@@ -215,11 +170,11 @@ class TuningsBaseSettingsUtils: AnyObject {
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let oneColumnLetterItem = oneColumns[letterIndex]
         
-        currentColumnResultItem.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
+        currentStandardResultItem.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
     }
     
     public func updateTwoColumnNumber(_ number:String){
-        currentColumnResultItem.updateNumber(number: number)
+        currentStandardResultItem.updateNumber(number: number)
     }
 }
 

@@ -27,9 +27,8 @@ class TuningsFretboardSettingsModel {
                       "-1,-1,-1,-1,-1,-1"
         )
     }
-    var resultCells: [[ColumnResultItem]] = [[ColumnResultItem]]()
-    
-    
+    var resultCells: [[StandardResultItem]] = [[StandardResultItem]]()
+
     
     init() {
     }

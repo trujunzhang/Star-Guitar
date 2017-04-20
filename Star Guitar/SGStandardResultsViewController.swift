@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StandardResultsProviderProtocol : class {    // 'class' means only class types can implement it
-    func toggleCell(_ columnResultItem: ColumnResultItem)
+    func toggleCell(_ columnResultItem: StandardResultItem)
 }
 
 class SGStandardResultsViewController: QuickCollectionViewController {
@@ -60,7 +60,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    public func updateCell(item:ColumnResultItem){
+    public func updateCell(item:StandardResultItem){
         if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
             if selectedItems.count == 1{
                 let indexPath = selectedItems[0]
