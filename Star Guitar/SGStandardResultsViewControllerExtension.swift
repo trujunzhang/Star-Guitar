@@ -17,7 +17,7 @@ extension SGStandardResultsViewController{
     
     public func toggleNote(_ sender: Row) {
         if let _row = sender as? StandardResultsSharpActionRow{
-            //delegate?.toggleCell(_row.item!)
+            delegate?.toggleCell(_row.item!)
         }
     }
     

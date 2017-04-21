@@ -40,6 +40,8 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         }
         
         tableContents = sections
+        
+        self.deselectAllCells()
     }
     
     override func viewDidLoad() {
@@ -80,23 +82,6 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 //}
             }
         }
-        
-        tableContents[2].rows = newRow
-        
-        // http://stackoverflow.com/questions/14212744/uicollectionview-select-an-item-immediately-after-reloaddata
-        
-        if let _collectionView = self.collectionView {
-            
-            _collectionView.performBatchUpdates({
-                //_collectionView.reloadSections(IndexSet(integer: 2))
-            }, completion: { (completed) in
-                if let resultItem = tuningsStandardSettingsUtils.currentStandardResultItem{
-                    //_collectionView.selectItem(at: resultItem.indexPath, animated: false, scrollPosition: .top)
-                }
-            })
-
-        }
-        
     }
     
     

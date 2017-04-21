@@ -142,7 +142,7 @@ open class QuickCollectionViewController: UIViewController,
         
         
         if let action = row.action{
-            //action(row)
+            action(row)
         }
         //else{
             //collectionView.deselectItem(at: indexPath, animated: true)
