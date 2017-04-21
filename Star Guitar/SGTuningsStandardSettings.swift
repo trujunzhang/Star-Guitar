@@ -45,11 +45,12 @@ class TuningsStandardFactory{
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let twoColumns = TwoColumnNumberType.getTitles()
         
-        for oneLine in rows{
+        for (section,oneLine) in rows.enumerated(){
             var resultColumn = [StandardResultItem]()
             
-            for column in oneLine{
-                var item = StandardResultItem()
+            for (row,column) in oneLine.enumerated(){
+                let indexPath: IndexPath = IndexPath(row: row, section: section)
+                var item = StandardResultItem(indexPath:indexPath)
                 if(column != "-1"){
                     let array = (column.components(separatedBy: "-")).flatMap({ Int($0) })
                     if(array.count == 3){
@@ -61,7 +62,7 @@ class TuningsStandardFactory{
                         }
                         
                         let oneColumnLetterItem = oneColumns[letterIndex]
-                        item = StandardResultItem(letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:canHighlight)
+                        item = StandardResultItem(indexPath:indexPath,letterIndex: letterIndex,numberIndex: numberIndex,oneColumnLetterItem: oneColumnLetterItem,number: twoColumns[numberIndex],canHighlight:canHighlight)
                     }
                 }
                 resultColumn.append(item)
@@ -80,11 +81,11 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
     
     public func toggleCurrentStandardResultItem(_ item: StandardResultItem) {
-        return self.currentStandardResultItem = item
+         self.currentStandardResultItem = item
     }
     
     public func getCurrentStandardResultItem() -> StandardResultItem{
-        return self.currentStandardResultItem
+        return (self.currentStandardResultItem)!
     }
     
     public func getCurrentResultCells() -> [[StandardResultItem]]{

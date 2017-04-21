@@ -86,25 +86,23 @@ class SGStandardResultsViewController: QuickCollectionViewController {
                 }
             }
         }
-
+        
         tableContents[2].rows = newRow
         
         // http://stackoverflow.com/questions/14212744/uicollectionview-select-an-item-immediately-after-reloaddata
-
+        
         if let _collectionView = self.collectionView {
-            if let selectedItems = self.getSelectedItems(){
-                
-                _collectionView.performBatchUpdates({ 
-                    _collectionView.reloadSections(IndexSet(integer: 2))
-                }, completion: { (completed) in
-                    for indexPath in selectedItems{
-                        _collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
-                    }
-                })
+            
+            _collectionView.performBatchUpdates({
+                _collectionView.reloadSections(IndexSet(integer: 2))
+            }, completion: { (completed) in
+                if let resultItem = tuningsStandardSettingsUtils.currentStandardResultItem{
+                    _collectionView.selectItem(at: resultItem.indexPath, animated: false, scrollPosition: .top)
+                }
+            })
 
-            }
         }
-
+        
     }
     
     

@@ -21,12 +21,12 @@ public class StandardResultItem {
     
     var indexPath: IndexPath?
     
-    init(){
+    init(indexPath: IndexPath){
         self.canClick = true
         self.canHighlight = true
     }
     
-    init(letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String,canHighlight:Bool) {
+    init(indexPath: IndexPath,letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String,canHighlight:Bool) {
         self.letterIndex = letterIndex
         self.numberIndex = numberIndex
         

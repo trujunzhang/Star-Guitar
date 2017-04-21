@@ -24,6 +24,11 @@
 ** Touch Event
    [[http://www.uiwithcocoa.io/4-different-ways-to-handle-taps-on-UIViews/][4 Different Ways to Handle Taps on UIViews]]
 
+* Highlight cells in CollectionView
+   [http://stackoverflow.com/questions/19562420/highlight-cells-in-collectionview] (answer: Calin Chitu) (used)
+
+
+
 
 
 

@@ -161,7 +161,7 @@ enum TwoColumnNumberType: Int {
 
 
 class TuningsBaseSettingsUtils: AnyObject {
-    var currentStandardResultItem = StandardResultItem()
+    var currentStandardResultItem:StandardResultItem?
     
     init() {
     }
@@ -170,11 +170,11 @@ class TuningsBaseSettingsUtils: AnyObject {
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let oneColumnLetterItem = oneColumns[letterIndex]
         
-        currentStandardResultItem.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
+        currentStandardResultItem?.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
     }
     
     public func updateTwoColumnNumber(_ number:String){
-        currentStandardResultItem.updateNumber(number: number)
+        currentStandardResultItem?.updateNumber(number: number)
     }
 }
 

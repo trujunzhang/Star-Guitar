@@ -401,10 +401,10 @@
 		5E4B6BFE1E7C9957006B811D /* Star Guitar */ = {
 			isa = PBXGroup;
 			children = (
+				5EF0AE171E8DE1B80026F0B4 /* TuningResults */,
 				5ED3F8841E94BEB8006B845D /* Tunings */,
 				5E2D89901E8E73DE00D6AEF0 /* Extensions */,
 				5E7F0BE51E8DE45D00E5569F /* Layout */,
-				5EF0AE171E8DE1B80026F0B4 /* TuningResults */,
 				5EF0AE101E8DDFAD0026F0B4 /* TuningColumns */,
 				5E9C6E221E8554CB006F93B4 /* Support Files */,
 				5EB5D01F1E84124F0018359D /* SwiftGen */,
