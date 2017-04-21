@@ -70,6 +70,9 @@ public protocol Row {
     func getRowHeight(indexPath: IndexPath) -> CGFloat
 
     func shouldHighlightRowAt() -> Bool
+    
+    func setSelectedRowAt(isSelected: Bool)
+    func setHighlightRowAt(didHighlight: Bool)
 }
 
 extension Row {
@@ -147,132 +150,6 @@ public struct Icon: Equatable {
 
 }
 
-// MARK: - NavigationRow
-
-
-/// A struct that represents a row that perfoms navigation when seleced.
-
-public struct NavigationRow: Row, Equatable, IconEnabled {
-    public func shouldHighlightRowAt() -> Bool {
-        return true
-    }
-
-    public func getRowHeight(indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-
-    public func render(viewCell: UIView) {
-
-    }
-
-
-    /// The title text of the row.
-    public var title: String = ""
-
-    /// The subtitle text of the row.
-    public var subtitle: Subtitle?
-
-    /// The icon of the row.
-    public var icon: Icon?
-
-    /// Returns `subtitle.style` as the reuse identifier of the table view cell to display the row.
-    public var cellReuseIdentifier: String {
-        return subtitle?.style ?? String(describing: UITableViewCell.self)
-    }
-
-    /// A closure related to the navigation when the row is selected.
-    public var action: ((Row) -> Void)?
-
-    ///
-    public init(title: String, subtitle: Subtitle, icon: Icon? = nil, action: ((Row) -> Void)? = nil) {
-        self.title = title
-        self.subtitle = subtitle
-        self.icon = icon
-        self.action = action
-    }
-
-
-    private init() {
-    }
-
-    // MARK: Equatable
-
-    /// Returns true iff `lhs` and `rhs` have equal titles, subtitles and icons.
-    public static func ==(lhs: NavigationRow, rhs: NavigationRow) -> Bool {
-        return lhs.title == rhs.title && lhs.subtitle == rhs.subtitle && lhs.icon == rhs.icon
-    }
-
-}
-
-
-// MARK: - SwitchRow
-
-
-/// A struct that represents a row with a switch.
-
-public struct SwitchRow: Row, Equatable, IconEnabled {
-    public func shouldHighlightRowAt() -> Bool {
-        return true
-    }
-
-    public func getRowHeight(indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-
-    public func render(viewCell: UIView) {
-        let cell = viewCell  as? SwitchCell
-        cell?.textLabel?.text = self.title
-
-        let switchControl = cell? .switchControl
-        switchControl?.isOn = self.switchValue
-
-        if switchControl?.actions(forTarget: self, forControlEvent: .valueChanged) == nil {
-            //switchControl?.addTarget(self, action: .didToggleSwitch, for: UIControlEvents.valueChanged)
-        }
-    }
-
-
-    /// The title text of the row.
-    public var title: String = ""
-
-    /// Subtitle is disabled in SwitchRow.
-    public let subtitle: Subtitle? = nil
-
-    /// The icon of the row.
-    public var icon: Icon?
-
-    /// The state of the switch.
-    public var switchValue: Bool = false {
-        didSet {
-            action?(self)
-        }
-    }
-
-    /// The value is **SwitchCell**, as the reuse identifier of the table view cell to display the row.
-    public let cellReuseIdentifier: String = String(describing: SwitchCell.self)
-
-    /// A closure that will be invoked when the switchValue is changed.
-    public var action: ((Row) -> Void)?
-
-    ///
-    public init(title: String, switchValue: Bool, icon: Icon? = nil, action: ((Row) -> Void)?) {
-        self.title = title
-        self.switchValue = switchValue
-        self.icon = icon
-        self.action = action
-    }
-
-    private init() {
-    }
-
-    // MARK: Equatable
-
-    /// Returns true iff `lhs` and `rhs` have equal titles, switch values, and icons.
-    public static func ==(lhs: SwitchRow, rhs: SwitchRow) -> Bool {
-        return lhs.title == rhs.title && lhs.switchValue == rhs.switchValue && lhs.icon == rhs.icon
-    }
-
-}
 
 
 // MARK: - Subtitle

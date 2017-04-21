@@ -65,6 +65,14 @@ open class TuningsEventsActionCell: UICollectionViewCell {
 
 
 public struct TuningsEventsActionRow: Row, Equatable {
+    public func setSelectedRowAt(didSelect: Bool) {
+        
+    }
+    
+    public func setHighlightRowAt(didHighlight: Bool) {
+        
+    }
+    
     public func shouldHighlightRowAt() -> Bool {
         return true
     }

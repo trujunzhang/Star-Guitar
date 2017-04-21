@@ -56,6 +56,14 @@ open class TwoColumnActionCell: UITableViewCell {
 
 
 public struct TwoColumnActionRow: Row, Equatable {
+    public func setSelectedRowAt(didSelect: Bool) {
+        
+    }
+    
+    public func setHighlightRowAt(didHighlight: Bool) {
+        
+    }
+    
     public func shouldHighlightRowAt() -> Bool {
         return true
     }

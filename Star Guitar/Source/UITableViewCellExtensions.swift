@@ -12,14 +12,12 @@ import UIKit
 extension UITableViewCell{
     
     
-    func setupSelectedBackground() -> UIView {
+    func setupSelectedBackground()  {
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor(named: .selectedHighLine)
         self.selectedBackgroundView = selectedView
         
         self.contentView.sendSubview(toBack: self.selectedBackgroundView!)
-        
-        return selectedView
     }
     
 }

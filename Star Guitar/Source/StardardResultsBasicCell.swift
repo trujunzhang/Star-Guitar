@@ -29,6 +29,14 @@ open class StandardResultsBasicActionCell: BasicCollectionCell {
 }
 
 public class StandardResultsBasicActionRow: Row, Equatable {
+    public func setSelectedRowAt(didSelect: Bool) {
+        
+    }
+    
+    public func setHighlightRowAt(didHighlight: Bool) {
+
+    }
+
     public func shouldHighlightRowAt() -> Bool {
         return true
     }

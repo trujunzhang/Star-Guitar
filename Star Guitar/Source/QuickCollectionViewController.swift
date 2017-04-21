@@ -138,9 +138,22 @@ open class QuickCollectionViewController: UIViewController,
         
         if let action = row.action{
             action(row)
-        }else{
-            collectionView.deselectItem(at: indexPath, animated: true)
         }
+        //else{
+            //collectionView.deselectItem(at: indexPath, animated: true)
+        //}
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        
     }
     
     public func getSelectedItems() ->[IndexPath]?{

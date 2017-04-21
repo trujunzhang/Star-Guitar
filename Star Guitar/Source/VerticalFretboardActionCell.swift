@@ -57,6 +57,14 @@ open class VerticalTuningsFretboardActionCell: UICollectionViewCell {
 
 
 public struct VerticalTuningsFretboardActionRow: Row, Equatable {
+    public func setSelectedRowAt(didSelect: Bool) {
+        
+    }
+    
+    public func setHighlightRowAt(didHighlight: Bool) {
+        
+    }
+    
     public func shouldHighlightRowAt() -> Bool {
         return true
     }

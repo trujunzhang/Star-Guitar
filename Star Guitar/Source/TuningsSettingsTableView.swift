@@ -88,6 +88,14 @@ open class TuningsActionCell: UITableViewCell {
 /// A struct that represents a row that triggers certain action when seleced.
 
 public struct TuningsActionRow: Row, Equatable {
+    public func setSelectedRowAt(didSelect: Bool) {
+        
+    }
+    
+    public func setHighlightRowAt(didHighlight: Bool) {
+        
+    }
+    
     public func shouldHighlightRowAt() -> Bool {
         return true
     }
