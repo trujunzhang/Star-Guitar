@@ -71,7 +71,7 @@ public protocol Row {
 
     func shouldHighlightRowAt() -> Bool
     
-    func setSelectedRowAt(isSelected: Bool)
+    func setSelectedRowAt(didSelect: Bool)
     func setHighlightRowAt(didHighlight: Bool)
 }
 
