@@ -71,8 +71,8 @@ public protocol Row {
 
     func shouldHighlightRowAt() -> Bool
     
-    func setSelectedRowAt(didSelect: Bool)
-    func setHighlightRowAt(didHighlight: Bool)
+    func setSelectedRowAt(_ cell:UICollectionViewCell, didSelect: Bool)
+    func setHighlightRowAt(_ cell:UICollectionViewCell, didHighlight: Bool)
 }
 
 extension Row {

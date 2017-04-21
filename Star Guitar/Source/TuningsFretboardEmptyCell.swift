@@ -43,11 +43,11 @@ open class TuningsFretboardEmptyCell: UICollectionViewCell {
 
 
 public struct TuningsFretboardEmptyRow: Row, Equatable {
-    public func setSelectedRowAt(didSelect: Bool) {
+    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
         
     }
     
-    public func setHighlightRowAt(didHighlight: Bool) {
+    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
         
     }
     

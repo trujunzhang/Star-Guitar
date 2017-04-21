@@ -11,17 +11,7 @@ import UIKit
 
 open class BasicCollectionCell: UICollectionViewCell {
     
-    override open var isHighlighted: Bool {
-        willSet { // make lightgray background show immediately(使灰背景立即出现)
-            self.setCellHighlighted(newValue ? true : false)
-        }
-    }
-    
-    override open var isSelected: Bool {
-        willSet { // keep lightGray background (保留灰背景)
-            self.setCellSelected(newValue ? true : false)
-        }
-    }
+
     
     func setCellHighlighted(_ newValue:Bool) {
         fatalError("Subclasses need to implement the `setCellHighlighted()` method.")

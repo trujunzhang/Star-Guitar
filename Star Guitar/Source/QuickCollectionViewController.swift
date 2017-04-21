@@ -136,8 +136,13 @@ open class QuickCollectionViewController: UIViewController,
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = tableContents[indexPath.section].rows[indexPath.row]
         
+        if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
+            row.setSelectedRowAt(cell, didSelect: true)
+        }
+        
+        
         if let action = row.action{
-            action(row)
+            //action(row)
         }
         //else{
             //collectionView.deselectItem(at: indexPath, animated: true)
@@ -146,14 +151,31 @@ open class QuickCollectionViewController: UIViewController,
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
+        if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
+            let row = tableContents[indexPath.section].rows[indexPath.row]
+            
+            row.setSelectedRowAt(cell, didSelect: false)
+        }
+        
+        
     }
     
     public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        
+        if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
+            let row = tableContents[indexPath.section].rows[indexPath.row]
+            
+            row.setHighlightRowAt(cell, didHighlight: true)
+        }
+
+
     }
     
     public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        
+        if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
+            let row = tableContents[indexPath.section].rows[indexPath.row]
+            
+            row.setHighlightRowAt(cell, didHighlight: false)
+        }
     }
     
     public func getSelectedItems() ->[IndexPath]?{

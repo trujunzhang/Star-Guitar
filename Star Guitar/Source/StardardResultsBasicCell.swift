@@ -18,23 +18,27 @@ open class StandardResultsBasicActionCell: BasicCollectionCell {
     let backRowView = UIView()
     
     override func setCellHighlighted(_ newValue:Bool) {
-        backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .tableRowBG)
+        //backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine) : UIColor(named: .tableRowBG)
     }
     
     override func setCellSelected(_ newValue:Bool) {
-        backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .tableRowBG)
+        //backRowView.backgroundColor = newValue ? UIColor(named: .selectedHighLine): UIColor(named: .tableRowBG)
     }
     
 
 }
 
 public class StandardResultsBasicActionRow: Row, Equatable {
-    public func setSelectedRowAt(didSelect: Bool) {
-        
+    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
+        if let cell = (viewCell as? StandardResultsBasicActionCell){
+            cell.backRowView.backgroundColor = didSelect ? .red : UIColor(named: .tableRowBG)
+        }
     }
     
-    public func setHighlightRowAt(didHighlight: Bool) {
-
+    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
+        if let cell = (viewCell as? StandardResultsBasicActionCell){
+            cell.backRowView.backgroundColor = didHighlight ? .blue : UIColor(named: .tableRowBG)
+        }
     }
 
     public func shouldHighlightRowAt() -> Bool {

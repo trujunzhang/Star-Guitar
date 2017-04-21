@@ -54,7 +54,7 @@ open class OneColumnActionCell: UITableViewCell {
         textLabel?.font = UIFont.oneColumnFont()
         textLabel?.textAlignment = .center
         textLabel?.textColor = .black
-
+        
         contentView.addSubview(sharpLabel)
         sharpLabel.font = UIFont.oneColumnSharpFont()
         sharpLabel.textColor = .black
@@ -68,11 +68,11 @@ open class OneColumnActionCell: UITableViewCell {
 
 
 public struct OneColumnActionRow: Row, Equatable {
-    public func setSelectedRowAt(didSelect: Bool) {
+    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
         
     }
 
-    public func setHighlightRowAt(didHighlight: Bool) {
+    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
         
     }
     
