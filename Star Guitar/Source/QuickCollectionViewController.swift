@@ -40,11 +40,7 @@ open class QuickCollectionViewController: UIViewController,
     public private(set) var collectionView: UICollectionView?
 
     /// The layout of sections and rows to display in the table view.
-    public var tableContents: [Section] = [] {
-        didSet {
-            collectionView?.reloadData()
-        }
-    }
+    public var tableContents: [Section] = [Section]()
     
     public func deselectAllCells(){
         for indexPath in self.collectionView?.indexPathsForSelectedItems ?? [] {
