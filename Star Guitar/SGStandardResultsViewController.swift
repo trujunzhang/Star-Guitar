@@ -20,13 +20,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         
         layout.itemSize = CGSize(width: StandResultsColumnSchema.itemWidth(), height: StandResultsColumnSchema.itemHeight()) // cell的寬、高
         
-        collectionView.register(StandardResultsActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsActionCell.self))
         collectionView.register(StandardResultsSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsSharpActionCell.self))
-        
-        
-        collectionView.register(StandardResultsNoHighActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsNoHighActionCell.self))
-        collectionView.register(StandardResultsNoHighSharpActionCell.self, forCellWithReuseIdentifier: String(describing: StandardResultsNoHighSharpActionCell.self))
-        
     }
     
     // 6X5
@@ -79,11 +73,11 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         
         var newRow = [Row]()
         for row in tableContents[2].rows{
-            if let currentRow = row as? StandardResultsBasicActionRow{
-                if let item = currentRow.item{
-                    item.canHighlight = canMiddleHighLight
-                    newRow.append(self.getStandardResultsActionRow(item))
-                }
+            if let currentRow = row as? StandardResultsSharpActionRow{
+                //if let item = currentRow.item{
+                    //item.canHighlight = canMiddleHighLight
+                    //newRow.append(self.getStandardResultsActionRow(item))
+                //}
             }
         }
         
@@ -94,10 +88,10 @@ class SGStandardResultsViewController: QuickCollectionViewController {
         if let _collectionView = self.collectionView {
             
             _collectionView.performBatchUpdates({
-                _collectionView.reloadSections(IndexSet(integer: 2))
+                //_collectionView.reloadSections(IndexSet(integer: 2))
             }, completion: { (completed) in
                 if let resultItem = tuningsStandardSettingsUtils.currentStandardResultItem{
-                    _collectionView.selectItem(at: resultItem.indexPath, animated: false, scrollPosition: .top)
+                    //_collectionView.selectItem(at: resultItem.indexPath, animated: false, scrollPosition: .top)
                 }
             })
 

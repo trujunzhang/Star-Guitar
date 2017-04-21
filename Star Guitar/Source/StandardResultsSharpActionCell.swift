@@ -10,24 +10,12 @@
 import Foundation
 import UIKit
 
-open class StandardResultsNoHighSharpActionCell: StandardResultsSharpActionCell {
-    override func setCellHighlighted(_ newValue:Bool) {
-        // No Highlighted
-    }
-    
-    override func setCellSelected(_ newValue:Bool) {
-        // No Selection
-    }
-    
-}
 
-public class StandardResultsNoHighSharpActionRow: StandardResultsSharpActionRow {
+open class StandardResultsSharpActionCell: BasicCollectionCell {
+    public let letterLabel = UILabel()
+    public let numberLabel = UILabel()
     
-    /// The value is **StandardResultsActionCell**, as the reuse identifier of the table view cell to display the row.
-    public override var cellReuseIdentifier: String { return  String(describing: StandardResultsNoHighSharpActionCell.self)}
-}
-
-open class StandardResultsSharpActionCell: StandardResultsActionCell {
+    let backRowView = UIView()
     
     public let sharpLabel = UILabel()
     
@@ -46,21 +34,21 @@ open class StandardResultsSharpActionCell: StandardResultsActionCell {
         letterLabel.font = UIFont.letterFont()
         letterLabel.textColor = .black
         letterLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(-16)
+            make.centerX.equalToSuperview().offset(-10)
             make.centerY.equalToSuperview()
         }
         
         sharpLabel.font = UIFont.letterSharpFont()
         sharpLabel.textColor = .black
         sharpLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview()
+            make.centerX.equalToSuperview().offset(4)
             make.centerY.equalToSuperview().offset(-12)
         }
         
         numberLabel.font = UIFont.letterFont()
         numberLabel.textColor = .black
         numberLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalToSuperview().offset(16)
+            make.centerX.equalToSuperview().offset(10)
             make.centerY.equalToSuperview()
         }
         
@@ -77,17 +65,67 @@ open class StandardResultsSharpActionCell: StandardResultsActionCell {
 }
 
 
-public class StandardResultsSharpActionRow: StandardResultsBasicActionRow {
+public struct StandardResultsSharpActionRow:  Row, Equatable {
+    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
+        if let cell = (viewCell as? StandardResultsSharpActionCell){
+            cell.backRowView.backgroundColor = didSelect ? .red : UIColor(named: .tableRowBG)
+        }
+    }
+    
+    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
+        if let cell = (viewCell as? StandardResultsSharpActionCell){
+            cell.backRowView.backgroundColor = didHighlight ? .blue : UIColor(named: .tableRowBG)
+        }
+    }
+    
+    public func shouldHighlightRowAt() -> Bool {
+        return true
+    }
+    
+    public func getRowHeight(indexPath: IndexPath) -> CGFloat {
+        return -1
+    }
+    
+    public var item:StandardResultItem? = nil
+    
+    /// The title text of the row.
+    public var title: String = ""
+    
+    /// Subtitle is disabled in TapActionRow.
+    public let subtitle: Subtitle? = nil
     
     /// The value is **StandardResultsActionCell**, as the reuse identifier of the table view cell to display the row.
-    public override var cellReuseIdentifier: String { return  String(describing: StandardResultsSharpActionCell.self)}
     
-    public override func render(viewCell: UIView) {
-        let cell = (viewCell as? StandardResultsSharpActionCell)
+    public let cellReuseIdentifier: String = String(describing: StandardResultsSharpActionCell.self)
+    
+    /// A closure as the tap action when the row is selected.
+    public var action: ((Row) -> Void)?
+    
+    ///
+    public init(item:StandardResultItem, action: ((Row) -> Void)?) {
+        self.item = item
+        self.action = action
+    }
+    
+    private init() {
+    }
+    
+    public  func render(viewCell: UIView) {
+        if let cell = (viewCell as? StandardResultsSharpActionCell){
+            if let _item = self.item{
+                
+                cell.letterLabel.text = self.item?.letter
+                cell.sharpLabel.text = ""
+                if(_item.haveSharp){
+                    cell.sharpLabel.text = "#"
+                }
+                cell.numberLabel.text = self.item?.number
+                
+            }
+            
+        }
         
-        cell?.letterLabel.text = self.item?.letter
-        cell?.sharpLabel.text = "#"
-        cell?.numberLabel.text = self.item?.number
+       
     }
     
     

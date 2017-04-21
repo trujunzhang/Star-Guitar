@@ -77,7 +77,7 @@ extension UIFont {
     }
     
     static func letterSharpFont() -> UIFont {
-        let fontSize = 20 + SGScreenLayout.sharedInstance.deviceIndex * 4
+        let fontSize = 18 + SGScreenLayout.sharedInstance.deviceIndex * 4
         return UIFont(font: FontFamily.ErasDemiITC.regular, size: UIFont.adustFontSize(fontSize))
     }
     

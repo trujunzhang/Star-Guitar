@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5E0012711EA97C240007F24D /* SGStandardTuningsResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0012701EA97C240007F24D /* SGStandardTuningsResultItem.swift */; };
 		5E04A58B1E89DFBA00238BB4 /* SGStandardResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */; };
-		5E04A58D1E89E03900238BB4 /* StardardResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A58C1E89E03800238BB4 /* StardardResultsCell.swift */; };
 		5E04A5911E89ED1D00238BB4 /* TuningsTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */; };
 		5E180B4B1E93344E00237530 /* TwoColumnTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */; };
 		5E25253E1E8922DD007E660E /* SGOneColumnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */; };
@@ -88,7 +87,6 @@
 		5ED0CB8C1E898BA000B4E604 /* TuningsEventCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */; };
 		5ED3F8811E94BC4F006B845D /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3F8801E94BC4F006B845D /* UITableViewCellExtensions.swift */; };
 		5ED3F8831E94BD73006B845D /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */; };
-		5EDBFED71EA6F65F005FB81F /* StardardResultsBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBFED61EA6F65F005FB81F /* StardardResultsBasicCell.swift */; };
 		5EDBFED91EA6F9B1005FB81F /* BasicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBFED81EA6F9B1005FB81F /* BasicCollectionCell.swift */; };
 		5EDBFEDB1EA6FCF0005FB81F /* SGStandardResultsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBFEDA1EA6FCF0005FB81F /* SGStandardResultsViewControllerExtension.swift */; };
 		5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */; };
@@ -141,7 +139,6 @@
 		55D7B8AAA9F7FFBCB92FCE1C /* Pods-Star GuitarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star GuitarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star GuitarTests/Pods-Star GuitarTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E0012701EA97C240007F24D /* SGStandardTuningsResultItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStandardTuningsResultItem.swift; sourceTree = "<group>"; };
 		5E04A58A1E89DFBA00238BB4 /* SGStandardResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStandardResultsViewController.swift; sourceTree = "<group>"; };
-		5E04A58C1E89E03800238BB4 /* StardardResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardardResultsCell.swift; sourceTree = "<group>"; };
 		5E04A5901E89ED1D00238BB4 /* TuningsTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsTypes.swift; sourceTree = "<group>"; };
 		5E180B4A1E93344E00237530 /* TwoColumnTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoColumnTableView.swift; sourceTree = "<group>"; };
 		5E25253D1E8922DD007E660E /* SGOneColumnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGOneColumnViewController.swift; sourceTree = "<group>"; };
@@ -226,7 +223,6 @@
 		5ED0CB8B1E898BA000B4E604 /* TuningsEventCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuningsEventCollectionView.swift; sourceTree = "<group>"; };
 		5ED3F8801E94BC4F006B845D /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		5ED3F8821E94BD73006B845D /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
-		5EDBFED61EA6F65F005FB81F /* StardardResultsBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardardResultsBasicCell.swift; sourceTree = "<group>"; };
 		5EDBFED81EA6F9B1005FB81F /* BasicCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionCell.swift; sourceTree = "<group>"; };
 		5EDBFEDA1EA6FCF0005FB81F /* SGStandardResultsViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGStandardResultsViewControllerExtension.swift; sourceTree = "<group>"; };
 		5EDFBD621E85F12200C91F26 /* SGGuitarTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGGuitarTypesViewController.swift; sourceTree = "<group>"; };
@@ -522,9 +518,7 @@
 		5EDBFED51EA6F636005FB81F /* StardardResults */ = {
 			isa = PBXGroup;
 			children = (
-				5E04A58C1E89E03800238BB4 /* StardardResultsCell.swift */,
 				5EEDA1BF1E93296B0012DCFB /* StandardResultsSharpActionCell.swift */,
-				5EDBFED61EA6F65F005FB81F /* StardardResultsBasicCell.swift */,
 			);
 			name = StardardResults;
 			sourceTree = "<group>";
@@ -928,7 +922,6 @@
 				5EDFBD631E85F12200C91F26 /* SGGuitarTypesViewController.swift in Sources */,
 				5E40D8F01E85F83200588AB6 /* SGScreenLayout.swift in Sources */,
 				5E45A8941E97C54300552A94 /* SGTuningsBaseSettings.swift in Sources */,
-				5EDBFED71EA6F65F005FB81F /* StardardResultsBasicCell.swift in Sources */,
 				5E5F6D651E86553300B8D5DA /* SGEffectViewController.swift in Sources */,
 				5E45A88E1E97BF5500552A94 /* SGTuningsCustomViewControllerExtension.swift in Sources */,
 				5EB1350A1E897B6400DA6F6E /* SGTuningsEventViewController.swift in Sources */,
@@ -970,7 +963,6 @@
 				5EBEFB4C1E8E9EBF00EB2851 /* SGTwoChordColumnViewController.swift in Sources */,
 				5EE3EA7C1EA5742500BD3B66 /* GuitarConfigureAsync.swift in Sources */,
 				5E763FBC1EA34B21002B371A /* HorizonFretboardActionCell.swift in Sources */,
-				5E04A58D1E89E03900238BB4 /* StardardResultsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
