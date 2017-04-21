@@ -58,9 +58,7 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     
     public func updateCell(item:StandardResultItem){
         if let indexPath = item.indexPath{
-            let section = indexPath.section
-            let rowIndex = indexPath.row
-            tableContents[section].rows[rowIndex] = self.getStandardResultsActionRow(item)
+            tableContents[indexPath.section].rows[indexPath.row] = self.getStandardResultsActionRow(item)
             
             self.collectionView?.reloadItems(at: [indexPath])
         }

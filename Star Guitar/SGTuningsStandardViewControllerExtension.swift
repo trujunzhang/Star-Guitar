@@ -67,12 +67,15 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
 extension SGTuningsStandardViewController: OneColumnProviderProtocol{
     
     func toggleOneColumnLetter(_ sender: Row) {
-        let row = sender as! OneColumnActionRow
+        if let row = sender as? OneColumnActionRow{
+            if let  item = row.item{
         
-        let letterIndex = (row.item?.type.rawValue)!
-        tuningsStandardSettingsUtils.updateOneColumnLetter(letterIndex)
-        
-        self.updateSelectedNoteCell()
+                let letterIndex = item.type.rawValue
+                tuningsStandardSettingsUtils.updateOneColumnLetter(letterIndex)
+                
+                self.updateSelectedNoteCell()
+            }
+        }
     }
     
 }
@@ -99,7 +102,7 @@ extension SGTuningsStandardViewController: TuningsTypeProviderProtocol{
         //let type = tuningsStandardSettingsUtils.currentStandardTuningsType
         
         // Step2: Reload the Standard Results Grid.
-        standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
+        //standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
     }
     
 }
