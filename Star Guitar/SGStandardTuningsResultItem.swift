@@ -22,11 +22,15 @@ public class StandardResultItem {
     var indexPath: IndexPath?
     
     init(indexPath: IndexPath){
+        self.indexPath = indexPath
+        
         self.canClick = true
         self.canHighlight = true
     }
     
     init(indexPath: IndexPath,letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String,canHighlight:Bool) {
+        self.indexPath = indexPath
+        
         self.letterIndex = letterIndex
         self.numberIndex = numberIndex
         

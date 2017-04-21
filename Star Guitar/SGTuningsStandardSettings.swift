@@ -80,7 +80,7 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     
     var currentStandardTuningsType: Int = TuningsStandardType.Stardand.rawValue
     
-    public func toggleCurrentStandardResultItem(_ item: StandardResultItem) {
+    public func setCurrentStandardResultItem(_ item: StandardResultItem) {
          self.currentStandardResultItem = item
     }
     

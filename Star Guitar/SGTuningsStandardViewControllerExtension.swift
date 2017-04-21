@@ -42,7 +42,7 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
         twoColumnViewController.updateCell(rowIndex: numberIndex)
 
         // Step3: Save the selected Result item.
-        tuningsStandardSettingsUtils.toggleCurrentStandardResultItem(item)
+        tuningsStandardSettingsUtils.setCurrentStandardResultItem(item)
         
 
         if let selectedItems = tuningsTypeViewController.getSelectedItems(){
@@ -57,16 +57,10 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
                 
                 
                 // Step6: Check and update the result's middle section's highlighter.
-                standardResultsViewController.updateMiddleSectionHighLighter(tuningsStandardSettingsUtils)
+                //standardResultsViewController.updateMiddleSectionHighLighter(tuningsStandardSettingsUtils)
             }
         }
-
-        
-       
-        
-        
     }
-    
 }
 
 

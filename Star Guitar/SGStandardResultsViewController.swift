@@ -57,31 +57,18 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     }
     
     public func updateCell(item:StandardResultItem){
-        if let selectedItems = self.collectionView?.indexPathsForSelectedItems{
-            if selectedItems.count == 1{
-                let indexPath = selectedItems[0]
-                let section = indexPath.section
-                let rowIndex = indexPath.row
-                tableContents[section].rows[rowIndex] = self.getStandardResultsActionRow(item)
-                self.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: .top)
-            }
+        if let indexPath = item.indexPath{
+            let section = indexPath.section
+            let rowIndex = indexPath.row
+            tableContents[section].rows[rowIndex] = self.getStandardResultsActionRow(item)
+            
+            self.collectionView?.reloadItems(at: [indexPath])
         }
     }
     
     public func updateMiddleSectionHighLighter(_ tuningsStandardSettingsUtils:TuningsStandardSettingsUtils){
-        let currentStandardTuningsType:Int = tuningsStandardSettingsUtils.currentStandardTuningsType
+        //let currentStandardTuningsType:Int = tuningsStandardSettingsUtils.currentStandardTuningsType
         
-        let canMiddleHighLight = TuningsStandardType.canMiddleHighLight(currentStandardTuningsType)
-        
-        var newRow = [Row]()
-        for row in tableContents[2].rows{
-            if let currentRow = row as? StandardResultsSharpActionRow{
-                //if let item = currentRow.item{
-                    //item.canHighlight = canMiddleHighLight
-                    //newRow.append(self.getStandardResultsActionRow(item))
-                //}
-            }
-        }
     }
     
     
