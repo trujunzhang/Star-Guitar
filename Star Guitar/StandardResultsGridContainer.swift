@@ -17,7 +17,7 @@
         weak var delegate : StandardResultsGridProviderProtocol?
         
         private var selectedRow:StandardResultsSharpActionRow?
-        private var sections = [Section]()
+        private var tableContents = [Section]()
         
         private var cells = [[UIView]]()
         
@@ -33,7 +33,7 @@
                 for item in cellsRow{
                     rows.append(self.getStandardResultsActionRow(item))
                 }
-                sections.append(Section(title: nil, rows: rows))
+                tableContents.append(Section(title: nil, rows: rows))
             }
             
         }
@@ -42,7 +42,7 @@
             self.cells = [[UIView]]()
             var step = 0
             
-            for section in self.sections{
+            for section in self.tableContents{
                 var sectionCells = [UIView]()
                 for row in section.rows{
                     let cell = StandardResultsSharpActionCell()
@@ -84,7 +84,7 @@
                     }
                 }
                 
-                if let currentRow = self.sections[section].rows[row] as? StandardResultsSharpActionRow{
+                if let currentRow = self.tableContents[section].rows[row] as? StandardResultsSharpActionRow{
                     currentRow.setSelectedRowAt(self.cells[section][row],didSelect: true)
                     
                     self.selectedRow = currentRow
@@ -113,13 +113,25 @@
         }
         
         public func getStandardResultsActionRow(_ item:StandardResultItem) ->Row{
-            return StandardResultsSharpActionRow(item: item, action: toggleNote)
+            return StandardResultsSharpActionRow(item: item, action: nil)
         }
         
-        public func toggleNote(_ sender: Row) {
-            //if let _row = sender as? StandardResultsSharpActionRow{
-            //            delegate?.toggleCell(_row.item!)
-            //        }
+        public func updateCell(item:StandardResultItem){
+            if let indexPath = item.indexPath{
+                if var actionRow = tableContents[indexPath.section].rows[indexPath.row] as? StandardResultsSharpActionRow{
+                    
+                    actionRow.setItem(item)
+
+                    self.reloadItem(at: indexPath)
+                }
+            }
+        }
+        
+        private func reloadItem(at indexPath:IndexPath){
+             if let updatedRow = self.tableContents[indexPath.section].rows[indexPath.row] as? StandardResultsSharpActionRow{
+                let updatedCell = self.cells[indexPath.section][indexPath.row]
+                updatedRow.render(viewCell: updatedCell)
+            }
         }
         
         
