@@ -129,11 +129,6 @@ extension QuickCollectionViewController: UICollectionViewDataSource{
         //print("collection's select: \(isSelect)")
         //print("")
         
-        if let standardResultRow = row as? StandardResultsSharpActionRow{
-            if(standardResultRow.item?.didSelect)!{
-                collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
-            }
-        }
         
         row.render(viewCell: cell)
         

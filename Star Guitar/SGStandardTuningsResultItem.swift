@@ -18,8 +18,6 @@ public class StandardResultItem {
     
     var canClick = false
     
-    public var didSelect = false
-    
     var indexPath: IndexPath?
     
     init(indexPath: IndexPath){

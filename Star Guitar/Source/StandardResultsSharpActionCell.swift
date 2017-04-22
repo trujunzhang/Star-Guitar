@@ -85,7 +85,6 @@ open class StandardResultsSharpActionCell: UIView {
 
 public struct StandardResultsSharpActionRow:  Row, Equatable {
     public func setSelectedRowAt(_ viewCell:UIView, didSelect: Bool) {
-        self.item?.didSelect = didSelect
             (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didSelect ? UIColor(named: .selectedHighLine) : UIColor(named: .tableRowBG)
     }
     
