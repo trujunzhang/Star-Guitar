@@ -14,6 +14,7 @@
     }
     
     class StandardResultsGridContainer: UIView{
+        weak var delegate : StandardResultsGridProviderProtocol?
         
         private var selectedRow:StandardResultsSharpActionRow?
         private var sections = [Section]()
@@ -87,6 +88,10 @@
                     currentRow.setSelectedRowAt(self.cells[section][row],didSelect: true)
                     
                     self.selectedRow = currentRow
+                    
+                    if let item = currentRow.item{
+                        delegate?.toggleCell(item)
+                    }
                 }
             }
         }

@@ -20,7 +20,7 @@ extension SGTuningsStandardViewController{
     
 }
 
-extension SGTuningsStandardViewController{
+extension SGTuningsStandardViewController : StandardResultsGridProviderProtocol{
     
     /**
      * (2017-04-19)

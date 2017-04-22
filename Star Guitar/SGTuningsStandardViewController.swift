@@ -36,8 +36,8 @@ class SGTuningsStandardViewController: UIViewController {
         tuningsTypeViewController.delegate = self
         tuningsEventViewController.delegate = self
         
+        tuningsResultContainer.delegate = self
         tuningsResultContainer.generateResultsRows(tuningsStandardSettingsUtils)
-        
         tuningsResultContainer.reloadData()
 
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
