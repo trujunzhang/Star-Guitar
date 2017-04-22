@@ -15,12 +15,12 @@ extension SGTuningsStandardViewController{
     func updateSelectedNoteCell() {
         let item = tuningsStandardSettingsUtils.getCurrentStandardResultItem()
         
-        standardResultsViewController.updateCell(item: item)
+        //standardResultsViewController.updateCell(item: item)
     }
     
 }
 
-extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
+extension SGTuningsStandardViewController{
     
     /**
      * (2017-04-19)

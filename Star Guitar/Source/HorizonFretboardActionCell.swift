@@ -58,11 +58,11 @@ open class HorizonTuningsFretboardActionCell: UICollectionViewCell {
 
 
 public struct HorizonTuningsFretboardActionRow: Row, Equatable {
-    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
+    public func setSelectedRowAt(_ viewCell:UIView, didSelect: Bool) {
 
     }
     
-    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
+    public func setHighlightRowAt(_ viewCell:UIView, didHighlight: Bool) {
 
     }
     

@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 
-open class StandardResultsSharpActionCell: UICollectionViewCell {
+open class StandardResultsSharpActionCell: UIView {
     public let letterLabel = UILabel()
     public let numberLabel = UILabel()
     
@@ -24,7 +24,6 @@ open class StandardResultsSharpActionCell: UICollectionViewCell {
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpAppearance()
     }
     
     /**
@@ -36,13 +35,13 @@ open class StandardResultsSharpActionCell: UICollectionViewCell {
      */
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setUpAppearance()
     }
-    
-    
-    func setUpAppearance() {
+
+    public func setUpAppearance() {
         backgroundColor = .clear
         //backgroundColor = UIColor(named: .tableRowBG)
+        
+        let contentView = self
         
         contentView.addSubview(letterLabel)
         contentView.addSubview(sharpLabel)
@@ -85,17 +84,13 @@ open class StandardResultsSharpActionCell: UICollectionViewCell {
 
 
 public struct StandardResultsSharpActionRow:  Row, Equatable {
-    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
+    public func setSelectedRowAt(_ viewCell:UIView, didSelect: Bool) {
         self.item?.didSelect = didSelect
-        if let cell = (viewCell as? StandardResultsSharpActionCell){
-            cell.backRowView.backgroundColor = didSelect ? .red : UIColor(named: .tableRowBG)
-        }
+            (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didSelect ? .red : UIColor(named: .tableRowBG)
     }
     
-    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
-        if let cell = (viewCell as? StandardResultsSharpActionCell){
-            cell.backRowView.backgroundColor = didHighlight ? .blue : UIColor(named: .tableRowBG)
-        }
+    public func setHighlightRowAt(_ viewCell:UIView, didHighlight: Bool) {
+            (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didHighlight ? .blue : UIColor(named: .tableRowBG)
     }
     
     public func shouldHighlightRowAt() -> Bool {
@@ -134,7 +129,7 @@ public struct StandardResultsSharpActionRow:  Row, Equatable {
     private init() {
     }
     
-    public  func render(viewCell: UIView) {
+    public func render(viewCell: UIView) {
         if let cell = (viewCell as? StandardResultsSharpActionCell){
             if let _item = self.item{
                 

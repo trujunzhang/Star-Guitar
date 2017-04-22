@@ -297,13 +297,6 @@
                                             <segue destination="LDY-la-6P1" kind="embed" identifier="typesContainer" id="nCM-gl-TAG"/>
                                         </connections>
                                     </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ey-C8-v0l">
-                                        <rect key="frame" x="486" y="20" width="404" height="404"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                        <connections>
-                                            <segue destination="7gU-ta-piI" kind="embed" identifier="standardResultContainer" id="dw1-Qv-Cws"/>
-                                        </connections>
-                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXi-XF-WL6">
                                         <rect key="frame" x="486" y="592" width="493" height="71"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -311,6 +304,11 @@
                                             <segue destination="T86-3z-0jY" kind="embed" identifier="eventsContainer" id="bMz-Sy-Vwk"/>
                                         </connections>
                                     </containerView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dY-YH-BMF" customClass="StandardResultsGridContainer" customModule="Star_Guitar" customModuleProvider="target">
+                                        <rect key="frame" x="513" y="146" width="323" height="225"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </view>
                         </subviews>
@@ -328,7 +326,7 @@
                     <connections>
                         <outlet property="eventsContainer" destination="gXi-XF-WL6" id="yr1-mK-RQl"/>
                         <outlet property="oneColumnContainer" destination="0us-Cc-Mu1" id="F1s-zg-4cb"/>
-                        <outlet property="tuningsResultContainer" destination="3ey-C8-v0l" id="t5m-hL-diM"/>
+                        <outlet property="tuningsResultContainer" destination="8dY-YH-BMF" id="jch-Ig-bLC"/>
                         <outlet property="tuningsTypesContainer" destination="fR7-GL-jLa" id="PjY-PO-F8t"/>
                         <outlet property="twoColumnContainer" destination="eGx-WO-57v" id="Q6y-BT-jP4"/>
                     </connections>
@@ -706,30 +704,13 @@
                         <viewControllerLayoutGuide type="bottom" id="INM-yo-hV2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BOb-B4-pj2">
-                        <rect key="frame" x="0.0" y="0.0" width="486" height="71"/>
+                        <rect key="frame" x="0.0" y="0.0" width="493" height="71"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSx-J6-O6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="-2418"/>
-        </scene>
-        <!--Standard Results View Controller-->
-        <scene sceneID="VUK-6a-dSM">
-            <objects>
-                <viewController id="7gU-ta-piI" customClass="SGStandardResultsViewController" customModule="Star_Guitar" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y1t-lE-pVZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="VkK-Rh-nk8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Yng-CH-nVv">
-                        <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dtX-L8-TiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="720" y="-4495"/>
         </scene>
         <!--Tunings Custom View Controller-->
         <scene sceneID="0AL-Jy-OxV">
@@ -969,11 +950,11 @@
         <image name="muteSelected" width="38" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="50A-81-dxo"/>
-        <segue reference="1Xg-Ew-c00"/>
-        <segue reference="ct1-Gu-d0b"/>
+        <segue reference="Nx6-BO-F9s"/>
+        <segue reference="FND-d6-ff7"/>
+        <segue reference="S0d-Dx-XmK"/>
+        <segue reference="bMz-Sy-Vwk"/>
         <segue reference="8It-5U-mgF"/>
-        <segue reference="rd8-Il-Unn"/>
-        <segue reference="rdS-U1-l5E"/>
+        <segue reference="ct1-Gu-d0b"/>
     </inferredMetricsTieBreakers>
 </document>

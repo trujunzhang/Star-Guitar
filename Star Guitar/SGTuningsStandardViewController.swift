@@ -16,12 +16,11 @@ class SGTuningsStandardViewController: UIViewController {
     @IBOutlet weak var twoColumnContainer: UIView!
     @IBOutlet weak var tuningsTypesContainer: UIView!
     @IBOutlet weak var eventsContainer: UIView!
-    @IBOutlet weak var tuningsResultContainer: UIView!
+    @IBOutlet weak var tuningsResultContainer: StandardResultsGridContainer!
     
     var oneColumnViewController: SGOneColumnViewController!
     var twoColumnViewController: SGTwoColumnViewController!
     var tuningsTypeViewController: SGTuningsTypeViewController!
-    var standardResultsViewController: SGStandardResultsViewController!
     var tuningsEventViewController: SGTuningsEventViewController!
     
     var tuningsStandardSettingsUtils = TuningsStandardSettingsUtils()
@@ -37,8 +36,9 @@ class SGTuningsStandardViewController: UIViewController {
         tuningsTypeViewController.delegate = self
         tuningsEventViewController.delegate = self
         
-        standardResultsViewController.delegate = self
-        standardResultsViewController.generateResultsRows(tuningsStandardSettingsUtils)
+        tuningsResultContainer.generateResultsRows(tuningsStandardSettingsUtils)
+        
+        tuningsResultContainer.reloadData()
 
         OneColumnLayout(self.view).layoutContainer(self.view, forColumnView: oneColumnContainer)
         TwoColumnLayout(self.view).layoutContainer(oneColumnContainer, forColumnView: twoColumnContainer)
@@ -74,9 +74,6 @@ class SGTuningsStandardViewController: UIViewController {
         }
         else if (segue.identifier == "typesContainer") {
             self.tuningsTypeViewController = segue.destination as! SGTuningsTypeViewController
-        }
-        else if (segue.identifier == "standardResultContainer") {
-            self.standardResultsViewController = segue.destination as! SGStandardResultsViewController
         }
         else if (segue.identifier == "eventsContainer") {
             self.tuningsEventViewController = segue.destination as! SGTuningsEventViewController

@@ -57,11 +57,11 @@ open class VerticalTuningsFretboardActionCell: UICollectionViewCell {
 
 
 public struct VerticalTuningsFretboardActionRow: Row, Equatable {
-    public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
+    public func setSelectedRowAt(_ viewCell:UIView, didSelect: Bool) {
         
     }
     
-    public func setHighlightRowAt(_ viewCell:UICollectionViewCell, didHighlight: Bool) {
+    public func setHighlightRowAt(_ viewCell:UIView, didHighlight: Bool) {
         
     }
     

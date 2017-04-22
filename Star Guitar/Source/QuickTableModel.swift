@@ -35,7 +35,7 @@ public struct Section {
     public var title: String?
 
     /// The array of rows in the section.
-    public var rows: [Row]
+    public var rows: [Row] = [Row]()
 
     /// The text of the section footer.
     public var footer: String?
@@ -71,8 +71,8 @@ public protocol Row {
 
     func shouldHighlightRowAt() -> Bool
     
-    func setSelectedRowAt(_ cell:UICollectionViewCell, didSelect: Bool)
-    func setHighlightRowAt(_ cell:UICollectionViewCell, didHighlight: Bool)
+    func setSelectedRowAt(_ cell:UIView, didSelect: Bool)
+    func setHighlightRowAt(_ cell:UIView, didHighlight: Bool)
 }
 
 extension Row {
