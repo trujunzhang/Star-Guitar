@@ -17,7 +17,6 @@ public class StandardResultItem {
     var numberIndex = -1
     
     var canClick = false
-    var canHighlight = true
     
     public var didSelect = false
     
@@ -27,10 +26,9 @@ public class StandardResultItem {
         self.indexPath = indexPath
         
         self.canClick = true
-        self.canHighlight = true
     }
     
-    init(indexPath: IndexPath,letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String,canHighlight:Bool) {
+    init(indexPath: IndexPath,letterIndex:Int,numberIndex :Int,oneColumnLetterItem: OneColumnLetterItem,number: String) {
         self.indexPath = indexPath
         
         self.letterIndex = letterIndex
@@ -39,8 +37,6 @@ public class StandardResultItem {
         self.letter = oneColumnLetterItem.letter
         self.haveSharp = oneColumnLetterItem.haveSharp
         self.number = number
-        
-        self.canHighlight = canHighlight
     }
     
     func copy(_ newItem:StandardResultItem) {
@@ -54,7 +50,6 @@ public class StandardResultItem {
         self.number = newItem.number
         
         self.canClick = newItem.canClick
-        self.canHighlight = newItem.canHighlight
     }
     
     func isOpenC() -> Bool {
