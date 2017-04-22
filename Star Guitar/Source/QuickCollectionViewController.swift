@@ -125,9 +125,9 @@ extension QuickCollectionViewController: UICollectionViewDataSource{
         
         let isSelect = cell.isSelected
         
-        print("")
-        print("collection's select: \(isSelect)")
-        print("")
+        //print("")
+        //print("collection's select: \(isSelect)")
+        //print("")
         
         if let standardResultRow = row as? StandardResultsSharpActionRow{
             if(standardResultRow.item?.didSelect)!{
