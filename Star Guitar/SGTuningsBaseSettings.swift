@@ -166,15 +166,31 @@ class TuningsBaseSettingsUtils: AnyObject {
     init() {
     }
     
-    public func updateOneColumnLetter(_ letterIndex:Int){
+    public func updateOneColumnLetter(_ letterIndex:Int) -> Bool{
+        var needUpdate = true
+        
         let oneColumns:[OneColumnLetterItem] = OneColumnLetterType.getOneColumnLetterItems()
         let oneColumnLetterItem = oneColumns[letterIndex]
         
-        currentStandardResultItem?.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
+        if let resultItem = currentStandardResultItem{
+            needUpdate = resultItem.letterIndex != letterIndex
+            resultItem.updateLetter ( letterIndex: letterIndex, oneColumnLetterItem: oneColumnLetterItem)
+        }
+        
+        return needUpdate
     }
     
-    public func updateTwoColumnNumber(_ number:String){
-        currentStandardResultItem?.updateNumber(number: number)
+    public func updateTwoColumnNumber(_ number:String) -> Bool{
+        var needUpdate = true
+
+        let numberIndex = TwoColumnNumberType.getTypeIndex(number)
+        
+        if let resultItem = currentStandardResultItem{
+            needUpdate = resultItem.numberIndex != numberIndex
+            resultItem.updateNumber(numberIndex, number)
+        }
+        
+        return needUpdate
     }
 }
 

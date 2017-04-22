@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 
-open class StandardResultsSharpActionCell: BasicCollectionCell {
+open class StandardResultsSharpActionCell: UICollectionViewCell {
     public let letterLabel = UILabel()
     public let numberLabel = UILabel()
     
@@ -21,7 +21,26 @@ open class StandardResultsSharpActionCell: BasicCollectionCell {
     
     // MARK: Private Methods
     
-    override func setUpAppearance() {
+    // MARK: Initializer
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpAppearance()
+    }
+    
+    /**
+     Overrides the designated initializer that returns an object initialized from data in a given unarchiver.
+     
+     - parameter aDecoder: An unarchiver object.
+     
+     - returns: `self`, initialized using the data in decoder.
+     */
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUpAppearance()
+    }
+    
+    
+    func setUpAppearance() {
         backgroundColor = .clear
         //backgroundColor = UIColor(named: .tableRowBG)
         
@@ -67,6 +86,7 @@ open class StandardResultsSharpActionCell: BasicCollectionCell {
 
 public struct StandardResultsSharpActionRow:  Row, Equatable {
     public func setSelectedRowAt(_ viewCell:UICollectionViewCell, didSelect: Bool) {
+        self.item?.didSelect = didSelect
         if let cell = (viewCell as? StandardResultsSharpActionCell){
             cell.backRowView.backgroundColor = didSelect ? .red : UIColor(named: .tableRowBG)
         }
@@ -84,6 +104,10 @@ public struct StandardResultsSharpActionRow:  Row, Equatable {
     
     public func getRowHeight(indexPath: IndexPath) -> CGFloat {
         return -1
+    }
+    
+    public mutating func setItem(_ newItem:StandardResultItem){
+        self.item?.copy(newItem)
     }
     
     public var item:StandardResultItem? = nil
@@ -122,12 +146,7 @@ public struct StandardResultsSharpActionRow:  Row, Equatable {
                 cell.numberLabel.text = self.item?.number
                 
             }
-            
         }
-        
-       
     }
-    
-    
 }
 

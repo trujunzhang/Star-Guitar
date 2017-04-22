@@ -40,11 +40,11 @@ extension SGTuningsStandardViewController: StandardResultsProviderProtocol{
         // Step2: Update oneColumnLetter and twoColumnNumber's selected cell.
         oneColumnViewController.updateCell(rowIndex: letterIndex)
         twoColumnViewController.updateCell(rowIndex: numberIndex)
-
+        
         // Step3: Save the selected Result item.
         tuningsStandardSettingsUtils.setCurrentStandardResultItem(item)
         
-
+        
         if let selectedItems = tuningsTypeViewController.getSelectedItems(){
             if let tuningsStandardType:TuningsStandardType = TuningsStandardType.needSelectCellType(item,selectedItems){
                 
@@ -68,12 +68,14 @@ extension SGTuningsStandardViewController: OneColumnProviderProtocol{
     
     func toggleOneColumnLetter(_ sender: Row) {
         if let row = sender as? OneColumnActionRow{
-            if let  item = row.item{
-        
-                let letterIndex = item.type.rawValue
-                tuningsStandardSettingsUtils.updateOneColumnLetter(letterIndex)
+            if let oneColumnLetterItem = row.item{
                 
-                self.updateSelectedNoteCell()
+                // Save new Letter Index and check whether need to update the Result Grid.
+                let needUpdate = tuningsStandardSettingsUtils.updateOneColumnLetter(oneColumnLetterItem.type.rawValue)
+
+                if(needUpdate){
+                    self.updateSelectedNoteCell()
+                }
             }
         }
     }
@@ -86,9 +88,11 @@ extension SGTuningsStandardViewController: TwoColumnProviderProtocol{
     func toggleTwoColumnNumber(_ sender: Row) {
         let row = sender as! TwoColumnActionRow
         
-        tuningsStandardSettingsUtils.updateTwoColumnNumber(row.title)
+        let needUpdate = tuningsStandardSettingsUtils.updateTwoColumnNumber(row.title)
         
-        self.updateSelectedNoteCell()
+        if(needUpdate){
+            self.updateSelectedNoteCell()
+        }
     }
     
 }

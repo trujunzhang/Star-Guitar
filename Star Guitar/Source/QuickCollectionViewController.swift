@@ -28,9 +28,7 @@ import UIKit
 
 /// A table view controller that shows `tableContents` as formatted sections and rows.
 
-open class QuickCollectionViewController: UIViewController,
-        UICollectionViewDataSource,
-        UICollectionViewDelegate {
+open class QuickCollectionViewController: UIViewController{
 
     /// A Boolean value indicating if the controller clears the selection when the collection view appears.
     public var clearsSelectionOnViewWillAppear = true
@@ -66,6 +64,8 @@ open class QuickCollectionViewController: UIViewController,
         layout.minimumLineSpacing = CGFloat(integerLiteral: 0) // collectionView設定為縱向的話即「行」的間距、橫向則為「列」的間距
         layout.minimumInteritemSpacing = CGFloat(integerLiteral: 0) // collectionView設定為縱向的話即「列」的間距、橫向則為「行」的間距
         layout.scrollDirection = UICollectionViewScrollDirection.vertical // 滑動方向，預設為垂直。注意若設為垂直，則cell的加入方式為由左至右，滿了才會換行；若是水平則由上往下，滿了才會換列
+        
+        collectionView.allowsMultipleSelection = false
 
     }
 
@@ -97,28 +97,67 @@ open class QuickCollectionViewController: UIViewController,
                
         self.setDefaultSelectedCells(collectionView!)
     }
+    
+    public func getSelectedItems() ->[IndexPath]?{
+        return self.collectionView?.indexPathsForSelectedItems
+    }
+    
+}
 
-    // MARK: - UICollectionViewDataSource
 
+
+// MARK: - UICollectionViewDataSource
+extension QuickCollectionViewController: UICollectionViewDataSource{
+    
     open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return tableContents.count
     }
-
+    
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tableContents[section].rows.count
     }
-
-
+    
+    
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let row = tableContents[indexPath.section].rows[indexPath.row]
-
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: row.cellReuseIdentifier, for: indexPath)
-
+        
+        let isSelect = cell.isSelected
+        
+        print("")
+        print("collection's select: \(isSelect)")
+        print("")
+        
+        if let standardResultRow = row as? StandardResultsSharpActionRow{
+            if(standardResultRow.item?.didSelect)!{
+                collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+            }
+        }
+        
         row.render(viewCell: cell)
-
+        
         return cell 
     }
+}
+
+// MARK: - UICollectionViewDelegate
+extension QuickCollectionViewController: UICollectionViewDelegate{
     
+    // Methods for notification of selection/deselection and highlight/unhighlight events.
+    // The sequence of calls leading to selection from a user touch is:
+    //
+    // (when the touch begins)
+    // 1. -collectionView:shouldHighlightItemAtIndexPath:
+    // 2. -collectionView:didHighlightItemAtIndexPath:
+    //
+    // (when the touch lifts)
+    // 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
+    // 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
+    // 5. -collectionView:didUnhighlightItemAtIndexPath:
+
+    
+    // 1. -collectionView:shouldHighlightItemAtIndexPath:
     public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         let row = tableContents[indexPath.section].rows[indexPath.row]
         
@@ -129,6 +168,31 @@ open class QuickCollectionViewController: UIViewController,
         return false
     }
     
+    // 2. -collectionView:didHighlightItemAtIndexPath:
+    public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
+            let row = tableContents[indexPath.section].rows[indexPath.row]
+            
+            row.setHighlightRowAt(cell, didHighlight: true)
+        }
+    }
+    
+    // 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
+    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let row = tableContents[indexPath.section].rows[indexPath.row]
+        
+        if (row.action) != nil{
+            return row.shouldHighlightRowAt()
+        }
+        
+        return false
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = tableContents[indexPath.section].rows[indexPath.row]
         
@@ -141,7 +205,7 @@ open class QuickCollectionViewController: UIViewController,
             action(row)
         }
         //else{
-            //collectionView.deselectItem(at: indexPath, animated: true)
+        //collectionView.deselectItem(at: indexPath, animated: true)
         //}
     }
     
@@ -152,20 +216,9 @@ open class QuickCollectionViewController: UIViewController,
             
             row.setSelectedRowAt(cell, didSelect: false)
         }
-        
-        
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
-            let row = tableContents[indexPath.section].rows[indexPath.row]
-            
-            row.setHighlightRowAt(cell, didHighlight: true)
-        }
-
-
-    }
-    
+    // 5. -collectionView:didUnhighlightItemAtIndexPath:
     public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         if let cell:UICollectionViewCell = collectionView.cellForItem(at: indexPath){
             let row = tableContents[indexPath.section].rows[indexPath.row]
@@ -173,17 +226,9 @@ open class QuickCollectionViewController: UIViewController,
             row.setHighlightRowAt(cell, didHighlight: false)
         }
     }
-    
-    public func getSelectedItems() ->[IndexPath]?{
-        return self.collectionView?.indexPathsForSelectedItems
-    }
-    
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
-
-
 private extension UIView {
 
     var containerCell: UICollectionViewCell? {

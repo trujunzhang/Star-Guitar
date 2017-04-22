@@ -58,9 +58,25 @@ class SGStandardResultsViewController: QuickCollectionViewController {
     
     public func updateCell(item:StandardResultItem){
         if let indexPath = item.indexPath{
-            tableContents[indexPath.section].rows[indexPath.row] = self.getStandardResultsActionRow(item)
-            
-            self.collectionView?.reloadItems(at: [indexPath])
+            if var actionRow = tableContents[indexPath.section].rows[indexPath.row] as? StandardResultsSharpActionRow{
+                
+                actionRow.setItem(item)
+                
+                if let _collectionView = self.collectionView{
+                    
+                    let indexPaths = self.getSelectedItems()
+                    let selectedCount = indexPaths?.count
+                    
+                    _collectionView.performBatchUpdates({
+                            _collectionView.reloadItems(at: [indexPath])
+                        //_collectionView.reloadData()
+                    }, completion: { (success) in
+                        if let _indexPath = item.indexPath{
+                            //_collectionView.selectItem(at: _indexPath, animated: false, scrollPosition: .top)
+                        }
+                    })
+                }
+            }
         }
     }
     
