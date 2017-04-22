@@ -16,6 +16,9 @@
     class StandardResultsGridContainer: UIView{
         weak var delegate : StandardResultsGridProviderProtocol?
         
+        
+        var tuningsStandardSettingsUtils = TuningsStandardSettingsUtils()
+        
         private var selectedRow:StandardResultsSharpActionRow?
         private var tableContents = [Section]()
         
@@ -68,6 +71,9 @@
             }
         }
         
+        // ====================================
+        // Tap Event
+        // ====================================
         func handleTap(sender: UITapGestureRecognizer) {
             if let view = sender.view{
                 let step = view.tag
@@ -76,22 +82,33 @@
                 
                 //print("section: \(section), row: \(row)")
                 
-                if let lastRow = self.selectedRow{
-                    if let item = lastRow.item{
-                        if let indexPath = item.indexPath{
-                            lastRow.setSelectedRowAt(self.cells[indexPath.section][indexPath.row],didSelect: false)
-                        }
+                //
+                //  1. In the standard tuning. I need the three middle turnings (drop d, dadgad, open c) to be highlighted when they are touched
+                //
+                if(section == 2 && TuningsStandardType.canMiddleHighLight(self.tuningsStandardSettingsUtils.currentStandardTuningsType)){
+                    // Can not be selected and highlight.
+                }else{
+                    self.invokeEvent(section, row)
+                }
+            }
+        }
+        
+        private func invokeEvent(_ section:Int,_ row:Int){
+            if let lastRow = self.selectedRow{
+                if let item = lastRow.item{
+                    if let indexPath = item.indexPath{
+                        lastRow.setSelectedRowAt(self.cells[indexPath.section][indexPath.row],didSelect: false)
                     }
                 }
+            }
+            
+            if let currentRow = self.tableContents[section].rows[row] as? StandardResultsSharpActionRow{
+                currentRow.setSelectedRowAt(self.cells[section][row],didSelect: true)
                 
-                if let currentRow = self.tableContents[section].rows[row] as? StandardResultsSharpActionRow{
-                    currentRow.setSelectedRowAt(self.cells[section][row],didSelect: true)
-                    
-                    self.selectedRow = currentRow
-                    
-                    if let item = currentRow.item{
-                        delegate?.toggleCell(item)
-                    }
+                self.selectedRow = currentRow
+                
+                if let item = currentRow.item{
+                    delegate?.toggleCell(item)
                 }
             }
         }

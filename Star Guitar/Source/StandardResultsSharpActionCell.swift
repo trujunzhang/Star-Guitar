@@ -86,11 +86,11 @@ open class StandardResultsSharpActionCell: UIView {
 public struct StandardResultsSharpActionRow:  Row, Equatable {
     public func setSelectedRowAt(_ viewCell:UIView, didSelect: Bool) {
         self.item?.didSelect = didSelect
-            (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didSelect ? .red : UIColor(named: .tableRowBG)
+            (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didSelect ? UIColor(named: .selectedHighLine) : UIColor(named: .tableRowBG)
     }
     
     public func setHighlightRowAt(_ viewCell:UIView, didHighlight: Bool) {
-            (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didHighlight ? .blue : UIColor(named: .tableRowBG)
+            (viewCell as! StandardResultsSharpActionCell).backRowView.backgroundColor = didHighlight ? UIColor(named: .selectedHighLine) : UIColor(named: .tableRowBG)
     }
     
     public func shouldHighlightRowAt() -> Bool {

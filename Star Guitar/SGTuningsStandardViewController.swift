@@ -37,6 +37,7 @@ class SGTuningsStandardViewController: UIViewController {
         tuningsEventViewController.delegate = self
         
         tuningsResultContainer.delegate = self
+        tuningsResultContainer.tuningsStandardSettingsUtils = self.tuningsStandardSettingsUtils
         tuningsResultContainer.generateResultsRows(tuningsStandardSettingsUtils)
         tuningsResultContainer.reloadData()
 

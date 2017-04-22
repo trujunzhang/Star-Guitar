@@ -69,9 +69,9 @@ enum TuningsStandardType: Int {
      */
     public static func canMiddleHighLight(_ tuningsType: Int) -> Bool{
         if(tuningsType == TuningsStandardType.DropD.rawValue || tuningsType == TuningsStandardType.Dadgad.rawValue || tuningsType == TuningsStandardType.OpenC.rawValue){
-            return true
+            return false
         }
-        return false
+        return true
     }
     
     public static func toggleTypeIndex(_ item: StandardResultItem) -> TuningsStandardType?{
