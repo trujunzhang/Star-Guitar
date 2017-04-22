@@ -45,14 +45,14 @@ class StandardResultsGridContainer: UIView{
     
     public func reloadData(){
         for section in self.sections{
-                for row in section.rows{
-                    let cell = StandardResultsSharpActionCell()
-                    self.addSubview(cell)
-                    self.layoutCell(cell, row)
-                    
-                    cell.setUpAppearance()
-                    row.render(viewCell: cell)
-                    
+            for row in section.rows{
+                let cell = StandardResultsSharpActionCell()
+                self.addSubview(cell)
+                self.layoutCell(cell, row)
+                
+                cell.setUpAppearance()
+                row.render(viewCell: cell)
+                
             }
         }
     }

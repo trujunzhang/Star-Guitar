@@ -307,7 +307,6 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dY-YH-BMF" customClass="StandardResultsGridContainer" customModule="Star_Guitar" customModuleProvider="target">
                                         <rect key="frame" x="513" y="146" width="323" height="225"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                             </view>
