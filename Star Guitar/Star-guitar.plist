@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Name</key>
+	<string>Star Guitar</string>
+	<key>Version</key>
+    <string>1.0.0</string>
 	<key>Title1To6</key>
 	<array>
 		<string>1st</string>
