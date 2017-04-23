@@ -33,10 +33,10 @@ class StandardResultsViewHelper{
          *
          */
         if(GuitarConfigureAsync.sharedInstance.isLeftHanded()){
-            return GuitarPlist.guitarPlistDict.Title6To1 // ["6st","5nd","4rd","3th","2th","1th"] // the standard tuning still need to be reversed in the left handed setting
+           return GuitarPlist.guitarPlistDict.Title1To6 //["1st","2nd","3rd","4th","5th","6th"]
         }
         
-        return GuitarPlist.guitarPlistDict.Title1To6 //["1st","2nd","3rd","4th","5th","6th"]
+         return GuitarPlist.guitarPlistDict.Title6To1 // ["6st","5nd","4rd","3th","2th","1th"] // the standard tuning still need to be reversed in the left handed setting
     }
     
     func addAsTitles(_ pageContainer:UIView,_ tuningsResultContainer:UIView)  {

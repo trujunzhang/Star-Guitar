@@ -85,7 +85,11 @@ class TuningsStandardSettingsUtils: TuningsBaseSettingsUtils {
     }
     
     public func getCurrentResultCells() -> [[StandardResultItem]]{
-        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString)
+        if(GuitarConfigureAsync.sharedInstance.isLeftHanded()){
+            return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardLeftHandResultString)
+        }
+        
+        return TuningsStandardFactory.convert(rows:GuitarPlist.guitarPlistDict.standardRightHandResultString)
     }
     
     public func setCurrentStandardTuningsType(_ title: String){
