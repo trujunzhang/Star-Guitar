@@ -132,12 +132,13 @@ public struct StandardResultsSharpActionRow:  Row, Equatable {
         if let cell = (viewCell as? StandardResultsSharpActionCell){
             if let _item = self.item{
                 
-                cell.letterLabel.text = self.item?.letter
+                cell.letterLabel.text = (_item.isLower) ? _item.letter.lowercased() :_item.letter
+
                 cell.sharpLabel.text = ""
                 if(_item.haveSharp){
                     cell.sharpLabel.text = "#"
                 }
-                cell.numberLabel.text = self.item?.number
+                cell.numberLabel.text = _item.number
                 
             }
         }

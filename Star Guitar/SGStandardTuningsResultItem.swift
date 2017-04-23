@@ -18,6 +18,8 @@ public class StandardResultItem {
     
     var canClick = false
     
+    var isLower = false
+    
     var indexPath: IndexPath?
     
     init(indexPath: IndexPath){
@@ -35,6 +37,8 @@ public class StandardResultItem {
         self.letter = oneColumnLetterItem.letter
         self.haveSharp = oneColumnLetterItem.haveSharp
         self.number = number
+        
+        self.isLower = self.isLowerItem(letterIndex, numberIndex)
     }
     
     func copy(_ newItem:StandardResultItem) {
@@ -48,6 +52,18 @@ public class StandardResultItem {
         self.number = newItem.number
         
         self.canClick = newItem.canClick
+    }
+    
+    /*
+     *
+     * [4/23/17, 3:59:06 AM] K_M: Notice how e4 is lower case and the rest are uppercase
+     *
+     */
+    private func isLowerItem(_ letterIndex:Int,_ numberIndex :Int) -> Bool{
+        if(letterIndex == 4 && numberIndex == 2){
+            return true
+        }
+        return false
     }
     
     func isOpenC() -> Bool {
@@ -66,7 +82,7 @@ public class StandardResultItem {
         
         self.number = number
     }
-  
+    
 }
 
 
